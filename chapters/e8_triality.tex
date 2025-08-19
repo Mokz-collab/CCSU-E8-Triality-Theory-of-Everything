@@ -1,0 +1,55 @@
+\section*{Roots of $E_8$ and the hybrid lattice}
+A concrete model of the $E_8$ root system $R\subset\mathbb R^8$ uses 240 roots:
+\begin{align*}
+R \;=\;&\Big\{(\pm1,\pm1,0,\ldots,0)\text{ with all permutations}\Big\}\ \cup \\
+&\Big\{\tfrac12(\pm1,\ldots,\pm1) \ \text{with an even \# of minus signs}\Big\}.
+\end{align*}
+The hybrid lattice $L_e$ (cube$\perp$sphere) embeds a canonical $D_4$ slice whose vertex set is the 24–cell $\mathcal V_{24}$:
+\[
+\mathcal V_{24}=\Big\{\text{perms of }(\pm1,0,0,0)\Big\}\ \cup\
+\Big\{\tfrac12(\pm1,\pm1,\pm1,\pm1)\ \text{even parity}\Big\}.
+\]
+
+\section*{Braidlines and fermion organization}
+We associate eight fermion types (up/down leptons; up/down quarks with three colors) to an orbit map
+\[
+\Phi:\ \{\text{type}\}\times \mathcal V_{24}\longrightarrow R,
+\]
+so that each row has a distinguished orbit vertex $v\in\mathcal V_{24}$ (carried in the dataset) and a trajectory (braidline) $\gamma_v\subset L_e$. The 192-state geometric superset (8 types $\times$ 24) reduces to the Standard Model by chirality/color filters and an optional right-handed neutrino removal.
+
+\section*{Triality}
+The triality automorphism $\mathsf T$ permutes a vector and two spinor representations of $D_4\subset E_8$; in our interface it acts as a braidline mirror that swaps orbit families while preserving collapse survivability. SUSY candidates are echo/anti-echo pairs that survive both neutral and observer lifts across triality sectors.
+
+\section*{Three generations}
+Exactly three generation shells arise as the only braidline crossings that remain stable under the recursion thresholds of the ambient vacuum. This is encoded as the A3 \emph{generation lock} invariant in Overlay XIII.
+\label{chap:e8}
+
+\section{Embedding}
+Let $E_8\supset \mathfrak{so}(16)\supset \mathfrak{so}(8)\oplus\mathfrak{so}(8)$ with the triality automorphism $\mathcal{T}$ on $\mathrm{Spin}(8)$ interchanging $(8_v,8_s,8_c)$ \cite{Adams1996Exceptional,CartanTriality}. Embed
+\[
+\iota:\ \mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)\hookrightarrow \mathfrak{e}_8,
+\]
+choose a weight basis $\{\lambda_i\}$ and a triality axis $u$.
+
+\paragraph{Braidline shells.}
+Define shell index $n$ by a lattice height functional $h(\lambda)=\kappa\langle \lambda,u\rangle$ and harmonic mass law
+\[
+m_a=m_0\,r^{n_a},\qquad n_a\in\mathbb{Z}.
+\]
+Three generation shells emerge as the only connected components that remain under Π/Λ (A3).
+
+\section{24-cell and the count 192}
+Within the $D_4$ sublattice the 24-cell has vertices
+\[
+\mathcal{V}=\Big\{\tfrac{1}{2}(\pm1,\pm1,0,0)\ \text{perm.}\Big\}\cup\{(\pm1,0,0,0)\ \text{perm.}\}.
+\]
+Associate to each flavor type $f$ (up, down, lepton, neutrino) and chirality $L/R$ an orbit $\mathcal{O}_{f,\chi}\subset\mathcal{V}$ of size $24$ under the Weyl group action and triality flips. Including three colors for quarks and particle/antiparticle doubling:
+\[
+\underbrace{(u/d)\times \text{lepton}/\text{neutrino}}_{\text{4 types}}
+\times \underbrace{(L/R)}_{\times 2}
+\times \underbrace{\text{color (3 for quarks, 1 for leptons)}}_{\text{avg }2}
+\times \underbrace{\text{particle/antiparticle}}_{\times 2}
+\times \underbrace{24\text{ vertices}}_{\text{per type}}
+\;\leadsto\; 192\ \text{fermionic states},
+\]
+providing the geometric superset; the SM minimal chiral content is obtained by filtering (see our JSON/plot linkage in the appendix).

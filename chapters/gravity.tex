@@ -1,0 +1,41 @@
+\section*{Effective action and Λ–memory}
+\begin{equation}
+S_{\mathrm{eff}}=\int\!\sqrt{-g}\Big[\frac{R}{16\pi G}-\Lambda_0-\delta\Lambda_{\mathrm{coll}}[\psi]
++\Lag_{\mathrm{SM}}+\Lag_{\mathrm{CCSU}}(\psi)\Big]\,d^4x,
+\end{equation}
+\[
+\delta\Lambda_{\mathrm{coll}}
+=\kappa_\Lambda\big\langle|\psi_{\rm echo}|^2-|\psi_{\rm anti}|^2\big\rangle
++\eta_\Lambda\,\Re\langle\psi_{\rm echo}\overline{\psi_{\rm anti}}\rangle .
+\]
+Linearized GWs satisfy $(\Box+m_{\rm eff}^2(\psi))\,h^{TT}_{ij}=0$; the echo term acts as a tiny dispersion/mass window.
+
+\section*{Ringdown model (220,221)}
+The signal is modeled by
+\[
+h(t)=\Theta(t-t_0)\sum_{n\in\{220,221\}} A_n e^{-(t-t_0)/\tau_n}
+\cos\!\big(2\pi f_n(t-t_0)+\phi_n\big)+c,
+\]
+with a soft prior enforcing mode ratio
+\[
+\text{penalty}(f_{221},f_{220}) \;=\; w\,\Big(\frac{f_{221}}{r\,f_{220}}-1\Big)^2,
+\quad r\simeq 1.5,\ w\ll 1.
+\]
+The batch fitter implements this via additional residuals in the Levenberg–Marquardt step and supports an interactive time‐window selector. We report per–event
+$\delta\omega/\omega$, $Q_n=\pi f_n\tau_n$, and the 221 energy fraction
+$\tfrac{A_{221}^2\tau_{221}}{A_{220}^2\tau_{220}+A_{221}^2\tau_{221}}$.
+\label{chap:gravity}
+
+\section{Memory as collapse}
+Define the Λ-memory functional on a window $I$:
+\[
+\overline{\Xi} = \frac{1}{|I|}\int_I \langle |\psi_+|^2-|\psi_-|^2\rangle\,dt .
+\]
+In black-hole ringdowns, \eqref{eq:dispersion} predicts a small shift of the 220 frequency $\delta\omega/\omega=\alpha_\Lambda \overline{\Xi}$. The 221/220 ratio concentrates near $r_*$ and its energy fraction grows with spin $a$ (our fitter implements a soft prior on $f_{221}/f_{220}$).
+
+\paragraph{Practical fit.}
+Two-mode ansatz:
+\[
+h(t)=\sum_{m\in\{220,221\}}A_m e^{-(t-t_0)/\tau_m}\cos\!\big(2\pi f_m (t-t_0)+\phi_m\big),
+\]
+with optional prior $f_{221}\sim\mathcal{N}(1.52\,f_{220},\,0.05^2 f_{220}^2)$ and a time gate on $t_0$.

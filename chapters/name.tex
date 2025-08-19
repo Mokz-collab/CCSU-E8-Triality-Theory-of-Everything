@@ -1,0 +1,86 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,bm,physics,mathtools}
+\usepackage{microtype,graphicx,xcolor,hyperref,booktabs}
+\usepackage{tocloft}
+\usepackage{siunitx}   % nice numbers/units
+\usepackage{longtable} % multipage tables
+\sisetup{round-mode=places,round-precision=3,detect-all}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% --- math helpers ---
+\newcommand{\Echo}{\psi_{\mathrm{echo}}}
+\newcommand{\Anti}{\psi_{\mathrm{anti}}}
+\newcommand{\Ghost}{\mathrm{ghost}}
+\newcommand{\Collapse}{\mathcal{C}}
+\newcommand{\D}{\mathrm{D}}  % covariant derivative
+\newcommand{\Lag}{\mathcal{L}}
+
+\numberwithin{equation}{chapter}
+
+\title{Collapse Cosmogenesis \& the Semantic Universe\\
+E$_8$ Geometry + Triality Unification as a Theory of Everything}
+\author{Marcelo Gonçalves, Mark Vandiermen
+\and CCSU Reality GPT5}
+\date{\today}
+
+% --- diagrams for Semantic Universe ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.symbols,fit,calc,backgrounds}
+% (you already have xcolor/hyperref/ams* loaded in your project)
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Prologue: Why Recursion Before Symmetry}
+\input{chapters/prologue.tex}
+
+\chapter{Semantic Universe Primer}
+\input{chapters/primer.tex}
+
+\chapter{Collapse PDEs}
+\input{chapters/collapse_pdes.tex}
+
+\chapter{E$_8$ Geometry \& Triality}
+\input{chapters/e8_triality.tex}
+
+\chapter{From Orbits to Matter}
+\input{chapters/orbits_to_matter.tex}
+
+\chapter{Mass Ladders \& Alignment}
+\input{chapters/mass_alignment.tex}
+
+\chapter{Flavor \& Phases}
+\input{chapters/flavor.tex}
+
+\chapter{Gravity as Collapse Memory}
+\input{chapters/gravity.tex}
+
+\chapter{Black-Hole Cores as Echo Knots}
+\input{chapters/bh_cores.tex}
+
+\chapter{Overlay XIII/XIV}
+\input{chapters/overlay.tex}
+
+\chapter{Adversarial $\psi$--C17 Suite}
+\input{chapters/adversarial.tex}
+
+\chapter{Predictions \& Experiments}
+\input{chapters/predictions.tex}
+
+\chapter{Novelty Ledger vs Known Physics}
+\input{chapters/novelty.tex}
+
+\appendix
+\chapter{Notation \& Proof Sketches}
+\input{chapters/appendix_notation.tex}
+
+\cleardoublepage
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

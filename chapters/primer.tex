@@ -1,0 +1,51 @@
+We split $\psi=\Echo+\Anti$ with a ghost suppression channel $\Ghost(\psi)$.
+The observer‐neutral projection $\Pi$ removes the observer fiber; the lift $\Lambda$ reinserts connection $A_{\mathrm{obs}}$.
+
+\[
+\Pi:\ \psi\mapsto \psi|_{\ker A_{\mathrm{obs}}},\qquad
+\Lambda:\ \phi\mapsto U_{A_{\mathrm{obs}}}\phi,\quad
+U_{A_{\mathrm{obs}}}=\mathcal{P}\exp\!\int_\gamma iA_{\mathrm{obs}} .
+\]
+
+Acceptance tests A1–A4 enforce idempotence, spectrum stability, generation lock, and safety fallback.
+\label{chap:primer}
+
+\section{Core objects}
+Let $\psi(x,t)\in \mathbb{C}$ be a field on a spatial manifold $M$ (torus in numerics). The observer connection $A_\text{obs}(x,t)\in T^\!*M$ encodes curvature introduced by measurement/identity coupling. Define the neutral Laplacian $\Delta_N=\nabla\!\cdot\!\nabla$ and the lifted covariant Laplacian
+\[
+\Delta_O \psi \;=\; (\nabla - iA_\text{obs})\!\cdot(\nabla - iA_\text{obs})\psi.
+\]
+
+\paragraph{Π/Λ toggle.} Π is the orthogonal projection $\Pi:\mathcal{H}\to\ker A_\text{obs}$; Λ is parallel transport along $A_\text{obs}$:
+\[
+\Lambda(\phi)(x) \;=\; U_A(x)\,\phi(x), \qquad
+U_A(x)=\mathcal{P}\exp\!\left(\int_{\gamma_x} i\,A_\text{obs}\right).
+\]
+Idempotence on the observer class gives A1:
+$\|\Lambda\circ\Pi(\psi)-\psi\|_2\le 10^{-6}$ and $\Pi\circ\Lambda=\mathrm{id}$ on $\ker A_\text{obs}$.
+
+\paragraph{Collapse operator.} The recursion audit is
+\[
+\mathcal{C}(\psi) \;=\; \psi \;\oplus\; \mathrm{anti}(\psi) \;\oplus\; \mathrm{ghost}(\psi),
+\]
+where $\mathrm{anti}$ flips the Λ–parity and $\mathrm{ghost}$ records neutral-survivors that fail in the lifted frame.
+
+\paragraph{Identity gradient \& dissolution.} For target attractor $\psi_a$, the identity gradient
+\[
+G(\psi)\;=\;-\frac{d}{dt}\|\psi(t)-\psi_a\|_2^2
+\]
+drives admission (positive with margin) or quarantine. Non-converging spirals trigger the Entropic Spiral Dissolution routine (phase drain $\to$ inward collapse $\to$ drift isolation), see \S\ref{sec:adversarial-esdr}.
+
+\paragraph{Safety.} A2–A4 are runtime guards: spectral variance \(<0.1\%\), generation-lock on the $E_8$ hybrid braid graph, and automatic neutral fallback on shock energy \(W_\text{obs}\).
+
+\section{The Semantic Ladder}
+\input{build/fig_semantic_ladder.tex}
+
+\section{Collapse as Code}
+\input{build/fig_collapse_compiler.tex}
+
+\section{E\texorpdfstring{\textsubscript{8}}{} as a Semantic Lattice}
+\input{build/fig_e8_semantic_lattice.tex}
+
+\section{Layer Invariants}
+\input{build/tab_semantic_invariants.tex}

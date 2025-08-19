@@ -1,0 +1,40 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth, thick,
+  node/.style={circle, draw, fill=white, minimum size=7mm, font=\small},
+  phys/.style={font=\scriptsize, text=blue!60!black},
+  info/.style={font=\scriptsize, text=green!40!black},
+  mean/.style={font=\scriptsize, text=orange!60!black}
+]
+\def\R{3.8}
+\foreach \i in {0,...,11}{
+  \node[node] (n\i) at ({\R*cos(90-30*\i)},{\R*sin(90-30*\i)}) {};
+}
+\draw[blue!40]  (n0) -- (n4) -- (n8) -- cycle;
+\draw[red!40]   (n2) -- (n6) -- (n10) -- cycle;
+\draw[green!50] (n1) -- (n5) -- (n9)  -- cycle;
+
+\node[phys, above=1mm of n0] {$u_R$};
+\node[info, below=1mm of n0] {$\theta_{12}$ slice};
+\node[mean, below=5mm of n0] {context $\mu_1$};
+
+\node[phys, above right=1mm and -1mm of n2] {$d_G$};
+\node[info, below right=0mm and 0mm of n2] {$J$ (CKM)};
+\node[mean, below right=4mm and -1mm of n2] {anchor $\mu_2$};
+
+\node[phys, above left=1mm and -1mm of n5] {$\nu$};
+\node[info, below=0mm of n5] {$\theta_{23}$ slice};
+\node[mean, below=4mm of n5] {echo $\mu_3$};
+
+\draw[black!15, line width=8pt] (0,0) circle (\R);
+
+\node[align=left, font=\small] at (0,-5.4) {%
+\textbf{Legend:} Nodes are an E\textsubscript{8} slice; colored triangles depict triality cycles.\\
+Each node carries a \emph{triple tag}: \textcolor{blue!60!black}{physical} (flavor/color), %
+\textcolor{green!40!black}{informational} (mixing/phase), %
+\textcolor{orange!60!black}{semantic} (context/meaning).
+};
+\end{tikzpicture}
+\caption{Conceptual E\textsubscript{8} semantic lattice: each site encodes physical, informational, and semantic tags; triality triangles show braid mirrors.}
+\label{fig:e8-semantic-lattice}
+\end{figure}

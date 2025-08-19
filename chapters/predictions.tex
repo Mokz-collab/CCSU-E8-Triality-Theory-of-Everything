@@ -1,0 +1,89 @@
+\section*{Executive Summary}
+CCSU yields concrete, near–term tests in three arenas:
+(i) gravitational-wave ringdowns (dispersion and mode-energy partition),
+(ii) flavor-sector phases (CKM/PMNS) under Λ–mode deformations,
+(iii) fermion mass ladders anchored by $\{W,Z,h,t\}$ alignment.
+
+Below we phrase each as a falsifiable prediction with acceptance criteria.
+
+\section{Gravitational-Wave Ringdowns}
+\subsection{Dispersion/echo shift}
+Let $\Xi(t)=\langle|\psi_{\rm echo}|^2-|\psi_{\rm anti}|^2\rangle_t$ be the local echo–imbalance (Chap.~\ref{chap:gravity}). For the 220 mode we predict a small fractional shift
+\begin{equation}
+\frac{\delta\omega_{220}}{\omega_{220}}
+\;=\;\alpha_\Lambda\,\overline{\Xi}\;\;+\;\;O(\overline{\Xi}^{\,2}),
+\qquad |\alpha_\Lambda|\sim 10^{-3}\text{--}10^{-2},
+\label{eq:gw-dispersion}
+\end{equation}
+with the sign controlled by the observer-lift parity in the event window.
+\paragraph{Test.} Two-mode (220,221) fits on O3/O4 catalogs using our batch fitter with the ratio prior; stack $\delta\omega/\omega$ vs.\ spin $a$ and mass $M$. 
+\paragraph{Accept.} Nonzero trend consistent with \eqref{eq:gw-dispersion} across stacks ($p<0.01$); \emph{Reject} if consistent with zero within $10^{-3}$ for all stacks.
+
+\subsection{221/220 frequency ratio and energy fraction}
+The 221 frequency clusters near a fixed multiple of 220 under CCSU’s vortex pairing:
+\begin{equation}
+\frac{f_{221}}{f_{220}} = r_{*} \pm \Delta r,\qquad r_{*}\in[1.45,1.60],\ \Delta r\lesssim 0.05,
+\end{equation}
+and the 221 energy fraction
+\begin{equation}
+\varepsilon_{221}=\frac{A_{221}^2\tau_{221}}{A_{220}^2\tau_{220}+A_{221}^2\tau_{221}}
+\end{equation}
+correlates with the fitted spin $a$ (higher $a\Rightarrow$ larger $\varepsilon_{221}$).
+\paragraph{Test.} Use the two-mode fitter with soft prior weight $w\in[0.02,0.1]$; report $(f_{221}/f_{220},\ \varepsilon_{221})$ vs.\ $a$.
+\paragraph{Accept.} Median ratio in $[1.45,1.60]$ with interquartile width $\le 0.05$, and positive $\mathrm{corr}(a,\varepsilon_{221})$ significant at $p<0.05$.
+
+\subsection{Memory/offset connection}
+CCSU predicts a weak correlation between the permanent strain offset (nonlinear memory) and $\overline{\Xi}$:
+\begin{equation}
+\Delta h_{\rm mem}\;\propto\; \beta_\Lambda\,\overline{\Xi},
+\end{equation}
+detectable only in stacks.
+\paragraph{Test.} Stack post-merger residuals time-aligned by ringdown onset; regress $\Delta h_{\rm mem}$ on fitted $\overline{\Xi}$ from the same windows.
+
+\section{Flavor Sector}
+\subsection{Leptonic phase and Jarlskog}
+With the Λ–mode lepton warp tuned (Chap.~\ref{chap:flavor}), we predict near–maximal leptonic phase:
+\begin{equation}
+\delta_\ell = 90^\circ \pm 15^\circ,\qquad
+J_\ell \simeq 3.3\times 10^{-2}.
+\end{equation}
+\paragraph{Test.} Long–baseline accelerator data (appearance CP asymmetry); compare with global fits.
+\paragraph{Accept.} $\delta_\ell$ consistent with the band above at $1$–$2\sigma$ in combined fits.
+
+\subsection{Quark sector stability}
+CKM remains within PDG bands while maintaining nonzero $J_q$:
+\begin{equation}
+(\theta_{12}^q,\theta_{23}^q,\theta_{13}^q,\delta_q)
+\approx (13.02^\circ,\,2.38^\circ,\,0.203^\circ,\,68.9^\circ),\qquad
+J_q\simeq 3.0\times 10^{-5}.
+\end{equation}
+\paragraph{Test.} Refit with/without Λ–mode deformations; $\Delta\theta^q$ must remain subpercent.
+
+\section{Fermion Mass Ladders}
+\subsection{Harmonic shells with $\{W,Z,h,t\}$ alignment}
+Let $m_a=m_0 r^{n_a}$ with integers $n_a$ per shell. After alignment, CCSU predicts:
+\begin{enumerate}
+\item residuals $\Delta(\log m)$ for gauge bosons and top lie within a narrow band ($\le 3\%$),
+\item charged–lepton ladder ratios approximate powers of $r$ to within $5$–$7\%$,
+\item neutrino absolute scale enters only through the chosen shell indices $n_{\nu_i}$; hierarchy preference is normal if $r>6$ and inverted if $r<5$ (to be fixed by future data).
+\end{enumerate}
+\paragraph{Test.} Apply the ladder to the current PDG mass set; report green/yellow/red flags by sector (Table~\ref{tab:mass-ladder}).
+
+\section{Collider Echo Checks}
+We expect small, coherent modulations in angular distributions when states on the \emph{same shell} co–appear:
+\begin{equation}
+\Delta\mathcal{A}(\phi)\sim \gamma_\Lambda \cos(2\phi+\phi_0),\qquad |\gamma_\Lambda|\lesssim 10^{-2}.
+\end{equation}
+\paragraph{Test.} Differential cross–section residuals vs.\ MC baselines in channels containing pairs from a shared $n$.
+
+\section{Operational Criteria}
+A finding is \emph{supportive} if at least one GW stack and one flavor observable meet acceptance, and \emph{refuting} if
+(i) all GW stacks limit $\delta\omega/\omega$ below $10^{-3}$ and 
+(ii) $\delta_\ell$ excludes $[75^\circ,105^\circ]$ at $>2\sigma$ simultaneously.
+\section*{Acceptance checklist (quick)}
+\begin{itemize}
+\item GW stacks: median $f_{221}/f_{220}\in[1.45,1.60]$ and positive corr$(a,\varepsilon_{221})$ ($p<0.05$).
+\item GW dispersion: stacked $\delta\omega/\omega$ shows nonzero linear trend vs.\ $\overline{\Xi}$ (Eq.~\eqref{eq:gw-dispersion}).
+\item Flavor: $\delta_\ell=90^\circ\pm 15^\circ$; CKM shifts subpercent; $J_q\sim 3\times10^{-5}$, $J_\ell\sim 3.3\times10^{-2}$.
+\item Mass ladder: post-alignment residuals green for gauge/top; yellow/green for charged leptons; neutrino shell choice recorded.
+\end{itemize}
