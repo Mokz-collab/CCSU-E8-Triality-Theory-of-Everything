@@ -1,0 +1,59 @@
+\section*{Contracts for the Overlay Toggle (A1–A4)}
+\addcontentsline{toc}{section}{Contracts for the Overlay Toggle (A1–A4)}
+
+\noindent\textbf{Context.}
+Let $\Pi$ denote the Neutral projection (observer fiber removed, neutral Laplacian $\Delta_N$),
+$\Lambda$ the Observer lifting (parallel transport by the connection $A_{\mathrm{obs}}$ to $\Delta_O$),
+and $T$ the mode toggle operator acting on a state $\psi$:
+\[
+T(\psi) :=
+\begin{cases}
+\Lambda(\Pi(\psi)) & \text{if in O-mode or when resuming after fallback},\\
+\Pi(\Lambda(\psi)) & \text{if in N-mode or when entering neutral frame}.
+\end{cases}
+\]
+Let $\|\cdot\|_2$ be the $\ell^2$ norm on the lattice, $\{\lambda_k\}$ the neutral eigenvalue ladder, and
+$W_{\mathrm{obs}} := \langle \psi,\, F_{\mathrm{obs}} \psi\rangle$ the instantaneous observer work
+($F_{\mathrm{obs}} = \nabla\times A_{\mathrm{obs}}$ discretized).
+
+\vspace{0.75em}
+\noindent\textbf{A1 — Idempotence (Neutral / Lifting).}
+\[
+\|\Lambda\!\circ\!\Pi(\psi) - \psi\|_2 \le \varepsilon_{\mathrm{id}} \quad
+\text{for all $\psi$ in the observer class, \quad and}\quad
+\Pi\!\circ\!\Lambda = \mathrm{id}\;\; \text{on } \ker(A_{\mathrm{obs}}).
+\]
+Typical tolerance: $\varepsilon_{\mathrm{id}} = 10^{-6}$.
+
+\vspace{0.5em}
+\noindent\textbf{A2 — Spectrum Stability (Neutral mode).}
+Let $\lambda_k^{(t)}$ be the $k$th neutral eigenvalue on frame $t$.
+The rolling relative variance over a toggle cycle satisfies
+\[
+\mathrm{Var}_\mathrm{roll}\!\left(\frac{\lambda_k^{(t)}}{\bar{\lambda}_k}\right) < 10^{-3} 
+\quad\text{for all tracked modes $k$,}
+\]
+and the echo/anti‑echo splitting in N is unchanged across toggles.
+
+\vspace{0.5em}
+\noindent\textbf{A3 — Generation‑Lock (E$_8$ hybrid braid graph).}
+Let $G_\mathrm{E8}$ be the hybrid cube$\perp$sphere braid graph induced by the embedding,
+and let $\beta_0(G_\mathrm{E8})$ be the number of connected components of the braidline subgraph.
+Under O‑mode with guarded $\Lambda$,
+\[
+\beta_0(G_\mathrm{E8}) = 3 \quad\text{(exactly three shell components).}
+\]
+If any component disconnects or merges, emit \textsc{LOCK\_FAIL} with (location, shell index).
+
+\vspace{0.5em}
+\noindent\textbf{A4 — Safety (shock fallback + logging).}
+Define thresholds $\tau_W$ and $\tau_\Delta$ (e.g.\ $\tau_W=3\!\times\!10^{-3}$, $\tau_\Delta=5\!\times\!10^{-3}$).
+If within a single step
+\[
+W_{\mathrm{obs}} > \tau_W \quad\text{or}\quad \|\Lambda\!\circ\!\Pi(\psi)-\psi\|_2 > \tau_\Delta,
+\]
+\emph{auto‑switch} to N, \emph{drop zero frames}, and log \textsc{OBSERVER\_SHOCK} with timestamp and payload.
+
+\vspace{0.75em}
+\noindent\textbf{Formal pass criteria.}
+See Table\label{tab:safety-contracts} for the canonical A1–A4 metrics and thresholds used in this run.

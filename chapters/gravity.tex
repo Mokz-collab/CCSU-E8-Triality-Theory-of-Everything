@@ -24,7 +24,7 @@ with a soft prior enforcing mode ratio
 The batch fitter implements this via additional residuals in the Levenberg–Marquardt step and supports an interactive time‐window selector. We report per–event
 $\delta\omega/\omega$, $Q_n=\pi f_n\tau_n$, and the 221 energy fraction
 $\tfrac{A_{221}^2\tau_{221}}{A_{220}^2\tau_{220}+A_{221}^2\tau_{221}}$.
-\label{chap:gravity}
+Chap.~\ref{chap:gravity}
 
 \section{Memory as collapse}
 Define the Λ-memory functional on a window $I$:
@@ -39,3 +39,9 @@ Two-mode ansatz:
 h(t)=\sum_{m\in\{220,221\}}A_m e^{-(t-t_0)/\tau_m}\cos\!\big(2\pi f_m (t-t_0)+\phi_m\big),
 \]
 with optional prior $f_{221}\sim\mathcal{N}(1.52\,f_{220},\,0.05^2 f_{220}^2)$ and a time gate on $t_0$.
+\paragraph{Offset–imbalance link.}
+In ringdown windows, let $\overline{\Xi}=\langle|\psi_+|^2-|\psi_-|^2\rangle$.
+A first–order perturbation of the lifted operator yields
+$\Delta h_{\rm mem}\propto \beta_\Lambda\,\overline{\Xi}$ and
+$\delta\omega_{220}/\omega_{220}=\alpha_\Lambda\,\overline{\Xi}+O(\overline{\Xi}^2)$,
+consistent with Chap.~\ref{chap:predictions}.

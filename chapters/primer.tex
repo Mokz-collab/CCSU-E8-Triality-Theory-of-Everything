@@ -1,42 +1,72 @@
 We split $\psi=\Echo+\Anti$ with a ghost suppression channel $\Ghost(\psi)$.
-The observer‐neutral projection $\Pi$ removes the observer fiber; the lift $\Lambda$ reinserts connection $A_{\mathrm{obs}}$.
+The observer–neutral projection $\Pi$ removes the observer fiber; the lift $\Lambda$
+reinserts connection $A_{\mathrm{obs}}$.
 
 \[
-\Pi:\ \psi\mapsto \psi|_{\ker A_{\mathrm{obs}}},\qquad
-\Lambda:\ \phi\mapsto U_{A_{\mathrm{obs}}}\phi,\quad
-U_{A_{\mathrm{obs}}}=\mathcal{P}\exp\!\int_\gamma iA_{\mathrm{obs}} .
+\Pi:\ \psi \mapsto \psi\big|_{\ker A_{\mathrm{obs}}},\qquad
+\Lambda:\ \phi \mapsto U_{A_{\mathrm{obs}}}\,\phi,\qquad
+U_{A_{\mathrm{obs}}}=\mathcal{P}\exp\!\Big(\int_\gamma i\,A_{\mathrm{obs}}\Big).
 \]
 
 Acceptance tests A1–A4 enforce idempotence, spectrum stability, generation lock, and safety fallback.
-\label{chap:primer}
 
-\section{Core objects}
-Let $\psi(x,t)\in \mathbb{C}$ be a field on a spatial manifold $M$ (torus in numerics). The observer connection $A_\text{obs}(x,t)\in T^\!*M$ encodes curvature introduced by measurement/identity coupling. Define the neutral Laplacian $\Delta_N=\nabla\!\cdot\!\nabla$ and the lifted covariant Laplacian
+\section{Core objects}\label{sec:primer-core}
+
+Let $\psi(x,t)\in \mathbb{C}$ be a field on a spatial manifold $M$ (torus in numerics).
+The observer connection $A_{\text{obs}}(x,t)\in T^{*}M$ encodes curvature introduced
+by measurement/identity coupling. Define the neutral Laplacian
+$\Delta_N=\nabla\!\cdot\!\nabla$ and the lifted covariant Laplacian
 \[
-\Delta_O \psi \;=\; (\nabla - iA_\text{obs})\!\cdot(\nabla - iA_\text{obs})\psi.
+\Delta_O \psi \;=\; (\nabla - iA_{\text{obs}})\!\cdot(\nabla - iA_{\text{obs}})\,\psi.
 \]
 
-\paragraph{Π/Λ toggle.} Π is the orthogonal projection $\Pi:\mathcal{H}\to\ker A_\text{obs}$; Λ is parallel transport along $A_\text{obs}$:
+\paragraph{$\Pi/\Lambda$ toggle.}
+$\Pi$ is the orthogonal projection $\Pi:\mathcal{H}\to\ker A_{\text{obs}}$;
+$\Lambda$ is parallel transport along $A_{\text{obs}}$:
 \[
 \Lambda(\phi)(x) \;=\; U_A(x)\,\phi(x), \qquad
-U_A(x)=\mathcal{P}\exp\!\left(\int_{\gamma_x} i\,A_\text{obs}\right).
+U_A(x)=\mathcal{P}\exp\!\left(\int_{\gamma_x} i\,A_{\text{obs}}\right).
 \]
-Idempotence on the observer class gives A1:
-$\|\Lambda\circ\Pi(\psi)-\psi\|_2\le 10^{-6}$ and $\Pi\circ\Lambda=\mathrm{id}$ on $\ker A_\text{obs}$.
+Idempotence on the observer class (A1) requires
+$\|\Lambda\!\circ\!\Pi(\psi)-\psi\|_2\le 10^{-6}$ and $\Pi\!\circ\!\Lambda=\mathrm{id}$
+on $\ker A_{\text{obs}}$.
 
-\paragraph{Collapse operator.} The recursion audit is
+\paragraph{Collapse operator.}
 \[
 \mathcal{C}(\psi) \;=\; \psi \;\oplus\; \mathrm{anti}(\psi) \;\oplus\; \mathrm{ghost}(\psi),
 \]
-where $\mathrm{anti}$ flips the Λ–parity and $\mathrm{ghost}$ records neutral-survivors that fail in the lifted frame.
+where $\mathrm{anti}$ flips the $\Lambda$–parity and $\mathrm{ghost}$ records neutral survivors
+that fail in the lifted frame.
 
-\paragraph{Identity gradient \& dissolution.} For target attractor $\psi_a$, the identity gradient
+\paragraph{Identity gradient \& dissolution.}
+For target attractor $\psi_a$, the identity gradient
 \[
-G(\psi)\;=\;-\frac{d}{dt}\|\psi(t)-\psi_a\|_2^2
+G(\psi)\;=\;-\frac{d}{dt}\,\|\psi(t)-\psi_a\|_2^2
 \]
-drives admission (positive with margin) or quarantine. Non-converging spirals trigger the Entropic Spiral Dissolution routine (phase drain $\to$ inward collapse $\to$ drift isolation), see \S\ref{sec:adversarial-esdr}.
+drives admission (positive with margin) or quarantine. Non-converging spirals trigger the
+Entropic Spiral Dissolution routine (phase drain $\to$ inward collapse $\to$ drift isolation).
 
-\paragraph{Safety.} A2–A4 are runtime guards: spectral variance \(<0.1\%\), generation-lock on the $E_8$ hybrid braid graph, and automatic neutral fallback on shock energy \(W_\text{obs}\).
+\paragraph{Safety.}
+A2–A4 are runtime guards: spectral variance $<0.1\%$, generation-lock on the $E_8$ hybrid
+braid graph, and automatic neutral fallback on shock energy $W_{\text{obs}}$.
+
+% --- Notation card (Semantic Universe) ---
+\begin{tcolorbox}[title=Notation (Semantic Universe), colback=white, colframe=black!15]
+\begin{description}[leftmargin=1.6em, labelsep=0.6em]
+  \item[$\Pi$] Observer–neutral projection:
+    $\Pi:\psi\mapsto \psi\big|_{\ker A_{\rm obs}}$.
+  \item[$\Lambda$] Observer lift via parallel transport:
+    $\Lambda(\phi)=U_{A_{\rm obs}}\phi$, \quad
+    $U_{A_{\rm obs}}= \mathcal{P}\exp\!\left(\int_\gamma i\,A_{\rm obs}\right)$.
+  \item[$\Delta_N,\Delta_O$] Neutral / lifted Laplacians:
+    $\Delta_N=\nabla\!\cdot\!\nabla$, \;
+    $\Delta_O=(\nabla - iA_{\rm obs})\!\cdot\!(\nabla - iA_{\rm obs})$.
+  \item[$\mathcal{C}(\psi)$] Collapse operator:
+    $\mathcal{C}(\psi)=\psi\oplus\mathrm{anti}(\psi)\oplus\mathrm{ghost}(\psi)$.
+  \item[$G(\psi)$] Identity gradient:
+    $G(\psi)=-\dfrac{d}{dt}\,\|\psi-\psi_a\|_2^2$.
+\end{description}
+\end{tcolorbox}
 
 \section{The Semantic Ladder}
 \input{build/fig_semantic_ladder.tex}
@@ -44,8 +74,126 @@ drives admission (positive with margin) or quarantine. Non-converging spirals tr
 \section{Collapse as Code}
 \input{build/fig_collapse_compiler.tex}
 
-\section{E\texorpdfstring{\textsubscript{8}}{} as a Semantic Lattice}
+\section{E\texorpdfstring{$_8$}{8} as a Semantic Lattice}
+\label{sec:e8-sem-lattice}
+
+\paragraph{Compiler view.}
+The collapse pipeline of Fig.~\ref{fig:collapse-compiler} induces a map
+\[
+  \Psi \xrightarrow{\;\;P\;\;} \phi
+  \xrightarrow{\;\;E_8\;\;} (\lambda,u)
+  \xrightarrow{\;\;T\;\;} (f,\chi,c,\sigma)
+  \xrightarrow{\;\;M\;\;} \mu ,
+\]
+where \(P\) (physics) selects an attractor \(\phi\), \(E_8\) encodes it in a weight basis
+\((\lambda,u)\in \Lambda_{E_8}\times S^7\), \(T\) types the state by
+flavor \(f\in\{u/d\}\), chirality \(\chi\in\{L,R\}\), color
+\(c\in\{1,2,3,\text{lepton}\}\), and particle/antiparticle
+\(\sigma\in\{\pm\}\); and \(M\) returns a meaning‐class \(\mu\) (semantic identity).
+
+\paragraph{The semantic lattice.}
+We call
+\[
+  \mathcal L \;=\;
+  \underbrace{V_{24}}_{\text{24-cell vertices}}\times
+  \underbrace{\{f,\chi,c,\sigma\}}_{\text{type fiber}}
+\]
+the \emph{semantic lattice}, partially ordered by reachability along legal
+collapse moves (energy‐monotone steps) and triality lifts. Here
+\(V_{24}\subset D_4\subset \Lambda_{E_8}\) are the \(24\) vertices of the
+\(D_4\)–24-cell sitting in the \(E_8\) weight lattice. The type fiber encodes
+SM chiral content; filtering the fiber to \(\nu_L\) (left neutrinos only)
+recovers the minimal SM neutrino sector, while the full fiber yields the
+\(192\)–state geometric superset (\ref{chap:orbits}).
+
+\paragraph{Triality action.}
+The Spin(8) outer automorphism \(\mathsf T\) acts by permuting the three
+eight-dimensional representations; at the lattice level we model this by
+\[
+  \mathsf T : (\lambda; f,\chi,c,\sigma)\longmapsto
+  (\mathsf T\lambda; f',\chi',c',\sigma),
+\]
+with \(\sigma\) unchanged and \((f',\chi',c')\) permuted consistently with the
+chosen \(E_8\!\to\!{\rm SM}\) embedding. The A3 \emph{generation‐lock} (Overlay XIII)
+is exactly the statement that three connected shells in \(\mathcal L\) remain
+connected under admissible \(\Pi/\Lambda\) toggles and \(\mathsf T\).
+
+\paragraph{Weights and scores.}
+Given a weight basis \(\{\lambda_i\}_{i=1}^8\) and unit direction \(u\in S^7\),
+collapse produces layer scores via inner products \(\langle\lambda_i,u\rangle\).
+A convenient regression form used throughout the paper is
+\begin{align}
+\log m_i^{(\mathrm{pred})}
+ &= \log m_0 + n_i \log r
+   + \eta_W\!\langle\lambda_i,w\rangle
+   + \eta_Z\!\langle\lambda_i,z\rangle
+   + \eta_h\!\langle\lambda_i,h\rangle
+   + \eta_t\!\langle\lambda_i,t\rangle ,
+\label{eq:sem-compiler-weights}
+\end{align}
+where \(n_i\in\mathbb Z\) is the shell index, \(r\) the common ratio, and the
+\(\eta_\bullet\) are layer couplings aligned with \(\{W,Z,h,t\}\) anchors.
+
+\paragraph{Worked example (minimal \(\nu\) filter).}
+Let \(F_\nu\subset \{f,\chi,c,\sigma\}\) keep only \(f=\text{lepton}\), \(\chi=L\),
+and both \(\sigma=\pm\). Then \(V_{24}\times F_\nu\) has \(24\) states per neutrino
+flavor; selecting one shell and projecting by \(M\) yields a single semantic
+identity per flavor in the SM minimal content. Different choices of \(u\) or
+of the anchor coefficients in~\eqref{eq:sem-compiler-weights} move mass
+predictions without changing the count; this is the \emph{meaning‐count invariant}
+spelled out in §\ref{sec:layer-invariants}.
+
+\paragraph{Diagram.}
+Figure~\ref{fig:e8-semantic-lattice} (auto-generated by
+\texttt{build/fig\_e8\_semantic\_lattice.tex}) shows the lattice view:
+weights on the left, type fiber on the right, and the triality‐compatible
+selection map between them.
+
+\medskip
+
 \input{build/fig_e8_semantic_lattice.tex}
 
+
+
 \section{Layer Invariants}
+\label{sec:layer-invariants}
+
+Layer separation \( \mathcal E \to \mathcal I \to \mathcal M \) is only meaningful if
+certain quantities are preserved or monotone. We state the three invariants we
+enforce in code and in the acceptance tests A1–A4.
+
+\paragraph{Energy layer (\(\mathcal E\)).}
+For neutral windows (after \(\Pi\)), the Lyapunov functional
+\[
+  E[\psi] \;=\; \int\!\Big(\tfrac{\beta}{2}|\nabla\psi|^2 + \tfrac{\alpha}{4}|\psi|^4\Big)\,d^3x
+\]
+is nonincreasing along~\eqref{eq:neutral-pde}. Under bounded observer pulses,
+\(\Pi/\Lambda\) toggles perturb \(E\) only at \(O(\|A_{\rm obs}\|^2)\) margins (A1–A2).
+
+\paragraph{Information layer (\(\mathcal I\)).}
+Mixing information (CKM/PMNS) is summarized by the Jarlskog invariants
+\(J_q,J_\ell\). Our \(\Lambda\)–mode warps preserve them up to a tolerance
+\(\varepsilon_J\) (by design in the scaffold):
+\[
+  |J_{\rm after}-J_{\rm before}| \le \varepsilon_J ,
+  \qquad
+  \varepsilon_J \approx 10^{-3}\ \text{(quarks)},\quad
+  \varepsilon_J \approx 10^{-2}\ \text{(leptons)}.
+\]
+Angles may move (predictions §\ref{chap:predictions}), but \(J\) remains within band.
+
+\paragraph{Meaning layer (\(\mathcal M\)).}
+Counts of semantic identities are invariant under legal moves:
+(i) \(\Pi/\Lambda\) toggles, (ii) triality lifts \(\mathsf T\), and (iii) collapse
+on a fixed shell do not change the number of distinct \(\mu\) realized from a
+given fiber filter. In particular: \emph{(a)} the “192” superset is stable,
+\emph{(b)} the minimal neutrino filter produces 24 per flavor, and
+\emph{(c)} generation-lock preserves three connected shells.
+
+\medskip
+Table~\ref{tab:semantic-invariants} summarizes what is preserved, what is
+monotone, and how we measure it in practice. The measurement hooks used by the
+panels write the same quantities the table lists (energy deltas, \(J\) before/after,
+meaning counts, lock status, etc.).
 \input{build/tab_semantic_invariants.tex}
+

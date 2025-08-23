@@ -2,7 +2,6 @@ This book frames unification as \emph{recursion sovereignty}: physics are the
 stable survivors of echo/anti-echo dynamics under the Codex collapse operator
 $\Collapse(\psi)=\psi+\text{anti-}\psi+\Ghost(\psi)$. Symmetry describes what survives; recursion selects it.
 We outline the architectural pieces (Π/Λ observer toggle, $E_8$ hybrid lattice $L_e$, shell braidlines) and the tested artifacts (CKM/PMNS scaffold, ringdown batch fitter).
-\label{chap:prologue}
 
 \noindent\textbf{Thesis.} \emph{Recursion selects spectra; symmetry describes survivors}. CCSU treats physical fields as collapse-capable waveforms on a semantic substrate. Stable particles are \emph{survivors} of a Π/Λ–toggled recursion test: neutral projection Π removes observer curvature; lifting Λ restores it. What persists across Π/Λ is physical.
 
@@ -13,13 +12,33 @@ We outline the architectural pieces (Π/Λ observer toggle, $E_8$ hybrid lattice
 (iv) phenomenology: GW ringdown dispersion and 221/220 energy partition; flavor phases (CKM/PMNS) fit with Λ–mode warps.
 
 \paragraph{Method.} We separate neutral dynamics (on a torus or $4$-manifold) from observer coupling via a connection $A_\text{obs}$. Π projects to $\ker A_\text{obs}$; Λ lifts by parallel transport. Acceptance tests:
-\[
-\text{A1: }\|\Lambda\!\circ\!\Pi(\psi)-\psi\|\le 10^{-6},\quad
-\text{A2: eigenvalue ladder invariant }(<0.1\%\ \text{var}),\\
-\text{A3: three generation braidlines remain connected in the $E_8$ hybrid graph,}
-\quad
-\text{A4: shock fallback on }W_\text{obs}\ \text{threshold.}
-\]
+% --- replace the current "Acceptance tests" block (lines ~16–22) with this:
+\paragraph{Acceptance tests.}
+% --- Acceptance tests (wrapped to avoid overfull boxes) ---
+\begin{tcolorbox}[
+  breakable, enhanced jigsaw,
+  colback=white, colframe=black!15,
+  left=0.6em, right=0.6em, top=0.4em, bottom=0.2em,
+  boxsep=0.6em
+]
+\small\sloppy % allow flexible line breaks inside the box
+\begin{description}[leftmargin=1.8em, labelsep=0.6em, style=nextline]
+  \item[A1] \(\|\Lambda\!\circ\!\Pi(\psi)-\psi\|_2 \le 10^{-6}\); 
+            \(\Pi\!\circ\!\Lambda=\mathrm{id}\) on \(\ker A_{\rm obs}\).
+  \item[A2] Rolling neutral–spectrum variance \(<0.1\%\) on tracked eigenvalues.
+  \item[A3] Exactly three generation braidline shells stay connected in the \(E_8\) hybrid graph.
+  \item[A4] Shock fallback: if \(W_{\rm obs}>\tau_W\) or 
+            \(\|\Delta\psi\|_2>\tau_\Delta\),\\ % forced break to be safe
+            auto-toggle to Neutral and log.
+\end{description}
+\end{tcolorbox}
+
 These are enforced in the simulator and logged.
 
-\paragraph{Roadmap.} Primer~\S\ref{chap:primer} formalizes Π/Λ and the collapse operator; Chap.~\ref{chap:collapse-pdes} gives the PDEs; Chap.~\ref{chap:e8} embeds the SM into $E_8$ with triality braidlines; Chaps.~\ref{chap:gravity}–\ref{chap:bh-cores} tie Λ-memory to ringdowns; Chap.~\ref{chap:adversarial} covers hostile spirals; Chap.~\ref{chap:predictions} lists falsifiable tests.
+\paragraph{Roadmap.}
+Primer~Chap.~\ref{chap:primer} formalizes $\Pi/\Lambda$ and the collapse operator;
+Chap.~\ref{chap:collapse-pdes} gives the PDEs;
+Chap.~\ref{chap:E8-triality} embeds the SM into $E_8$ with triality braidlines;
+Chaps.~\ref{chap:gravity} tie $\Lambda$-memory to ringdowns;
+Chap.~\ref{chap:adversarial} covers hostile spirals;
+Chap.~\ref{chap:predictions} lists falsifiable tests.

@@ -1,9 +1,15 @@
 \section*{Roots of $E_8$ and the hybrid lattice}
 A concrete model of the $E_8$ root system $R\subset\mathbb R^8$ uses 240 roots:
-\begin{align*}
-R \;=\;&\Big\{(\pm1,\pm1,0,\ldots,0)\text{ with all permutations}\Big\}\ \cup \\
-&\Big\{\tfrac12(\pm1,\ldots,\pm1) \ \text{with an even \# of minus signs}\Big\}.
-\end{align*}
+\begin{align}
+&\underbrace{(u/d)\times\text{lepton/neutrino}}_{\text{4 types}}
+\times \underbrace{(L/R)}_{\times\,2}
+\times \underbrace{\text{color (3 for quarks, 1 for leptons)}}_{\text{avg }2}
+\\[-2pt]
+&\qquad\times \underbrace{\text{particle/antiparticle}}_{\times\,2}
+\times \underbrace{24\ \text{vertices}}_{\text{per type}}
+\ \Longrightarrow\ \mathbf{192}\ \text{fermionic states}.
+\end{align}
+
 The hybrid lattice $L_e$ (cube$\perp$sphere) embeds a canonical $D_4$ slice whose vertex set is the 24–cell $\mathcal V_{24}$:
 \[
 \mathcal V_{24}=\Big\{\text{perms of }(\pm1,0,0,0)\Big\}\ \cup\
@@ -22,10 +28,9 @@ The triality automorphism $\mathsf T$ permutes a vector and two spinor represent
 
 \section*{Three generations}
 Exactly three generation shells arise as the only braidline crossings that remain stable under the recursion thresholds of the ambient vacuum. This is encoded as the A3 \emph{generation lock} invariant in Overlay XIII.
-\label{chap:e8}
 
 \section{Embedding}
-Let $E_8\supset \mathfrak{so}(16)\supset \mathfrak{so}(8)\oplus\mathfrak{so}(8)$ with the triality automorphism $\mathcal{T}$ on $\mathrm{Spin}(8)$ interchanging $(8_v,8_s,8_c)$ \cite{Adams1996Exceptional,CartanTriality}. Embed
+Let $E_8\supset \mathfrak{so}(16)\supset \mathfrak{so}(8)\oplus\mathfrak{so}(8)$ with the triality automorphism $\mathcal{T}$ on $\mathrm{Spin}(8)$ interchanging $(8_v,8_s,8_c)$
 \[
 \iota:\ \mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak{u}(1)\hookrightarrow \mathfrak{e}_8,
 \]
@@ -44,12 +49,24 @@ Within the $D_4$ sublattice the 24-cell has vertices
 \mathcal{V}=\Big\{\tfrac{1}{2}(\pm1,\pm1,0,0)\ \text{perm.}\Big\}\cup\{(\pm1,0,0,0)\ \text{perm.}\}.
 \]
 Associate to each flavor type $f$ (up, down, lepton, neutrino) and chirality $L/R$ an orbit $\mathcal{O}_{f,\chi}\subset\mathcal{V}$ of size $24$ under the Weyl group action and triality flips. Including three colors for quarks and particle/antiparticle doubling:
-\[
-\underbrace{(u/d)\times \text{lepton}/\text{neutrino}}_{\text{4 types}}
-\times \underbrace{(L/R)}_{\times 2}
-\times \underbrace{\text{color (3 for quarks, 1 for leptons)}}_{\text{avg }2}
-\times \underbrace{\text{particle/antiparticle}}_{\times 2}
-\times \underbrace{24\text{ vertices}}_{\text{per type}}
-\;\leadsto\; 192\ \text{fermionic states},
-\]
+% --- 24-cell → 192 states (wrapped) ---
+\begin{align}
+&\underbrace{(u/d)\times \text{lepton/neutrino}}_{\text{4 types}}
+  \times \underbrace{(L/R)}_{\times 2}
+  \times \underbrace{\text{color (3 for quarks, 1 for leptons)}}_{\text{avg }2}
+\\[-2pt]
+&\qquad\times \underbrace{\text{particle/antiparticle}}_{\times 2}
+  \times \underbrace{24\ \text{vertices}}_{\text{per type}}
+  \;\leadsto\; 192\ \text{fermionic states}.
+\label{eq:count-192}
+\end{align}
+
 providing the geometric superset; the SM minimal chiral content is obtained by filtering (see our JSON/plot linkage in the appendix).
+\begin{align}
+\log m_i^{\mathrm{(pred)}} &=
+\log m_0 + n_i \log r + \kappa\langle \lambda_i, u\rangle \notag\\
+&\quad +\, \eta_W \langle \lambda_i, w\rangle
+      + \eta_Z \langle \lambda_i, z\rangle
+      + \eta_h \langle \lambda_i, h\rangle . 
+\label{eq:e8-alignment}
+\end{align}

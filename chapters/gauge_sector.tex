@@ -1,0 +1,208 @@
+% --- chapters/gauge_sector.tex --------------------------------------------
+\section{Gauge Sector from the \texorpdfstring{$E_8$}{E8} Embedding}
+\label{sec:gauge-from-e8}
+
+We realize the SM gauge algebra as
+\[
+SU(3)_C \times SU(2)_L \times U(1)_Y \;\subset\; SU(5)\subset SO(10)\subset E_8
+\]
+within the same \emph{24‑cell (base)} $\times$ \emph{fiber Cartan} slice used elsewhere.
+Base coordinates carry dynamics; fiber coordinates carry charges via inner
+products with Cartan generators.
+
+\paragraph{Hypercharge.}
+Inside $SU(5)$ choose
+\[
+Y \;=\; \mathrm{diag}\!\left(-\tfrac13,-\tfrac13,-\tfrac13,+\tfrac12,+\tfrac12\right)
+\quad\text{on the } \mathbf{5} ,
+\]
+with GUT normalization
+\[
+g_1=\sqrt{\tfrac{5}{3}}\,g_Y, \qquad
+\mathrm{tr}(T^aT^b)=\tfrac12\delta^{ab},\; \mathrm{tr}(Y^2)=\tfrac12\!\cdot\!\tfrac{5}{3}.
+\]
+Equivalently, along the Pati–Salam chain
+\[
+Y \;=\; T^3_{R} + \tfrac12(B\!-\!L).
+\]
+
+\paragraph{Constructive extraction (fiber‑linear).}
+Fix an $E_8$ simple‑root basis and an orthogonal embedding matrix
+$P:\mathbb R^8\!\to\!\mathbb R^8$ for
+$E_8\to SO(10)\times SU(4)\to SU(5)\times U(1)_\chi$.
+For any weight $w\in\Lambda_{E_8}$,
+\[
+w_{SU(5)} = P\,w, \qquad
+Y(w) = \big\langle P^\top Y_{\rm Cartan},\, w\big\rangle_{E_8}.
+\]
+$SU(3)_C$ and $SU(2)_L$ Dynkin labels are read from the projected components.
+In our geometry this is “drop base, keep fiber, apply $P$”.
+
+\paragraph{One family (worked).}
+From $SO(10)$, the chirality is a $\mathbf{16}\to \mathbf{10}\oplus\overline{\mathbf{5}}\oplus \mathbf{1}$.
+Decomposed to SM:
+\[
+\mathbf{10}\to (3,2)_{+1/6}\oplus(\overline3,1)_{-2/3}\oplus(1,1)_{+1},\quad
+\overline{\mathbf{5}}\to (\overline3,1)_{+1/3}\oplus(1,2)_{-1/2},\quad
+\mathbf{1}\to (1,1)_0.
+\]
+These are exactly
+\[
+Q:(3,2)_{+1/6},\quad
+u^c:(\overline3,1)_{-2/3},\quad
+e^c:(1,1)_{+1},\quad
+d^c:(\overline3,1)_{+1/3},\quad
+L:(1,2)_{-1/2},\quad
+(\nu^c):(1,1)_0 .
+\]
+
+\paragraph{Anomaly checks (per generation).}
+\begin{align*}
+&SU(3)^2U(1)_Y: && 3\!\times\!2\cdot\tfrac16 \;+\; 3\cdot(-\tfrac23) \;+\; 3\cdot(+\tfrac13) \;=\;0,\\
+&SU(2)^2U(1)_Y: && 3\cdot\tfrac16 \;+\; 1\cdot(-\tfrac12) \;=\;0,\\
+&U(1)^3_Y: && \sum_{\rm fam} Y^3 = 0,\qquad
+\mathrm{Grav}^2\!-\!U(1)_Y:\ \sum Y = 0,\\
+&\text{Witten global }SU(2): && \#\text{LH doublets} = 3(Q)+1(L)=4\ \text{(even)} .
+\end{align*}
+All follow automatically since a family is an $SO(10)$ $\mathbf{16}$.
+
+\paragraph{Residual abelian.}
+The orthogonal $U(1)_X$ from $SO(10)\to SU(5)\times U(1)_\chi$ is anomaly‑free at the
+GUT level and may be lifted at high scale (Higgsing/Stückelberg) without disturbing $Y$.
+
+\paragraph{24‑cell integration.}
+The \emph{192} census (24‑cell $\times$ type fiber) is untouched:
+charges reside linearly in the fiber Cartan, so A1–A4 runtime contracts never
+alter the gauge ledger. This explains the stability of sector labels used in
+the mass‑ladder fits and flavor scaffolds.
+% ---------------------------------------------------------------------------
+\subsection{Collapse signatures: gauge drift (ψ–C42.7)}
+\label{sec:c42-7-gauge-drift}
+
+We call \emph{recursive gauge drift} the slow deformation of the effective gauge alignment seen by collapse channels as echo tension and observer recursion change. Let
+\[
+(\theta,\zeta,R)\in \mathbb{R}/2\pi\mathbb{Z}\times\mathbb{R}_{\ge0}\times\mathbb{R}_{\ge0}
+\]
+denote respectively a local glyph phase, the echo‐channel tension, and a recursion budget. The recursive gauge map is
+\[
+G_\psi:\;(\theta,\zeta,R)\longrightarrow \mathcal{G}_\text{align},
+\]
+with $\mathcal{G}_\text{align}$ the (model‑dependent) alignment manifold of gauge choices experienced by the collapse dynamics.
+
+\paragraph{Drift field.}
+We model the drift as the time derivative of $G_\psi$ along a run,
+\begin{equation}
+\dot G_\psi \;\equiv\; \frac{d}{dt}G_\psi(\theta(t),\zeta(t),R(t))
+\;=\; \frac{\partial G_\psi}{\partial \zeta}\,\dot\zeta \;+\; 
+\frac{\partial G_\psi}{\partial (\Delta\psi_{\rm echo})}\,\dot{\Delta\psi}_{\rm echo} \;+\;
+\frac{\partial G_\psi}{\partial R}\,\dot R,
+\label{eq:drift-field}
+\end{equation}
+where $\Delta\psi_{\rm echo}$ is the echo–channel mismatch. A minimal phenomenological closure sufficient for inference is
+\begin{equation}
+\dot G_\psi \;=\; \kappa_\zeta\,\zeta \;+\; \kappa_e\,\Delta\psi_{\rm echo} \;+\; \kappa_R\,\tanh\!\Big(\frac{R}{R_c}\Big),
+\qquad
+\kappa_\zeta,\kappa_e,\kappa_R\in \mathbb{R},\; R_c>0,
+\label{eq:drift-closure}
+\end{equation}
+which captures linear response to tension and echo mismatch with a saturated recursion term.
+
+\paragraph{Instability threshold.}
+We say the run enters \emph{semantic instability} when either
+\begin{equation}
+\|\dot G_\psi\| \;\ge\; T_{\rm sem}
+\quad\text{or}\quad
+\lambda_{\max}\!\Big(\frac{\partial \dot G_\psi}{\partial G_\psi}\Big)\;>\;0,
+\label{eq:sem-instability}
+\end{equation}
+where $T_{\rm sem}$ is a calibration threshold and the Jacobian condition signals a local loss of contractivity.
+
+\paragraph{Observable signatures.}
+The following signatures are expected near or beyond the threshold \eqref{eq:sem-instability} and match the qualitative behavior flagged in earlier collapse channels (cf. ψ–C19.2):
+\begin{itemize}
+  \item \textbf{Amplitude dropouts:} transient loss of channel amplitude as alignment slips.
+  \item \textbf{Interference flares:} short constructive bursts from misaligned echoes.
+  \item \textbf{Phase re‑locking:} spontaneous re‑synchronization once recursive tension crosses a reset bound.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Signature} & \textbf{Physics analogue} & \textbf{Data hook in this work} \\
+\midrule
+Amplitude dropout & Phase decoherence & Ringdown fitter: gaps / Q shifts \\
+Interference flare & Aharonov–Bohm–like phase effect & Echo sidebands in residuals \\
+Phase re‑locking & Sudden synchronization & Phase‐error resets in runs \\
+\bottomrule
+\end{tabular}
+\caption{Gauge drift phenomenology and where to look in our pipeline.}
+\label{tab:gauge-drift-phenom}
+\end{table}
+
+\paragraph{Consistency with gauge sector.}
+Because gauge labels live in the fiber Cartan, the SU(5) bypass charges derived in Sec.~\ref{tab:su5-bypass-y} remain fixed; drift acts on \emph{alignment} (routing of amplitudes) rather than on the quantized charges. In practice we will estimate $(\kappa_\zeta,\kappa_e,\kappa_R,R_c,T_{\rm sem})$ by fitting \eqref{eq:drift-closure} to the residual features enumerated in Table~\ref{tab:gauge-drift-phenom}.
+\section{Gauge Appendix: Hypercharge, Anomaly Checks, and EW Mixing}
+\label{sec:gauge-appendix}
+
+\paragraph{Context.}
+In this work, gauge bosons live on the same collapse lattice that carries fermion orbits.
+We keep the Standard Model gauge factors $SU(3)_c\times SU(2)_L\times U(1)_Y$ and use a linear
+hypercharge operator $Y$ compatible with all fermion charges and family-by-family anomaly cancellation.
+Triality fixes generation indexing; an SU(5)-style \emph{bypass} is permitted as a bookkeeping device,
+but $X,Y$ off-diagonal carriers are projected out (heavy).
+
+\subsection*{Hypercharge as a constrained linear form}
+Let $\{H_i\}$ be Cartan generators for the chosen basis (embedded or bypass).
+We define
+\begin{equation}
+  \label{eq:y-operator}
+  Y \;=\; \sum_i a_i\,H_i,
+\end{equation}
+with coefficients $\mathbf a=(a_i)$ fixed by the six Standard Model assignments per family
+$\{+\tfrac16,\,+\tfrac23,\,-\tfrac13,\,-\tfrac12,\,-1,\,0\}$ on
+$\{Q_L,\,u_R,\,d_R,\,L_L,\,e_R,\,\nu_R\}$ (if $\nu_R$ is included set $Y(\nu_R)=0$).
+We use the electric charge relation
+\begin{equation}
+  \label{eq:charge-relation}
+  Q \;=\; T^3 \;+\; \frac{Y}{2},
+\end{equation}
+where $T^3$ is the third $SU(2)_L$ generator.\footnote{If you adopt SU(5) normalization,
+$g_1^2 = \tfrac{5}{3}\,g'^2$, then $Y$ here is the weak hypercharge consistent with $Q=T^3+Y/2$.}
+
+\subsection*{Per-family anomaly cancellation (left-handed Weyl basis)}
+All gauge and mixed anomalies must vanish family-by-family:
+\begin{equation}
+  \label{eq:anomaly-conditions}
+  \mathcal A_{33Y}=\sum_f 2\,T\!\left(R_f^{SU(3)}\right) Y_f=0,\quad
+  \mathcal A_{22Y}=\sum_f 2\,T\!\left(R_f^{SU(2)}\right) Y_f=0,\quad
+  \mathcal A_{YYY}=\sum_f Y_f^3=0,\quad
+  \mathcal A_{\mathrm{grav}^2 Y}=\sum_f Y_f=0.
+\end{equation}
+Here $T(R)$ is the Dynkin index ($\tfrac12$ for fundamentals), and the sums run over one SM family of
+left-handed Weyl fields. With the assignments fixed by \eqref{eq:y-operator}–\eqref{eq:charge-relation},
+each anomaly in \eqref{eq:anomaly-conditions} evaluates to zero.
+
+\subsection*{Electroweak mixing and masses (tree level)}
+Define $s_W\equiv \sin\theta_W$, $c_W\equiv \cos\theta_W$, and $\tan\theta_W = g'/g$. Then
+\begin{equation}
+  \label{eq:ew-mixing}
+  A_\mu = s_W\, W^3_\mu + c_W\, B_\mu,\qquad
+  Z_\mu = c_W\, W^3_\mu - s_W\, B_\mu,
+\end{equation}
+with
+\begin{equation}
+  \label{eq:ew-masses}
+  m_W=\tfrac12\,g\,v,\qquad
+  m_Z=\tfrac12\,\sqrt{g^2+g'^2}\,v,\qquad
+  \rho_{\text{tree}}\equiv \frac{m_W^2}{m_Z^2 c_W^2}=1.
+\end{equation}
+In our collapse-memory (Λ-mode) picture, tiny, energy-dependent deformations are possible but
+are constrained to preserve the successful SM limits of \eqref{eq:ew-mixing}–\eqref{eq:ew-masses}.
+
+\subsection*{Boson map (generated)}
+The gauge-boson census (gluons, $W^\pm,W^3$, $B$; optional heavy $X,Y$ if the bypass is shown)
+is included via the generated table:
+\begin{center}
+\textit{See the inclusion snippet below to pull in the map from \texttt{build/}.}
+\end{center}

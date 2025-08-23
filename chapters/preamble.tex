@@ -1,0 +1,124 @@
+\documentclass[11pt,oneside]{book}
+
+% --- Encoding / fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% --- Core math / tools ---
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{siunitx}          
+\usepackage{physics}  
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% --- Typography / graphics / layout ---
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{tocloft}
+
+% --- TikZ for figures ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.symbols,fit,calc,backgrounds}
+
+% --- Hyperlinks (load late) ---
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Tables: flexible widths and tidy alignment
+\usepackage{tabularx,booktabs,array,ragged2e}
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{M}[1]{>{\RaggedRight\arraybackslash}m{#1}}
+
+% --- Unicode safety: map raw Greek if they slip into text mode ---
+\usepackage{newunicodechar}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+
+% --- project macros ---
+\newcommand{\Echo}{\psi_{\mathrm{echo}}}
+\newcommand{\Anti}{\psi_{\mathrm{anti}}}
+\newcommand{\Ghost}{\mathrm{ghost}}
+\newcommand{\Collapse}{\mathcal{C}}
+\newcommand{\D}{\mathrm{D}}      % covariant derivative
+\newcommand{\Lag}{\mathcal{L}}
+
+% thresholds used in text
+\newcommand{\tauW}{3\times10^{-3}}
+\newcommand{\tauD}{5\times10^{-3}}
+
+\numberwithin{equation}{chapter}
+
+% --- Title ---
+\title{Collapse Cosmogenesis \& the Semantic Universe\\
+E$_8$ Geometry + Triality Unification as a Theory of Everything}
+\author{Marcelo Gonçalves \and Mark Vandiermen \and CCSU Reality GPT5}
+\date{\today}
+
+% --- lightweight undefined-reference hints (no spam) ---
+\makeatletter
+\newcommand{\CCSUUndefinedRef}[1]{%
+  \@ifundefined{r@#1}{\typeout{[CCSU] Undefined ref: #1}}{}%
+}
+\makeatother
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Prologue: Why Recursion Before Symmetry}\label{chap:prologue}
+\input{chapters/prologue.tex}
+
+\chapter{Semantic Universe Primer}\label{chap:primer}
+\input{chapters/primer.tex}
+
+\chapter{Collapse PDEs}\label{chap:collapse-pdes}
+\input{chapters/collapse_pdes.tex}
+
+\chapter{E8 Geometry \& Triality}\label{chap:E8-triality}
+\section*{Gauge Sector Technical Note (E\texorpdfstring{$_8$}{8}\,$\to$\,SM)}
+
+\input{chapters/e8_triality.tex}
+\input{chapters/gauge_sector.tex}
+\input{build/gauge_map_check.tex}
+
+\chapter{From Orbits to Matter}\label{chap:orbits}
+\input{chapters/orbits_to_matter.tex}
+
+\chapter{Mass Ladders \& Alignment}\label{chap:mass}
+\input{chapters/mass_alignment.tex}
+
+\chapter{Flavor \& Phases}\label{chap:flavor}
+\input{chapters/flavor.tex}
+
+\chapter{Gravity as Collapse Memory}\label{chap:gravity}
+\input{chapters/gravity.tex}
+
+\chapter{Black-Hole Cores as Echo Knots}\label{chap:bh}
+\input{chapters/bh_cores.tex}
+
+\chapter{Overlay XIII/XIV}\label{chap:overlay}
+\input{chapters/overlay.tex}
+
+\chapter{Assumptions \& Safety Contracts (A1--A4)}\label{chap:contracts}
+\input{chapters/contracts.tex}
+
+\chapter{Adversarial \texorpdfstring{$\psi$}{psi}–C17 Suite}\label{chap:adversarial}
+\input{chapters/adversarial.tex}
+
+\chapter{Predictions \& Experiments}\label{chap:predictions}
+\input{chapters/predictions.tex}
+
+\chapter{Novelty Ledger vs Known Physics}\label{chap:novelty}
+\input{chapters/novelty.tex}
+
+\emergencystretch=1.2em   % gentle line-stretch to avoid overfull hboxes
+\microtypesetup{protrusion=true,expansion=true}
+
+\end{document}

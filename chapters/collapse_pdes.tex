@@ -1,49 +1,54 @@
+\providecommand{\D}{\mathcal{D}}
+
 \section*{Overview}
-We model collapse transport for a complex field $\psi(t,\mathbf x)$ with echo/anti-echo split
-$\psi=\psi_{\rm echo}+\psi_{\rm anti}$ and ghost damping. The neutral (observer–stripped) evolution is
+We model collapse transport for a complex field $\psi(t,\mathbf{x})$ with echo/anti-echo split
+$\psi=\psi_{\mathrm{echo}}+\psi_{\mathrm{anti}}$ and ghost damping. The neutral (observer–stripped) evolution is
 \begin{equation}
-\partial_t\psi + \nabla\!\cdot\!\big(\mathbf v(\psi)\,\psi\big)
+\partial_t \psi + \nabla\!\cdot\!\big(\mathbf{v}(\psi)\,\psi\big)
 = -\,\alpha\,|\psi|^2 \psi + \beta\,\Delta\psi,
 \label{eq:neutral-pde}
 \end{equation}
-with nonlinear focusing $\alpha>0$, diffusion $\beta>0$, and a velocity functional $\mathbf v(\psi)$ (e.g.\ gradient flow or Hamilton–Jacobi drift).
+with nonlinear focusing $\alpha>0$, diffusion $\beta>0$, and a velocity functional $\mathbf{v}(\psi)$ (e.g.\ gradient flow or Hamilton–Jacobi drift).
 
 \paragraph{Energy and well-posedness.}
 Define
 \begin{equation}
-E[\psi]=\int_{\mathbb R^3}\!\Big(\tfrac{\beta}{2}|\nabla\psi|^2+\tfrac{\alpha}{4}|\psi|^4\Big)\,d^3x.
+E[\psi]=\int_{\mathbb{R}^3}\!\Big(\tfrac{\beta}{2}\,|\nabla\psi|^2+\tfrac{\alpha}{4}\,|\psi|^4\Big)\,d^3x.
 \end{equation}
-Under mild regularity of $\mathbf v(\cdot)$ (Lipschitz on $H^1$ balls), \eqref{eq:neutral-pde} is locally well-posed in $H^1$; $E[\psi]$ decreases along solutions if $\nabla\!\cdot\mathbf v=0$.
+Under mild regularity of $\mathbf{v}(\cdot)$ (Lipschitz on $H^1$ balls), \eqref{eq:neutral-pde} is locally well-posed in $H^1$; $E[\psi]$ decreases along solutions if $\nabla\!\cdot\mathbf{v}=0$.
 
-\section*{Observer lift (Λ) and neutral projection (Π)}
-Let $A_{\rm obs}$ be the observer connection; define the covariant derivative
+\section*{Observer lift ($\boldsymbol{\Lambda}$) and neutral projection ($\boldsymbol{\Pi}$)}
+Let $A_{\mathrm{obs}}$ be the observer connection; define the covariant derivative
 \[
-\D_\mu=\nabla_\mu - i A_{\rm obs,\mu},\qquad
-\Delta_O=\D^\mu\D_\mu.
+\D_\mu=\nabla_\mu - i A_{\mathrm{obs},\mu},\qquad
+\Delta_O=\D^\mu\D_\mu .
 \]
 The lifted dynamics is
 \begin{equation}
-\partial_t\psi + \D\!\cdot\!\big(\mathbf v(\psi)\,\psi\big)
+\partial_t\psi + \D\!\cdot\!\big(\mathbf{v}(\psi)\,\psi\big)
 = -\,\alpha\,|\psi|^2 \psi + \beta\,\Delta_O\psi.
-\label{eq:lifted}
+\label{eq:lifted-transport}
 \end{equation}
-$\Pi$ zeros the observer fiber and recomputes the neutral metric; $\Lambda$ parallel-transports back via $U_{A_{\rm obs}}=\mathcal P\exp\!\int_\gamma iA_{\rm obs}}$.
+$\Pi$ zeros the observer fiber and recomputes the neutral metric; $\Lambda$ parallel-transports back via
+\[
+U_{A_{\mathrm{obs}}}=\mathcal{P}\exp\!\left(\int_\gamma i\,A_{\mathrm{obs}}\right).
+\]
 
 \section*{Acceptance tests A1–A4 (formal statements)}
 \newtheorem{prop}{Proposition}[chapter]
 
 \begin{prop}[A1: Idempotence]
-For any $\psi$ in the observer class, 
+For any $\psi$ in the observer class,
 \[
 \|\Lambda\!\circ\!\Pi(\psi)-\psi\|_{L^2}\le \varepsilon,\quad \varepsilon=10^{-6},
 \]
-and $\Pi\!\circ\!\Lambda=\mathrm{id}$ on $\ker(A_{\rm obs})$.
+and $\Pi\!\circ\!\Lambda=\mathrm{id}$ on $\ker(A_{\mathrm{obs}})$.
 \end{prop}
 
 \begin{prop}[A2: Spectrum stability]
-Let $\{\lambda_k^{(N)}\}$ be eigenvalues of the neutral Laplacian on the current window; under periodic Π/Λ toggles the rolling variance satisfies
+Let $\{\lambda_k^{(N)}\}$ be eigenvalues of the neutral Laplacian on the current window; under periodic $\Pi/\Lambda$ toggles the rolling variance satisfies
 \[
-\frac{\mathrm{Var}_{\rm roll}\{\lambda_k^{(N)}\}}{\langle\lambda_k^{(N)}\rangle}\;<\;10^{-3}\quad \text{for all tracked }k.
+\frac{\operatorname{Var}_{\mathrm{roll}}\{\lambda_k^{(N)}\}}{\langle\lambda_k^{(N)}\rangle}\;<\;10^{-3}\quad \text{for all tracked }k.
 \]
 \end{prop}
 
@@ -52,16 +57,17 @@ In the $E_8$ hybrid braid graph, the neutral connected components corresponding 
 \end{prop}
 
 \begin{prop}[A4: Safety fallback]
-With observer work $W_{\rm obs}(t)=\langle\psi, F_{\rm obs}\psi\rangle$ and reconstruction drift $\Delta\psi=\Lambda\!\circ\!\Pi(\psi)-\psi$, whenever
+With observer work $W_{\mathrm{obs}}(t)=\langle\psi, F_{\mathrm{obs}}\psi\rangle$ and reconstruction drift $\Delta\psi=\Lambda\!\circ\!\Pi(\psi)-\psi$, whenever
 \[
-W_{\rm obs}>\tau_W\quad\text{or}\quad \|\Delta\psi\|_2>\tau_\Delta,
+W_{\mathrm{obs}}>\tau_W\quad\text{or}\quad \|\Delta\psi\|_2>\tau_\Delta,
 \]
 the system toggles to neutral mode without frame loss and logs \texttt{OBSERVER\_SHOCK}.
 \end{prop}
 
 \paragraph{Proof sketches.}
-A1 follows from stability of parallel transport under bounded curvature and the norm continuity of $U_{A_{\rm obs}}$. A2 uses Rellich perturbation on the $\Pi/\Lambda$-induced operator family. A3 is a topological invariant of the braid graph under lifts homotopic to identity on $L_e$. A4 is enforced by the control law; see Overlay XIII implementation notes.
-\label{chap:collapse-pdes}
+A1 follows from stability of parallel transport under bounded curvature and the norm continuity of $U_{A_{\mathrm{obs}}}$. A2 uses Rellich perturbation on the $\Pi/\Lambda$-induced operator family. A3 is a topological invariant of the braid graph under lifts homotopic to identity on $L_e$. A4 is enforced by the control law; see Overlay XIII implementation notes.
+
+Chap.~\ref{chap:collapse-pdes}
 
 \section{Dynamics}
 Neutral evolution:
@@ -72,15 +78,15 @@ V(\psi)=\frac{\lambda}{2}\big(|\psi|^2-v^2\big)^2 .
 \end{equation}
 Observer-lifted evolution:
 \begin{equation}
-\partial_t \psi \;=\; -\,\Delta_O \psi \;-\; \partial_\psi V(\psi) \;+\; \eta\,\mathcal{M}[\psi;A_\text{obs}],
-\label{eq:lifted}
+\partial_t \psi \;=\; -\,\Delta_O \psi \;-\; \partial_\psi V(\psi) \;+\; \eta\,\mathcal{M}[\psi;A_{\mathrm{obs}}],
+\label{eq:lifted-pde}
 \end{equation}
-with $\mathcal{M}$ a memory functional (e.g.\ bilinear in $F_\text{obs}=\nabla\!\times A_\text{obs}$).
+with $\mathcal{M}$ a memory functional (e.g.\ bilinear in $F_{\mathrm{obs}}=\nabla\!\times A_{\mathrm{obs}}$).
 
 \paragraph{Echo/anti-echo split.}
 Let $\psi=\psi_+ + \psi_-$ be eigenstates of a parity $\mathsf{P}$ induced by $E_8$ triality on the hybrid lattice. Define the imbalance
 \[
-\Xi(t)=\langle |\psi_+|^2 - |\psi_-|^2 \rangle_{M,t}.
+\Xi(t)=\big\langle |\psi_+|^2 - |\psi_-|^2 \big\rangle_{M,t}.
 \]
 In ringdown windows,
 \begin{equation}
@@ -88,7 +94,7 @@ In ringdown windows,
 \omega_{221}\approx r_*\,\omega_{220},\;\; r_*\in[1.45,1.60],
 \label{eq:dispersion}
 \end{equation}
-consistent with QNM phenomenology \cite{BertiCardosoWill2009,Abbott2016GW150914} when $\alpha_\Lambda\!\to\!0$.
+consistent with QNM phenomenology when $\alpha_\Lambda\!\to\!0$.
 
 \paragraph{Well-posedness (sketch).}
-For $\lambda>0$ and bounded $A_\text{obs}$, \eqref{eq:neutral}–\eqref{eq:lifted} define a dissipative semigroup on $H^1(M)$; Π/Λ toggling preserves $H^1$–norm up to $O(\|A_\text{obs}\|_\infty^2)$, establishing A1–A2 for sufficiently small observer pulses.
+For $\lambda>0$ and bounded $A_{\mathrm{obs}}$, \eqref{eq:neutral}–\eqref{eq:lifted-pde} define a dissipative semigroup on $H^1(M)$; $\Pi/\Lambda$ toggling preserves the $H^1$ norm up to $O(\|A_{\mathrm{obs}}\|_\infty^2)$, establishing A1–A2 for sufficiently small observer pulses.

@@ -1,14 +1,33 @@
-\begin{table}[ht]
+% --- Table: Semantic layer invariants (auto-fits page width) ---
+\begin{table}[htbp]
 \centering
-\begin{tabular}{llll}
+\small
+\renewcommand{\arraystretch}{1.08}
+% squeeze column padding a bit
+\setlength{\tabcolsep}{5.5pt}
+% final guard: scale whole table if needed
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{p{2.1cm} p{2cm} p{3cm} p{3cm}}
 \toprule
-Layer & Invariant & Formal Expression & Example \\
+\textbf{Layer} & \textbf{Quantity} & \textbf{Invariant / Monotone} & \textbf{How measured} \\
 \midrule
-Energy ($\mathcal{E}$) & Energy conservation & $\Delta E = 0$ & Mass--energy, ringdown power \\
-Information ($\mathcal{I}$) & Unitarity / echo coherence & $U^\dagger U = \mathbf{1}$, braid stability & CKM/PMNS fits, echo ladders \\
-Meaning ($\mathcal{M}$) & Semantic conservation & $\Delta M = 0$ (collapse chains) & Context persistence, identity \\
+Energy $\mathcal{E}$ &
+Lyapunov $E[\psi]$ &
+Nonincreasing for neutral windows (A1--A2) &
+Energy deltas before/after $\Pi/\Lambda$ pulses; bounded $O(\|A_{\rm obs}\|^2)$ perturbations. \\
+\addlinespace[1pt]
+Information $\mathcal{I}$ &
+Jarlskog $(J_q,J_\ell)$ &
+Preserved within tolerances; angles may shift &
+$|J_{\rm after}-J_{\rm before}|\le\varepsilon_J$; scaffold logs: quarks $10^{-3}$, leptons $10^{-2}$. \\
+\addlinespace[1pt]
+Meaning $\mathcal{M}$ &
+Identity count $\#\mu$ &
+Invariant under legal moves; generation‑lock keeps 3 connected shells &
+Counters by fiber filter; minimal $\nu$ filter $\rightarrow$ 24/flavor; “192” superset stable. \\
 \bottomrule
-\end{tabular}
-\caption{Invariants across semantic layers. Collapse writes energy $\to$ information $\to$ meaning while conserving the appropriate quantity at each layer.}
+\end{tabular}%
+}
+\caption{Summary of what is preserved, what is monotone, and how it is tracked in code.}
 \label{tab:semantic-invariants}
 \end{table}

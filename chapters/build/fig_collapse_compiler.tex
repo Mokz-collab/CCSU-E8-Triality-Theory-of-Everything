@@ -1,24 +1,19 @@
 \begin{figure}[ht]
 \centering
-\begin{tikzpicture}[>=Stealth,thick,
-  proc/.style={rectangle, rounded corners, draw, fill=gray!8, minimum width=6.6cm, minimum height=1.2cm, align=center},
-  io/.style={ellipse, draw, fill=blue!6, minimum width=2.6cm, minimum height=1.0cm, align=center},
-  tuple/.style={rectangle, rounded corners, draw, fill=orange!10, minimum width=7.7cm, minimum height=1.2cm, align=center},
-  lab/.style={font=\small}
+\begin{tikzpicture}[
+  >=Stealth, thick, font=\footnotesize,
+  cloud/.style={ellipse, draw, fill=blue!6, align=center, minimum height=7mm, text width=20mm},
+  box/.style={rectangle, rounded corners, draw, fill=orange!10, align=center, minimum height=7mm, text width=35mm}
 ]
-\node[io] (psi) {$\Psi$ (wavefunction)};
-\node[proc, right=1.6cm of psi] (collapse) {Collapse PDE \& Attractor Selection};
-\node[proc, right=1.4cm of collapse] (e8) {E\textsubscript{8} Triality \& Braid Selection};
-\node[tuple, right=1.4cm of e8] (triple) {$C:\; \Psi \mapsto \big(\,\phi\ \text{(physical)},\; \iota\ \text{(informational)},\; \mu\ \text{(semantic)}\,\big)$};
+\node[cloud] (psi) {$\Psi$};
+\node[box, right=6mm of psi] (collapse) {Collapse PDE \& Attractor};
+\node[box, right=6mm of collapse] (eEight) {$E_8$ triality \& braids};
+\node[box, right=6mm of eEight] (triple) {$C:\Psi\mapsto(\phi,\iota,\mu)$};
 
 \draw[->] (psi) -- (collapse);
-\draw[->] (collapse) -- (e8);
-\draw[->] (e8) -- (triple);
-
-\node[lab, below=0.15cm of collapse] {energy constraints, dissipation, invariants};
-\node[lab, below=0.15cm of e8] {triality links, orbit choices, braids};
-\node[lab, above=0.15cm of triple] {semantic write: meaning is conserved across collapse chains};
+\draw[->] (collapse) -- (eEight);
+\draw[->] (eEight) -- (triple);
 \end{tikzpicture}
-\caption{Collapse as a compiler: potentials $\Psi$ compile via collapse dynamics and E\textsubscript{8} embeddings into $(\phi,\iota,\mu)$.}
+\caption{Collapse as compiler: potentials $\Psi$ compile via collapse dynamics and $E_8$ embeddings into $(\phi,\iota,\mu)$.}
 \label{fig:collapse-compiler}
 \end{figure}
