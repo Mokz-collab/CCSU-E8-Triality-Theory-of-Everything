@@ -1,0 +1,15 @@
+{
+  "block_rows": {
+    "P1": 18000,
+    "P2": 18000,
+    "P3": 36000,
+    "P4": 18000,
+    "P5": 7500
+  },
+  "compression": "gzip",
+  "encoding": "UTF-8",
+  "file": "seeds.csv.gz",
+  "rows": 97500,
+  "sha256": "137ed9536561daa584a5d5304e6760dcb58c1408d7611f0e9d48140aa446ab26",
+  "unique_seeds": 97500
+}
