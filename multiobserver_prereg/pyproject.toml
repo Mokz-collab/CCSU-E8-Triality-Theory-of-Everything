@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccsu-multiobserver-simulator"
+version = "1.0.0"
+description = "Preregistered P1-P5 simulator for the CCSU multi-observer lift"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.3.5",
+  "PyYAML==6.0.3",
+]
+
+[project.scripts]
+ccsu-multiobserver = "ccsu_multiobserver.runner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
