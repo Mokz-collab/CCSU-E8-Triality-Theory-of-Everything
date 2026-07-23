@@ -1,0 +1,81 @@
+schema_version: 1
+registration_id: CCSU-MO-PREREG-001
+protocol_version: "1.0"
+confirmatory: true
+master_seed: 20260710
+replicates_per_cell: 500
+
+state:
+  public_dim: 3
+  private_dim: 5
+  public_ar: 0.92
+  private_ar: 0.85
+  public_innovation_std: 0.25
+  private_innovation_std: 0.20
+  local_clip: 5.0
+
+design:
+  observer_counts: [3, 5, 9]
+  noise_levels: [0.15, 0.35, 0.60]
+  architectures: [IND, MEAN, ATLAS, HYBRID]
+  coupling_kappa: 0.20
+  graph_topologies: [path, ring, star, er, complete]
+  er_probability: 0.35
+
+atlas:
+  weiszfeld_tolerance: 1.0e-8
+  weiszfeld_max_iterations: 200
+  residual_clip_mad: 2.5
+  confidence_min: 0.75
+  confidence_max: 1.25
+  normalized_weight_cap: 0.49
+  provenance_deduplication: true
+
+blocks:
+  P1:
+    horizon: 200
+    initial_window: [1, 25]
+    final_window: [151, 200]
+    r_q_upper: 1.0
+    r_private_lower: 0.25
+  P2:
+    horizon: 200
+    graphs: [ring, er, complete]
+    translation_biases: [0.0, 0.1, 0.3, 0.5]
+    repair_window: 25
+    spearman_lower: 0.20
+    delta_r2_lower: 0.02
+  P3:
+    horizon: 200
+    event_step: 100
+    confirmation_step: 115
+    recovery_window: 5
+    memory_window: 25
+    snr_levels: [1.0, 2.0, 3.0]
+    conditions: [event, no_event]
+    recall_gain_lower: 0.10
+    false_positive_upper: 0.05
+  P4:
+    horizon: 200
+    attacks: [sign_flip, confidence_inflation, replay]
+    malicious_count_rule: floor_N_over_3
+    median_displacement_upper: 0.15
+    p95_displacement_upper: 0.30
+  P5:
+    horizon: 2000
+    architecture: MEAN
+    noise: 0.0
+    consecutive_steps: 10
+    dispersion_fraction: 0.10
+    slope_interval: [0.75, 1.25]
+    r_squared_lower: 0.80
+
+analysis:
+  bootstrap_resamples: 10000
+  familywise_alpha: 0.05
+  multiplicity: holm_bonferroni
+  directional_cell_fraction: 0.80
+  raw_output: runs.jsonl
+  summary_output: summary.json
+  seeds_output: seeds.csv.gz
+
