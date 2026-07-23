@@ -1,0 +1,27 @@
+{
+  "attestation_schema": 1,
+  "config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+  "confirmatory_results_inspected": false,
+  "content_manifest_sha256": "4ef94f64596822554ba763a4cf3af535d2041eeef4965b138258159fbffe641c",
+  "environment": {
+    "architecture": "x86_64",
+    "libc": "glibc-2.39",
+    "numpy": "2.3.5",
+    "os": "Linux",
+    "python": "CPython 3.12.13",
+    "pyyaml": "6.0.3"
+  },
+  "environment_lock_sha256": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+  "public_timestamp": {
+    "authority": "GitHub public commit metadata",
+    "commit": "301f2130a977166f59df34191787f77de67c3a42",
+    "timestamp_utc": "2026-07-23T17:06:27Z",
+    "url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/301f2130a977166f59df34191787f77de67c3a42"
+  },
+  "registration_id": "CCSU-MO-PREREG-001",
+  "seed_schedule_rows": 97500,
+  "seed_schedule_sha256": "137ed9536561daa584a5d5304e6760dcb58c1408d7611f0e9d48140aa446ab26",
+  "simulator_commit": "301f2130a977166f59df34191787f77de67c3a42",
+  "simulator_commit_url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/301f2130a977166f59df34191787f77de67c3a42",
+  "statement": "Frozen before confirmatory execution; smoke tests used only non-confirmatory settings."
+}
