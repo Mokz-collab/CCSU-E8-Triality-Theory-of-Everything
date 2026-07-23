@@ -1,0 +1,20 @@
+{
+  "files": {
+    "README.md": "ab212060464838fc8d82d884f7ffad71c32d530c814f60d74b05c216cc6cdc2a",
+    "REVIEW.md": "5b829a8173cf9cdc5773f28411d67a32c3b866aaec3c3e463e12d1c4d76b1408",
+    "artifacts/seed_schedule_metadata.json": "bc443561ec0fb9e3c98bca96318e2a3001e6972c47e1cd172578929825596736",
+    "artifacts/seeds.csv.gz": "137ed9536561daa584a5d5304e6760dcb58c1408d7611f0e9d48140aa446ab26",
+    "artifacts/seeds.sha256": "b86028ac49dc7b10ca167e616c66bbc7ebfd1ffc2408c526ee6eaaca00ac63b3",
+    "config.yaml": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+    "config_smoke.yaml": "9db47430b46be4c88e07247c7054e945ea932e3581dba4027e5a0c05b484fea1",
+    "environment.lock": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+    "pyproject.toml": "d96554b0034facc9635ef7d5361b1b9d4f463cfea0a3197832bad4303f4e45a0",
+    "src/ccsu_multiobserver/__init__.py": "38f986fa003f90a01cfe9097b0478572386658ac4b7d206cc61663111d2bc866",
+    "src/ccsu_multiobserver/core.py": "7685b45901b2d65e061fbb7a877987a54dc6a35b60126ae96e366bd8fe0ea4ac",
+    "src/ccsu_multiobserver/runner.py": "744d48fb6e7fd3505677fd77f694d0b80ab1b14a4e8cb8ff9498fa9d7b3c6735",
+    "tests/test_core.py": "38184a546dbde56991ab973dc848cadda6ccce460de317d8e6ea1dabee8196a0"
+  },
+  "registration_id": "CCSU-MO-PREREG-001",
+  "schema_version": 1,
+  "statement": "Hashes fixed before confirmatory execution; no confirmatory results inspected."
+}
