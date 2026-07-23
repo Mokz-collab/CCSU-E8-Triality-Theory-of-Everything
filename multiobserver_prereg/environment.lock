@@ -1,0 +1,14 @@
+lock_version=1
+created_utc=2026-07-23T16:56:23Z
+python_implementation=CPython
+python_version=3.12.13
+numpy_version=2.3.5
+pyyaml_version=6.0.3
+os=Linux
+kernel=6.12.13
+architecture=x86_64
+libc=glibc-2.39
+float_model=IEEE-754-binary64
+timezone=UTC
+raw_output_format=JSON-Lines-UTF-8
+
