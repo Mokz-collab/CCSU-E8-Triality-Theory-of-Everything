@@ -25,6 +25,7 @@ parent (or repeat `--input` for individual JSONL files):
 PYTHONPATH=src python -m ccsu_multiobserver.analysis \
   --config config.yaml \
   --attestation public_attestation.json \
+  --analysis-attestation analysis_attestation.json \
   --input outputs \
   --output analyses/CCSU-MO-PREREG-001
 ```
