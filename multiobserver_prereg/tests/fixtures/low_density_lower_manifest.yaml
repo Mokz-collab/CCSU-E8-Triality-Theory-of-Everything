@@ -1,0 +1,19 @@
+schema_version: 1
+table_manifest_id: CCSU-TEST-LOW-DENSITY-LOWER
+source_kind: SYNTHETIC_TEST_ONLY
+model_label: gamma_2_relativistic_polytrope_lower
+table_path: low_density_lower_synthetic.csv
+sha256: 1ab9668e9152ede0c7f34200b8ce5d5833f378798ca9a72f811ae1ad1c9c849a
+license_spdx: CC0-1.0
+redistribution_permitted: true
+source_url: generated_in_repository
+citation: CCSU synthetic test fixture; not scientific input
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+validation:
+  thermodynamic_identity_relative_tolerance: 0.0000000001
+  finite_difference_cs2_absolute_tolerance: 0.0001

@@ -1,0 +1,98 @@
+schema_version: 1
+low_density_contract_id: CCSU-MO-NS-EOS-001-LOW-DENSITY
+version: "0.3-development"
+status: FORMAT_LOCKED_SCIENTIFIC_SOURCE_BYTES_PENDING
+confirmatory_authorization: false
+
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+  saturation_density_fm3: 0.16
+
+required_columns:
+  - n_b_fm3
+  - p_mev_fm3
+  - epsilon_mev_fm3
+  - mu_b_mev
+  - cs2
+
+source_acceptance:
+  required_metadata:
+    - immutable_source_url
+    - retrieval_timestamp_utc
+    - sha256
+    - model_label
+    - citation
+    - license_spdx_or_exact_permission_text
+    - redistribution_permitted
+  bytes_must_match_sha256_before_parse: true
+  no_silent_unit_inference: true
+  no_unlicensed_scientific_bytes_in_repository: true
+  synthetic_fixtures_cannot_be_promoted_to_scientific_input: true
+
+density_segments:
+  outer_crust:
+    scientific_label: BPS_family_outer_crust
+    lower_boundary: stellar_surface
+    upper_boundary: neutron_drip_from_pinned_table
+    source_status: PENDING_EXACT_TABLE_AND_REDISTRIBUTION_LICENSE
+    semantic_rule: BPS_label_must_not_cover_inner_crust
+  inner_crust:
+    scientific_label: shared_inner_crust_connector
+    lower_boundary: neutron_drip_from_pinned_table
+    upper_boundary_nsat: 0.5
+    source_status: THERMODYNAMIC_BRIDGE_IMPLEMENTED_EXTERNAL_VALIDATION_PENDING
+    interpolation_coordinate: baryon_chemical_potential_as_function_of_density
+    bridge_family: normalized_exponential_with_endpoint_determined_shape
+    exact_identities:
+      - dP_equals_n_dmu
+      - epsilon_equals_n_mu_minus_P
+    observer_specific_parameters_forbidden: true
+    required_validation:
+      - pressure_continuity
+      - baryon_chemical_potential_continuity
+      - energy_density_continuity_unless_discontinuity_registered
+      - comparison_against_at_least_one_unified_EOS
+  chiral_EFT_band:
+    scientific_label: chiral_EFT_spanning_polytropes
+    lower_boundary_nsat: 0.5
+    upper_boundary_nsat: 1.1
+    gamma_range: [1.77, 3.23]
+    source_status: PENDING_PINNED_ANCHOR_BYTES_AND_LICENSE
+
+matching_policy:
+  smooth_match_relative_tolerance:
+    baryon_number_density: 0.000001
+    pressure: 0.000001
+    energy_density: 0.000001
+    baryon_chemical_potential: 0.000001
+  registered_density_discontinuity:
+    pressure_and_baryon_chemical_potential_must_remain_continuous: true
+    interpolation_across_jump_forbidden: true
+
+references:
+  - label: BPS_original
+    citation: G. Baym, C. Pethick and P. Sutherland, Astrophys. J. 170, 299 (1971)
+    role: outer_crust_scientific_definition
+    redistributable_table_selected: false
+  - label: CompOSE
+    url: https://compose.obspm.fr/
+    role: candidate_standardized_table_provider
+    redistributable_table_selected: false
+  - label: Hebeler_2013
+    url: https://arxiv.org/abs/1303.4662
+    role: chiral_EFT_constraint_and_representative_EOS_tables
+    redistributable_table_selected: false
+
+development_evidence:
+  parser_and_hash_gate: IMPLEMENTED
+  canonical_unit_conversions: IMPLEMENTED
+  thermodynamic_identity_checks: IMPLEMENTED
+  smooth_matching_checks: IMPLEMENTED
+  shared_inner_crust_connector: INTERNAL_ANALYTIC_TEST_PASSED
+  scientific_outer_crust_bytes: NOT_EMBEDDED
+  scientific_EFT_bytes: NOT_EMBEDDED
+  counts_toward_confirmatory_freeze: false

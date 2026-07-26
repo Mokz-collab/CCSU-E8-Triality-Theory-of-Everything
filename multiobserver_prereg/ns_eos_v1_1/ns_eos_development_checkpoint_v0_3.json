@@ -1,0 +1,47 @@
+{
+  "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
+  "registration_id": "CCSU-MO-NS-EOS-001",
+  "version": "0.3-development",
+  "status": "DEVELOPMENT_NOT_FROZEN",
+  "confirmatory_authorization": false,
+  "created_utc": "2026-07-26T21:48:33Z",
+  "branch": "multiobserver-control-recovery-v1-20260726",
+  "parent_commit": "25f48709de38d485b4f7b40ef752595f5bdd7904",
+  "scientific_source_bytes_embedded": false,
+  "tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+    "passed": 42,
+    "failed": 0
+  },
+  "files": {
+    "MULTIOBSERVER_V1_1_ROADMAP.md": "f278d54c806861cd55bfad88a5d57a14de455c28677ac2e2f959268f30a5054b",
+    "ns_eos_v1_1/NS_EOS_DOMAIN_LOCK_V0_1.md": "ebcb3da2101fcd2bf8751d277aab02a36be9f0592399d912d9a24823d5b8f940",
+    "ns_eos_v1_1/ns_eos_domain_v0_1.yaml": "96ecebe6ef25c744958d004744d06eea9caf332992ac826d949ab4e3e25aac87",
+    "ns_eos_v1_1/NS_EOS_DECISION_LOCK_V0_2.md": "a612eb26c2b86f83392bc3dd50cf744c2ae88d4ae9ea7814a7b6ca8002bd4b8b",
+    "ns_eos_v1_1/ns_eos_decisions_v0_2.yaml": "7eee0420c794b90bc21a238d07b1428e73e52623e830929d0551c8f5d81ff49b",
+    "ns_eos_v1_1/NS_EOS_ORACLE_REVIEW_V0_2.md": "09d0a5b46ee6eef5ae4332a76cc895efb13ad35ac7eed73b2256c51db4f42b34",
+    "ns_eos_v1_1/ns_eos_oracle_contract_v0_2.yaml": "9324b9657c226da3f7e825ce61752e8b01ad624b05605874516ddc9654ccb96a",
+    "ns_eos_v1_1/NS_EOS_LOW_DENSITY_REVIEW_V0_3.md": "2a2c7e6b5426cbbe061c1642334d632b1dd50833202e75813aa645dd90a8bffb",
+    "ns_eos_v1_1/ns_eos_low_density_contract_v0_3.yaml": "74a848a5c4f6fd268f7e136319228f5f0e3cf9508bc399bf0bdf18fd62f5394c",
+    "src/ccsu_multiobserver/ns_eos_domain.py": "cc7db2ac72e83984c13a3bbe90b408f932750f6a08df6e4af7f42f3b316bd0e3",
+    "src/ccsu_multiobserver/ns_eos_decisions.py": "226551848bbb8a12a522bf08532c0e487eaf94ca4e302e9662b85fe59fff0e2b",
+    "src/ccsu_multiobserver/ns_eos_oracle.py": "47f9c78894b0881f31fc5a699407b4a19048b332fcbf9ee65c9c7673be45c539",
+    "src/ccsu_multiobserver/ns_eos_low_density.py": "66991f56b96a2f46309dcbc2f11cc250b45a49f6d2f299644582c1c93ffb7c0c",
+    "tests/test_ns_eos_domain.py": "bb82642cf65ca233c3d32c5901dd718e223e388531d66df518f3888c0f594ea5",
+    "tests/test_ns_eos_decisions.py": "5a58b81dd93d11f15af05fc8467550bc15af6c282dbd35c6df1f97156a1ea211",
+    "tests/test_ns_eos_oracle.py": "7bfede9960e3d116c1e9ec7b827b28b583511f402ef141598d664806fe13a853",
+    "tests/test_ns_eos_low_density.py": "7bce9928938381a0b61cd474e3eb271e946a26b9019bde233ad9a3907bdb8361",
+    "tests/fixtures/low_density_lower_synthetic.csv": "1ab9668e9152ede0c7f34200b8ce5d5833f378798ca9a72f811ae1ad1c9c849a",
+    "tests/fixtures/low_density_upper_synthetic.csv": "cafc5b980192ad25f649e7f73778b62c8834ed12ab5e00f40eca4ef61b865661",
+    "tests/fixtures/low_density_lower_manifest.yaml": "1cd19a8aa4689559faab387f0db932555664a0375050b6bdaf323bcb8c6d2b49",
+    "tests/fixtures/low_density_upper_manifest.yaml": "9d5a69f078c6d4e2fb6d6cd3cdc2fabdef460b37fdec649124831fc06229d1e9"
+  },
+  "remaining_freeze_blockers": [
+    "pin_outer_crust_and_chiral_EFT_reference_bytes_and_licenses",
+    "validate_shared_inner_crust_connector_against_unified_EOS",
+    "independent_review_of_parameter_ranges",
+    "TOV_and_Love_cross_implementation_agreement",
+    "pilot_calibration_of_P1_to_P4_thresholds",
+    "power_derived_confirmatory_budget"
+  ]
+}

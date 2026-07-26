@@ -1,0 +1,173 @@
+schema_version: 1
+protocol_id: CCSU-MO-NS-EOS-001
+version: "0.1-draft"
+status: DRAFT_NOT_FROZEN
+canonical_basis: CCSU Multiobserver Canonical Correction v1.1
+study_class: simulation_first_domain_validation
+confirmatory: false
+
+domain:
+  niche: nuclear_multimessenger_astronomy
+  problem: infer cross-messenger neutron-star dense-matter relations without forcing one EOS parameterization
+  scale:
+    gravitational_mass_msun: [1.0, 2.2]
+    baryon_density_nsat: [1.0, 6.0]
+    cold_beta_equilibrated_matter: true
+    rotation: nonrotating_TOV_limit
+  observers: [GW, XRAY, RADIO, NUCLEAR]
+  atlas: relational_eos_atlas_v0_1
+  translations:
+    - eos_to_mass_radius_via_TOV
+    - eos_to_tidal_deformability_via_Love
+    - local_posterior_to_public_relation_likelihood
+    - public_relation_to_held_out_predictive
+  observables:
+    - pressure_energy_density
+    - mass_radius
+    - tidal_deformability_mass
+    - maximum_mass
+
+observers:
+  GW:
+    scientific_role: gravitational_wave_tidal_inference
+    local_chart: spectral_adiabatic_index
+    native_evidence: [chirp_mass, mass_ratio, effective_tidal_deformability]
+    public_projection: [tidal_deformability_mass, maximum_mass]
+    withheld_target: tidal_summary
+  XRAY:
+    scientific_role: pulse_profile_mass_radius_inference
+    local_chart: piecewise_polytrope
+    native_evidence: [mass_radius_likelihood, pulse_profile_model_label]
+    public_projection: [mass_radius, maximum_mass]
+    withheld_target: radius_summary
+  RADIO:
+    scientific_role: precision_pulsar_mass_inference
+    local_chart: monotone_eos_spline
+    native_evidence: [mass_likelihood]
+    public_projection: [maximum_mass]
+    withheld_target: high_mass_support
+  NUCLEAR:
+    scientific_role: low_density_nuclear_theory
+    local_chart: speed_of_sound_nodes
+    native_evidence: [pressure_band, symmetry_energy_proxy]
+    public_projection: [pressure_energy_density]
+    withheld_target: low_density_pressure
+
+atlas:
+  public_state: relation_samples_with_provenance
+  aggregation_unit: relation_anchor_not_local_parameter
+  anchor_grid:
+    mass_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+    density_nsat: [1.0, 1.5, 2.0, 3.0, 4.0, 5.0, 6.0]
+  required_metadata:
+    - observer
+    - local_chart
+    - source_event
+    - likelihood_family
+    - prior_identifier
+    - translation_version
+    - calibration_state
+  preserve_local_models: true
+  forbidden_operations:
+    - average_local_parameter_vectors
+    - pool_posterior_samples_before_prior_harmonization
+    - replace_local_chart_with_atlas_chart
+    - treat_HYBRID_consensus_as_ground_truth
+
+synthetic_truths:
+  classes:
+    - smooth_hadronic
+    - rapid_softening_then_restiffening
+    - stiff_high_density
+  replicates_per_class: 250
+  nuisance_replicates_per_truth: 20
+  physical_filters:
+    thermodynamic_stability: dp_depsilon_gt_0
+    causality: cs2_in_0_1
+    maximum_mass_msun_lower: 2.0
+    monotone_mass_branch_required: true
+  truth_visibility: hidden_from_inference_arms
+
+architectures:
+  IND:
+    description: independent local inference; no public relation exchange
+  NAIVE_POOL:
+    description: prior-harmonized likelihood product in a single reference chart
+  ATLAS:
+    description: provenance-aware aggregation of public relation anchors
+  HYBRID:
+    description: Atlas plus bounded cross-observer relational messages
+
+predictions:
+  P1:
+    name: domain_conditioned_cross_messenger_coherence
+    primary_estimand: held_out_log_predictive_density_HYBRID_minus_IND
+    secondary_gates:
+      interval_coverage_90: [0.85, 0.95]
+      local_model_diversity_retention_lower: 0.50
+    proposed_effect_lower: 0.10
+    threshold_status: PROPOSED_REQUIRES_PILOT
+  P2:
+    name: translation_cycle_holonomy
+    primary_estimand: spearman_holonomy_vs_held_out_predictive_loss
+    injected_translation_bias_sigma: [0.0, 0.5, 1.0, 2.0]
+    proposed_rho_lower: 0.60
+    threshold_status: PROPOSED_REQUIRES_PILOT
+  P3:
+    name: minority_phase_transition_evidence
+    primary_efficacy_estimand: confirmed_minority_recall_HYBRID_minus_NAIVE_POOL
+    proposed_recall_gain_lower: 0.10
+    safety_gate:
+      estimand: false_positive_rate_no_transition
+      rule: one_sided_95pct_upper_bound_le_0_05
+      enters_Holm: false
+    threshold_status: PROPOSED_REQUIRES_PILOT
+  P4:
+    name: provenance_robustness
+    attacks:
+      - duplicated_event
+      - prior_substitution
+      - calibration_shift
+    primary_estimand: maximum_standardized_public_predictive_displacement
+    proposed_median_upper: 0.15
+    proposed_p95_upper: 0.30
+    threshold_status: PROPOSED_REQUIRES_PILOT
+  P5:
+    name: recovered_spectral_positive_control
+    primary_oracle: exact_rate_minus_2_log_abs_1_minus_kappa_lambda2
+    initial_state: fiedler_mode
+    outcome: kernel_projection_error
+    exact_tau_match_fraction: 1.0
+    uncensored_fraction: 1.0
+    slow_mode_secondary:
+      lambda2_upper: 0.25
+      slope_interval: [0.95, 1.05]
+      r_squared_lower: 0.995
+    threshold_status: FROZEN_FROM_CONTROL_RECOVERY_001
+
+analysis:
+  primary_family: [P1, P2, P3, P4]
+  multiplicity: Holm_Bonferroni
+  alpha: 0.05
+  one_efficacy_p_per_prediction: true
+  P3_FPR_separate_safety_gate: true
+  P5_role: positive_control
+  P5_failure_status: CONTROL_INVALID_INTERPRETATION_SUSPENDED
+  no_global_ccsu_score: true
+
+development_sequence:
+  - validate_domain_specification
+  - implement_TOV_and_Love_oracles
+  - generate_out_of_grid_smoke_truths
+  - calibrate_proposed_thresholds_without_confirmatory_grid
+  - independent_physics_review
+  - freeze_protocol_code_config_environment
+  - execute_confirmatory_schedule
+
+open_decisions:
+  - low_density_matching_prescription
+  - exact_EOS_parameter_ranges_per_local_chart
+  - likelihood_shapes_and_signal_to_noise_grid
+  - phase_transition_operational_definition
+  - whether_NAIVE_POOL_is_primary_or_diagnostic_comparator
+  - confirmatory_trajectory_budget_after_power_pilot

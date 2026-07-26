@@ -1,0 +1,60 @@
+schema_version: 1
+oracle_contract_id: CCSU-MO-NS-EOS-001-ORACLE
+version: "0.2-development"
+status: INTERNAL_ORACLE_NOT_CROSS_VALIDATED
+confirmatory_authorization: false
+
+units: geometrized_dimensionless
+eos:
+  family: relativistic_polytrope
+  k: 1.0
+  gamma: 2.0
+
+solver:
+  system: coupled_TOV_and_l2_Love
+  integrator: adaptive_pressure_limited_RK4
+  maximum_step: 0.001
+  minimum_step: 0.00000001
+  pressure_step_fraction: 0.08
+  surface_pressure_fraction: 0.00000001
+  initial_radius: 0.000001
+  maximum_radius: 100.0
+  maximum_steps: 2000000
+
+reference_sequence:
+  relative_tolerance: 0.000005
+  models:
+    - central_pressure: 0.05
+      mass: 0.16006919575748596
+      radius: 0.841271079366532
+      love_k2: 0.042943079159453265
+      tidal_lambda: 114.8002686767352
+    - central_pressure: 0.10
+      mass: 0.1637264513880882
+      radius: 0.7647785869060388
+      love_k2: 0.029757550445255392
+      tidal_lambda: 44.115405175437694
+    - central_pressure: 0.20
+      mass: 0.1606394895967314
+      radius: 0.6907219991635758
+      love_k2: 0.020713976054353826
+      tidal_lambda: 20.29677673135777
+    - central_pressure: 0.40
+      mass: 0.15229764642134339
+      radius: 0.6234019742240263
+      love_k2: 0.014891269496643945
+      tidal_lambda: 11.408153901183084
+
+internal_acceptance:
+  finite_positive_mass_radius_k2_lambda: true
+  compactness_strictly_below_one_half: true
+  mass_increases_on_low_pressure_stable_branch: true
+  step_halving_relative_change_upper: 0.01
+  reject_acausal_central_state: true
+
+excluded_claims:
+  - physical_mass_or_radius_calibration
+  - production_EOS_accuracy
+  - phase_transition_identifiability
+  - agreement_with_an_external_TOV_Love_implementation
+  - readiness_for_confirmatory_trajectories
