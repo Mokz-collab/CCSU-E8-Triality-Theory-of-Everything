@@ -1,0 +1,25 @@
+{
+  "analysis_addendum_sha256": "08d94b2acd9f5c24e88730a859c45b3757f076bef00a971908767798734925a1",
+  "analysis_engine_commit": "631a46bec4f895cf189ed8df9cdbfbed647a95e7",
+  "analysis_engine_commit_url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/631a46bec4f895cf189ed8df9cdbfbed647a95e7",
+  "analysis_engine_manifest_sha256": "67e0d6e059dc9d10989273f7b7d5317930342604e88fcaf257fdd01162159e91",
+  "analysis_engine_sha256": "4c0d161137e7df41f2241dcede9e4a135a8bc944dd524986d633d42c36c43d4b",
+  "analysis_engine_version": "1.0.0",
+  "attestation_schema": 1,
+  "branch": "multiobserver-prereg-v1-20260723",
+  "confirmatory_results_inspected": false,
+  "confirmatory_trajectories_executed": false,
+  "original_config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+  "original_environment_lock_sha256": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+  "original_seed_schedule_sha256": "137ed9536561daa584a5d5304e6760dcb58c1408d7611f0e9d48140aa446ab26",
+  "original_simulator_commit": "301f2130a977166f59df34191787f77de67c3a42",
+  "public_timestamp": {
+    "authority": "GitHub public commit metadata",
+    "commit": "631a46bec4f895cf189ed8df9cdbfbed647a95e7",
+    "timestamp_utc": "2026-07-26T09:12:40Z",
+    "url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/631a46bec4f895cf189ed8df9cdbfbed647a95e7"
+  },
+  "registration_id": "CCSU-MO-PREREG-001",
+  "statement": "Confirmatory analysis implementation and operational addendum were publicly frozen before any confirmatory execution or result inspection.",
+  "tests_sha256": "406946efc30e88ff786fcee5e853a88476a6e87a8be9c570552574702a1f0eb7"
+}
