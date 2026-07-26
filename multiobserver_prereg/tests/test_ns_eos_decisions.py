@@ -10,7 +10,7 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_2.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_3.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -44,6 +44,26 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertTrue(
             low["inner_crust"]["observer_specific_parameters_forbidden"]
         )
+
+    def test_outer_crust_is_a_paired_shared_nuisance(self):
+        outer = self.decisions["low_density_matching"]["outer_crust"]
+        self.assertEqual(
+            set(outer["model_labels"]),
+            {"DD-ME2", "DD-PC1", "DD-PCX", "ELMA"},
+        )
+        self.assertTrue(outer["same_model_for_all_arms_within_trajectory"])
+        self.assertTrue(outer["observer_conditioned_selection_forbidden"])
+
+    def test_chiral_eft_members_are_paired_without_coverage_claim(self):
+        nuclear = self.decisions["low_density_matching"]["nuclear_band"]
+        self.assertEqual(
+            set(nuclear["model_labels"]),
+            {"MUSES-N3LO-414", "MUSES-N3LO-450"},
+        )
+        self.assertTrue(nuclear["same_model_for_all_arms_within_trajectory"])
+        self.assertTrue(nuclear["pointwise_envelope_sampling_forbidden"])
+        self.assertIsNone(nuclear["probabilistic_coverage"])
+        self.assertFalse(nuclear["formal_chiral_truncation_error"])
 
     def test_phase_transition_language_is_bounded(self):
         proxy = self.decisions["phase_transition_proxy"]

@@ -1,0 +1,123 @@
+run_name: ccsu-ns-eos-n3lo-414-anchor-v0.4
+chiraleft_parameters:
+  cutoff_scale_MeV: 414.0
+  cutoff_exponent: 10.0
+  cutoff_exponent_LO: 10.0
+  c_lecs:
+    c_1: -0.81
+    c_2: 3.28
+    c_3: -3.0
+    c_4: 3.4
+  d_lecs:
+    d_12: 3.06
+    d_3: -3.27
+    d_5: 0.45
+    d_1415: -5.65
+  contacts_LO:
+    contact_LO_pp_1: -0.15795
+    contact_LO_np_1: -0.158887
+    contact_LO_nn_1: -0.158414
+    contact_LO_np_2: -0.170804
+  contacts_NLO:
+    contact_NLO_1: 2.131
+    contact_NLO_2: 1.328
+    contact_NLO_3: 0.394
+    contact_NLO_4: -0.63
+    contact_NLO_5: 0.75
+    contact_NLO_6: 0.57
+    contact_NLO_7: -0.573
+  contacts_N3LO:
+    contact_N3LO_1: -3.745
+    contact_N3LO_2: -16.4
+    contact_N3LO_3: -0.805
+    contact_N3LO_4: 0.9
+    contact_N3LO_5: 3.45
+    contact_N3LO_6: 12.2
+    contact_N3LO_7: 1.55
+    contact_N3LO_8: -0.3
+    contact_N3LO_9: 2.65
+    contact_N3LO_10: 4.43
+    contact_N3LO_11: -2.2
+    contact_N3LO_12: 0.03
+    contact_N3LO_13: 1.525
+    contact_N3LO_14: -0.615
+    contact_N3LO_15: 5.76
+  contact_lsj: true
+  three_nucleon_forces:
+    cutoff_scale_MeV: 700.0
+    c_D: -0.4
+    c_E: -0.072
+physical_parameters:
+  hbarc: 197.327
+  proton_mass: 938.272
+  neutron_mass: 939.5653
+  average_nucleon_mass: 938.9182
+  neutral_pion_mass: 134.9766
+  charged_pion_mass: 139.5702
+  average_pion_mass: 138.039
+  gA: 1.29
+  fpi: 92.4
+  alpha: 0.0072967957
+  gamma: 0.0
+computational_parameters:
+  chiraleft_potential:
+    minpts: 8
+    maxpts: 96
+    cutoff_limit: 80.0
+    momentumpts: 80
+  chiraleft_eos:
+    epsilon: 1.0e-12
+    interpolation:
+      potential_nn_points: 30
+      potential_nn_order: 3
+      potential_3n_points: 20
+      potential_3n_order: 3
+      angular_sum_points: 30
+      angular_sum_order: 3
+      self_energy_points: 30
+      self_energy_order: 3
+    first_order_eos:
+      jmax: 6
+      p_points_a: 10
+      p_points_b: 10
+    first_order_self_energy:
+      jmax: 6
+      p_points_a: 10
+      p_points_b: 10
+      k_max: 3.5
+      k_fit_max: 2.5
+    second_order_eos:
+      jmax: 4
+      K_points: 10
+      p1_points: 10
+      p2_points: 10
+      x1_points: 8
+      x2_points: 8
+calculation_options:
+  n_threads: 8
+  use_multithreading: true
+  use_three_nucleon_forces: true
+  use_first_order_eos: true
+  use_second_order_eos: true
+  use_first_order_self_energy: true
+  use_quadratic_asymmetry_expansion: true
+  use_free_energy_ansatz_fit: true
+output_options:
+  output_format: csv
+  output_precision: 12
+  include_output_stable: false
+  include_output_lepton: false
+  include_output_flavor: false
+  include_output_self_energy: false
+  include_output_saturation_properties: false
+  verbose: false
+eos_grid:
+  density_start: 0.04
+  density_end: 0.2
+  density_step: 0.004
+  isospin_asymmetry_start: 0.0
+  isospin_asymmetry_end: 1.0
+  isospin_asymmetry_step: 1.0
+  temperature_start: 0.0
+  temperature_end: 0.0
+  temperature_step: 0.0

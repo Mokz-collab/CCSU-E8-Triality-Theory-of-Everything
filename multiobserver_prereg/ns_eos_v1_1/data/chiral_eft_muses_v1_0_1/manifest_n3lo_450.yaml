@@ -1,0 +1,49 @@
+schema_version: 1
+table_manifest_id: CCSU-NS-EOS-CHEFT-MUSES-N3LO-450
+source_kind: SCIENTIFIC_CHIRAL_EFT_REFERENCE
+provenance_mode: deterministic_generated_output
+raw_format: canonical_csv_v1
+model_label: MUSES-N3LO-450
+table_path: beta_equilibrium_n3lo_450.csv
+sha256: 8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6
+source_commit: 6cf7fea41d2a2bac5f93e567d71279631168088b
+source_tag: v1.0.1
+source_tag_object: 36e5e4ecc2d3572e48470deab820519b5e248b13
+immutable_source_url: https://gitlab.com/nsf-muses/chiral-eft-eos/chiral_eft_eos/-/tree/6cf7fea41d2a2bac5f93e567d71279631168088b
+retrieval_timestamp_utc: 2026-07-26T22:33:24.043136Z
+generation_timestamp_utc: 2026-07-26T22:33:52.945025Z
+license_spdx: GPL-3.0-or-later
+license_scope: conservative_notice_carried_with_generated_numerical_output
+license_path: MUSES_LICENSE
+license_sha256: 8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903
+redistribution_permitted: true
+source_url: https://gitlab.com/nsf-muses/chiral-eft-eos/chiral_eft_eos
+citation: D. Friedenberg and J. W. Holt, MUSES Chiral EFT EoS v1.0.1; M. R. Pelicer et al., Building Neutron Stars with the MUSES Calculation Engine, arXiv:2502.07902
+generated_provenance:
+  member_label: n3lo-450
+  generator_path: ../../../scripts/generate_muses_chiral_eft_anchor.py
+  generator_sha256: 117f5b4cec21c1fbccf9a20a8f5db486f7b00ebc7d3295015644baaac2f08db4
+  generation_record_path: generation_record.json
+  generation_record_sha256: 99af1cbb834273fde7c9ad579e65414c6ff9ed1cffacaef8015206154d986fd7
+  config_path: config_n3lo_450.yaml
+  config_sha256: b45ceb662aef7172515cbc46f994e16c579a0b530ebb3115534eb29174ac3043
+  raw_output_path: raw_n3lo_450.csv
+  raw_output_sha256: bf911ed58f465aad4bbe13885a1b01a6c950956ff0d022e45e18e0e1407efe43
+  build_binary_sha256: 4da03ecfb458accae7443c7525a3a9ba4dd237f3c833ecb584c11ce1ccc893ea
+  yaml_cpp_commit: f7320141120f720aecc4c32be25586e7da9eb978
+  upstream_key_normalizations: []
+scientific_semantics:
+  envelope_type: coherent_interaction_reference_envelope
+  probabilistic_coverage: null
+  formal_chiral_truncation_error: false
+  member_must_remain_coherent_across_density: true
+  pointwise_envelope_sampling_forbidden: true
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+validation:
+  thermodynamic_identity_relative_tolerance: 0.0000000001
+  finite_difference_cs2_absolute_tolerance: 0.0002

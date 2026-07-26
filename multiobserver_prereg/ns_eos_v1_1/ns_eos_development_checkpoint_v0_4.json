@@ -1,0 +1,63 @@
+{
+  "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
+  "registration_id": "CCSU-MO-NS-EOS-001",
+  "version": "0.4-development",
+  "status": "DEVELOPMENT_NOT_FROZEN",
+  "confirmatory_authorization": false,
+  "created_utc": "2026-07-26T22:37:05Z",
+  "branch": "multiobserver-control-recovery-v1-20260726",
+  "parent_commit": "2b65ca41a982128ea8eac3e8705d034028ac1b7f",
+  "scientific_source_bytes_embedded": true,
+  "tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+    "passed": 51,
+    "failed": 0
+  },
+  "reproducibility_replay": {
+    "status": "EXACT_BYTE_REPLAY_PASSED",
+    "binary_sha256": "4da03ecfb458accae7443c7525a3a9ba4dd237f3c833ecb584c11ce1ccc893ea",
+    "products_compared": 8,
+    "mismatches": 0
+  },
+  "files": {
+    "ns_eos_v1_1/README.md": "9f5d65b28f67f3d74010735cf397376b4549a27abd1689e56bbd616c12004f56",
+    "ns_eos_v1_1/NS_EOS_DECISION_LOCK_V0_3.md": "1716d637626c318e8a4ef18068459354556fce23550869a5a2e46fd2743d830c",
+    "ns_eos_v1_1/ns_eos_decisions_v0_3.yaml": "2ba423265745eebbb132a151e4f3232fc3ed43c0936478076b8b9e96d1a332fe",
+    "ns_eos_v1_1/NS_EOS_LOW_DENSITY_REVIEW_V0_4.md": "931847d292b89054e2de53da9a308f0ca1c7e9b155c918fbe90de15fb2f131aa",
+    "ns_eos_v1_1/ns_eos_low_density_contract_v0_4.yaml": "2960cc9f3077df62f4f86379dea2ce3af46e7fb7e9183f5ba9c4c22c3e31737c",
+    "scripts/generate_muses_chiral_eft_anchor.py": "117f5b4cec21c1fbccf9a20a8f5db486f7b00ebc7d3295015644baaac2f08db4",
+    "src/ccsu_multiobserver/ns_eos_decisions.py": "1dcbbeb047d7bb105e6507fe89749ed2c31f17fa376cac9bf081b56dfcc18ed5",
+    "src/ccsu_multiobserver/ns_eos_low_density.py": "7c0b7ea04f3ce8c02a859d19422794f3db099f65bd6152aff27cf51f4ddc8181",
+    "tests/test_ns_eos_decisions.py": "b3b6023c1383aba0ebcd9716fbe1afa347daaf5ba9b68741a42a7600854410b7",
+    "tests/test_ns_eos_low_density.py": "c4699633ccfb22116fc06e66ecdd193cbe9ee05fa5fae7711635957a62d5598c",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/EOS_DDME2.dat": "ded0286c4c50950f42635b97be185311defec2236ca7c14274c0cc626a6848ca",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/EOS_DDPC1.dat": "7fd625d8817bb5abb348bf9da2b387d9c0a3af1c9aa42ea732c6e6ef6951b552",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/EOS_DDPCX.dat": "55bfe783340e786348fb1931608e795cb7842700c0b89c90b32177e32637ec4c",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/EOS_ELMA.dat": "57e9ca2f1ed26fc6ccd07171a4611253ea370b5918c9743fc8528322a617753c",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/UPSTREAM_README.md": "08fde52d191a2d79aa053c5045cf68e61b3938466425822809cdee0c2372f10e",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/manifest_DDME2.yaml": "ad328140137a36442cd15a599f0ad8cbfdc889139547f0accbf8ab2397f936d7",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/manifest_DDPC1.yaml": "3f4314b507d7a7ca6bcd4a17e3f3583eb2cfadebcbbd5c7e3ff7c3da4e92bc03",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/manifest_DDPCX.yaml": "79fd430c409ceeeb794a596310108d1475eb8079aad8c435a4e01d330bc823cb",
+    "ns_eos_v1_1/data/outer_crust_koliogi_2026/manifest_ELMA.yaml": "627b7d5be529109d9c7d36a73fc872905b3bca74f3a82880be68b360a44fdd12",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/MUSES_LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/beta_equilibrium_n3lo_414.csv": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/beta_equilibrium_n3lo_414_diagnostics.csv": "375a93c124dad777af84c8b0a29132f885ca590c4088ee173ca71c0380118fa5",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/beta_equilibrium_n3lo_450.csv": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/beta_equilibrium_n3lo_450_diagnostics.csv": "d4a89fa1705988f066dfbd35f0f8c4c200d6da9e21d2da3a7b4435e7fa254da0",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/config_n3lo_414.yaml": "41b04f21b798c7e378eda3d06bb8e1fafae3d66cf469dc74db2e0f463e6dffb3",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/config_n3lo_450.yaml": "b45ceb662aef7172515cbc46f994e16c579a0b530ebb3115534eb29174ac3043",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/generation_record.json": "99af1cbb834273fde7c9ad579e65414c6ff9ed1cffacaef8015206154d986fd7",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml": "4622387f5a6c2c087d40705fad3f4bc59f403634b64e7e2fb11bde40a0ebfd88",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml": "eeb56a5c3a2cc9f2fe77addf45e415438e87b220d241a6572d375df838a50b61",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/raw_n3lo_414.csv": "cc812d58b9d92403c9871e7df81c72cb8e54a7cf950203bdf27f7336de8cef8d",
+    "ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/raw_n3lo_450.csv": "bf911ed58f465aad4bbe13885a1b01a6c950956ff0d022e45e18e0e1407efe43"
+  },
+  "remaining_freeze_blockers": [
+    "validate_shared_inner_crust_connector_against_unified_EOS",
+    "independent_review_of_parameter_ranges",
+    "TOV_and_Love_cross_implementation_agreement",
+    "pilot_calibration_of_P1_to_P4_thresholds",
+    "power_derived_confirmatory_budget"
+  ]
+}

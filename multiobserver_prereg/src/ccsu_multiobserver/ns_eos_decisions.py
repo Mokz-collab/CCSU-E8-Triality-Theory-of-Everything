@@ -27,7 +27,10 @@ def load_and_validate_decisions(path: str | Path) -> dict[str, Any]:
     _require(decisions.get("schema_version") == 1, "schema_version must equal 1")
     _require(decisions.get("decision_lock_id") == "CCSU-MO-NS-EOS-001-DECISIONS", "unexpected decision lock id")
     _require(decisions.get("status") == "DRAFT_LOCKED_FOR_IMPLEMENTATION", "decision lock must remain draft")
-    _require(decisions.get("confirmatory_authorization") is False, "v0.2 cannot authorize confirmation")
+    _require(
+        decisions.get("confirmatory_authorization") is False,
+        "development decision lock cannot authorize confirmation",
+    )
 
     base_path = resolved.parent / decisions["base_domain_spec"]
     base = load_and_validate(base_path)
@@ -52,8 +55,44 @@ def load_and_validate_decisions(path: str | Path) -> dict[str, Any]:
         "BPS label must end at neutron drip",
     )
     _require(
+        set(low["outer_crust"]["model_labels"])
+        == {"DD-ME2", "DD-PC1", "DD-PCX", "ELMA"},
+        "outer-crust sensitivity ensemble changed",
+    )
+    _require(
+        low["outer_crust"]["same_model_for_all_arms_within_trajectory"] is True,
+        "outer-crust nuisance must remain paired across arms",
+    )
+    _require(
+        low["outer_crust"]["observer_conditioned_selection_forbidden"] is True,
+        "outer-crust model cannot be selected by observer",
+    )
+    _require(
         low["inner_crust"]["observer_specific_parameters_forbidden"] is True,
         "inner crust cannot vary by observer",
+    )
+    nuclear_band = low["nuclear_band"]
+    _require(
+        set(nuclear_band["model_labels"])
+        == {"MUSES-N3LO-414", "MUSES-N3LO-450"},
+        "χEFT reference-member ensemble changed",
+    )
+    _require(
+        nuclear_band["same_model_for_all_arms_within_trajectory"] is True,
+        "χEFT reference member must remain paired across arms",
+    )
+    _require(
+        nuclear_band["observer_conditioned_selection_forbidden"] is True,
+        "χEFT reference member cannot be selected by observer",
+    )
+    _require(
+        nuclear_band["pointwise_envelope_sampling_forbidden"] is True,
+        "pointwise χEFT envelope sampling must remain forbidden",
+    )
+    _require(
+        nuclear_band["probabilistic_coverage"] is None
+        and nuclear_band["formal_chiral_truncation_error"] is False,
+        "reference-member envelope cannot claim formal χEFT coverage",
     )
     _require(low["no_observer_specific_crust"] is True, "observer-specific crust must be forbidden")
     _require(
@@ -123,7 +162,9 @@ def decision_summary(decisions: dict[str, Any]) -> dict[str, Any]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Validate the NS-EOS v0.2 decision lock")
+    parser = argparse.ArgumentParser(
+        description="Validate an NS-EOS development decision lock"
+    )
     parser.add_argument("decisions", type=Path)
     args = parser.parse_args(argv)
     print(json.dumps(decision_summary(load_and_validate_decisions(args.decisions)), indent=2, sort_keys=True))

@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import math
 import tempfile
 import unittest
 from pathlib import Path
+
+import yaml
 
 from ccsu_multiobserver.ns_eos_low_density import (
     MEV_FM3_TO_ERG_CM3,
@@ -26,9 +29,52 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "tests" / "fixtures"
 LOWER_MANIFEST = FIXTURES / "low_density_lower_manifest.yaml"
 UPPER_MANIFEST = FIXTURES / "low_density_upper_manifest.yaml"
+OUTER_CRUST_DATA = (
+    ROOT / "ns_eos_v1_1" / "data" / "outer_crust_koliogi_2026"
+)
+OUTER_CRUST_MANIFESTS = tuple(
+    OUTER_CRUST_DATA / name
+    for name in (
+        "manifest_DDME2.yaml",
+        "manifest_DDPC1.yaml",
+        "manifest_DDPCX.yaml",
+        "manifest_ELMA.yaml",
+    )
+)
+CHIRAL_EFT_DATA = (
+    ROOT / "ns_eos_v1_1" / "data" / "chiral_eft_muses_v1_0_1"
+)
+CHIRAL_EFT_MANIFESTS = tuple(
+    CHIRAL_EFT_DATA / name
+    for name in (
+        "manifest_n3lo_414.yaml",
+        "manifest_n3lo_450.yaml",
+    )
+)
 
 
 class NSEOSLowDensityTests(unittest.TestCase):
+    def _absolute_generated_manifest(self) -> dict:
+        manifest_path = CHIRAL_EFT_MANIFESTS[0]
+        manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+        manifest["table_path"] = str(
+            (CHIRAL_EFT_DATA / manifest["table_path"]).resolve()
+        )
+        manifest["license_path"] = str(
+            (CHIRAL_EFT_DATA / manifest["license_path"]).resolve()
+        )
+        generated = manifest["generated_provenance"]
+        for field in (
+            "generator_path",
+            "generation_record_path",
+            "config_path",
+            "raw_output_path",
+        ):
+            generated[field] = str(
+                (CHIRAL_EFT_DATA / generated[field]).resolve()
+            )
+        return manifest
+
     def test_pinned_synthetic_tables_validate_and_match(self):
         lower = load_thermodynamic_table(LOWER_MANIFEST)
         upper = load_thermodynamic_table(UPPER_MANIFEST)
@@ -150,6 +196,133 @@ class NSEOSLowDensityTests(unittest.TestCase):
             LowDensityContractError, r"violate dP=n dmu"
         ):
             build_chemical_potential_connector(lower, upper)
+
+    def test_pinned_scientific_outer_crust_ensemble_validates(self):
+        tables = [
+            load_thermodynamic_table(manifest)
+            for manifest in OUTER_CRUST_MANIFESTS
+        ]
+        self.assertEqual(
+            {table.model_label for table in tables},
+            {"DD-ME2", "DD-PC1", "DD-PCX", "ELMA"},
+        )
+        for table in tables:
+            self.assertEqual(table.source_kind, "SCIENTIFIC_OUTER_CRUST")
+            self.assertEqual(
+                table.provenance_mode, "direct_upstream_git_blob"
+            )
+            self.assertEqual(table.raw_format, "koliogi_outer_crust_v1")
+            self.assertEqual(table.license_spdx, "CC-BY-4.0")
+            self.assertEqual(len(table.rows), 56)
+            self.assertEqual(table.first.n_b_fm3, 7.0e-12)
+            self.assertGreater(table.last.n_b_fm3, 2.0e-4)
+            self.assertLess(table.last.n_b_fm3, 3.0e-4)
+
+    def test_outer_crust_speed_ratio_is_squared_on_import(self):
+        table = load_thermodynamic_table(OUTER_CRUST_MANIFESTS[0])
+        self.assertAlmostEqual(
+            table.first.cs2,
+            (1.748879e-3) ** 2,
+            places=18,
+        )
+
+    def test_neutron_drip_endpoint_remains_model_specific(self):
+        tables = [
+            load_thermodynamic_table(manifest)
+            for manifest in OUTER_CRUST_MANIFESTS
+        ]
+        endpoints = {table.last.n_b_fm3 for table in tables}
+        self.assertEqual(len(endpoints), 4)
+
+    def test_generated_chiral_eft_reference_members_validate(self):
+        tables = [
+            load_thermodynamic_table(manifest)
+            for manifest in CHIRAL_EFT_MANIFESTS
+        ]
+        self.assertEqual(
+            {table.model_label for table in tables},
+            {"MUSES-N3LO-414", "MUSES-N3LO-450"},
+        )
+        for table in tables:
+            self.assertEqual(
+                table.source_kind, "SCIENTIFIC_CHIRAL_EFT_REFERENCE"
+            )
+            self.assertEqual(
+                table.provenance_mode, "deterministic_generated_output"
+            )
+            self.assertEqual(table.raw_format, "canonical_csv_v1")
+            self.assertEqual(table.license_spdx, "GPL-3.0-or-later")
+            self.assertEqual(len(table.rows), 25)
+            self.assertEqual(table.first.n_b_fm3, 0.5 * 0.16)
+            self.assertAlmostEqual(table.last.n_b_fm3, 1.1 * 0.16)
+            self.assertGreater(table.first.cs2, 0.0)
+            self.assertLess(table.last.cs2, 1.0)
+
+    def test_chiral_eft_members_remain_distinct_coherent_eos(self):
+        interaction_414, interaction_450 = [
+            load_thermodynamic_table(manifest)
+            for manifest in CHIRAL_EFT_MANIFESTS
+        ]
+        self.assertEqual(
+            [row.n_b_fm3 for row in interaction_414.rows],
+            [row.n_b_fm3 for row in interaction_450.rows],
+        )
+        self.assertTrue(
+            all(
+                row_414.p_mev_fm3 > row_450.p_mev_fm3
+                for row_414, row_450 in zip(
+                    interaction_414.rows,
+                    interaction_450.rows,
+                    strict=True,
+                )
+            )
+        )
+
+    def test_generated_chiral_eft_generator_hash_is_enforced(self):
+        manifest = self._absolute_generated_manifest()
+        manifest["generated_provenance"]["generator_sha256"] = "0" * 64
+        with tempfile.TemporaryDirectory() as directory:
+            temporary_manifest = Path(directory) / "manifest.yaml"
+            temporary_manifest.write_text(
+                yaml.safe_dump(manifest, sort_keys=False),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                LowDensityContractError,
+                "generated provenance hash mismatch: generator_path",
+            ):
+                load_thermodynamic_table(temporary_manifest)
+
+    def test_generated_chiral_eft_cannot_claim_coverage(self):
+        manifest = self._absolute_generated_manifest()
+        record_path = Path(
+            manifest["generated_provenance"]["generation_record_path"]
+        )
+        generation_record = json.loads(record_path.read_text(encoding="utf-8"))
+        generation_record["scientific_semantics"]["probabilistic_coverage"] = 0.9
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            temporary_record = temporary / "generation_record.json"
+            temporary_record.write_text(
+                json.dumps(generation_record, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
+            manifest["generated_provenance"]["generation_record_path"] = str(
+                temporary_record
+            )
+            manifest["generated_provenance"]["generation_record_sha256"] = (
+                hashlib.sha256(temporary_record.read_bytes()).hexdigest()
+            )
+            temporary_manifest = temporary / "manifest.yaml"
+            temporary_manifest.write_text(
+                yaml.safe_dump(manifest, sort_keys=False),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                LowDensityContractError,
+                "cannot claim probabilistic coverage",
+            ):
+                load_thermodynamic_table(temporary_manifest)
 
 
 if __name__ == "__main__":

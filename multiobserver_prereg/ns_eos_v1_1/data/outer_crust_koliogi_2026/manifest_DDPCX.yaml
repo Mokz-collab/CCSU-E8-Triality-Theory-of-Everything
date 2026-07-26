@@ -1,0 +1,26 @@
+schema_version: 1
+table_manifest_id: CCSU-NS-EOS-OUTER-CRUST-DDPCX
+source_kind: SCIENTIFIC_OUTER_CRUST
+raw_format: koliogi_outer_crust_v1
+model_label: DD-PCX
+table_path: EOS_DDPCX.dat
+sha256: 55bfe783340e786348fb1931608e795cb7842700c0b89c90b32177e32637ec4c
+upstream_git_blob_sha: 5c0616b096fff4a88f6379e697c09e3be6db69bf
+source_commit: d569b24d072d6746943ef6d107dabd6458d9730b
+immutable_source_url: https://github.com/pkoliogi/Outer-Crust-Equations-of-State/blob/d569b24d072d6746943ef6d107dabd6458d9730b/outer_crust_eos_tables/EOS_DDPCX.dat
+retrieval_timestamp_utc: 2026-07-26T22:02:38Z
+license_spdx: CC-BY-4.0
+license_path: LICENSE
+license_sha256: 9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94
+redistribution_permitted: true
+source_url: https://github.com/pkoliogi/Outer-Crust-Equations-of-State
+citation: P. S. Koliogiannis and N. Paar, Outer-Crust Equations of State for Neutron Stars, arXiv:2604.26952
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+validation:
+  thermodynamic_identity_relative_tolerance: 0.000001
+  finite_difference_cs2_absolute_tolerance: 0.001

@@ -1,0 +1,286 @@
+{
+  "build": {
+    "binary_path": "/tmp/ccsu-cheft-anchor-run-v4/build/chiraleft",
+    "binary_sha256": "4da03ecfb458accae7443c7525a3a9ba4dd237f3c833ecb584c11ce1ccc893ea",
+    "build_log_path": "/tmp/ccsu-cheft-anchor-run-v4/build/build.log",
+    "build_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/usr/bin/g++",
+      "-std=gnu++2a",
+      "-O2",
+      "-fopenmp",
+      "-I/tmp/ccsu-cheft-0alPwv/src",
+      "-I/tmp/ccsu-yamlcpp-zeXksg/include",
+      "/tmp/ccsu-cheft-0alPwv/src/chiral-eft-eos.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/effective-mass.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/fermi-gas.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/first-order-self-energy.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/first-order.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/main.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/math-functions.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/microscopic.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/second-order.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/table-generate.cpp",
+      "/tmp/ccsu-cheft-0alPwv/src/yaml-parser.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/binary.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/contrib/graphbuilder.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/contrib/graphbuilderadapter.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/convert.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/depthguard.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/directives.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/emit.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/emitfromevents.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/emitter.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/emitterstate.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/emitterutils.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/exceptions.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/exp.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/memory.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/node.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/node_data.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/nodebuilder.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/nodeevents.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/null.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/ostream_wrapper.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/parse.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/parser.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/regex_yaml.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/scanner.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/scanscalar.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/scantag.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/scantoken.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/simplekey.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/singledocparser.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/stream.cpp",
+      "/tmp/ccsu-yamlcpp-zeXksg/src/tag.cpp",
+      "-L/tmp/ccsu-cheft-0alPwv/lib",
+      "-lcheft-potential",
+      "-o",
+      "/tmp/ccsu-cheft-anchor-run-v4/build/chiraleft"
+    ],
+    "compiler": "/usr/bin/g++",
+    "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+    "finished_utc": "2026-07-26T22:32:55.754123Z",
+    "muses_tracked_cpp_sources": [
+      "src/chiral-eft-eos.cpp",
+      "src/effective-mass.cpp",
+      "src/fermi-gas.cpp",
+      "src/first-order-self-energy.cpp",
+      "src/first-order.cpp",
+      "src/main.cpp",
+      "src/math-functions.cpp",
+      "src/microscopic.cpp",
+      "src/second-order.cpp",
+      "src/table-generate.cpp",
+      "src/yaml-parser.cpp"
+    ],
+    "started_utc": "2026-07-26T22:32:27.111428Z",
+    "yaml_cpp_tracked_cpp_sources": [
+      "src/binary.cpp",
+      "src/contrib/graphbuilder.cpp",
+      "src/contrib/graphbuilderadapter.cpp",
+      "src/convert.cpp",
+      "src/depthguard.cpp",
+      "src/directives.cpp",
+      "src/emit.cpp",
+      "src/emitfromevents.cpp",
+      "src/emitter.cpp",
+      "src/emitterstate.cpp",
+      "src/emitterutils.cpp",
+      "src/exceptions.cpp",
+      "src/exp.cpp",
+      "src/memory.cpp",
+      "src/node.cpp",
+      "src/node_data.cpp",
+      "src/nodebuilder.cpp",
+      "src/nodeevents.cpp",
+      "src/null.cpp",
+      "src/ostream_wrapper.cpp",
+      "src/parse.cpp",
+      "src/parser.cpp",
+      "src/regex_yaml.cpp",
+      "src/scanner.cpp",
+      "src/scanscalar.cpp",
+      "src/scantag.cpp",
+      "src/scantoken.cpp",
+      "src/simplekey.cpp",
+      "src/singledocparser.cpp",
+      "src/stream.cpp",
+      "src/tag.cpp"
+    ]
+  },
+  "build_dependency": {
+    "yaml_cpp": {
+      "commit": "f7320141120f720aecc4c32be25586e7da9eb978",
+      "repository": "https://github.com/jbeder/yaml-cpp",
+      "version": "0.8.0"
+    }
+  },
+  "environment": {
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13 (main, Mar  3 2026, 14:59:34) [Clang 21.1.4 ]",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "execution": [
+    {
+      "config_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_414/input/validated_config.yaml",
+      "config_sha256": "41b04f21b798c7e378eda3d06bb8e1fafae3d66cf469dc74db2e0f463e6dffb3",
+      "finished_utc": "2026-07-26T22:33:24.023059Z",
+      "interaction": "n3lo-414",
+      "log_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_414/muses_run.log",
+      "normalizations": [
+        "three_nucleon_forces.cD->c_D",
+        "three_nucleon_forces.cE->c_E"
+      ],
+      "raw_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_414/output/raw_output.csv",
+      "raw_sha256": "cc812d58b9d92403c9871e7df81c72cb8e54a7cf950203bdf27f7336de8cef8d",
+      "started_utc": "2026-07-26T22:32:55.770224Z"
+    },
+    {
+      "config_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_450/input/validated_config.yaml",
+      "config_sha256": "b45ceb662aef7172515cbc46f994e16c579a0b530ebb3115534eb29174ac3043",
+      "finished_utc": "2026-07-26T22:33:52.936365Z",
+      "interaction": "n3lo-450",
+      "log_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_450/muses_run.log",
+      "normalizations": [],
+      "raw_path": "/tmp/ccsu-cheft-anchor-run-v4/n3lo_450/output/raw_output.csv",
+      "raw_sha256": "bf911ed58f465aad4bbe13885a1b01a6c950956ff0d022e45e18e0e1407efe43",
+      "started_utc": "2026-07-26T22:33:24.043136Z"
+    }
+  ],
+  "generated_utc": "2026-07-26T22:33:52.945025Z",
+  "generator": "generate_muses_chiral_eft_anchor.py",
+  "grid": {
+    "calculation_density_fm3": [
+      0.04,
+      0.2,
+      0.004
+    ],
+    "isospin_asymmetry_step": 1.0,
+    "published_anchor_density_fm3": [
+      0.08,
+      0.176
+    ]
+  },
+  "products": {
+    "n3lo-414": {
+      "anchor": {
+        "path": "beta_equilibrium_n3lo_414.csv",
+        "rows": 25,
+        "sha256": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b"
+      },
+      "ansatz_coefficients": {
+        "basis": [
+          "n",
+          "n^(4/3)",
+          "n^(5/3)",
+          "n^2"
+        ],
+        "pure_neutron_matter": [
+          -358.3886393912029,
+          696.236747147246,
+          -868.6072299904114,
+          745.8012014240916
+        ],
+        "symmetric_matter": [
+          -996.946075024641,
+          2711.6015930509457,
+          -3615.923154580487,
+          2201.64492340608
+        ]
+      },
+      "config": {
+        "path": "config_n3lo_414.yaml",
+        "sha256": "41b04f21b798c7e378eda3d06bb8e1fafae3d66cf469dc74db2e0f463e6dffb3"
+      },
+      "diagnostics": {
+        "path": "beta_equilibrium_n3lo_414_diagnostics.csv",
+        "rows": 41,
+        "sha256": "375a93c124dad777af84c8b0a29132f885ca590c4088ee173ca71c0380118fa5"
+      },
+      "key_normalizations": [
+        "three_nucleon_forces.cD->c_D",
+        "three_nucleon_forces.cE->c_E"
+      ],
+      "raw": {
+        "path": "raw_n3lo_414.csv",
+        "sha256": "cc812d58b9d92403c9871e7df81c72cb8e54a7cf950203bdf27f7336de8cef8d"
+      }
+    },
+    "n3lo-450": {
+      "anchor": {
+        "path": "beta_equilibrium_n3lo_450.csv",
+        "rows": 25,
+        "sha256": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6"
+      },
+      "ansatz_coefficients": {
+        "basis": [
+          "n",
+          "n^(4/3)",
+          "n^(5/3)",
+          "n^2"
+        ],
+        "pure_neutron_matter": [
+          -347.6990006510371,
+          601.4450564476651,
+          -602.9857431163489,
+          502.82518981553534
+        ],
+        "symmetric_matter": [
+          -889.7881483232851,
+          2161.013383071452,
+          -2703.066364383776,
+          1715.488019376834
+        ]
+      },
+      "config": {
+        "path": "config_n3lo_450.yaml",
+        "sha256": "b45ceb662aef7172515cbc46f994e16c579a0b530ebb3115534eb29174ac3043"
+      },
+      "diagnostics": {
+        "path": "beta_equilibrium_n3lo_450_diagnostics.csv",
+        "rows": 41,
+        "sha256": "d4a89fa1705988f066dfbd35f0f8c4c200d6da9e21d2da3a7b4435e7fa254da0"
+      },
+      "key_normalizations": [],
+      "raw": {
+        "path": "raw_n3lo_450.csv",
+        "sha256": "bf911ed58f465aad4bbe13885a1b01a6c950956ff0d022e45e18e0e1407efe43"
+      }
+    }
+  },
+  "schema_version": 1,
+  "scientific_semantics": {
+    "asymmetry_treatment": "quadratic_interaction_energy",
+    "envelope_type": "coherent_interaction_reference_envelope",
+    "formal_chiral_truncation_error": false,
+    "leptons": [
+      "electron",
+      "muon"
+    ],
+    "matter": "charge_neutral_beta_equilibrated_npe_mu",
+    "member_set": [
+      "n3lo-414",
+      "n3lo-450"
+    ],
+    "probabilistic_coverage": null,
+    "temperature_mev": 0.0
+  },
+  "source": {
+    "commit": "6cf7fea41d2a2bac5f93e567d71279631168088b",
+    "repository": "https://gitlab.com/nsf-muses/chiral-eft-eos/chiral_eft_eos",
+    "source_hashes": {
+      "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "README.md": "cf4bfb8be8393ff49c7f52543ee2d12dceb851f6351d913c264cc7a9e5787323",
+      "input/config.yaml": "e2cd0281ad295c143ca9f76f3e336b143b334ce0c95a091b17bb98c19671da8f",
+      "src/cheft-potential/fitted-parameters.yaml": "12893b31cf204cb4f6f6f6939717b9a24ef50bc9ea43081038bc28ae72656d1b"
+    },
+    "tag_object": "36e5e4ecc2d3572e48470deab820519b5e248b13",
+    "version": "v1.0.1"
+  }
+}

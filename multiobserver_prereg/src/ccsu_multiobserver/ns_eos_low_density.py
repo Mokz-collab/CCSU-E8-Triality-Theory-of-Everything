@@ -25,6 +25,21 @@ REQUIRED_COLUMNS = (
     "cs2",
 )
 
+KOLIOGI_OUTER_CRUST_COLUMNS = (
+    "density",
+    "A",
+    "Z",
+    "Nucleus",
+    "energy",
+    "pressure",
+    "chemical_potential",
+    "electron_chemical_potential",
+    "B/A",
+    "Gamma",
+    "cs/c",
+    "BE_source",
+)
+
 CANONICAL_UNITS = {
     "baryon_number_density": "fm^-3",
     "pressure": "MeV_fm^-3",
@@ -51,6 +66,12 @@ def sha256_file(path: str | Path) -> str:
     return digest.hexdigest()
 
 
+def git_blob_sha_file(path: str | Path) -> str:
+    payload = Path(path).read_bytes()
+    header = f"blob {len(payload)}\0".encode("ascii")
+    return hashlib.sha1(header + payload, usedforsecurity=False).hexdigest()
+
+
 @dataclass(frozen=True)
 class ThermodynamicRow:
     n_b_fm3: float
@@ -65,6 +86,9 @@ class ThermodynamicTable:
     manifest_id: str
     model_label: str
     source_kind: str
+    provenance_mode: str
+    raw_format: str
+    license_spdx: str
     table_path: str
     sha256: str
     rows: tuple[ThermodynamicRow, ...]
@@ -303,6 +327,29 @@ def _parse_row(raw: dict[str, str], row_number: int) -> ThermodynamicRow:
     return ThermodynamicRow(**values)
 
 
+def _parse_koliogi_outer_crust_row(
+    raw: dict[str, str], row_number: int
+) -> ThermodynamicRow:
+    try:
+        speed_ratio = float(raw["cs/c"])
+        row = ThermodynamicRow(
+            n_b_fm3=float(raw["density"]),
+            p_mev_fm3=float(raw["pressure"]),
+            epsilon_mev_fm3=float(raw["energy"]),
+            mu_b_mev=float(raw["chemical_potential"]),
+            cs2=speed_ratio**2,
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        raise LowDensityContractError(
+            f"invalid Koliogi outer-crust row {row_number}"
+        ) from exc
+    _require(
+        all(math.isfinite(value) for value in asdict(row).values()),
+        f"non-finite value in Koliogi outer-crust row {row_number}",
+    )
+    return row
+
+
 def _validate_rows(
     rows: tuple[ThermodynamicRow, ...],
     *,
@@ -374,16 +421,167 @@ def load_thermodynamic_table(manifest_path: str | Path) -> ThermodynamicTable:
     actual_sha256 = sha256_file(table_path)
     _require(actual_sha256 == expected_sha256, "table sha256 mismatch")
 
-    with table_path.open("r", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
+    source_kind = str(manifest["source_kind"])
+    provenance_mode = str(
+        manifest.get("provenance_mode", "direct_upstream_git_blob")
+    )
+    raw_format = str(manifest.get("raw_format", "canonical_csv_v1"))
+    if source_kind != "SYNTHETIC_TEST_ONLY":
+        source_commit = str(manifest.get("source_commit", ""))
+        immutable_source_url = str(manifest.get("immutable_source_url", ""))
         _require(
-            tuple(reader.fieldnames or ()) == REQUIRED_COLUMNS,
-            "table columns or column order violate the contract",
+            len(source_commit) == 40
+            and all(
+                character in "0123456789abcdef" for character in source_commit
+            ),
+            "scientific manifest source_commit is invalid",
         )
-        rows = tuple(
-            _parse_row(raw, row_number)
-            for row_number, raw in enumerate(reader, start=2)
+        _require(
+            source_commit in immutable_source_url,
+            "scientific source URL is not pinned to source_commit",
         )
+        _require(
+            bool(manifest.get("retrieval_timestamp_utc")),
+            "scientific retrieval timestamp is required",
+        )
+        license_path = (resolved_manifest.parent / manifest["license_path"]).resolve()
+        _require(license_path.is_file(), "scientific license file is missing")
+        _require(
+            sha256_file(license_path) == manifest.get("license_sha256"),
+            "scientific license sha256 mismatch",
+        )
+        if provenance_mode == "direct_upstream_git_blob":
+            upstream_git_blob_sha = str(
+                manifest.get("upstream_git_blob_sha", "")
+            )
+            _require(
+                len(upstream_git_blob_sha) == 40,
+                "scientific upstream Git blob SHA is invalid",
+            )
+            _require(
+                git_blob_sha_file(table_path) == upstream_git_blob_sha,
+                "scientific table differs from the pinned upstream Git blob",
+            )
+        elif provenance_mode == "deterministic_generated_output":
+            generated = manifest.get("generated_provenance", {})
+            _require(
+                isinstance(generated, dict),
+                "generated scientific provenance must be a mapping",
+            )
+
+            def require_generated_file(
+                path_field: str, hash_field: str
+            ) -> Path:
+                generated_path = (
+                    resolved_manifest.parent / generated.get(path_field, "")
+                ).resolve()
+                expected_hash = str(generated.get(hash_field, "")).lower()
+                _require(
+                    generated_path.is_file(),
+                    f"generated provenance file is missing: {path_field}",
+                )
+                _require(
+                    len(expected_hash) == 64,
+                    f"generated provenance hash is invalid: {hash_field}",
+                )
+                _require(
+                    sha256_file(generated_path) == expected_hash,
+                    f"generated provenance hash mismatch: {path_field}",
+                )
+                return generated_path
+
+            generator_path = require_generated_file(
+                "generator_path", "generator_sha256"
+            )
+            generation_record_path = require_generated_file(
+                "generation_record_path", "generation_record_sha256"
+            )
+            config_path = require_generated_file(
+                "config_path", "config_sha256"
+            )
+            raw_output_path = require_generated_file(
+                "raw_output_path", "raw_output_sha256"
+            )
+            _require(
+                generator_path.suffix == ".py",
+                "generated scientific data require a Python generator",
+            )
+            with generation_record_path.open("r", encoding="utf-8") as handle:
+                generation_record = json.load(handle)
+            _require(
+                generation_record.get("source", {}).get("commit")
+                == source_commit,
+                "generation record source commit mismatch",
+            )
+            _require(
+                generation_record.get("build", {}).get("binary_sha256")
+                == generated.get("build_binary_sha256"),
+                "generation record build-binary hash mismatch",
+            )
+            _require(
+                generation_record.get("build_dependency", {})
+                .get("yaml_cpp", {})
+                .get("commit")
+                == generated.get("yaml_cpp_commit"),
+                "generation record yaml-cpp commit mismatch",
+            )
+            member_label = str(generated.get("member_label", ""))
+            product = generation_record.get("products", {}).get(
+                member_label, {}
+            )
+            _require(
+                product.get("config", {}).get("sha256")
+                == sha256_file(config_path),
+                "generation record config hash mismatch",
+            )
+            _require(
+                product.get("raw", {}).get("sha256")
+                == sha256_file(raw_output_path),
+                "generation record raw-output hash mismatch",
+            )
+            _require(
+                product.get("anchor", {}).get("sha256") == actual_sha256,
+                "generation record anchor hash mismatch",
+            )
+            semantics = generation_record.get("scientific_semantics", {})
+            _require(
+                semantics.get("envelope_type")
+                == "coherent_interaction_reference_envelope",
+                "generated χEFT envelope semantics are not frozen",
+            )
+            _require(
+                semantics.get("probabilistic_coverage") is None
+                and semantics.get("formal_chiral_truncation_error") is False,
+                "generated χEFT members cannot claim probabilistic coverage",
+            )
+        else:
+            raise LowDensityContractError(
+                f"unsupported scientific provenance_mode: {provenance_mode}"
+            )
+
+    with table_path.open("r", encoding="utf-8", newline="") as handle:
+        if raw_format == "canonical_csv_v1":
+            reader = csv.DictReader(handle)
+            _require(
+                tuple(reader.fieldnames or ()) == REQUIRED_COLUMNS,
+                "table columns or column order violate the contract",
+            )
+            rows = tuple(
+                _parse_row(raw, row_number)
+                for row_number, raw in enumerate(reader, start=2)
+            )
+        elif raw_format == "koliogi_outer_crust_v1":
+            reader = csv.DictReader(handle, delimiter="\t")
+            _require(
+                tuple(reader.fieldnames or ()) == KOLIOGI_OUTER_CRUST_COLUMNS,
+                "Koliogi table columns or column order violate the contract",
+            )
+            rows = tuple(
+                _parse_koliogi_outer_crust_row(raw, row_number)
+                for row_number, raw in enumerate(reader, start=2)
+            )
+        else:
+            raise LowDensityContractError(f"unsupported raw_format: {raw_format}")
 
     validation = manifest.get("validation", {})
     identity_tolerance = float(
@@ -402,7 +600,10 @@ def load_thermodynamic_table(manifest_path: str | Path) -> ThermodynamicTable:
     return ThermodynamicTable(
         manifest_id=manifest["table_manifest_id"],
         model_label=manifest["model_label"],
-        source_kind=manifest["source_kind"],
+        source_kind=source_kind,
+        provenance_mode=provenance_mode,
+        raw_format=raw_format,
+        license_spdx=manifest["license_spdx"],
         table_path=str(table_path),
         sha256=actual_sha256,
         rows=rows,
@@ -453,6 +654,9 @@ def table_summary(table: ThermodynamicTable) -> dict[str, Any]:
         "manifest_id": table.manifest_id,
         "model_label": table.model_label,
         "source_kind": table.source_kind,
+        "provenance_mode": table.provenance_mode,
+        "raw_format": table.raw_format,
+        "license_spdx": table.license_spdx,
         "sha256": table.sha256,
         "rows": len(table.rows),
         "density_range_fm3": [table.first.n_b_fm3, table.last.n_b_fm3],
