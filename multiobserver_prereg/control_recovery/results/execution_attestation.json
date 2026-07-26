@@ -1,0 +1,25 @@
+{
+  "schema": "ccsu.multiobserver.control-recovery-execution.v1",
+  "registration_id": "CCSU-MO-CONTROL-RECOVERY-001",
+  "freeze_commit": "c75f9c8c497a5a43645d2ce99dd8b0f6d8876f65",
+  "freeze_timestamp_utc": "2026-07-26T20:53:12Z",
+  "execution_completed_at_utc": "2026-07-26T20:54:54Z",
+  "config_sha256": "243c75b3c18e1dd99a715c58f6c25e5b2ca8fa928a8a72d807b61db982dcf3d5",
+  "engine_sha256": "8cabab73127c688b0494ded1008b9717b53302af9202fb68d0dd5061e42a1f23",
+  "environment_lock_sha256": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+  "runs": {
+    "rows": 2750,
+    "sha256": "62dc41dbf8324b66a64f28135fda6460339b0c53da4d647c054d4080b732b409",
+    "public_gzip_sha256": "d21400e2c5350916cc36ab59bc040fded8097d8229332ab15720e91815acc017",
+    "public_encoding": "base64(gzip(runs.jsonl))"
+  },
+  "summary_sha256": "01d55449914f4cb5669ae31443baf13f89a5d502bdde2d6630b331c7618f184a",
+  "replay": {
+    "byte_identical": true,
+    "runs_sha256": "62dc41dbf8324b66a64f28135fda6460339b0c53da4d647c054d4080b732b409",
+    "summary_sha256": "01d55449914f4cb5669ae31443baf13f89a5d502bdde2d6630b331c7618f184a"
+  },
+  "execution_failures": 0,
+  "classification": "RECOVERED",
+  "control_recovered": true
+}
