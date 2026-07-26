@@ -1,0 +1,368 @@
+{
+  "analysis": {
+    "bootstrap": "BCa stratified by preregistered cell",
+    "bootstrap_resamples": 10000,
+    "equal_cell_weighting": true,
+    "familywise_alpha": 0.05,
+    "multiplicity": "Holm-Bonferroni over P1-P4",
+    "one_sided_confidence": 0.95,
+    "primary_p": "maximum one-sided centered-bootstrap p across gates"
+  },
+  "analysis_engine_version": "1.0.0",
+  "confirmatory": true,
+  "deviation_count": 0,
+  "global_score": null,
+  "global_score_reason": "not preregistered; predictions are decided independently",
+  "inputs": [
+    {
+      "bytes": 5258166,
+      "path": "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P1/runs.jsonl",
+      "rows": 18000,
+      "sha256": "793c325df0db05bc20961dd73df7c616f9d360ef81ac2b204ee0a029f9c5fd6b",
+      "summary_sha256": "8b5b351fab1e548d5a4ace94fc7fd4db6032f5dd59a94e55ecb856c96bcf9275"
+    },
+    {
+      "bytes": 5631696,
+      "path": "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P2/runs.jsonl",
+      "rows": 18000,
+      "sha256": "669c431326b68ee98ed9349c63611dbafb572cf53e0b7536b4a896ae2abc0bbd",
+      "summary_sha256": "276cc503a23c571ef092abbd9605cf987e2b5e175287a586329d70dda440c9fa"
+    },
+    {
+      "bytes": 14171434,
+      "path": "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P3/runs.jsonl",
+      "rows": 36000,
+      "sha256": "3966838e77ab07c924c14bb03821f712b2161afcbdae9686f8e244fa9b2ecbe4",
+      "summary_sha256": "0cf74798cfe7f73b4890319d7938fbebfe97f32d3cda6d994d0df2603f57903e"
+    },
+    {
+      "bytes": 5625542,
+      "path": "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P4/runs.jsonl",
+      "rows": 18000,
+      "sha256": "c3d1c56c94d680ba4ac1907e2accbfcd84a2815f18aad1a239c834ae03603634",
+      "summary_sha256": "c9e7a3a560711853562bf68e36b596912dd3893b154ea09ebeee022c32e3b122"
+    },
+    {
+      "bytes": 2065829,
+      "path": "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P5/runs.jsonl",
+      "rows": 7500,
+      "sha256": "da6b806fa6c8e19358a60f654f665d0039195f33ee26e8e2f809928b222ac9f5",
+      "summary_sha256": "c9f886490561c9daeb115344f62898ece9d2682aa71eadbe490ebe1b4b148fce"
+    }
+  ],
+  "integrity": {
+    "analysis_attestation_sha256": "7c320b6adae0f7e5964322202aeafc9ce24112a6784e6c4d9aabc0206b5853d5",
+    "analysis_engine_commit": "b394541aef1122d911c4daf22adcba1974bd33dc",
+    "analysis_engine_sha256": "00b11b1e784cd222468de19cb74a7929d34996d9a03287e3efe55369e920cfa1",
+    "attestation_sha256": "9c201c8374b46bcfb75d41c34742aee166db7e797ca6ea3197c4ecd878d3d63b",
+    "config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+    "content_manifest_sha256": "4ef94f64596822554ba763a4cf3af535d2041eeef4965b138258159fbffe641c",
+    "frozen_files_verified": 18,
+    "runtime_matches_lock": true
+  },
+  "predictions": {
+    "P1": {
+      "all_arm_execution_failures": 0,
+      "decision": "FAIL",
+      "directional_cells": {
+        "favorable": 9,
+        "fraction": 1.0,
+        "minimum": 0.8,
+        "pass": true,
+        "total": 9
+      },
+      "gates": {
+        "hybrid_outperforms_ind": {
+          "alternative": "less",
+          "criterion": "BCa upper 95% bound of HYBRID\u2212IND rQ < 0",
+          "estimate": -0.01097728084538141,
+          "lower_95_one_sided": -0.01631334599964787,
+          "null": 0.0,
+          "raw_p": 0.0005999400059994001,
+          "threshold_pass": true,
+          "upper_95_one_sided": -0.005497709286878281
+        },
+        "hybrid_r_q_below_1": {
+          "alternative": "less",
+          "criterion": "BCa upper 95% bound < 1.0",
+          "estimate": 1.0053579657303309,
+          "lower_95_one_sided": 1.001624237434091,
+          "null": 1.0,
+          "raw_p": 0.9897010298970103,
+          "threshold_pass": false,
+          "upper_95_one_sided": 1.0092098142127481
+        },
+        "private_retention_above_0_25": {
+          "alternative": "greater",
+          "criterion": "BCa lower 95% bound > 0.25",
+          "estimate": 1.072951182367545,
+          "lower_95_one_sided": 1.0702374645959405,
+          "null": 0.25,
+          "raw_p": 9.999000099990002e-05,
+          "threshold_pass": true,
+          "upper_95_one_sided": 1.0755835826784257
+        }
+      },
+      "multiplicity": {
+        "holm_adjusted_p": 1.0,
+        "raw_p": 0.9897010298970103,
+        "rejected": false
+      },
+      "prediction": "P1",
+      "primary_execution_failures": 0,
+      "raw_p": 0.9897010298970103,
+      "threshold_pass": false
+    },
+    "P2": {
+      "all_arm_execution_failures": 0,
+      "decision": "FAIL",
+      "directional_cells": {
+        "favorable": 1,
+        "fraction": 0.1111111111111111,
+        "minimum": 0.8,
+        "pass": false,
+        "total": 9,
+        "unit": "N \u00d7 topology strata"
+      },
+      "fixed_out_of_sample_rule": "four folds grouped by translation-bias level; controls are categorical N and topology; the full model adds standardized Hc",
+      "gates": {
+        "out_of_sample_delta_r2_above_0_02": {
+          "alternative": "greater",
+          "criterion": "point estimate of four-fold out-of-sample \u0394R\u00b2 > 0.02",
+          "estimate": -0.012992628552853214,
+          "lower_95_one_sided": -0.03791978886627899,
+          "null": 0.02,
+          "raw_p": 0.9824017598240176,
+          "threshold_pass": false,
+          "upper_95_one_sided": 1.559642281781917e-05
+        },
+        "spearman_above_0_20": {
+          "alternative": "greater",
+          "criterion": "BCa lower 95% bound of Spearman \u03c1 > 0.20",
+          "estimate": -0.07214710808622342,
+          "lower_95_one_sided": -0.17431016357840168,
+          "null": 0.2,
+          "raw_p": 1.0,
+          "threshold_pass": false,
+          "upper_95_one_sided": -0.04717310913329993
+        }
+      },
+      "multiplicity": {
+        "holm_adjusted_p": 1.0,
+        "raw_p": 1.0,
+        "rejected": false
+      },
+      "prediction": "P2",
+      "primary_execution_failures": 0,
+      "raw_p": 1.0,
+      "threshold_pass": false
+    },
+    "P3": {
+      "all_arm_execution_failures": 0,
+      "decision": "FAIL",
+      "directional_cells": {
+        "favorable": 9,
+        "fraction": 1.0,
+        "minimum": 0.8,
+        "pass": true,
+        "total": 9,
+        "unit": "N \u00d7 SNR strata"
+      },
+      "gates": {
+        "hybrid_fpr_at_most_0_05": {
+          "alternative": "less",
+          "criterion": "equal-cell-weighted HYBRID no-event FPR \u2264 0.05",
+          "estimate": 0.04555555555555555,
+          "lower_95_one_sided": 0.040666666666666657,
+          "null": 0.05,
+          "raw_p": 0.07479252074792521,
+          "threshold_pass": true,
+          "upper_95_one_sided": 0.05088888888888889
+        },
+        "mean_recall_gain_above_0": {
+          "alternative": "greater",
+          "criterion": "BCa lower 95% bound of HYBRID\u2212MEAN recall > 0",
+          "estimate": 0.34711111111111115,
+          "lower_95_one_sided": 0.3355555555555555,
+          "null": 0.0,
+          "raw_p": 9.999000099990002e-05,
+          "threshold_pass": true,
+          "upper_95_one_sided": 0.35888888888888887
+        },
+        "median_recall_gain_at_least_0_10": {
+          "alternative": "greater",
+          "criterion": "median cell recall gain \u2265 0.10",
+          "estimate": 0.332,
+          "lower_95_one_sided": 0.314,
+          "null": 0.1,
+          "raw_p": 9.999000099990002e-05,
+          "threshold_pass": true,
+          "upper_95_one_sided": 0.372
+        }
+      },
+      "multiplicity": {
+        "holm_adjusted_p": 0.29917008299170084,
+        "raw_p": 0.07479252074792521,
+        "rejected": false
+      },
+      "prediction": "P3",
+      "primary_execution_failures": 0,
+      "raw_p": 0.07479252074792521,
+      "threshold_pass": true
+    },
+    "P4": {
+      "all_arm_execution_failures": 0,
+      "attacks": {
+        "confidence_inflation": {
+          "gates": {
+            "median_at_most_0_15": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight median \u0394\u03a9 \u2264 0.15",
+              "estimate": 0.035002102093829826,
+              "lower_95_one_sided": 0.034766408255458785,
+              "null": 0.15,
+              "raw_p": 9.999000099990002e-05,
+              "threshold_pass": true,
+              "upper_95_one_sided": 0.03519438157470866
+            },
+            "p95_at_most_0_30": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight P95 \u0394\u03a9 \u2264 0.30",
+              "estimate": 0.04826379504057198,
+              "lower_95_one_sided": 0.047771282657575374,
+              "null": 0.3,
+              "raw_p": 9.999000099990002e-05,
+              "threshold_pass": true,
+              "upper_95_one_sided": 0.048760936324773116
+            }
+          },
+          "threshold_pass": true
+        },
+        "replay": {
+          "gates": {
+            "median_at_most_0_15": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight median \u0394\u03a9 \u2264 0.15",
+              "estimate": 0.0,
+              "lower_95_one_sided": 0.0,
+              "null": 0.15,
+              "raw_p": 9.999000099990002e-05,
+              "threshold_pass": true,
+              "upper_95_one_sided": 0.0
+            },
+            "p95_at_most_0_30": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight P95 \u0394\u03a9 \u2264 0.30",
+              "estimate": 0.0,
+              "lower_95_one_sided": 0.0,
+              "null": 0.3,
+              "raw_p": 9.999000099990002e-05,
+              "threshold_pass": true,
+              "upper_95_one_sided": 0.0
+            }
+          },
+          "threshold_pass": true
+        },
+        "sign_flip": {
+          "gates": {
+            "median_at_most_0_15": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight median \u0394\u03a9 \u2264 0.15",
+              "estimate": 0.3424989131079057,
+              "lower_95_one_sided": 0.3388086282460162,
+              "null": 0.15,
+              "raw_p": 1.0,
+              "threshold_pass": false,
+              "upper_95_one_sided": 0.3444926026219187
+            },
+            "p95_at_most_0_30": {
+              "alternative": "less",
+              "criterion": "pooled equal-cell-weight P95 \u0394\u03a9 \u2264 0.30",
+              "estimate": 0.48885523274654513,
+              "lower_95_one_sided": 0.48417976461436624,
+              "null": 0.3,
+              "raw_p": 1.0,
+              "threshold_pass": false,
+              "upper_95_one_sided": 0.49248798016822565
+            }
+          },
+          "threshold_pass": false
+        }
+      },
+      "decision": "FAIL",
+      "directional_cells": {
+        "favorable": 6,
+        "fraction": 0.6666666666666666,
+        "minimum": 0.8,
+        "pass": false,
+        "total": 9,
+        "unit": "N \u00d7 attack cells meeting both bounds"
+      },
+      "multiplicity": {
+        "holm_adjusted_p": 1.0,
+        "raw_p": 1.0,
+        "rejected": false
+      },
+      "prediction": "P4",
+      "primary_execution_failures": 0,
+      "raw_p": 1.0,
+      "threshold_pass": false,
+      "worst_attack": {
+        "name": "sign_flip",
+        "selection_rule": "largest of median/0.15 and P95/0.30; lexical tie-break"
+      }
+    },
+    "P5": {
+      "all_arm_execution_failures": 0,
+      "decision": "FAIL",
+      "gates": {
+        "r_squared_at_least_0_80": {
+          "criterion": "point R\u00b2 \u2265 0.8",
+          "estimate": 0.4150640007614309,
+          "lower_95_one_sided": 0.3836773307838709,
+          "threshold_pass": false,
+          "upper_95_one_sided": 0.4395955755075354
+        },
+        "slope_in_interval": {
+          "criterion": "point slope in [0.75, 1.25]",
+          "estimate": 0.41531918624756786,
+          "lower_95_one_sided": 0.4031293729397407,
+          "threshold_pass": false,
+          "upper_95_one_sided": 0.42781009752640015
+        }
+      },
+      "prediction": "P5",
+      "primary_execution_failures": 0,
+      "role": "positive_control",
+      "threshold_pass": false
+    }
+  },
+  "registration_id": "CCSU-MO-PREREG-001",
+  "schedule": {
+    "complete": true,
+    "execution_failures_by_block": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0,
+      "P4": 0,
+      "P5": 0
+    },
+    "expected_rows": 97500,
+    "observed_rows": 97500,
+    "primary_execution_failures_by_block": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0,
+      "P4": 0,
+      "P5": 0
+    },
+    "rows_by_block": {
+      "P1": 18000,
+      "P2": 18000,
+      "P3": 36000,
+      "P4": 18000,
+      "P5": 7500
+    }
+  },
+  "schema_version": 1
+}
