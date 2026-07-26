@@ -43,6 +43,8 @@ class IntegrityResult:
     config_sha256: str
     attestation_sha256: str | None
     content_manifest_sha256: str | None
+    analysis_attestation_sha256: str | None
+    analysis_engine_commit: str | None
     frozen_files_verified: int
     runtime_matches_lock: bool | None
 
@@ -1021,13 +1023,18 @@ def verify_freeze(
     root: Path,
     config_path: Path,
     attestation_path: Path | None,
+    analysis_attestation_path: Path | None,
     enforce: bool,
 ) -> IntegrityResult:
     config_hash = sha256_file(config_path)
     if not enforce:
-        return IntegrityResult(config_hash, None, None, 0, None)
+        return IntegrityResult(config_hash, None, None, None, None, 0, None)
     if attestation_path is None:
         raise AnalysisError("confirmatory analysis requires --attestation")
+    if analysis_attestation_path is None:
+        raise AnalysisError(
+            "confirmatory analysis requires --analysis-attestation"
+        )
     attestation_path = attestation_path.resolve()
     attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
     if config_hash != attestation.get("config_sha256"):
@@ -1064,11 +1071,64 @@ def verify_freeze(
     )
     if not runtime_matches:
         raise AnalysisError("runtime does not match the publicly attested environment")
+    analysis_attestation_path = analysis_attestation_path.resolve()
+    analysis_attestation = json.loads(
+        analysis_attestation_path.read_text(encoding="utf-8")
+    )
+    analysis_manifest_path = root / "analysis_engine_manifest.json"
+    analysis_addendum_path = root / "analysis_addendum.json"
+    engine_path = Path(__file__).resolve()
+    if sha256_file(engine_path) != analysis_attestation.get(
+        "analysis_engine_sha256"
+    ):
+        raise AnalysisError("analysis engine hash mismatch")
+    if sha256_file(analysis_addendum_path) != analysis_attestation.get(
+        "analysis_addendum_sha256"
+    ):
+        raise AnalysisError("analysis addendum hash mismatch")
+    analysis_manifest_hash = sha256_file(analysis_manifest_path)
+    if analysis_manifest_hash != analysis_attestation.get(
+        "analysis_engine_manifest_sha256"
+    ):
+        raise AnalysisError("analysis engine manifest hash mismatch")
+    analysis_manifest = json.loads(
+        analysis_manifest_path.read_text(encoding="utf-8")
+    )
+    analysis_verified = 0
+    for relative, expected in analysis_manifest["files"].items():
+        path = root / relative
+        if not path.is_file() or sha256_file(path) != expected:
+            raise AnalysisError(f"analysis file hash mismatch: {relative}")
+        analysis_verified += 1
+    cross_checks = {
+        "original_config_sha256": config_hash,
+        "original_environment_lock_sha256": attestation[
+            "environment_lock_sha256"
+        ],
+        "original_seed_schedule_sha256": attestation["seed_schedule_sha256"],
+        "original_simulator_commit": attestation["simulator_commit"],
+        "registration_id": attestation["registration_id"],
+    }
+    for field, expected in cross_checks.items():
+        if analysis_attestation.get(field) != expected:
+            raise AnalysisError(
+                f"analysis attestation disagrees with original freeze: {field}"
+            )
+    if analysis_attestation.get("confirmatory_results_inspected") is not False:
+        raise AnalysisError(
+            "analysis attestation does not assert a pre-result freeze"
+        )
+    if analysis_attestation.get("confirmatory_trajectories_executed") is not False:
+        raise AnalysisError(
+            "analysis attestation does not assert a pre-execution freeze"
+        )
     return IntegrityResult(
         config_sha256=config_hash,
         attestation_sha256=sha256_file(attestation_path),
         content_manifest_sha256=manifest_hash,
-        frozen_files_verified=verified,
+        analysis_attestation_sha256=sha256_file(analysis_attestation_path),
+        analysis_engine_commit=str(analysis_attestation["analysis_engine_commit"]),
+        frozen_files_verified=verified + analysis_verified,
         runtime_matches_lock=runtime_matches,
     )
 
@@ -1366,6 +1426,7 @@ def run_analysis(
     inputs: Sequence[Path],
     output: Path,
     attestation_path: Path | None = None,
+    analysis_attestation_path: Path | None = None,
     allow_nonconfirmatory: bool = False,
     bootstrap_resamples: int | None = None,
 ) -> dict[str, Any]:
@@ -1381,6 +1442,7 @@ def run_analysis(
         root,
         config.path,
         attestation_path,
+        analysis_attestation_path,
         enforce=config.confirmatory,
     )
     resamples = (
@@ -1422,6 +1484,8 @@ def run_analysis(
             "config_sha256": integrity.config_sha256,
             "attestation_sha256": integrity.attestation_sha256,
             "content_manifest_sha256": integrity.content_manifest_sha256,
+            "analysis_attestation_sha256": integrity.analysis_attestation_sha256,
+            "analysis_engine_commit": integrity.analysis_engine_commit,
             "frozen_files_verified": integrity.frozen_files_verified,
             "runtime_matches_lock": integrity.runtime_matches_lock,
             "analysis_engine_sha256": sha256_file(Path(__file__)),
@@ -1498,6 +1562,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--attestation", type=Path)
+    parser.add_argument("--analysis-attestation", type=Path)
     parser.add_argument("--allow-nonconfirmatory", action="store_true")
     parser.add_argument(
         "--bootstrap-resamples",
@@ -1511,6 +1576,7 @@ def main(argv: list[str] | None = None) -> int:
             inputs=args.input,
             output=args.output,
             attestation_path=args.attestation,
+            analysis_attestation_path=args.analysis_attestation,
             allow_nonconfirmatory=args.allow_nonconfirmatory,
             bootstrap_resamples=args.bootstrap_resamples,
         )
