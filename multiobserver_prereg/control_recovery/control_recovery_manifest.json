@@ -1,0 +1,24 @@
+{
+  "schema": "ccsu.multiobserver.control-recovery-manifest.v1",
+  "registration_id": "CCSU-MO-CONTROL-RECOVERY-001",
+  "engine_version": "1.0.0",
+  "status": "READY_FOR_PUBLIC_FREEZE",
+  "recovery_schedule_executed": false,
+  "files": {
+    "CONTROL_RECOVERY_PROTOCOL.md": "718836d60408a85d52b3fcf20c37e3418c48fa7a8ae777c2795d1eeb79b480df",
+    "CONTROL_RECOVERY_REVIEW.md": "f3de3893e75e8028ad4ea22644f74e7960f0fc44577c7019a925f25a14da381d",
+    "control_recovery_config.yaml": "243c75b3c18e1dd99a715c58f6c25e5b2ca8fa928a8a72d807b61db982dcf3d5",
+    "src/ccsu_multiobserver/control_recovery.py": "8cabab73127c688b0494ded1008b9717b53302af9202fb68d0dd5061e42a1f23",
+    "tests/test_control_recovery.py": "14e82f92758b2e152df4796fdda09e2d1d2173512f210e38da286bcc9b531be7"
+  },
+  "references": {
+    "canonical_correction_v1_1.json": "1cc87605000435eaaba715d067ad84de7940db15c81b71c25f6dc98260e3400e",
+    "environment.lock": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+    "historical_config.yaml": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35"
+  },
+  "tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+    "passed": 18,
+    "failed": 0
+  }
+}
