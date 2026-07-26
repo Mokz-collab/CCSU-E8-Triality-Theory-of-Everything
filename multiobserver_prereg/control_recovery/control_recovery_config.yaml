@@ -1,0 +1,53 @@
+schema_version: 1
+registration_id: CCSU-MO-CONTROL-RECOVERY-001
+protocol_version: "1.0"
+study_class: preregistered_control_recovery
+confirmatory_ccsu_claims: false
+master_seed: 2026072601
+
+historical_boundary:
+  registration_id: CCSU-MO-PREREG-001
+  config: config.yaml
+  immutable: true
+
+operator:
+  laplacian: symmetric_normalized
+  coupling_kappa: 0.20
+  er_probability: 0.35
+  public_dim: 3
+
+phase_a_implementation_equivalence:
+  observer_counts: [3, 5, 9]
+  topologies: [path, ring, star, er, complete]
+  replicates_per_cell: 100
+  horizon: 2000
+  consecutive_steps: 10
+  dispersion_fraction: 0.10
+  gates:
+    tau_exact_match_fraction: 1.0
+    lambda2_max_abs_error: 1.0e-12
+
+phase_b_measurement_audit:
+  irregular_topologies: [path, star, er]
+  obstruction_threshold: 0.10
+  classification_only: true
+
+phase_c_recovered_control:
+  observer_counts: [3, 5, 9, 17, 33]
+  topologies: [path, ring, star, er, complete]
+  replicates_per_cell: 50
+  horizon: 4000
+  consecutive_steps: 10
+  kernel_error_fraction: 0.10
+  slow_mode_lambda2_upper: 0.25
+  gates:
+    tau_exact_match_fraction: 1.0
+    uncensored_fraction: 1.0
+    slow_mode_slope_interval: [0.95, 1.05]
+    slow_mode_r_squared_lower: 0.995
+
+outputs:
+  directory: outputs/CCSU-MO-CONTROL-RECOVERY-001
+  runs: runs.jsonl
+  summary: summary.json
+  attestation: execution_attestation.json
