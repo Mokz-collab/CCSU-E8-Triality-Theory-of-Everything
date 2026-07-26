@@ -1,0 +1,17 @@
+{
+  "analysis_engine_version": "1.0.0",
+  "files": {
+    "analysis_report.json": "5cc273ff387c486a8e9777351de1ef242f76f5d108bea5dcc4cfcc638dee8ba9",
+    "analysis_report.md": "8cd11b8bd56398189844f4c6cc5c93818a2cdb9473543a83525387310acabc0d",
+    "deviations.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "inputs": {
+    "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P1/runs.jsonl": "793c325df0db05bc20961dd73df7c616f9d360ef81ac2b204ee0a029f9c5fd6b",
+    "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P2/runs.jsonl": "669c431326b68ee98ed9349c63611dbafb572cf53e0b7536b4a896ae2abc0bbd",
+    "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P3/runs.jsonl": "3966838e77ab07c924c14bb03821f712b2161afcbdae9686f8e244fa9b2ecbe4",
+    "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P4/runs.jsonl": "c3d1c56c94d680ba4ac1907e2accbfcd84a2815f18aad1a239c834ae03603634",
+    "/workspace/scratch/d9f62b6ef3a1/ccsu_multiobserver_simulator/outputs/CCSU-MO-PREREG-001/P5/runs.jsonl": "da6b806fa6c8e19358a60f654f665d0039195f33ee26e8e2f809928b222ac9f5"
+  },
+  "registration_id": "CCSU-MO-PREREG-001",
+  "schema_version": 1
+}
