@@ -1,0 +1,30 @@
+extends: ns_eos_decisions_v0_5.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.6-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  TOV_Love_cross_implementation:
+    status: INTERNAL_INDEPENDENT_FORMULATION_AGREEMENT_PASSED
+    implementation_A: radial_pressure_limited_custom_RK4
+    implementation_A_source: src/ccsu_multiobserver/ns_eos_oracle.py
+    implementation_B: relativistic_enthalpy_scipy_DOP853
+    implementation_B_source: src/ccsu_multiobserver/ns_eos_enthalpy_oracle.py
+    contract: tov_love_cross_validation_contract_v0_1.yaml
+    result: tov_love_cross_validation_results_v0_1.json
+    review: TOV_LOVE_CROSS_VALIDATION_REVIEW_V0_1.md
+    registered_cases: 10
+    all_registered_cases_passed: true
+    independent_external_software_package: false
+    counts_toward_confirmatory_freeze: false
+  low_density_contract:
+    stellar_impact_cross_implementation_validated: true
+    stellar_impact_cross_implementation_scope: >
+      INTERNAL_INDEPENDENT_VARIABLE_AND_INTEGRATOR_WITH_SHARED_EOS_BYTES
+
+remaining_freeze_blockers:
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

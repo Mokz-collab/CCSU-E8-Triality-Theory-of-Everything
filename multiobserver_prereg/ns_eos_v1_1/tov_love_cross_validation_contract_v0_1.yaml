@@ -1,0 +1,54 @@
+schema_version: 1
+validation_id: CCSU-MO-NS-EOS-001-TOV-LOVE-CROSS-001
+version: "0.1-development"
+status: DEVELOPMENT_CROSS_IMPLEMENTATION
+confirmatory_authorization: false
+
+source_stellar_contract: stellar_impact_contract_v0_1.yaml
+source_stellar_results: stellar_impact_results_v0_1.json
+pairing_contract: final_low_density_pairing_contract_v0_1.yaml
+
+implementation_A:
+  label: radial_pressure_limited_RK4
+  source: src/ccsu_multiobserver/ns_eos_oracle.py
+  independent_variable: radius
+  state: [mass, pressure, y]
+  integrator: custom_RK4
+
+implementation_B:
+  label: enthalpy_DOP853
+  source: src/ccsu_multiobserver/ns_eos_enthalpy_oracle.py
+  independent_variable: relativistic_enthalpy
+  state: [radius, mass, y]
+  integrator: scipy_solve_ivp_DOP853
+  relative_tolerance: 0.00000001
+  absolute_tolerance: 0.0000000001
+  maximum_enthalpy_step: 0.005
+  initial_enthalpy_offset: 0.00000001
+  separate_rhs: true
+  separate_love_number_function: true
+
+cases:
+  all_pairings_at_mass_msun: 1.4
+  edge_cases:
+    - pair_id: DD-ME2__MUSES-N3LO-414
+      target_mass_msun: 1.0
+    - pair_id: ELMA__MUSES-N3LO-450
+      target_mass_msun: 2.0
+  expected_case_count: 10
+
+relative_tolerances:
+  mass: 0.0001
+  radius: 0.0001
+  love_k2: 0.01
+  tidal_lambda: 0.01
+
+decision_scope: >
+  Numerical cross-implementation agreement for the registered piecewise-linear
+  low-density EOS plus shared synthetic CSS core.
+does_not_validate:
+  - independent_external_software_package
+  - physical_high_density_core_prior
+  - observational_EOS_constraints
+  - confirmatory_trajectory_authorization
+

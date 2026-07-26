@@ -17,7 +17,7 @@ verify the two χEFT members with:
 
 ```bash
 PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_decisions \
-  ns_eos_v1_1/ns_eos_decisions_v0_5.yaml
+  ns_eos_v1_1/ns_eos_decisions_v0_6.yaml
 PYTHONPATH=src python scripts/run_inner_crust_validation.py \
   --contract ns_eos_v1_1/inner_crust_validation_contract_v0_1.yaml \
   --output /tmp/inner_crust_validation.json \
@@ -34,6 +34,10 @@ PYTHONPATH=src python scripts/run_stellar_impact_validation.py \
   --contract ns_eos_v1_1/stellar_impact_contract_v0_1.yaml \
   --output /tmp/stellar_impact.json \
   --created-utc 2026-07-26T23:32:00Z
+PYTHONPATH=src python scripts/run_tov_love_cross_validation.py \
+  --contract ns_eos_v1_1/tov_love_cross_validation_contract_v0_1.yaml \
+  --output /tmp/tov_love_cross_validation.json \
+  --created-utc 2026-07-26T23:28:00Z
 ```
 
 The two χEFT members form a coherent interaction-reference envelope. They do
@@ -48,7 +52,10 @@ template calibrated on IOPB and tested on held-out G3; FSUGarnet is a
 coarse-grid advisory holdout. This accepts the connector only for continued
 development. Radius, tidal-deformability, and final endpoint-pairing tests are
 complete under one shared synthetic CSS core. That core is diagnostic rather
-than a physical prior, and independent TOV/Love agreement remains pending.
+than a physical prior. A second, enthalpy-based DOP853 implementation agrees
+with the radius-based RK4 solver in all ten preregistered cases. This closes
+the internal TOV/Love cross-implementation blocker, but it is not validation
+by a separately maintained external package or independent research group.
 
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_5.yaml` are closed.
+`ns_eos_decisions_v0_6.yaml` are closed.

@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_5.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_4.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_6.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_5.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,22 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.4-development")
+        self.assertEqual(previous["version"], "0.5-development")
+
+    def test_cross_implementation_blocker_is_closed_in_development_only(self):
+        evidence = self.decisions["implementation_evidence"][
+            "TOV_Love_cross_implementation"
+        ]
+        self.assertEqual(
+            evidence["status"],
+            "INTERNAL_INDEPENDENT_FORMULATION_AGREEMENT_PASSED",
+        )
+        self.assertTrue(evidence["all_registered_cases_passed"])
+        self.assertFalse(evidence["independent_external_software_package"])
+        self.assertNotIn(
+            "TOV_and_Love_cross_implementation_agreement",
+            self.decisions["remaining_freeze_blockers"],
+        )
 
     def test_low_density_intervals_are_contiguous(self):
         low = self.decisions["low_density_matching"]

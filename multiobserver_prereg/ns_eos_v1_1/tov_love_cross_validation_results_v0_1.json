@@ -1,0 +1,529 @@
+{
+  "all_cases_pass": true,
+  "canonical_record_sha256": "31f82797d76045d07dc939d88ffc1617d37aa15cb97ab984e8d6c1536ba5e3e4",
+  "case_count": 10,
+  "cases": [
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2331,
+        "central_enthalpy": 0.14676185303907688,
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.14309424019622294,
+        "function_evaluations": 68246,
+        "love_k2": 0.13344839917654824,
+        "mass": 2.067277560551849,
+        "radius": 14.44696556421155,
+        "surface_y": 0.12725429804716643,
+        "tidal_lambda": 1482.898222273918
+      },
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radial_RK4": {
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.14309417138288394,
+        "love_k2": 0.13378715470108304,
+        "mass": 2.0672746157831736,
+        "pressure_floor": 9.2393464438751e-21,
+        "radius": 14.4469519324562,
+        "steps": 1067,
+        "surface_y": 0.12368181145998061,
+        "tidal_lambda": 1486.6660980934555
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.002532048202173615,
+        "mass": 1.424467005188346e-06,
+        "radius": 9.435722187193015e-07,
+        "tidal_lambda": 0.0025344465878178895
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2353,
+        "central_enthalpy": 0.14666273754759174,
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.1433375105916516,
+        "function_evaluations": 68894,
+        "love_k2": 0.13396740754082143,
+        "mass": 2.067275247422142,
+        "radius": 14.422430240968245,
+        "surface_y": 0.11952023463197517,
+        "tidal_lambda": 1476.0756165776825
+      },
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radial_RK4": {
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.1433373983897149,
+        "love_k2": 0.13418792517553677,
+        "mass": 2.067273150972481,
+        "pressure_floor": 9.2393464438751e-21,
+        "radius": 14.422426904608985,
+        "steps": 1067,
+        "surface_y": 0.11719958624903386,
+        "tidal_lambda": 1478.511104021686
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0016433493134860758,
+        "mass": 1.0141124959515385e-06,
+        "radius": 2.3133128080580452e-07,
+        "tidal_lambda": 0.001647256782433833
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2349,
+        "central_enthalpy": 0.14677546566907654,
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.1430846306447795,
+        "function_evaluations": 67982,
+        "love_k2": 0.13340288572387798,
+        "mass": 2.0672795419925327,
+        "radius": 14.4479496692048,
+        "surface_y": 0.127823996489753,
+        "tidal_lambda": 1482.890323718315
+      },
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radial_RK4": {
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.14308471574715678,
+        "love_k2": 0.13374765159084118,
+        "mass": 2.067276593433843,
+        "pressure_floor": 9.24293667982149e-21,
+        "radius": 14.447920468926268,
+        "steps": 1067,
+        "surface_y": 0.12418591598960282,
+        "tidal_lambda": 1486.7182780683243
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.002577733985325553,
+        "mass": 1.4262989739698032e-06,
+        "radius": 2.021067293263678e-06,
+        "tidal_lambda": 0.002574767799978195
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2402,
+        "central_enthalpy": 0.14667634582363462,
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.14332790946390306,
+        "function_evaluations": 68738,
+        "love_k2": 0.13392264059517378,
+        "mass": 2.0672772032562152,
+        "radius": 14.423410004294078,
+        "surface_y": 0.12008126882978032,
+        "tidal_lambda": 1476.0766582611582
+      },
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radial_RK4": {
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.14332790421642522,
+        "love_k2": 0.13414404823121412,
+        "mass": 2.0672751064469974,
+        "pressure_floor": 9.24293667982149e-21,
+        "radius": 14.42339590290395,
+        "steps": 1067,
+        "surface_y": 0.11774973659615605,
+        "tidal_lambda": 1478.5172529874355
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0016505215025173121,
+        "mass": 1.0142854642367874e-06,
+        "radius": 9.776738042027134e-07,
+        "tidal_lambda": 0.001650704258841752
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2342,
+        "central_enthalpy": 0.1467944769337985,
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.14307088528732304,
+        "function_evaluations": 68306,
+        "love_k2": 0.13333951914592654,
+        "mass": 2.0672763401277745,
+        "radius": 14.449315358440352,
+        "surface_y": 0.12862070887103177,
+        "tidal_lambda": 1482.8980811950464
+      },
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radial_RK4": {
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.14307060810462116,
+        "love_k2": 0.13364603161337682,
+        "mass": 2.0672733960801235,
+        "pressure_floor": 9.239229946543505e-21,
+        "radius": 14.449322774726859,
+        "steps": 1067,
+        "surface_y": 0.12538818735587412,
+        "tidal_lambda": 1486.3212714640454
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.00229346478716995,
+        "mass": 1.4241190661607514e-06,
+        "radius": 5.132618755357512e-07,
+        "tidal_lambda": 0.0023031294342084367
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.21885134394025,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2344,
+        "central_enthalpy": 0.1466955846462482,
+        "central_pressure": 3.073788891185368e-05,
+        "compactness": 0.1433143633834379,
+        "function_evaluations": 68618,
+        "love_k2": 0.13385822807692782,
+        "mass": 2.06727746361245,
+        "radius": 14.42477512237517,
+        "surface_y": 0.1208861601414895,
+        "tidal_lambda": 1476.0641029552023
+      },
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radial_RK4": {
+        "central_pressure": 3.073788891185368e-05,
+        "compactness": 0.143314341491703,
+        "love_k2": 0.13400771009640555,
+        "mass": 2.067275365506394,
+        "pressure_floor": 9.239229946543505e-21,
+        "radius": 14.42476268591777,
+        "steps": 1067,
+        "surface_y": 0.11931137887187113,
+        "tidal_lambda": 1477.7135803330757
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0011154732766509741,
+        "mass": 1.0149126534456216e-06,
+        "radius": 8.621595341621184e-07,
+        "tidal_lambda": 0.001116236190711322
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2387,
+        "central_enthalpy": 0.14675075833253232,
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.1431021224542484,
+        "function_evaluations": 69098,
+        "love_k2": 0.1334851465121179,
+        "mass": 2.06727688161933,
+        "radius": 14.446165061459975,
+        "surface_y": 0.1267932450270741,
+        "tidal_lambda": 1482.8980964306893
+      },
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radial_RK4": {
+        "central_pressure": 3.065880962330071e-05,
+        "compactness": 0.1431021233480315,
+        "love_k2": 0.13378389998460036,
+        "mass": 2.0672739366289714,
+        "pressure_floor": 9.239539723538879e-21,
+        "radius": 14.446144391591298,
+        "steps": 1067,
+        "surface_y": 0.12364226608571492,
+        "tidal_lambda": 1486.2169283142007
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0022331048243984797,
+        "mass": 1.424574707371474e-06,
+        "radius": 1.4308204695962713e-06,
+        "tidal_lambda": 0.002233073665279743
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2341,
+        "central_enthalpy": 0.1466516472577869,
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.1433453846606034,
+        "function_evaluations": 68798,
+        "love_k2": 0.13400436466248167,
+        "mass": 2.0672745759480726,
+        "radius": 14.421633321803322,
+        "surface_y": 0.11905762489279005,
+        "tidal_lambda": 1476.0773394459538
+      },
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radial_RK4": {
+        "central_pressure": 3.073782456743663e-05,
+        "compactness": 0.14334528673849317,
+        "love_k2": 0.13422235759449114,
+        "mass": 2.0672724796153523,
+        "pressure_floor": 9.239539723538879e-21,
+        "radius": 14.421628549159811,
+        "steps": 1067,
+        "surface_y": 0.11676383364113148,
+        "tidal_lambda": 1478.4836128301074
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0016241178885269172,
+        "mass": 1.0140562577863375e-06,
+        "radius": 3.30936406724777e-07,
+        "tidal_lambda": 0.0016275279369160445
+      },
+      "target_mass_msun": 1.4
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 15.668419147263668,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2357,
+        "central_enthalpy": 0.11189297598913497,
+        "central_pressure": 2.0742375238069016e-05,
+        "compactness": 0.10781789268111548,
+        "function_evaluations": 66338,
+        "love_k2": 0.14007666508330938,
+        "mass": 1.4766257767428854,
+        "radius": 13.695554049736305,
+        "surface_y": 0.35441816470397175,
+        "tidal_lambda": 6409.443720370347
+      },
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radial_RK4": {
+        "central_pressure": 2.0742375238069016e-05,
+        "compactness": 0.10781781218091267,
+        "love_k2": 0.13994327896594264,
+        "mass": 1.4766237523032986,
+        "pressure_floor": 9.2393464438751e-21,
+        "radius": 13.695545498786423,
+        "steps": 1022,
+        "surface_y": 0.35562907933200644,
+        "tidal_lambda": 6403.364318650898
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.0009522365290993352,
+        "mass": 1.3709902798268544e-06,
+        "radius": 6.243595440781502e-07,
+        "tidal_lambda": 0.0009485069195830464
+      },
+      "target_mass_msun": 1.0
+    },
+    {
+      "all_checks_pass": true,
+      "central_pressure_mev_fm3": 38.9936244807443,
+      "checks": {
+        "love_k2": true,
+        "mass": true,
+        "radius": true,
+        "tidal_lambda": true
+      },
+      "enthalpy_DOP853": {
+        "accepted_steps": 2308,
+        "central_enthalpy": 0.21084272183190228,
+        "central_pressure": 5.162105910430694e-05,
+        "compactness": 0.1923998466848218,
+        "function_evaluations": 67706,
+        "love_k2": 0.10445104367052975,
+        "mass": 2.9532562816470525,
+        "radius": 15.349577104834728,
+        "surface_y": -0.030374211704008287,
+        "tidal_lambda": 264.11794928284434
+      },
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radial_RK4": {
+        "central_pressure": 5.162105910430694e-05,
+        "compactness": 0.19239986634136066,
+        "love_k2": 0.10364742102235819,
+        "mass": 2.9532526039994487,
+        "pressure_floor": 9.239539723538879e-21,
+        "radius": 15.349556422038848,
+        "steps": 1118,
+        "surface_y": -0.01823910045908154,
+        "tidal_lambda": 262.0857517835858
+      },
+      "registered_radial_replay_relative_differences": {
+        "love_k2": 0.0,
+        "radius": 0.0,
+        "tidal_lambda": 0.0
+      },
+      "relative_differences": {
+        "love_k2": 0.007693773273404824,
+        "mass": 1.2452856281516447e-06,
+        "radius": 1.3474505348429752e-06,
+        "tidal_lambda": 0.007694280168298013
+      },
+      "target_mass_msun": 2.0
+    }
+  ],
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "tov_love_cross_validation_contract_v0_1.yaml",
+    "sha256": "a40efc39a1c58c76ad830a51b2adc17ade3e8b1b413faee51fc21c9e755a1394"
+  },
+  "created_utc": "2026-07-26T23:28:00Z",
+  "decision": "TOV_LOVE_CROSS_IMPLEMENTATION_AGREEMENT_PASSED",
+  "decision_scope": "Numerical cross-implementation agreement for the registered piecewise-linear low-density EOS plus shared synthetic CSS core.\n",
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "scipy": "1.17.0"
+  },
+  "implementations": {
+    "A": {
+      "independent_variable": "radius",
+      "integrator": "custom_RK4",
+      "label": "radial_pressure_limited_RK4",
+      "source": "src/ccsu_multiobserver/ns_eos_oracle.py",
+      "state": [
+        "mass",
+        "pressure",
+        "y"
+      ]
+    },
+    "B": {
+      "absolute_tolerance": 1e-10,
+      "independent_variable": "relativistic_enthalpy",
+      "initial_enthalpy_offset": 1e-08,
+      "integrator": "scipy_solve_ivp_DOP853",
+      "label": "enthalpy_DOP853",
+      "maximum_enthalpy_step": 0.005,
+      "relative_tolerance": 1e-08,
+      "separate_love_number_function": true,
+      "separate_rhs": true,
+      "source": "src/ccsu_multiobserver/ns_eos_enthalpy_oracle.py",
+      "state": [
+        "radius",
+        "mass",
+        "y"
+      ]
+    }
+  },
+  "maximum_relative_differences": {
+    "love_k2": 0.007693773273404824,
+    "mass": 1.4262989739698032e-06,
+    "radius": 2.021067293263678e-06,
+    "tidal_lambda": 0.007694280168298013
+  },
+  "pairing_contract_sha256": "d3303ccbd982c341cecbdc8101ad5a292a737519f6e6eb1a495a2375fc03dc69",
+  "remaining_nonvalidated_items": [
+    "independent_external_software_package",
+    "physical_high_density_core_prior",
+    "observational_EOS_constraints",
+    "confirmatory_trajectory_authorization"
+  ],
+  "schema": "ccsu.multiobserver.tov-love-cross-validation-result.v1",
+  "source_stellar_contract_sha256": "215d6f68dcaa6b174ce6b203bb57ac79e07326d47c112c6e892b6982460166b6",
+  "source_stellar_results_sha256": "15aeb12004fa7aaeed2adfe4bf5684fb08eda2588f863c57e58d893358afff3d",
+  "status": "DEVELOPMENT_NOT_CONFIRMATORY",
+  "validation_id": "CCSU-MO-NS-EOS-001-TOV-LOVE-CROSS-001"
+}

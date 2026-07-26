@@ -19,10 +19,47 @@ def _require(condition: bool, message: str) -> None:
         raise DecisionLockError(message)
 
 
+def _merge_mapping(
+    base: dict[str, Any],
+    override: dict[str, Any],
+) -> dict[str, Any]:
+    merged = dict(base)
+    for key, value in override.items():
+        if (
+            key in merged
+            and isinstance(merged[key], dict)
+            and isinstance(value, dict)
+        ):
+            merged[key] = _merge_mapping(merged[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
+def _load_decision_document(
+    path: Path,
+    seen: frozenset[Path] = frozenset(),
+) -> dict[str, Any]:
+    resolved = path.resolve()
+    _require(resolved not in seen, "decision lock inheritance cycle")
+    with resolved.open("r", encoding="utf-8") as handle:
+        document = yaml.safe_load(handle)
+    _require(isinstance(document, dict), "decision lock must be a mapping")
+    base_name = document.pop("extends", None)
+    if base_name is None:
+        return document
+    base_path = (resolved.parent / str(base_name)).resolve()
+    _require(
+        base_path.parent == resolved.parent,
+        "decision lock base must be in the same directory",
+    )
+    base = _load_decision_document(base_path, seen | {resolved})
+    return _merge_mapping(base, document)
+
+
 def load_and_validate_decisions(path: str | Path) -> dict[str, Any]:
     resolved = Path(path).resolve()
-    with resolved.open("r", encoding="utf-8") as handle:
-        decisions = yaml.safe_load(handle)
+    decisions = _load_decision_document(resolved)
 
     _require(decisions.get("schema_version") == 1, "schema_version must equal 1")
     _require(decisions.get("decision_lock_id") == "CCSU-MO-NS-EOS-001-DECISIONS", "unexpected decision lock id")

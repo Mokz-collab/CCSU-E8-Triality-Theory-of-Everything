@@ -1,0 +1,14 @@
+lock_version=1
+scope=CCSU-MO-NS-EOS-001-TOV-LOVE-CROSS-001
+created_utc=2026-07-26T23:28:00Z
+python_implementation=CPython
+python_version=3.12.13
+numpy_version=2.3.5
+scipy_version=1.17.0
+pyyaml_version=6.0.3
+os=Linux
+kernel=6.12.13
+architecture=x86_64
+libc=glibc-2.39
+float_model=IEEE-754-binary64
+raw_output_format=JSON-UTF-8
