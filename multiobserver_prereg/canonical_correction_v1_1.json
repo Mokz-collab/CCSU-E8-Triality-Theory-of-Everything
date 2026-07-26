@@ -1,0 +1,60 @@
+{
+  "schema": "ccsu.multiobserver.canonical-correction.v1",
+  "version": "1.1",
+  "adopted_at": "2026-07-26",
+  "status": "prospective_post_trial_addendum",
+  "non_retroactive": true,
+  "historical_run": "CCSU-MO-PREREG-001",
+  "domain_frame": [
+    "niche",
+    "problem",
+    "scale",
+    "observers",
+    "atlas",
+    "translations",
+    "observables"
+  ],
+  "terminology": {
+    "retired": "absolute public convergence",
+    "canonical": "domain-conditioned public coherence",
+    "rq_lt_1_diagnostic": "intradomain public-disagreement contraction",
+    "consensus_required": false,
+    "global_ontology_required": false,
+    "local_plurality_preserved": true
+  },
+  "p1": {
+    "name": "Domain-conditioned public coherence",
+    "primary_comparison": "rQ_HYBRID < rQ_IND",
+    "separate_diagnostic": "rQ_HYBRID < 1",
+    "private_retention_required": true
+  },
+  "p3_prospective": {
+    "primary_efficacy_estimand": "delta_recall",
+    "primary_p_value_source": "delta_recall",
+    "fpr_role": "separate_safety_noninferiority_gate",
+    "fpr_pass_rule": "one_sided_95pct_upper_bound <= 0.05",
+    "fpr_p_value_enters_holm": false
+  },
+  "multiplicity_prospective": {
+    "family": "P1-P4",
+    "method": "Holm-Bonferroni",
+    "alpha": 0.05,
+    "rule": "one efficacy p-value per prediction"
+  },
+  "p5_prospective": {
+    "role": "positive_control",
+    "failure_status": "CONTROL INVALID / INTERPRETATION SUSPENDED",
+    "p1_p4_results_preserved": true,
+    "equivalent_refutations": false
+  },
+  "immutable_v1_0": [
+    "protocol",
+    "simulator_commit",
+    "config_hash",
+    "environment",
+    "public_timestamp",
+    "trajectories",
+    "analysis",
+    "decisions"
+  ]
+}
