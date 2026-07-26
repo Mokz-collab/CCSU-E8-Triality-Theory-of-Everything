@@ -1,0 +1,71 @@
+{
+  "analysis": {
+    "analysis_manifest_sha256": "b29a08ffbf290c900e394378a29bedf933c5347c167cd9f734979474f5947fcf",
+    "analysis_report_json_sha256": "5cc273ff387c486a8e9777351de1ef242f76f5d108bea5dcc4cfcc638dee8ba9",
+    "analysis_report_markdown_sha256": "8cd11b8bd56398189844f4c6cc5c93818a2cdb9473543a83525387310acabc0d",
+    "bootstrap_resamples": 10000,
+    "decisions": {
+      "P1": "FAIL",
+      "P2": "FAIL",
+      "P3": "FAIL",
+      "P4": "FAIL",
+      "P5": "FAIL"
+    },
+    "deviation_count": 0,
+    "engine_commit": "b394541aef1122d911c4daf22adcba1974bd33dc",
+    "engine_sha256": "00b11b1e784cd222468de19cb74a7929d34996d9a03287e3efe55369e920cfa1",
+    "engine_version": "1.0.0"
+  },
+  "blocks": {
+    "P1": {
+      "failures": 0,
+      "raw_sha256": "793c325df0db05bc20961dd73df7c616f9d360ef81ac2b204ee0a029f9c5fd6b",
+      "rows": 18000,
+      "summary_sha256": "8b5b351fab1e548d5a4ace94fc7fd4db6032f5dd59a94e55ecb856c96bcf9275"
+    },
+    "P2": {
+      "failures": 0,
+      "raw_sha256": "669c431326b68ee98ed9349c63611dbafb572cf53e0b7536b4a896ae2abc0bbd",
+      "rows": 18000,
+      "summary_sha256": "276cc503a23c571ef092abbd9605cf987e2b5e175287a586329d70dda440c9fa"
+    },
+    "P3": {
+      "failures": 0,
+      "raw_sha256": "3966838e77ab07c924c14bb03821f712b2161afcbdae9686f8e244fa9b2ecbe4",
+      "rows": 36000,
+      "summary_sha256": "0cf74798cfe7f73b4890319d7938fbebfe97f32d3cda6d994d0df2603f57903e"
+    },
+    "P4": {
+      "failures": 0,
+      "raw_sha256": "c3d1c56c94d680ba4ac1907e2accbfcd84a2815f18aad1a239c834ae03603634",
+      "rows": 18000,
+      "summary_sha256": "c9e7a3a560711853562bf68e36b596912dd3893b154ea09ebeee022c32e3b122"
+    },
+    "P5": {
+      "failures": 0,
+      "raw_sha256": "da6b806fa6c8e19358a60f654f665d0039195f33ee26e8e2f809928b222ac9f5",
+      "rows": 7500,
+      "summary_sha256": "c9f886490561c9daeb115344f62898ece9d2682aa71eadbe490ebe1b4b148fce"
+    }
+  },
+  "combined_digest_of_raw_hashes": "6ddbfcc067fd7ae5f11af194f854fd47fa70fce21677089231e03f30903f86ae",
+  "config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+  "execution": {
+    "completed_utc": "2026-07-26T10:49:29Z",
+    "process_exit_codes": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 0,
+      "P4": 0,
+      "P5": 0
+    },
+    "reruns": 0,
+    "started_utc": "2026-07-26T09:48:56Z",
+    "stderr_nonempty_files": 0,
+    "total_rows": 97500
+  },
+  "original_simulator_commit": "301f2130a977166f59df34191787f77de67c3a42",
+  "registration_id": "CCSU-MO-PREREG-001",
+  "schema_version": 1,
+  "statement": "The complete frozen schedule was executed once, without adaptive stopping or parameter changes. Raw outputs passed count, failure, and hash validation before confirmatory analysis."
+}
