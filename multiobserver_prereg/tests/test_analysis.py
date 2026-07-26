@@ -89,6 +89,7 @@ class IntegrityTests(unittest.TestCase):
             ROOT,
             ROOT / "config.yaml",
             ROOT / "public_attestation.json",
+            ROOT / "analysis_attestation.json",
             enforce=True,
         )
         self.assertEqual(
