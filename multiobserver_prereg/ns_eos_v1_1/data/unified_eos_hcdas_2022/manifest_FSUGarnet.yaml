@@ -1,0 +1,34 @@
+schema_version: 1
+oracle_manifest_id: CCSU-MO-NS-EOS-001-UNIFIED-ORACLE-FSUGARNET
+model_label: FSUGarnet
+source_kind: SCIENTIFIC_UNIFIED_EOS_ORACLE
+validation_role: secondary_coarse_grid_holdout
+provenance_mode: direct_upstream_git_blob
+source_repository: https://github.com/hcdas/Unified_eos
+source_commit: 80eadb3820c337765659bd204719cedba2221649
+immutable_source_url: https://github.com/hcdas/Unified_eos/blob/80eadb3820c337765659bd204719cedba2221649/eos_unified_FSUGarnet.dat
+retrieval_timestamp_utc: "2026-07-26T22:50:26Z"
+table_path: eos_unified_FSUGarnet.dat
+sha256: 4f81f8809fb7beff3aa14c5cb9e5b430fa2175ff254a099db997ab8295498e61
+upstream_git_blob_sha: e604d0fa6394a635de46eaae8cdc288b86d2b980
+raw_format: hcdas_unified_eos_v1
+columns:
+  - n_b_fm3
+  - epsilon_mev_fm3
+  - p_mev_fm3
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+license_spdx: GPL-3.0-only
+license_path: LICENSE
+license_sha256: 3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986
+redistribution_permitted: true
+citation: "H. C. Das et al., Phys. Rev. D 105, 043017 (2022), arXiv:2111.07278"
+inner_crust_slice:
+  lower_anchor_n_b_fm3: 0.000360452
+  lower_predecessor_n_b_fm3: 0.000260452
+  upper_anchor_n_b_fm3: 0.1079765
+  target_upper_n_b_fm3: 0.08
+  upper_grid_offset_n_b_fm3: 0.0279765
+  endpoint_selection_frozen: true

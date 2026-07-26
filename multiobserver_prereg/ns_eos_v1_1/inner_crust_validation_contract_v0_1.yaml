@@ -1,0 +1,92 @@
+schema_version: 1
+validation_id: CCSU-MO-NS-EOS-001-INNER-CRUST-VALIDATION-001
+version: "0.1-development"
+status: DEVELOPMENT_NOT_CONFIRMATORY
+confirmatory_authorization: false
+
+scientific_question: >
+  Does the frozen inner-crust connector family reproduce the density-dependent
+  thermodynamics of licensed unified EOS tables when each table supplies its
+  own endpoints?
+
+data_split:
+  calibration:
+    model_label: IOPB
+    manifest: data/unified_eos_hcdas_2022/manifest_IOPB.yaml
+    may_determine_template_weights: true
+  primary_holdout:
+    model_label: G3
+    manifest: data/unified_eos_hcdas_2022/manifest_G3.yaml
+    may_determine_template_weights: false
+  secondary_coarse_grid_holdout:
+    model_label: FSUGarnet
+    manifest: data/unified_eos_hcdas_2022/manifest_FSUGarnet.yaml
+    may_determine_template_weights: false
+    gate_status: advisory
+    reason: >
+      The nearest tabulated upper endpoint to 0.08 fm^-3 is 0.1079765 fm^-3
+      and follows a large grid gap, so it cannot be a primary gate.
+
+connectors:
+  baseline:
+    kind: endpoint_exponential_v0_4
+    expected_decision: REJECT
+    reason_under_test: endpoint_exactness_may_hide_interior_shape_error
+  candidate:
+    kind: reference_tilted_v0_5_candidate
+    template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+    expected_decision: ACCEPT_FOR_CONTINUED_DEVELOPMENT_ONLY
+    template_semantics:
+      positive_derivative_components: true
+      common_tilt_solved_from_endpoint_pressure: true
+      sampled_free_parameters: 0
+      observer_specific_parameters: 0
+      probabilistic_prior: false
+
+metrics:
+  node_weighting: trapezoidal_in_baryon_density_normalized_to_unit_span
+  pressure: absolute_log_ratio
+  chemical_potential: absolute_error_divided_by_endpoint_mu_span
+  sound_speed_squared: >
+    absolute connector-minus-oracle secant dP/dE at interval midpoints,
+    density-interval weighted
+  endpoint_residual: maximum_relative_residual_over_n_P_epsilon_mu
+
+primary_thresholds:
+  pressure_log_weighted_rms: 0.08
+  pressure_log_max: 0.15
+  chemical_potential_span_weighted_rms: 0.02
+  chemical_potential_span_max: 0.04
+  cs2_interval_weighted_rms: 0.002
+  lower_endpoint_max_relative_residual: 0.0000000001
+  upper_endpoint_max_relative_residual: 0.0000000001
+  minimum_cs2: 0.0
+  maximum_cs2: 1.0
+
+secondary_advisory_thresholds:
+  pressure_log_weighted_rms: 0.20
+  pressure_log_max: 0.30
+  chemical_potential_span_weighted_rms: 0.05
+  chemical_potential_span_max: 0.06
+  cs2_interval_weighted_rms: 0.002
+  lower_endpoint_max_relative_residual: 0.0000000001
+  upper_endpoint_max_relative_residual: 0.0000000001
+  minimum_cs2: 0.0
+  maximum_cs2: 1.0
+
+decision_rule:
+  candidate_requires_all_primary_metrics:
+    - calibration
+    - primary_holdout
+  secondary_holdout_is_advisory: true
+  baseline_rejection_requires_any_primary_failure:
+    - calibration
+    - primary_holdout
+  success_scope: local_inner_crust_thermodynamic_shape_only
+  does_not_validate:
+    - final_outer_crust_to_EFT_pairings
+    - stellar_radius_impact
+    - tidal_deformability_impact
+    - TOV_or_Love_cross_implementation_agreement
+    - probabilistic_coverage
+

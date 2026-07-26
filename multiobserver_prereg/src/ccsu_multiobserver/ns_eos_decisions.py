@@ -71,6 +71,32 @@ def load_and_validate_decisions(path: str | Path) -> dict[str, Any]:
         low["inner_crust"]["observer_specific_parameters_forbidden"] is True,
         "inner crust cannot vary by observer",
     )
+    if (
+        low["inner_crust"]["prescription"]
+        == "shared_reference_tilted_chemical_potential_connector"
+    ):
+        inner = low["inner_crust"]
+        components = inner["derivative_template_components"]
+        _require(
+            components["exponents"] == [-40.0, 0.0, 40.0],
+            "inner-crust derivative-template exponents changed",
+        )
+        _require(
+            abs(sum(components["mass_weights"]) - 1.0) <= 1.0e-12
+            and all(weight >= 0 for weight in components["mass_weights"]),
+            "inner-crust derivative-template weights are invalid",
+        )
+        _require(
+            inner["template_calibration_model"] == "IOPB"
+            and inner["primary_holdout_model"] == "G3",
+            "inner-crust calibration/holdout split changed",
+        )
+        _require(
+            inner["template_probabilistic_prior"] is False
+            and inner["sampled_free_parameters"] == 0
+            and inner["endpoint_tilt_deterministically_solved"] is True,
+            "inner-crust template semantics changed",
+        )
     nuclear_band = low["nuclear_band"]
     _require(
         set(nuclear_band["model_labels"])

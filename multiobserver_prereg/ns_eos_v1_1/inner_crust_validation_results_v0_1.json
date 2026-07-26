@@ -1,0 +1,250 @@
+{
+  "canonical_record_sha256": "c665e78c231e55fbbeaf9f5f5d00034d47e3318b0bb56bc10f2ba7516f4a4e52",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "inner_crust_validation_contract_v0_1.yaml",
+    "sha256": "1896eacec145cbf8235556d73599650e3315aba256eb61773475926686ca44b4"
+  },
+  "created_utc": "2026-07-26T23:08:00Z",
+  "decision": "ACCEPT_REFERENCE_TILTED_FOR_CONTINUED_DEVELOPMENT",
+  "decision_checks": {
+    "baseline_fails_calibration_and_primary_holdout": true,
+    "candidate_calibration_and_primary_holdout_pass": true,
+    "secondary_coarse_grid_advisory_pass": true
+  },
+  "decision_scope": "local_inner_crust_thermodynamic_shape_only",
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13"
+  },
+  "remaining_nonvalidated_items": [
+    "final_outer_crust_to_EFT_pairings",
+    "stellar_radius_impact",
+    "tidal_deformability_impact",
+    "TOV_or_Love_cross_implementation_agreement",
+    "probabilistic_coverage"
+  ],
+  "results": {
+    "calibration": {
+      "baseline": {
+        "all_thresholds_pass": false,
+        "kind": "endpoint_exponential_v0_4",
+        "metrics": {
+          "chemical_potential_span_max": 0.08945119122285325,
+          "chemical_potential_span_weighted_rms": 0.04082277846274612,
+          "cs2_interval_max": 0.0047808113475507116,
+          "cs2_interval_weighted_rms": 0.0009210138427451546,
+          "lower_endpoint_max_relative_residual": 2.7627593472124775e-14,
+          "maximum_cs2": 0.014406776646387209,
+          "minimum_cs2": 7.772827273088091e-05,
+          "pressure_log_max": 0.692881461991857,
+          "pressure_log_weighted_rms": 0.20078682173869372,
+          "upper_endpoint_max_relative_residual": 1.0086676179393386e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": false,
+          "chemical_potential_span_weighted_rms": false,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": false,
+          "pressure_log_weighted_rms": false,
+          "upper_endpoint_max_relative_residual": true
+        }
+      },
+      "candidate": {
+        "all_thresholds_pass": true,
+        "kind": "reference_tilted_v0_5_candidate",
+        "metrics": {
+          "chemical_potential_span_max": 0.021528969788010263,
+          "chemical_potential_span_weighted_rms": 0.012832828975732803,
+          "cs2_interval_max": 0.003754405524208301,
+          "cs2_interval_weighted_rms": 0.0012793048544840373,
+          "lower_endpoint_max_relative_residual": 2.7627593472124775e-14,
+          "maximum_cs2": 0.05024684554492041,
+          "minimum_cs2": 0.0003369188691359739,
+          "pressure_log_max": 0.1228207219146155,
+          "pressure_log_weighted_rms": 0.046579023000632595,
+          "upper_endpoint_max_relative_residual": 1.3387770201740135e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": true,
+          "chemical_potential_span_weighted_rms": true,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": true,
+          "pressure_log_weighted_rms": true,
+          "upper_endpoint_max_relative_residual": true
+        }
+      }
+    },
+    "primary_holdout": {
+      "baseline": {
+        "all_thresholds_pass": false,
+        "kind": "endpoint_exponential_v0_4",
+        "metrics": {
+          "chemical_potential_span_max": 0.09966526581275506,
+          "chemical_potential_span_weighted_rms": 0.047944133747228335,
+          "cs2_interval_max": 0.037608572390216595,
+          "cs2_interval_weighted_rms": 0.0009792825564891251,
+          "lower_endpoint_max_relative_residual": 8.792228363211745e-15,
+          "maximum_cs2": 0.0072420621777911694,
+          "minimum_cs2": 0.00011636812120349896,
+          "pressure_log_max": 0.5884219579735244,
+          "pressure_log_weighted_rms": 0.1648739920639231,
+          "upper_endpoint_max_relative_residual": 5.192307157594779e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": false,
+          "chemical_potential_span_weighted_rms": false,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": false,
+          "pressure_log_weighted_rms": false,
+          "upper_endpoint_max_relative_residual": true
+        }
+      },
+      "candidate": {
+        "all_thresholds_pass": true,
+        "kind": "reference_tilted_v0_5_candidate",
+        "metrics": {
+          "chemical_potential_span_max": 0.013917898331095243,
+          "chemical_potential_span_weighted_rms": 0.006176015149279112,
+          "cs2_interval_max": 0.0386591105984359,
+          "cs2_interval_weighted_rms": 0.0009370812489431011,
+          "lower_endpoint_max_relative_residual": 8.792228363211745e-15,
+          "maximum_cs2": 0.028376279969099687,
+          "minimum_cs2": 0.00046018140742963944,
+          "pressure_log_max": 0.06119437374465,
+          "pressure_log_weighted_rms": 0.03189854522538158,
+          "upper_endpoint_max_relative_residual": 5.192307157594779e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": true,
+          "chemical_potential_span_weighted_rms": true,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": true,
+          "pressure_log_weighted_rms": true,
+          "upper_endpoint_max_relative_residual": true
+        }
+      }
+    },
+    "secondary_coarse_grid_holdout": {
+      "baseline": {
+        "all_thresholds_pass": false,
+        "kind": "endpoint_exponential_v0_4",
+        "metrics": {
+          "chemical_potential_span_max": 0.13918026081113608,
+          "chemical_potential_span_weighted_rms": 0.09911610343647125,
+          "cs2_interval_max": 0.032749768083734296,
+          "cs2_interval_weighted_rms": 0.0011384856409821043,
+          "lower_endpoint_max_relative_residual": 3.572274303743562e-14,
+          "maximum_cs2": 0.0071022111579455895,
+          "minimum_cs2": 0.00012207557100586032,
+          "pressure_log_max": 0.6540798031981371,
+          "pressure_log_weighted_rms": 0.2705099758432067,
+          "upper_endpoint_max_relative_residual": 2.1368444470133553e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": false,
+          "chemical_potential_span_weighted_rms": false,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": false,
+          "pressure_log_weighted_rms": false,
+          "upper_endpoint_max_relative_residual": true
+        }
+      },
+      "candidate": {
+        "all_thresholds_pass": true,
+        "kind": "reference_tilted_v0_5_candidate",
+        "metrics": {
+          "chemical_potential_span_max": 0.04285813892195246,
+          "chemical_potential_span_weighted_rms": 0.029193146994547396,
+          "cs2_interval_max": 0.033499166845782934,
+          "cs2_interval_weighted_rms": 0.0007370974981170456,
+          "lower_endpoint_max_relative_residual": 3.572274303743562e-14,
+          "maximum_cs2": 0.023838828260672608,
+          "minimum_cs2": 0.0004549391899199211,
+          "pressure_log_max": 0.2448160159144323,
+          "pressure_log_weighted_rms": 0.1668428359529324,
+          "upper_endpoint_max_relative_residual": 2.1368444470133553e-14
+        },
+        "threshold_results": {
+          "chemical_potential_span_max": true,
+          "chemical_potential_span_weighted_rms": true,
+          "cs2_interval_weighted_rms": true,
+          "lower_endpoint_max_relative_residual": true,
+          "maximum_cs2": true,
+          "minimum_cs2": true,
+          "pressure_log_max": true,
+          "pressure_log_weighted_rms": true,
+          "upper_endpoint_max_relative_residual": true
+        }
+      }
+    }
+  },
+  "schema": "ccsu.multiobserver.inner-crust-validation-result.v1",
+  "sources": {
+    "calibration": {
+      "density_range_fm3": [
+        0.000340618,
+        0.08113221
+      ],
+      "manifest_path": "data/unified_eos_hcdas_2022/manifest_IOPB.yaml",
+      "manifest_sha256": "baf6f32e6e98382516f88efba5470b4688a749e16a130b82681a7f314a4b4d4a",
+      "model_label": "IOPB",
+      "slice_rows": 241,
+      "source_commit": "80eadb3820c337765659bd204719cedba2221649",
+      "table_sha256": "e26a2691f73235910211389d369f7023127cb3521f8b01ed77d187b688f2b752",
+      "upstream_git_blob_sha": "34e48e755fbf24fdb4e1aba4058d4e554d5a390f",
+      "validation_role": "calibration_only"
+    },
+    "primary_holdout": {
+      "density_range_fm3": [
+        0.000355345,
+        0.07398835
+      ],
+      "manifest_path": "data/unified_eos_hcdas_2022/manifest_G3.yaml",
+      "manifest_sha256": "d48f8b9d2cf9bd8b09100aec83bc749230ff5ad8328018a3124f8bd8e96abdc7",
+      "model_label": "G3",
+      "slice_rows": 171,
+      "source_commit": "80eadb3820c337765659bd204719cedba2221649",
+      "table_sha256": "dfdf83b33f8155e11cd08ee5ef1159d6e8220f37f2672db3a66ef08b79097ba4",
+      "upstream_git_blob_sha": "e5c04204ff916af881b63bc295aab935db610418",
+      "validation_role": "primary_holdout"
+    },
+    "secondary_coarse_grid_holdout": {
+      "density_range_fm3": [
+        0.000360452,
+        0.1079765
+      ],
+      "manifest_path": "data/unified_eos_hcdas_2022/manifest_FSUGarnet.yaml",
+      "manifest_sha256": "24c6d97b2acb4a4bfcd20dfe6b7bc83fb1bc6c07d9772d7bd0cbcef339ebe7f4",
+      "model_label": "FSUGarnet",
+      "slice_rows": 105,
+      "source_commit": "80eadb3820c337765659bd204719cedba2221649",
+      "table_sha256": "4f81f8809fb7beff3aa14c5cb9e5b430fa2175ff254a099db997ab8295498e61",
+      "upstream_git_blob_sha": "e604d0fa6394a635de46eaae8cdc288b86d2b980",
+      "validation_role": "secondary_coarse_grid_holdout"
+    }
+  },
+  "status": "DEVELOPMENT_NOT_CONFIRMATORY",
+  "template": {
+    "path": "data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json",
+    "sha256": "28a2c95bf6558bc9063f3f3a4b596427e4bb6fb8eacb2c9e98ff45e7ee22717c",
+    "template_id": "CCSU-MO-NS-EOS-001-INNER-CRUST-TEMPLATE-001"
+  },
+  "validation_id": "CCSU-MO-NS-EOS-001-INNER-CRUST-VALIDATION-001"
+}

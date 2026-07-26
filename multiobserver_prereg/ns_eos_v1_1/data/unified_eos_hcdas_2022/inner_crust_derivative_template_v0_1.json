@@ -1,0 +1,59 @@
+{
+  "calibration_source": {
+    "density_anchors_fm3": [
+      0.000340618,
+      0.08113221
+    ],
+    "manifest_path": "manifest_IOPB.yaml",
+    "manifest_sha256": "baf6f32e6e98382516f88efba5470b4688a749e16a130b82681a7f314a4b4d4a",
+    "model_label": "IOPB",
+    "rows": 241,
+    "source_commit": "80eadb3820c337765659bd204719cedba2221649",
+    "table_sha256": "e26a2691f73235910211389d369f7023127cb3521f8b01ed77d187b688f2b752",
+    "upstream_git_blob_sha": "34e48e755fbf24fdb4e1aba4058d4e554d5a390f",
+    "validation_role": "calibration_only"
+  },
+  "created_utc": "2026-07-26T23:03:00Z",
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "scipy": "1.17.0"
+  },
+  "fit": {
+    "basis": "normalized_exponential_derivative_mixture",
+    "density_weighted_rms": 0.012763144055254212,
+    "exponents": [
+      -40.0,
+      0.0,
+      40.0
+    ],
+    "mass_weight_sum": 1.0,
+    "mass_weights": [
+      0.10197140370508168,
+      0.8427348093396028,
+      0.0552937869553156
+    ],
+    "maximum_absolute_residual": 0.024778972240738384,
+    "method": "density_weighted_non_negative_least_squares",
+    "sum_constraint_weight": 100.0,
+    "target": "normalized_baryon_chemical_potential",
+    "weights_non_negative": true
+  },
+  "generator": {
+    "path": "../../../scripts/fit_inner_crust_reference_template.py",
+    "sha256": "76d765a0121effbc8e061436008bfa74dffe22e65cdd49aab27bb0524f503c9a"
+  },
+  "schema": "ccsu.multiobserver.inner-crust-derivative-template.v1",
+  "scientific_semantics": {
+    "calibration_member_only": "IOPB",
+    "coverage_probability": null,
+    "endpoint_tilt_is_deterministically_solved": true,
+    "holdout_members_used_in_fit": [],
+    "observer_specific_parameters": false,
+    "probabilistic_prior": false
+  },
+  "status": "DEVELOPMENT_CALIBRATED_NOT_CONFIRMATORY",
+  "template_id": "CCSU-MO-NS-EOS-001-INNER-CRUST-TEMPLATE-001"
+}

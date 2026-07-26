@@ -181,6 +181,149 @@ class ChemicalPotentialConnector:
         )
 
 
+@dataclass(frozen=True)
+class ChemicalPotentialDerivativeTemplate:
+    """Positive mixture template for a normalized chemical-potential slope.
+
+    ``mass_weights`` are probability masses for exponential components on
+    x in [0, 1].  Dividing each mass by the corresponding exponential
+    integral converts it to a derivative coefficient.  A common exponential
+    tilt is solved from the endpoint pressure span when the template is
+    applied to a new pair of endpoints.
+    """
+
+    template_id: str
+    exponents: tuple[float, ...]
+    mass_weights: tuple[float, ...]
+
+    def __post_init__(self) -> None:
+        _require(bool(self.template_id), "connector template_id is required")
+        _require(
+            len(self.exponents) == len(self.mass_weights) >= 1,
+            "connector template components are invalid",
+        )
+        _require(
+            all(
+                math.isfinite(exponent)
+                for exponent in self.exponents
+            ),
+            "connector template exponent is non-finite",
+        )
+        _require(
+            all(
+                math.isfinite(weight) and weight >= 0
+                for weight in self.mass_weights
+            ),
+            "connector template weights must be finite and non-negative",
+        )
+        _require(
+            math.isclose(
+                sum(self.mass_weights),
+                1.0,
+                rel_tol=0.0,
+                abs_tol=1.0e-12,
+            ),
+            "connector template weights must sum to one",
+        )
+
+
+@dataclass(frozen=True)
+class ReferenceTiltedChemicalPotentialConnector:
+    """Endpoint-exact connector with a fixed, positive derivative template."""
+
+    lower: ThermodynamicRow
+    upper: ThermodynamicRow
+    template: ChemicalPotentialDerivativeTemplate
+    tilt: float
+
+    def _normalization(self) -> float:
+        return sum(
+            weight
+            / _exp_integral(exponent)
+            * _exp_integral(exponent + self.tilt)
+            for exponent, weight in zip(
+                self.template.exponents,
+                self.template.mass_weights,
+                strict=True,
+            )
+        )
+
+    def evaluate(self, baryon_density_fm3: float) -> ThermodynamicRow:
+        n0 = self.lower.n_b_fm3
+        n1 = self.upper.n_b_fm3
+        if not n0 <= baryon_density_fm3 <= n1:
+            raise LowDensityContractError(
+                "connector evaluation lies outside its density interval"
+            )
+        density_span = n1 - n0
+        x = (baryon_density_fm3 - n0) / density_span
+        chemical_potential_span = self.upper.mu_b_mev - self.lower.mu_b_mev
+        normalization = self._normalization()
+        cumulative = 0.0
+        cumulative_integral = 0.0
+        derivative = 0.0
+        for exponent, weight in zip(
+            self.template.exponents,
+            self.template.mass_weights,
+            strict=True,
+        ):
+            coefficient = weight / _exp_integral(exponent)
+            tilted_exponent = exponent + self.tilt
+            cumulative += coefficient * _exp_segment_integral(
+                tilted_exponent, x
+            )
+            cumulative_integral += (
+                coefficient
+                * _exp_segment_cumulative_integral(tilted_exponent, x)
+            )
+            derivative += coefficient * math.exp(tilted_exponent * x)
+        cumulative /= normalization
+        cumulative_integral /= normalization
+        derivative /= normalization
+
+        chemical_potential = (
+            self.lower.mu_b_mev + chemical_potential_span * cumulative
+        )
+        energy_density = (
+            self.lower.epsilon_mev_fm3
+            + density_span
+            * (
+                self.lower.mu_b_mev * x
+                + chemical_potential_span * cumulative_integral
+            )
+        )
+        pressure = baryon_density_fm3 * chemical_potential - energy_density
+        chemical_potential_gradient = (
+            chemical_potential_span * derivative / density_span
+        )
+        cs2 = (
+            baryon_density_fm3
+            * chemical_potential_gradient
+            / chemical_potential
+        )
+        if not 0 <= cs2 <= 1:
+            raise LowDensityContractError(
+                "reference-tilted connector violates 0 <= c_s^2 <= 1"
+            )
+        return ThermodynamicRow(
+            n_b_fm3=baryon_density_fm3,
+            p_mev_fm3=pressure,
+            epsilon_mev_fm3=energy_density,
+            mu_b_mev=chemical_potential,
+            cs2=cs2,
+        )
+
+    def sample(self, points: int) -> tuple[ThermodynamicRow, ...]:
+        if points < 2:
+            raise ValueError("connector sample requires at least two points")
+        n0 = self.lower.n_b_fm3
+        span = self.upper.n_b_fm3 - n0
+        return tuple(
+            self.evaluate(n0 + span * index / (points - 1))
+            for index in range(points)
+        )
+
+
 def pressure_mev_fm3_to_pa(value: float) -> float:
     return value * MEV_FM3_TO_PA
 
@@ -224,6 +367,112 @@ def _bridge_h_derivative(x: float, shape: float) -> float:
     if abs(shape) < 1.0e-8:
         return 1.0
     return shape * math.exp(shape * x) / math.expm1(shape)
+
+
+def _exp_integral(exponent: float) -> float:
+    """Return integral_0^1 exp(exponent*x) dx with a stable zero limit."""
+
+    if abs(exponent) < 1.0e-6:
+        return (
+            1.0
+            + exponent / 2.0
+            + exponent**2 / 6.0
+            + exponent**3 / 24.0
+            + exponent**4 / 120.0
+        )
+    return math.expm1(exponent) / exponent
+
+
+def _exp_segment_integral(exponent: float, x: float) -> float:
+    """Return integral_0^x exp(exponent*t) dt."""
+
+    if abs(exponent) < 1.0e-7:
+        return (
+            x
+            + exponent * x**2 / 2.0
+            + exponent**2 * x**3 / 6.0
+            + exponent**3 * x**4 / 24.0
+        )
+    return math.expm1(exponent * x) / exponent
+
+
+def _exp_segment_cumulative_integral(exponent: float, x: float) -> float:
+    """Return integral_0^x integral_0^u exp(exponent*t) dt du."""
+
+    if abs(exponent) < 1.0e-5:
+        return (
+            x**2 / 2.0
+            + exponent * x**3 / 6.0
+            + exponent**2 * x**4 / 24.0
+            + exponent**3 * x**5 / 120.0
+        )
+    return (math.expm1(exponent * x) - exponent * x) / exponent**2
+
+
+def _exp_survival_integral(exponent: float) -> float:
+    """Return integral_0^1 (1-x) exp(exponent*x) dx."""
+
+    if abs(exponent) < 1.0e-5:
+        return (
+            0.5
+            + exponent / 6.0
+            + exponent**2 / 24.0
+            + exponent**3 / 120.0
+            + exponent**4 / 720.0
+        )
+    return (math.exp(exponent) - exponent - 1.0) / exponent**2
+
+
+def _template_mean(
+    template: ChemicalPotentialDerivativeTemplate,
+    tilt: float,
+) -> float:
+    normalization = sum(
+        weight
+        / _exp_integral(exponent)
+        * _exp_integral(exponent + tilt)
+        for exponent, weight in zip(
+            template.exponents,
+            template.mass_weights,
+            strict=True,
+        )
+    )
+    return (
+        sum(
+            weight
+            / _exp_integral(exponent)
+            * _exp_survival_integral(exponent + tilt)
+            for exponent, weight in zip(
+                template.exponents,
+                template.mass_weights,
+                strict=True,
+            )
+        )
+        / normalization
+    )
+
+
+def _solve_template_tilt(
+    template: ChemicalPotentialDerivativeTemplate,
+    target_mean: float,
+) -> float:
+    _require(0 < target_mean < 1, "connector target mean must lie in (0, 1)")
+    lower_tilt = -100.0
+    upper_tilt = 100.0
+    _require(
+        _template_mean(template, lower_tilt)
+        >= target_mean
+        >= _template_mean(template, upper_tilt),
+        "connector endpoint geometry requires an extreme unsupported tilt",
+    )
+    for _ in range(200):
+        midpoint = (lower_tilt + upper_tilt) / 2.0
+        if _template_mean(template, midpoint) > target_mean:
+            lower_tilt = midpoint
+        else:
+            upper_tilt = midpoint
+    tilt = (lower_tilt + upper_tilt) / 2.0
+    return 0.0 if abs(tilt) < 1.0e-12 else tilt
 
 
 def _solve_bridge_shape(target_mean: float) -> float:
@@ -296,6 +545,76 @@ def build_chemical_potential_connector(
     for label, expected, reconstructed in (
         ("lower", lower, reconstructed_lower),
         ("upper", upper, reconstructed_upper),
+    ):
+        for field in (
+            "n_b_fm3",
+            "p_mev_fm3",
+            "epsilon_mev_fm3",
+            "mu_b_mev",
+        ):
+            _require(
+                _relative_residual(
+                    getattr(expected, field), getattr(reconstructed, field)
+                )
+                <= endpoint_identity_relative_tolerance,
+                f"{label} connector reconstruction failed for {field}",
+            )
+    return connector
+
+
+def build_reference_tilted_connector(
+    lower: ThermodynamicRow,
+    upper: ThermodynamicRow,
+    template: ChemicalPotentialDerivativeTemplate,
+    *,
+    endpoint_identity_relative_tolerance: float = 1.0e-8,
+) -> ReferenceTiltedChemicalPotentialConnector:
+    """Apply a fixed derivative template and solve its common endpoint tilt."""
+
+    _require(
+        upper.n_b_fm3 > lower.n_b_fm3,
+        "connector upper density must exceed lower density",
+    )
+    _require(
+        upper.mu_b_mev > lower.mu_b_mev,
+        "connector requires increasing baryon chemical potential",
+    )
+    _require(
+        upper.p_mev_fm3 > lower.p_mev_fm3,
+        "connector requires increasing pressure",
+    )
+    for label, endpoint in (("lower", lower), ("upper", upper)):
+        identity_mu = (
+            endpoint.epsilon_mev_fm3 + endpoint.p_mev_fm3
+        ) / endpoint.n_b_fm3
+        _require(
+            _relative_residual(identity_mu, endpoint.mu_b_mev)
+            <= endpoint_identity_relative_tolerance,
+            f"{label} connector endpoint violates mu=(epsilon+p)/n",
+        )
+
+    density_span = upper.n_b_fm3 - lower.n_b_fm3
+    chemical_potential_span = upper.mu_b_mev - lower.mu_b_mev
+    pressure_span = upper.p_mev_fm3 - lower.p_mev_fm3
+    pressure_weighted_density = pressure_span / chemical_potential_span
+    _require(
+        lower.n_b_fm3
+        < pressure_weighted_density
+        < upper.n_b_fm3,
+        "endpoint pressure and chemical-potential spans violate dP=n dmu",
+    )
+    target_mean = (
+        upper.n_b_fm3 - pressure_weighted_density
+    ) / density_span
+    connector = ReferenceTiltedChemicalPotentialConnector(
+        lower=lower,
+        upper=upper,
+        template=template,
+        tilt=_solve_template_tilt(template, target_mean),
+    )
+    for label, expected, reconstructed in (
+        ("lower", lower, connector.evaluate(lower.n_b_fm3)),
+        ("upper", upper, connector.evaluate(upper.n_b_fm3)),
     ):
         for field in (
             "n_b_fm3",

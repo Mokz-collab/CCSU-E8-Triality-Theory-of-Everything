@@ -10,7 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_3.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_4.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_3.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -22,6 +23,10 @@ class NSEOSDecisionTests(unittest.TestCase):
         result = decision_summary(self.decisions)
         self.assertEqual(len(result["resolved"]), 6)
         self.assertFalse(result["confirmatory_authorization"])
+
+    def test_previous_decision_checkpoint_remains_valid(self):
+        previous = load_and_validate_decisions(LEGACY_DECISIONS)
+        self.assertEqual(previous["version"], "0.3-development")
 
     def test_low_density_intervals_are_contiguous(self):
         low = self.decisions["low_density_matching"]
@@ -44,6 +49,17 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertTrue(
             low["inner_crust"]["observer_specific_parameters_forbidden"]
         )
+
+    def test_inner_crust_template_is_shared_and_nonprobabilistic(self):
+        inner = self.decisions["low_density_matching"]["inner_crust"]
+        self.assertEqual(
+            inner["prescription"],
+            "shared_reference_tilted_chemical_potential_connector",
+        )
+        self.assertEqual(inner["template_calibration_model"], "IOPB")
+        self.assertEqual(inner["primary_holdout_model"], "G3")
+        self.assertFalse(inner["template_probabilistic_prior"])
+        self.assertEqual(inner["sampled_free_parameters"], 0)
 
     def test_outer_crust_is_a_paired_shared_nuisance(self):
         outer = self.decisions["low_density_matching"]["outer_crust"]

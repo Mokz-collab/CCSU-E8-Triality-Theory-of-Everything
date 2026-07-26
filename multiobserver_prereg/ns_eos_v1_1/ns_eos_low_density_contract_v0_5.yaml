@@ -1,0 +1,196 @@
+schema_version: 1
+low_density_contract_id: CCSU-MO-NS-EOS-001-LOW-DENSITY
+version: "0.5-development"
+status: LOCAL_THERMODYNAMIC_SHAPE_VALIDATION_PASSED_STELLAR_IMPACT_PENDING
+confirmatory_authorization: false
+
+canonical_units:
+  baryon_number_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+  saturation_density_fm3: 0.16
+
+required_columns:
+  - n_b_fm3
+  - p_mev_fm3
+  - epsilon_mev_fm3
+  - mu_b_mev
+  - cs2
+
+source_acceptance:
+  required_metadata:
+    - immutable_source_url
+    - retrieval_timestamp_utc
+    - sha256
+    - model_label
+    - citation
+    - license_spdx_or_exact_permission_text
+    - redistribution_permitted
+  bytes_must_match_sha256_before_parse: true
+  no_silent_unit_inference: true
+  no_unlicensed_scientific_bytes_in_repository: true
+  synthetic_fixtures_cannot_be_promoted_to_scientific_input: true
+  accepted_provenance_modes:
+    direct_upstream_git_blob:
+      upstream_git_blob_identity_required: true
+    deterministic_generated_output:
+      pinned_source_commit_required: true
+      generator_hash_required: true
+      generation_record_hash_required: true
+      config_hash_required: true
+      raw_output_hash_required: true
+      final_table_hash_required: true
+
+density_segments:
+  outer_crust:
+    scientific_label: modern_BPS_formalism_outer_crust_ensemble
+    lower_boundary: stellar_surface
+    upper_boundary: model_specific_neutron_drip_from_pinned_table
+    source_status: PINNED_EXACT_UPSTREAM_BYTES_CC_BY_4_0
+    semantic_rule: BPS_label_must_not_cover_inner_crust
+    source_commit: d569b24d072d6746943ef6d107dabd6458d9730b
+    source_repository: https://github.com/pkoliogi/Outer-Crust-Equations-of-State
+    source_license: CC-BY-4.0
+    model_labels: [DD-ME2, DD-PC1, DD-PCX, ELMA]
+    design_role: balanced_shared_nuisance_factor
+    pairing_rule: same_outer_crust_model_for_all_arms_within_a_trajectory
+    observer_conditioned_model_selection_forbidden: true
+    coefficient_or_table_averaging_forbidden: true
+  inner_crust:
+    scientific_label: shared_inner_crust_connector
+    lower_boundary: neutron_drip_from_pinned_table
+    upper_boundary_nsat: 0.5
+    source_status: REFERENCE_TILTED_BRIDGE_LOCAL_SHAPE_VALIDATION_PASSED
+    interpolation_coordinate: baryon_chemical_potential_as_function_of_density
+    retired_bridge_family: normalized_exponential_with_endpoint_determined_shape
+    retired_bridge_decision: REJECTED_BY_EXTERNAL_LOCAL_SHAPE_VALIDATION
+    bridge_family: positive_reference_derivative_mixture_with_endpoint_tilt
+    derivative_template:
+      template_id: CCSU-MO-NS-EOS-001-INNER-CRUST-TEMPLATE-001
+      exponents: [-40.0, 0.0, 40.0]
+      mass_weights:
+        - 0.10197140370508168
+        - 0.8427348093396028
+        - 0.0552937869553156
+      calibration_model: IOPB
+      primary_holdout_model: G3
+      secondary_coarse_grid_holdout_model: FSUGarnet
+      probabilistic_prior: false
+      coverage_probability: null
+    endpoint_tilt_deterministically_solved: true
+    sampled_free_parameters: 0
+    exact_identities:
+      - dP_equals_n_dmu
+      - epsilon_equals_n_mu_minus_P
+    observer_specific_parameters_forbidden: true
+    required_validation:
+      - pressure_continuity
+      - baryon_chemical_potential_continuity
+      - energy_density_continuity_unless_discontinuity_registered
+      - comparison_against_at_least_one_unified_EOS
+    completed_validation:
+      contract: inner_crust_validation_contract_v0_1.yaml
+      result: inner_crust_validation_results_v0_1.json
+      calibration: IOPB
+      primary_holdout: G3
+      secondary_advisory_holdout: FSUGarnet
+      local_thermodynamic_shape: PASSED
+      stellar_radius_and_tidal_impact: PENDING
+  chiral_EFT_band:
+    scientific_label: MUSES_v1_0_1_chiral_EFT_reference_member_ensemble
+    lower_boundary_nsat: 0.5
+    upper_boundary_nsat: 1.1
+    source_status: PINNED_DETERMINISTIC_GENERATION_CHAIN_GPL_3_0_OR_LATER
+    source_repository: https://gitlab.com/nsf-muses/chiral-eft-eos/chiral_eft_eos
+    source_tag: v1.0.1
+    source_tag_object: 36e5e4ecc2d3572e48470deab820519b5e248b13
+    source_commit: 6cf7fea41d2a2bac5f93e567d71279631168088b
+    source_license: GPL-3.0-or-later
+    model_labels: [MUSES-N3LO-414, MUSES-N3LO-450]
+    matter: charge_neutral_beta_equilibrated_npe_mu
+    temperature_mev: 0.0
+    asymmetry_treatment: quadratic_interaction_energy
+    design_role: balanced_shared_nuisance_factor
+    pairing_rule: same_reference_member_for_all_arms_within_a_trajectory
+    observer_conditioned_model_selection_forbidden: true
+    pointwise_envelope_sampling_forbidden: true
+    coefficient_or_table_averaging_forbidden: true
+    envelope_semantics: coherent_interaction_reference_envelope
+    probabilistic_coverage: null
+    formal_chiral_truncation_error: false
+    known_source_normalization:
+      affected_member: MUSES-N3LO-414
+      source_keys: [cD, cE]
+      parser_keys: [c_D, c_E]
+      numerical_values_changed: false
+
+matching_policy:
+  smooth_match_relative_tolerance:
+    baryon_number_density: 0.000001
+    pressure: 0.000001
+    energy_density: 0.000001
+    baryon_chemical_potential: 0.000001
+  registered_density_discontinuity:
+    pressure_and_baryon_chemical_potential_must_remain_continuous: true
+    interpolation_across_jump_forbidden: true
+
+references:
+  - label: BPS_original
+    citation: G. Baym, C. Pethick and P. Sutherland, Astrophys. J. 170, 299 (1971)
+    role: outer_crust_scientific_definition
+    redistributable_table_selected: false
+  - label: CompOSE
+    url: https://compose.obspm.fr/
+    role: candidate_standardized_table_provider
+    redistributable_table_selected: false
+  - label: Koliogiannis_Paar_2026
+    url: https://arxiv.org/abs/2604.26952
+    role: pinned_outer_crust_table_ensemble
+    source_commit: d569b24d072d6746943ef6d107dabd6458d9730b
+    license_spdx: CC-BY-4.0
+    redistributable_table_selected: true
+  - label: Hebeler_2013
+    url: https://arxiv.org/abs/1303.4662
+    role: chiral_EFT_constraint_and_representative_EOS_tables
+    redistributable_table_selected: false
+  - label: MUSES_Chiral_EFT_v1_0_1
+    url: https://gitlab.com/nsf-muses/chiral-eft-eos/chiral_eft_eos/-/tree/6cf7fea41d2a2bac5f93e567d71279631168088b
+    role: pinned_chiral_EFT_reference_member_generator
+    source_commit: 6cf7fea41d2a2bac5f93e567d71279631168088b
+    license_spdx: GPL-3.0-or-later
+    redistributable_table_selected: true
+  - label: Pelicer_et_al_2025
+    url: https://arxiv.org/abs/2502.07902
+    role: MUSES_neutron_star_workflow_and_beta_equilibrium_context
+    redistributable_table_selected: false
+  - label: Das_et_al_2022_unified_EOS
+    url: https://github.com/hcdas/Unified_eos/tree/80eadb3820c337765659bd204719cedba2221649
+    role: inner_crust_connector_calibration_and_holdout_oracles
+    source_commit: 80eadb3820c337765659bd204719cedba2221649
+    model_labels: [IOPB, G3, FSUGarnet]
+    license_spdx: GPL-3.0-only
+    redistributable_table_selected: true
+
+development_evidence:
+  parser_and_hash_gate: IMPLEMENTED
+  canonical_unit_conversions: IMPLEMENTED
+  thermodynamic_identity_checks: IMPLEMENTED
+  smooth_matching_checks: IMPLEMENTED
+  endpoint_exponential_inner_crust_connector: EXTERNAL_VALIDATION_FAILED_RETIRED
+  reference_tilted_inner_crust_connector: LOCAL_THERMODYNAMIC_SHAPE_VALIDATION_PASSED
+  reference_tilted_primary_holdout: G3
+  reference_tilted_stellar_impact: PENDING
+  unified_EOS_oracle_bytes: EMBEDDED_EXACT_UPSTREAM_BYTES
+  unified_EOS_oracle_git_blob_identity: VERIFIED
+  unified_EOS_oracle_license: VERIFIED_GPL_3_0_ONLY
+  scientific_outer_crust_bytes: EMBEDDED_EXACT_UPSTREAM_BYTES
+  scientific_outer_crust_git_blob_identity: VERIFIED
+  scientific_outer_crust_license: VERIFIED_CC_BY_4_0
+  scientific_EFT_reference_member_bytes: EMBEDDED
+  scientific_EFT_source_commit: PINNED
+  scientific_EFT_generation_chain: HASH_VERIFIED
+  scientific_EFT_license: VERIFIED_GPL_3_0_OR_LATER
+  scientific_EFT_coverage_claim: NONE
+  counts_toward_confirmatory_freeze: false
