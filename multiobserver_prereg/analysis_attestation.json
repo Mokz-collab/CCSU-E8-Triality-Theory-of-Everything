@@ -1,9 +1,9 @@
 {
   "analysis_addendum_sha256": "08d94b2acd9f5c24e88730a859c45b3757f076bef00a971908767798734925a1",
-  "analysis_engine_commit": "631a46bec4f895cf189ed8df9cdbfbed647a95e7",
-  "analysis_engine_commit_url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/631a46bec4f895cf189ed8df9cdbfbed647a95e7",
-  "analysis_engine_manifest_sha256": "67e0d6e059dc9d10989273f7b7d5317930342604e88fcaf257fdd01162159e91",
-  "analysis_engine_sha256": "4c0d161137e7df41f2241dcede9e4a135a8bc944dd524986d633d42c36c43d4b",
+  "analysis_engine_commit": "b394541aef1122d911c4daf22adcba1974bd33dc",
+  "analysis_engine_commit_url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/b394541aef1122d911c4daf22adcba1974bd33dc",
+  "analysis_engine_manifest_sha256": "c3fbffc4ee9824e762e599292c3368a398d5ef205efbb6e969cce62f03272f31",
+  "analysis_engine_sha256": "00b11b1e784cd222468de19cb74a7929d34996d9a03287e3efe55369e920cfa1",
   "analysis_engine_version": "1.0.0",
   "attestation_schema": 1,
   "branch": "multiobserver-prereg-v1-20260723",
@@ -15,11 +15,11 @@
   "original_simulator_commit": "301f2130a977166f59df34191787f77de67c3a42",
   "public_timestamp": {
     "authority": "GitHub public commit metadata",
-    "commit": "631a46bec4f895cf189ed8df9cdbfbed647a95e7",
-    "timestamp_utc": "2026-07-26T09:12:40Z",
-    "url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/631a46bec4f895cf189ed8df9cdbfbed647a95e7"
+    "commit": "b394541aef1122d911c4daf22adcba1974bd33dc",
+    "timestamp_utc": "2026-07-26T09:16:14Z",
+    "url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/b394541aef1122d911c4daf22adcba1974bd33dc"
   },
   "registration_id": "CCSU-MO-PREREG-001",
   "statement": "Confirmatory analysis implementation and operational addendum were publicly frozen before any confirmatory execution or result inspection.",
-  "tests_sha256": "406946efc30e88ff786fcee5e853a88476a6e87a8be9c570552574702a1f0eb7"
+  "tests_sha256": "13e122af5e58f0e8797f92841215e6d9f2cce03e733673f512a022d41bb0fbb3"
 }
