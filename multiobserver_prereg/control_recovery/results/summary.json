@@ -1,0 +1,68 @@
+{
+  "classification": "RECOVERED",
+  "config_sha256": "243c75b3c18e1dd99a715c58f6c25e5b2ca8fa928a8a72d807b61db982dcf3d5",
+  "control_recovered": true,
+  "counts": {
+    "A": 1500,
+    "C": 1250
+  },
+  "engine_version": "1.0.0",
+  "execution_failures": {
+    "A": 0,
+    "C": 0
+  },
+  "historical_config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+  "historical_files_immutable": true,
+  "historical_registration_id": "CCSU-MO-PREREG-001",
+  "phase_a": {
+    "lambda2_max_abs_error": 0.0,
+    "pass": true,
+    "tau_exact_match_fraction": 1.0
+  },
+  "phase_b": {
+    "by_topology": {
+      "complete": {
+        "cases": 300,
+        "max_floor_ratio": 0.0,
+        "obstructed": 0,
+        "obstructed_fraction": 0.0
+      },
+      "er": {
+        "cases": 300,
+        "max_floor_ratio": 0.02671266661492726,
+        "obstructed": 0,
+        "obstructed_fraction": 0.0
+      },
+      "path": {
+        "cases": 300,
+        "max_floor_ratio": 1.2408967356939044e-29,
+        "obstructed": 0,
+        "obstructed_fraction": 0.0
+      },
+      "ring": {
+        "cases": 300,
+        "max_floor_ratio": 4.677959714671827e-31,
+        "obstructed": 0,
+        "obstructed_fraction": 0.0
+      },
+      "star": {
+        "cases": 300,
+        "max_floor_ratio": 2.853965747797081e-31,
+        "obstructed": 0,
+        "obstructed_fraction": 0.0
+      }
+    },
+    "obstruction_detected": false,
+    "obstruction_threshold": 0.1
+  },
+  "phase_c": {
+    "pass": true,
+    "slow_mode_r_squared": 0.9998948778629565,
+    "slow_mode_slope": 1.0015791783519559,
+    "tau_exact_match_fraction": 1.0,
+    "uncensored_fraction": 1.0,
+    "unique_slow_spectral_cells": 24
+  },
+  "registration_id": "CCSU-MO-CONTROL-RECOVERY-001",
+  "runs_sha256": "62dc41dbf8324b66a64f28135fda6460339b0c53da4d647c054d4080b732b409"
+}
