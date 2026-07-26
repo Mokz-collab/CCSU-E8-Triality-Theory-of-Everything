@@ -1,0 +1,15 @@
+{
+  "schema": "ccsu.multiobserver.control-recovery-attestation.v1",
+  "registration_id": "CCSU-MO-CONTROL-RECOVERY-001",
+  "branch": "multiobserver-control-recovery-v1-20260726",
+  "freeze_commit": "c75f9c8c497a5a43645d2ce99dd8b0f6d8876f65",
+  "freeze_commit_url": "https://github.com/Mokz-collab/CCSU-E8-Triality-Theory-of-Everything/commit/c75f9c8c497a5a43645d2ce99dd8b0f6d8876f65",
+  "freeze_timestamp_utc": "2026-07-26T20:53:12Z",
+  "manifest_sha256": "54967d1ac6249d1c065395dfe149a0be4fffff94a196acc41354116eb48264ab",
+  "config_sha256": "243c75b3c18e1dd99a715c58f6c25e5b2ca8fa928a8a72d807b61db982dcf3d5",
+  "engine_sha256": "8cabab73127c688b0494ded1008b9717b53302af9202fb68d0dd5061e42a1f23",
+  "environment_lock_sha256": "8d3823e8151d0a9f53b2e24f6661c5961af8123b9f631e39c5e7a561092411ca",
+  "historical_config_sha256": "d522fba2db9cb08316bed0bc0e39a9685bdf1b1355aa2054787ab79ed93b0d35",
+  "recovery_schedule_executed_before_freeze": false,
+  "authorized_to_execute": true
+}
