@@ -1,0 +1,63 @@
+schema_version: 1
+validation_id: CCSU-MO-NS-EOS-001-STELLAR-IMPACT-001
+version: "0.1-development"
+status: INTERNAL_STELLAR_IMPACT_NOT_CROSS_VALIDATED
+confirmatory_authorization: false
+
+pairing_contract: final_low_density_pairing_contract_v0_1.yaml
+template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+
+connectors:
+  baseline: endpoint_exponential_v0_4
+  candidate: reference_tilted_v0_5_candidate
+  sampled_points_including_endpoints: 257
+  rounded_outer_endpoint_projection_tolerance: 0.000001
+
+high_density_extension:
+  family: constant_sound_speed
+  cs2: 0.6
+  starts_at: last_pinned_MUSES_row_1_1_nsat
+  same_rule_for_all_pairings_and_connectors: true
+  scientific_semantics: synthetic_common_diagnostic_not_a_physical_prior
+
+physical_units:
+  pressure_and_energy_input: MeV_fm^-3
+  integration_length: km
+  mass_output: nominal_solar_mass
+  mev_fm3_to_geometric_km_minus_2: 0.0000013238333135663825
+  nominal_solar_mass_geometric_km: 1.4766250380501249
+
+target_masses_msun: [1.0, 1.4, 2.0]
+
+solver:
+  central_pressure_bounds_mev_fm3: [3.0, 3000.0]
+  stable_branch_scan_points: 24
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  convergence_check:
+    pair_id: DD-ME2__MUSES-N3LO-414
+    connector: candidate
+    target_mass_msun: 1.4
+    fine_maximum_step_km: 0.015
+    maximum_radius_relative_difference: 0.001
+    maximum_tidal_lambda_relative_difference: 0.005
+
+impact_thresholds:
+  maximum_candidate_vs_baseline_radius_absolute_km: 0.05
+  maximum_candidate_vs_baseline_tidal_lambda_relative: 0.02
+  maximum_outer_crust_radius_spread_km_within_EFT_and_mass: 0.02
+  maximum_outer_crust_tidal_fractional_spread_within_EFT_and_mass: 0.01
+  maximum_target_mass_absolute_error_msun: 0.000002
+
+decision_scope: >
+  Sensitivity of radius and tidal deformability to the inner-crust connector
+  replacement and outer-crust member under one shared synthetic CSS core.
+does_not_validate:
+  - physical_high_density_core_prior
+  - observational_EOS_constraints
+  - independent_TOV_or_Love_cross_implementation
+  - confirmatory_trajectory_authorization
+

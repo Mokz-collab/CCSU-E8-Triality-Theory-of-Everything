@@ -1,0 +1,868 @@
+{
+  "all_thresholds_pass": true,
+  "canonical_record_sha256": "a9b673c77c1f01ba0fec134656db67b0127b165bcd247db88519202252041057",
+  "confirmatory_authorization": false,
+  "connector_impacts": [
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.001281553076557529,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.003148201802277497
+    },
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0008939770238285405,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.002099119683267334
+    },
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0005777214434861122,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.005986762515637518
+    },
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0012735828800298776,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.00495573202005278
+    },
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0008954668150202849,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.0029278288432596044
+    },
+    {
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0005656198688033243,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.019132398928022102
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.001184426311210629,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.003002640704608614
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0008481100762978144,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.001966753816656162
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0005317676481269018,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.005951397980054755
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0011440033302445585,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.0045345825417263275
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.000844345891895415,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.0029736706028625627
+    },
+    {
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0005231760769390803,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.019125559496307506
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0014047307699875944,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.0029312141298260086
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0009840972987920082,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.0019128789514635384
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0006313500257757454,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.005894913393767968
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0014035252038340218,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.0052076387147562166
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0009528584002964635,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.002692022016802099
+    },
+    {
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0006281771069449604,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.019287976648940507
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0013445970476642088,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.0032186069304652406
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0009452086068542087,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.0017815148045718513
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_absolute_difference_km": 0.0006071855551716965,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.005956939114960134
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0013077473987479493,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_relative_difference": 0.004998700362663014
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0009501612215778721,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_relative_difference": 0.0029033492733863907
+    },
+    {
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_absolute_difference_km": 0.0005872040239047749,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_relative_difference": 0.01884232775667424
+    }
+  ],
+  "contract": {
+    "path": "stellar_impact_contract_v0_1.yaml",
+    "sha256": "215d6f68dcaa6b174ce6b203bb57ac79e07326d47c112c6e892b6982460166b6"
+  },
+  "convergence": {
+    "coarse_maximum_step_km": 0.03,
+    "fine_maximum_step_km": 0.015,
+    "pair_id": "DD-ME2__MUSES-N3LO-414",
+    "radius_relative_difference": 2.9754681878837582e-06,
+    "target_mass_msun": 1.4,
+    "tidal_lambda_relative_difference": 0.003447372631301787
+  },
+  "created_utc": "2026-07-26T23:32:00Z",
+  "decision": "STELLAR_IMPACT_WITHIN_REGISTERED_DEVELOPMENT_LIMITS",
+  "decision_scope": "Sensitivity of radius and tidal deformability to the inner-crust connector replacement and outer-crust member under one shared synthetic CSS core.\n",
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13"
+  },
+  "high_density_extension": {
+    "cs2": 0.6,
+    "family": "constant_sound_speed",
+    "same_rule_for_all_pairings_and_connectors": true,
+    "scientific_semantics": "synthetic_common_diagnostic_not_a_physical_prior",
+    "starts_at": "last_pinned_MUSES_row_1_1_nsat"
+  },
+  "models": [
+    {
+      "central_pressure_mev_fm3": 15.658772473838647,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.13956781877039595,
+      "mass_msun": 0.999998873788988,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 13.694263945709865,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6383.205235562282
+    },
+    {
+      "central_pressure_mev_fm3": 23.151242315524318,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13354871123304282,
+      "mass_msun": 1.4000019623623297,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 14.446057955432371,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1483.5454080245013
+    },
+    {
+      "central_pressure_mev_fm3": 38.88709946727411,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1119,
+      "love_k2": 0.10513705965339835,
+      "mass_msun": 1.9999980032642455,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 15.369121473824958,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.5536207739063
+    },
+    {
+      "central_pressure_mev_fm3": 15.668419147263668,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.13994327896594264,
+      "mass_msun": 0.9999991292665414,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 13.695545498786423,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6403.364318650898
+    },
+    {
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13378715470108304,
+      "mass_msun": 1.3999997037250556,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 14.4469519324562,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1486.6660980934555
+    },
+    {
+      "central_pressure_mev_fm3": 38.89454381097752,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1119,
+      "love_k2": 0.10448848386254345,
+      "mass_msun": 1.9999998969907768,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "radius_km": 15.369699195268444,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 265.95184078613397
+    },
+    {
+      "central_pressure_mev_fm3": 15.705566038960017,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.14218046298591203,
+      "mass_msun": 1.0000009420402636,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 13.663527910845774,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6429.981449685712
+    },
+    {
+      "central_pressure_mev_fm3": 23.211025999889237,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13383652758426684,
+      "mass_msun": 1.3999985826054342,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 14.421531437793965,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1474.1822765662516
+    },
+    {
+      "central_pressure_mev_fm3": 38.98635738331954,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1118,
+      "love_k2": 0.10567563800548194,
+      "mass_msun": 2.000001568447517,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 15.349533594543662,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.2124665542979
+    },
+    {
+      "central_pressure_mev_fm3": 15.714996742084477,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.14140952203318452,
+      "mass_msun": 1.0000003536655453,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 13.664801493725804,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6398.116184727159
+    },
+    {
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13418792517553677,
+      "mass_msun": 1.3999987117259662,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 14.422426904608985,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1478.511104021686
+    },
+    {
+      "central_pressure_mev_fm3": 38.9936244807443,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1118,
+      "love_k2": 0.10363481957253343,
+      "mass_msun": 2.0000019767319617,
+      "outer_crust_model": "DD-ME2",
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "radius_km": 15.350099214412465,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 262.1000510456403
+    },
+    {
+      "central_pressure_mev_fm3": 15.658772473838647,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.13953643378036587,
+      "mass_msun": 1.0000009263292893,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 13.695704116027592,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6385.06072916907
+    },
+    {
+      "central_pressure_mev_fm3": 23.151145106281447,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13352264637067882,
+      "mass_msun": 1.3999986483676725,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 14.44707235884997,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1483.794269220641
+    },
+    {
+      "central_pressure_mev_fm3": 38.88709946727411,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1119,
+      "love_k2": 0.10511999489213485,
+      "mass_msun": 1.9999987667891514,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 15.369836957901336,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.5719567639774
+    },
+    {
+      "central_pressure_mev_fm3": 15.668419147263668,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.13989635853503887,
+      "mass_msun": 1.0000011948609826,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 13.696888542338803,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6404.29051254618
+    },
+    {
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13374765159084118,
+      "mass_msun": 1.4000010430296308,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 14.447920468926268,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1486.7182780683243
+    },
+    {
+      "central_pressure_mev_fm3": 38.89454381097752,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1119,
+      "love_k2": 0.10447680534205776,
+      "mass_msun": 2.0000006659768474,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "radius_km": 15.370368725549463,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 265.979529560973
+    },
+    {
+      "central_pressure_mev_fm3": 15.70549404885983,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.1420563492672231,
+      "mass_msun": 0.9999987182322038,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 13.665010547450267,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6427.926306783124
+    },
+    {
+      "central_pressure_mev_fm3": 23.211025999889237,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13378423580182125,
+      "mass_msun": 1.3999998972284045,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 14.422551557012055,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1474.1206296964017
+    },
+    {
+      "central_pressure_mev_fm3": 38.98626876018022,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1118,
+      "love_k2": 0.10564657440849144,
+      "mass_msun": 1.999999677486466,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 15.350258878402588,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.2033583776854
+    },
+    {
+      "central_pressure_mev_fm3": 15.71492475198429,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.14135259737021894,
+      "mass_msun": 0.9999981423663955,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 13.666154550780512,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6398.778344372882
+    },
+    {
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13414404823121412,
+      "mass_msun": 1.4000000360124074,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 14.42339590290395,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1478.5172529874355
+    },
+    {
+      "central_pressure_mev_fm3": 38.993535857604975,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1118,
+      "love_k2": 0.10360847332519461,
+      "mass_msun": 2.00000008731891,
+      "outer_crust_model": "DD-PC1",
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "radius_km": 15.350782054479527,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 262.0929446494198
+    },
+    {
+      "central_pressure_mev_fm3": 15.658844463938834,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.1393902684927509,
+      "mass_msun": 1.0000019809328176,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 13.697419085066509,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6382.333166700428
+    },
+    {
+      "central_pressure_mev_fm3": 23.151242315524318,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.1334369238848943,
+      "mass_msun": 1.4000012020950898,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 14.448338677428067,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1483.4781187887493
+    },
+    {
+      "central_pressure_mev_fm3": 38.88718809041344,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1119,
+      "love_k2": 0.10506702999025275,
+      "mass_msun": 2.0000002157396763,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 15.370680122181467,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.50953500495416
+    },
+    {
+      "central_pressure_mev_fm3": 15.66845514231376,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.13972700880625202,
+      "mass_msun": 1.0000000055690779,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 13.698823815836496,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6401.096150182217
+    },
+    {
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13364603161337682,
+      "mass_msun": 1.3999988777177628,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 14.449322774726859,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1486.3212714640454
+    },
+    {
+      "central_pressure_mev_fm3": 38.89454381097752,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1119,
+      "love_k2": 0.10442601205116168,
+      "mass_msun": 1.9999994166208281,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "radius_km": 15.371311472207243,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 265.9325894640928
+    },
+    {
+      "central_pressure_mev_fm3": 15.705566038960017,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1021,
+      "love_k2": 0.14204699292756573,
+      "mass_msun": 0.9999998031591223,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 13.66662967660671,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6431.27684046034
+    },
+    {
+      "central_pressure_mev_fm3": 23.21107460451067,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13369107852320342,
+      "mass_msun": 1.4000001480188646,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 14.423809827517474,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1473.7355428402916
+    },
+    {
+      "central_pressure_mev_fm3": 38.98635738331954,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1118,
+      "love_k2": 0.10563515267864225,
+      "mass_msun": 2.0000011303517784,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 15.351064770197842,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.2436405853813
+    },
+    {
+      "central_pressure_mev_fm3": 15.714996742084477,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.1412342412809392,
+      "mass_msun": 0.9999991160130682,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 13.668033201810545,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6397.785074200644
+    },
+    {
+      "central_pressure_mev_fm3": 23.21885134394025,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13400771009640555,
+      "mass_msun": 1.4000002114526107,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 14.42476268591777,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1477.7135803330757
+    },
+    {
+      "central_pressure_mev_fm3": 38.9936244807443,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1118,
+      "love_k2": 0.1035765663293021,
+      "mass_msun": 2.0000015006226275,
+      "outer_crust_model": "DD-PCX",
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "radius_km": 15.351692947304787,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 262.0890514861926
+    },
+    {
+      "central_pressure_mev_fm3": 15.658772473838647,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.13961161148595408,
+      "mass_msun": 0.999998236391873,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 13.693083923987663,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6382.477896024261
+    },
+    {
+      "central_pressure_mev_fm3": 23.151242315524318,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.13359035645924203,
+      "mass_msun": 1.40000154219951,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 14.445199182984444,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1483.5692108536036
+    },
+    {
+      "central_pressure_mev_fm3": 38.88718809041344,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "baseline",
+      "integration_steps": 1119,
+      "love_k2": 0.1051468866525091,
+      "mass_msun": 2.000000413707563,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 15.368544300374444,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.52677685525254
+    },
+    {
+      "central_pressure_mev_fm3": 15.668419147263668,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.13999380662330782,
+      "mass_msun": 0.9999984312590969,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 13.694428521035327,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6403.086915948304
+    },
+    {
+      "central_pressure_mev_fm3": 23.15911626419677,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13378389998460036,
+      "mass_msun": 1.3999992437882505,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 14.446144391591298,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1486.2169283142007
+    },
+    {
+      "central_pressure_mev_fm3": 38.89454381097752,
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "connector": "candidate",
+      "integration_steps": 1119,
+      "love_k2": 0.10449968350602834,
+      "mass_msun": 1.9999996296608422,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "radius_km": 15.369151485929615,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 265.93313613390427
+    },
+    {
+      "central_pressure_mev_fm3": 15.705566038960017,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1022,
+      "love_k2": 0.142266392267666,
+      "mass_msun": 1.000000313985276,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 13.662389067627423,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6431.2068791033325
+    },
+    {
+      "central_pressure_mev_fm3": 23.211025999889237,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1067,
+      "love_k2": 0.1338767162998333,
+      "mass_msun": 1.3999981669480297,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 14.420678387938233,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1474.1910585070834
+    },
+    {
+      "central_pressure_mev_fm3": 38.98635738331954,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "baseline",
+      "integration_steps": 1118,
+      "love_k2": 0.10565799136944634,
+      "mass_msun": 2.000001326787965,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 15.348969218014943,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 267.1188935253914
+    },
+    {
+      "central_pressure_mev_fm3": 15.714996742084477,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1022,
+      "love_k2": 0.1414870580691656,
+      "mass_msun": 0.9999996650291855,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 13.66369681502617,
+      "target_mass_msun": 1.0,
+      "tidal_lambda": 6399.059202944398
+    },
+    {
+      "central_pressure_mev_fm3": 23.218802739318818,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1067,
+      "love_k2": 0.13422235759449114,
+      "mass_msun": 1.3999982570694955,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 14.421628549159811,
+      "target_mass_msun": 1.4,
+      "tidal_lambda": 1478.4836128301074
+    },
+    {
+      "central_pressure_mev_fm3": 38.9936244807443,
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "connector": "candidate",
+      "integration_steps": 1118,
+      "love_k2": 0.10364742102235819,
+      "mass_msun": 2.0000017119438813,
+      "outer_crust_model": "ELMA",
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "radius_km": 15.349556422038848,
+      "target_mass_msun": 2.0,
+      "tidal_lambda": 262.0857517835858
+    }
+  ],
+  "outer_crust_spreads": [
+    {
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "radius_spread_km": 0.0043952948011689585,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_fractional_spread": 0.0004989091619171741
+    },
+    {
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "radius_spread_km": 0.003178383135560736,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_fractional_spread": 0.0003372759372940456
+    },
+    {
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "radius_spread_km": 0.002159986277627368,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_fractional_spread": 0.00017649568491206295
+    },
+    {
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "radius_spread_km": 0.004336386784373758,
+      "target_mass_msun": 1.0,
+      "tidal_lambda_fractional_spread": 0.00019913171031227386
+    },
+    {
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "radius_spread_km": 0.0031341367579589274,
+      "target_mass_msun": 1.4,
+      "tidal_lambda_fractional_spread": 0.0005437144118121104
+    },
+    {
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "radius_spread_km": 0.0021365252659393263,
+      "target_mass_msun": 2.0,
+      "tidal_lambda_fractional_spread": 5.4557990610745396e-05
+    }
+  ],
+  "pairing_contract": {
+    "path": "final_low_density_pairing_contract_v0_1.yaml",
+    "sha256": "d3303ccbd982c341cecbdc8101ad5a292a737519f6e6eb1a495a2375fc03dc69"
+  },
+  "remaining_nonvalidated_items": [
+    "physical_high_density_core_prior",
+    "observational_EOS_constraints",
+    "independent_TOV_or_Love_cross_implementation",
+    "confirmatory_trajectory_authorization"
+  ],
+  "schema": "ccsu.multiobserver.stellar-impact-result.v1",
+  "status": "INTERNAL_STELLAR_IMPACT_NOT_CROSS_VALIDATED",
+  "template": {
+    "path": "data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json",
+    "sha256": "28a2c95bf6558bc9063f3f3a4b596427e4bb6fb8eacb2c9e98ff45e7ee22717c"
+  },
+  "threshold_results": {
+    "candidate_vs_baseline_radius": true,
+    "candidate_vs_baseline_tidal": true,
+    "outer_crust_radius_spread": true,
+    "outer_crust_tidal_spread": true,
+    "radius_step_convergence": true,
+    "target_mass_accuracy": true,
+    "tidal_step_convergence": true
+  },
+  "validation_id": "CCSU-MO-NS-EOS-001-STELLAR-IMPACT-001"
+}

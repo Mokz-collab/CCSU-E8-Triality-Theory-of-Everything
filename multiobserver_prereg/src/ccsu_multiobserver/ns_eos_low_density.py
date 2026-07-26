@@ -340,6 +340,42 @@ def number_density_fm3_to_cm3(value: float) -> float:
     return value * FM3_TO_CM3_NUMBER_DENSITY
 
 
+def project_rounded_chemical_potential(
+    row: ThermodynamicRow,
+    *,
+    maximum_original_relative_residual: float,
+) -> tuple[ThermodynamicRow, float]:
+    """Project a rounded tabular chemical potential onto the exact identity.
+
+    Density, pressure, energy density, and sound speed are preserved.  The
+    correction is allowed only when the registered source value already lies
+    within an explicit relative-residual limit.
+    """
+
+    _require(
+        maximum_original_relative_residual > 0,
+        "chemical-potential projection tolerance must be positive",
+    )
+    identity_mu = (
+        row.epsilon_mev_fm3 + row.p_mev_fm3
+    ) / row.n_b_fm3
+    residual = _relative_residual(identity_mu, row.mu_b_mev)
+    _require(
+        residual <= maximum_original_relative_residual,
+        "rounded chemical potential exceeds projection tolerance",
+    )
+    return (
+        ThermodynamicRow(
+            n_b_fm3=row.n_b_fm3,
+            p_mev_fm3=row.p_mev_fm3,
+            epsilon_mev_fm3=row.epsilon_mev_fm3,
+            mu_b_mev=identity_mu,
+            cs2=row.cs2,
+        ),
+        residual,
+    )
+
+
 def _relative_residual(left: float, right: float) -> float:
     scale = max(abs(left), abs(right), 1.0e-300)
     return abs(left - right) / scale

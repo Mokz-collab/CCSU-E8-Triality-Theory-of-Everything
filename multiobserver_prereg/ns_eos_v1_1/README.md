@@ -17,7 +17,7 @@ verify the two χEFT members with:
 
 ```bash
 PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_decisions \
-  ns_eos_v1_1/ns_eos_decisions_v0_4.yaml
+  ns_eos_v1_1/ns_eos_decisions_v0_5.yaml
 PYTHONPATH=src python scripts/run_inner_crust_validation.py \
   --contract ns_eos_v1_1/inner_crust_validation_contract_v0_1.yaml \
   --output /tmp/inner_crust_validation.json \
@@ -26,6 +26,14 @@ PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_low_density \
   ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
 PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_low_density \
   ns_eos_v1_1/data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+PYTHONPATH=src python scripts/run_final_low_density_pairing_validation.py \
+  --contract ns_eos_v1_1/final_low_density_pairing_contract_v0_1.yaml \
+  --output /tmp/final_low_density_pairings.json \
+  --created-utc 2026-07-26T23:18:00Z
+PYTHONPATH=src python scripts/run_stellar_impact_validation.py \
+  --contract ns_eos_v1_1/stellar_impact_contract_v0_1.yaml \
+  --output /tmp/stellar_impact.json \
+  --created-utc 2026-07-26T23:32:00Z
 ```
 
 The two χEFT members form a coherent interaction-reference envelope. They do
@@ -39,7 +47,8 @@ potential shape thresholds. The active candidate uses a positive derivative
 template calibrated on IOPB and tested on held-out G3; FSUGarnet is a
 coarse-grid advisory holdout. This accepts the connector only for continued
 development. Radius, tidal-deformability, and final endpoint-pairing tests are
-still pending.
+complete under one shared synthetic CSS core. That core is diagnostic rather
+than a physical prior, and independent TOV/Love agreement remains pending.
 
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_4.yaml` are closed.
+`ns_eos_decisions_v0_5.yaml` are closed.

@@ -176,6 +176,7 @@ def solve_star(
     minimum_step: float = 1.0e-8,
     pressure_step_fraction: float = 0.08,
     surface_pressure_fraction: float = 1.0e-8,
+    surface_pressure_absolute: float | None = None,
     initial_radius: float = 1.0e-6,
     maximum_radius: float = 100.0,
     maximum_steps: int = 2_000_000,
@@ -190,6 +191,16 @@ def solve_star(
         raise ValueError("pressure_step_fraction must lie in (0, 1)")
     if not 0 < surface_pressure_fraction < 1:
         raise ValueError("surface_pressure_fraction must lie in (0, 1)")
+    if (
+        surface_pressure_absolute is not None
+        and (
+            not math.isfinite(surface_pressure_absolute)
+            or not 0 < surface_pressure_absolute < central_pressure
+        )
+    ):
+        raise ValueError(
+            "absolute surface pressure must lie between zero and central pressure"
+        )
     if not 0 < initial_radius < maximum_radius:
         raise ValueError("radius bounds are invalid")
 
@@ -198,7 +209,11 @@ def solve_star(
     if central_epsilon <= 0 or not 0 < central_cs2 <= 1:
         raise OracleError("central EOS state is non-positive or acausal")
 
-    pressure_floor = central_pressure * surface_pressure_fraction
+    pressure_floor = (
+        central_pressure * surface_pressure_fraction
+        if surface_pressure_absolute is None
+        else surface_pressure_absolute
+    )
     radius = initial_radius
     state: State = (
         (4.0 / 3.0) * math.pi * central_epsilon * radius**3,

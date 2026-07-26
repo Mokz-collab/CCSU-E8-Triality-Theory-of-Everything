@@ -26,13 +26,19 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/create_ns_eos_development_checkpoint.py",
             "scripts/fit_inner_crust_reference_template.py",
             "scripts/generate_muses_chiral_eft_anchor.py",
+            "scripts/run_final_low_density_pairing_validation.py",
             "scripts/run_inner_crust_validation.py",
+            "scripts/run_stellar_impact_validation.py",
             "src/ccsu_multiobserver/ns_eos_decisions.py",
             "src/ccsu_multiobserver/ns_eos_inner_crust_validation.py",
             "src/ccsu_multiobserver/ns_eos_low_density.py",
+            "src/ccsu_multiobserver/ns_eos_oracle.py",
+            "src/ccsu_multiobserver/ns_eos_stellar_impact.py",
             "tests/test_ns_eos_decisions.py",
+            "tests/test_ns_eos_final_pairings.py",
             "tests/test_ns_eos_inner_crust_validation.py",
             "tests/test_ns_eos_low_density.py",
+            "tests/test_ns_eos_stellar_impact.py",
         )
     )
     return tuple(sorted(set(files)))
@@ -52,16 +58,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "0.5-development",
+        "version": "0.6-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "679115740f6214d4abe15b29a0931d54b5307889",
+        "parent_commit": "a1f814600042fea8daffa8a614bbcb54f45a2495",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 61,
+            "passed": 70,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -90,6 +96,26 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "canonical_record_sha256"
                 ],
             },
+            "final_low_density_pairings": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(
+                    PROJECT_ROOT
+                    / "ns_eos_v1_1"
+                    / "final_low_density_pairing_results_v0_1.json"
+                ),
+                "pairs_tested": 8,
+                "pairs_passed": 8,
+            },
+            "stellar_impact": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(
+                    PROJECT_ROOT
+                    / "ns_eos_v1_1"
+                    / "stellar_impact_results_v0_1.json"
+                ),
+                "conditional_core": "constant_sound_speed_cs2_0_6",
+                "cross_implementation_validated": False,
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -102,13 +128,13 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             "primary_holdout_model": "G3",
             "secondary_advisory_model": "FSUGarnet",
             "validation_decision": validation["decision"],
+            "final_pairings": "ALL_8_PASSED",
+            "stellar_impact": (
+                "WITHIN_LIMITS_UNDER_SHARED_SYNTHETIC_CSS_CORE"
+            ),
         },
         "files": files,
         "remaining_freeze_blockers": [
-            (
-                "validate_final_outer_crust_EFT_pairings_and_"
-                "stellar_radius_tidal_impact"
-            ),
             "independent_review_of_parameter_ranges",
             "TOV_and_Love_cross_implementation_agreement",
             "pilot_calibration_of_P1_to_P4_thresholds",

@@ -1,0 +1,298 @@
+{
+  "all_pairs_pass": true,
+  "canonical_record_sha256": "6d649b5fc83237a7d1009fe9ec29a1cdce72c154e45933a732d5af182f4200fd",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "final_low_density_pairing_contract_v0_1.yaml",
+    "sha256": "d3303ccbd982c341cecbdc8101ad5a292a737519f6e6eb1a495a2375fc03dc69"
+  },
+  "created_utc": "2026-07-26T23:18:00Z",
+  "decision": "ACCEPT_ALL_FINAL_LOW_DENSITY_PAIRINGS_FOR_STELLAR_IMPACT_TESTING",
+  "decision_scope": "final_low_density_endpoint_pairing_and_local_bridge_physics",
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13"
+  },
+  "pair_count": 8,
+  "pairs": [
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "density_range_fm3": [
+        0.0002561592,
+        0.08
+      ],
+      "maximum_cs2": 0.023897115172547095,
+      "maximum_endpoint_relative_residual": 6.313999834108278e-14,
+      "maximum_identity_relative_residual": 1.2098015589805022e-16,
+      "minimum_cs2": 0.0003578164629295318,
+      "outer_crust_model": "DD-ME2",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.00021296131455983414,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 2.2665942887415368e-07,
+        "projected_mu_b_mev": 939.5652129613146
+      },
+      "pair_id": "DD-ME2__MUSES-N3LO-414",
+      "sampled_points": 2049,
+      "tilt": -1.0510722030825659
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "density_range_fm3": [
+        0.0002561592,
+        0.08
+      ],
+      "maximum_cs2": 0.023310175690982305,
+      "maximum_endpoint_relative_residual": 6.876182608148569e-14,
+      "maximum_identity_relative_residual": 1.2098006418468322e-16,
+      "minimum_cs2": 0.0003595287697237489,
+      "outer_crust_model": "DD-ME2",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.00021296131455983414,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 2.2665942887415368e-07,
+        "projected_mu_b_mev": 939.5652129613146
+      },
+      "pair_id": "DD-ME2__MUSES-N3LO-450",
+      "sampled_points": 2049,
+      "tilt": -1.0808024943348178
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "density_range_fm3": [
+        0.0002641166,
+        0.08
+      ],
+      "maximum_cs2": 0.02388439698108733,
+      "maximum_endpoint_relative_residual": 6.332735738660528e-14,
+      "maximum_identity_relative_residual": 1.2099293952186163e-16,
+      "minimum_cs2": 0.00036912538022997217,
+      "outer_crust_model": "DD-PC1",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.00023050046831940563,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 2.453267930578572e-07,
+        "projected_mu_b_mev": 939.5647694995317
+      },
+      "pair_id": "DD-PC1__MUSES-N3LO-414",
+      "sampled_points": 2049,
+      "tilt": -1.0521287213888106
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "density_range_fm3": [
+        0.0002641166,
+        0.08
+      ],
+      "maximum_cs2": 0.023297563856580033,
+      "maximum_endpoint_relative_residual": 6.857446415755794e-14,
+      "maximum_identity_relative_residual": 1.2088196551979026e-16,
+      "minimum_cs2": 0.0003708920727081564,
+      "outer_crust_model": "DD-PC1",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.00023050046831940563,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 2.453267930578572e-07,
+        "projected_mu_b_mev": 939.5647694995317
+      },
+      "pair_id": "DD-PC1__MUSES-N3LO-450",
+      "sampled_points": 2049,
+      "tilt": -1.0818685769488243
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "density_range_fm3": [
+        0.0002436161,
+        0.08
+      ],
+      "maximum_cs2": 0.02390862281891534,
+      "maximum_endpoint_relative_residual": 6.313999834108278e-14,
+      "maximum_identity_relative_residual": 1.2099290738726762e-16,
+      "minimum_cs2": 0.0003401201315057717,
+      "outer_crust_model": "DD-PCX",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 5.871327880413446e-05,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 6.248984916972271e-08,
+        "projected_mu_b_mev": 939.5650587132789
+      },
+      "pair_id": "DD-PCX__MUSES-N3LO-414",
+      "sampled_points": 2049,
+      "tilt": -1.0500748074107316
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "density_range_fm3": [
+        0.0002436161,
+        0.08
+      ],
+      "maximum_cs2": 0.023321609449169972,
+      "maximum_endpoint_relative_residual": 6.857446415755794e-14,
+      "maximum_identity_relative_residual": 1.2099287622096843e-16,
+      "minimum_cs2": 0.0003417475417795005,
+      "outer_crust_model": "DD-PCX",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 5.871327880413446e-05,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 6.248984916972271e-08,
+        "projected_mu_b_mev": 939.5650587132789
+      },
+      "pair_id": "DD-PCX__MUSES-N3LO-450",
+      "sampled_points": 2049,
+      "tilt": -1.0797955275271711
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "density_range_fm3": [
+        0.0002486087,
+        0.08
+      ],
+      "maximum_cs2": 0.023903746620966178,
+      "maximum_endpoint_relative_residual": 6.313999834108278e-14,
+      "maximum_identity_relative_residual": 1.2098648220482145e-16,
+      "minimum_cs2": 0.00034716430257511157,
+      "outer_crust_model": "ELMA",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.0001190002601560991,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 1.2665461685372139e-07,
+        "projected_mu_b_mev": 939.5651190002602
+      },
+      "pair_id": "ELMA__MUSES-N3LO-414",
+      "sampled_points": 2049,
+      "tilt": -1.0504915741499268
+    },
+    {
+      "all_checks_pass": true,
+      "checks": {
+        "chemical_potential_strictly_increasing": true,
+        "endpoint_residual_within_tolerance": true,
+        "energy_density_strictly_increasing": true,
+        "identity_residual_within_tolerance": true,
+        "maximum_cs2_pass": true,
+        "minimum_cs2_pass": true,
+        "pressure_strictly_increasing": true,
+        "projection_within_tolerance": true
+      },
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "density_range_fm3": [
+        0.0002486087,
+        0.08
+      ],
+      "maximum_cs2": 0.023316765434376406,
+      "maximum_endpoint_relative_residual": 6.857446415755794e-14,
+      "maximum_identity_relative_residual": 1.2099286747225803e-16,
+      "minimum_cs2": 0.00034882551225805567,
+      "outer_crust_model": "ELMA",
+      "outer_endpoint_projection": {
+        "absolute_correction_mev": 0.0001190002601560991,
+        "original_mu_b_mev": 939.565,
+        "original_relative_identity_residual": 1.2665461685372139e-07,
+        "projected_mu_b_mev": 939.5651190002602
+      },
+      "pair_id": "ELMA__MUSES-N3LO-450",
+      "sampled_points": 2049,
+      "tilt": -1.0802163191862997
+    }
+  ],
+  "remaining_nonvalidated_items": [
+    "stellar_radius_impact",
+    "tidal_deformability_impact",
+    "independent_TOV_or_Love_cross_implementation",
+    "confirmatory_trajectory_authorization"
+  ],
+  "schema": "ccsu.multiobserver.final-low-density-pairing-result.v1",
+  "source_manifests": {
+    "data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml": "4622387f5a6c2c087d40705fad3f4bc59f403634b64e7e2fb11bde40a0ebfd88",
+    "data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml": "eeb56a5c3a2cc9f2fe77addf45e415438e87b220d241a6572d375df838a50b61",
+    "data/outer_crust_koliogi_2026/manifest_DDME2.yaml": "ad328140137a36442cd15a599f0ad8cbfdc889139547f0accbf8ab2397f936d7",
+    "data/outer_crust_koliogi_2026/manifest_DDPC1.yaml": "3f4314b507d7a7ca6bcd4a17e3f3583eb2cfadebcbbd5c7e3ff7c3da4e92bc03",
+    "data/outer_crust_koliogi_2026/manifest_DDPCX.yaml": "79fd430c409ceeeb794a596310108d1475eb8079aad8c435a4e01d330bc823cb",
+    "data/outer_crust_koliogi_2026/manifest_ELMA.yaml": "627b7d5be529109d9c7d36a73fc872905b3bca74f3a82880be68b360a44fdd12"
+  },
+  "status": "DEVELOPMENT_NOT_CONFIRMATORY",
+  "template": {
+    "path": "data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json",
+    "sha256": "28a2c95bf6558bc9063f3f3a4b596427e4bb6fb8eacb2c9e98ff45e7ee22717c",
+    "template_id": "CCSU-MO-NS-EOS-001-INNER-CRUST-TEMPLATE-001"
+  },
+  "validation_id": "CCSU-MO-NS-EOS-001-FINAL-LOW-DENSITY-PAIRINGS-001"
+}

@@ -21,6 +21,7 @@ from ccsu_multiobserver.ns_eos_low_density import (
     load_thermodynamic_table,
     number_density_fm3_to_cm3,
     pressure_mev_fm3_to_pa,
+    project_rounded_chemical_potential,
     validate_smooth_match,
 )
 
@@ -196,6 +197,46 @@ class NSEOSLowDensityTests(unittest.TestCase):
             LowDensityContractError, r"violate dP=n dmu"
         ):
             build_chemical_potential_connector(lower, upper)
+
+    def test_rounded_chemical_potential_projection_is_explicitly_bounded(self):
+        table = load_thermodynamic_table(OUTER_CRUST_MANIFESTS[0])
+        projected, residual = project_rounded_chemical_potential(
+            table.last,
+            maximum_original_relative_residual=1.0e-6,
+        )
+        self.assertGreater(residual, 0.0)
+        self.assertLess(residual, 1.0e-6)
+        self.assertEqual(projected.n_b_fm3, table.last.n_b_fm3)
+        self.assertEqual(projected.p_mev_fm3, table.last.p_mev_fm3)
+        self.assertEqual(
+            projected.epsilon_mev_fm3,
+            table.last.epsilon_mev_fm3,
+        )
+        self.assertEqual(
+            projected.mu_b_mev,
+            (
+                projected.epsilon_mev_fm3
+                + projected.p_mev_fm3
+            )
+            / projected.n_b_fm3,
+        )
+
+    def test_rounded_chemical_potential_projection_rejects_large_change(self):
+        row = ThermodynamicRow(
+            n_b_fm3=0.01,
+            p_mev_fm3=0.01,
+            epsilon_mev_fm3=9.39,
+            mu_b_mev=900.0,
+            cs2=0.01,
+        )
+        with self.assertRaisesRegex(
+            LowDensityContractError,
+            "exceeds projection tolerance",
+        ):
+            project_rounded_chemical_potential(
+                row,
+                maximum_original_relative_residual=1.0e-6,
+            )
 
     def test_pinned_scientific_outer_crust_ensemble_validates(self):
         tables = [

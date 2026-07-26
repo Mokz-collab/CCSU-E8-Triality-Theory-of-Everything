@@ -1,0 +1,51 @@
+schema_version: 1
+validation_id: CCSU-MO-NS-EOS-001-FINAL-LOW-DENSITY-PAIRINGS-001
+version: "0.1-development"
+status: DEVELOPMENT_NOT_CONFIRMATORY
+confirmatory_authorization: false
+
+outer_crust_manifests:
+  - data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  - data/outer_crust_koliogi_2026/manifest_DDPC1.yaml
+  - data/outer_crust_koliogi_2026/manifest_DDPCX.yaml
+  - data/outer_crust_koliogi_2026/manifest_ELMA.yaml
+
+chiral_eft_manifests:
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+
+connector:
+  kind: reference_tilted_v0_5_candidate
+  template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  sampled_points_including_endpoints: 2049
+  observer_specific_parameters: 0
+
+rounded_source_projection:
+  applies_to: outer_crust_endpoint_mu_b_mev_only
+  authoritative_fields_preserved:
+    - n_b_fm3
+    - p_mev_fm3
+    - epsilon_mev_fm3
+    - cs2
+  replacement: mu_b_mev_equals_epsilon_plus_pressure_divided_by_density
+  maximum_original_relative_residual: 0.000001
+  silent_projection_forbidden: true
+  report_original_and_projected_values: true
+
+required_checks:
+  expected_pair_count: 8
+  maximum_endpoint_relative_residual: 0.0000000001
+  maximum_sampled_identity_relative_residual: 0.000000000001
+  minimum_cs2: 0.0
+  maximum_cs2: 1.0
+  pressure_strictly_increasing: true
+  energy_density_strictly_increasing: true
+  chemical_potential_strictly_increasing: true
+
+decision_scope: final_low_density_endpoint_pairing_and_local_bridge_physics
+does_not_validate:
+  - stellar_radius_impact
+  - tidal_deformability_impact
+  - independent_TOV_or_Love_cross_implementation
+  - confirmatory_trajectory_authorization
+

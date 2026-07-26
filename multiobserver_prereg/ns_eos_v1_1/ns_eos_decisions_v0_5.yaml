@@ -1,0 +1,215 @@
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.5-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+base_domain_spec: ns_eos_domain_v0_1.yaml
+confirmatory_authorization: false
+
+low_density_matching:
+  status: LOCKED
+  outer_crust:
+    prescription: pinned_modern_BPS_formalism_table_ensemble
+    density_nsat: [0.0, model_specific_neutron_drip_from_pinned_table]
+    semantic_limit: BPS_label_ends_at_neutron_drip
+    model_labels: [DD-ME2, DD-PC1, DD-PCX, ELMA]
+    design_role: balanced_shared_nuisance_factor
+    same_model_for_all_arms_within_trajectory: true
+    observer_conditioned_selection_forbidden: true
+  inner_crust:
+    prescription: shared_reference_tilted_chemical_potential_connector
+    density_nsat: [model_specific_neutron_drip_from_pinned_table, 0.5]
+    derivative_template_id: CCSU-MO-NS-EOS-001-INNER-CRUST-TEMPLATE-001
+    derivative_template_components:
+      exponents: [-40.0, 0.0, 40.0]
+      mass_weights:
+        - 0.10197140370508168
+        - 0.8427348093396028
+        - 0.0552937869553156
+    template_calibration_model: IOPB
+    primary_holdout_model: G3
+    secondary_coarse_grid_holdout_model: FSUGarnet
+    template_probabilistic_prior: false
+    sampled_free_parameters: 0
+    endpoint_tilt_deterministically_solved: true
+    observer_specific_parameters_forbidden: true
+  nuclear_band:
+    prescription: pinned_MUSES_v1_0_1_chiral_EFT_reference_members
+    density_nsat: [0.5, 1.1]
+    model_labels: [MUSES-N3LO-414, MUSES-N3LO-450]
+    source_commit: 6cf7fea41d2a2bac5f93e567d71279631168088b
+    source_tag: v1.0.1
+    matter: charge_neutral_beta_equilibrated_npe_mu
+    design_role: balanced_shared_nuisance_factor
+    same_model_for_all_arms_within_trajectory: true
+    observer_conditioned_selection_forbidden: true
+    pointwise_envelope_sampling_forbidden: true
+    coefficient_or_table_averaging_forbidden: true
+    probabilistic_coverage: null
+    formal_chiral_truncation_error: false
+  local_chart_start_nsat: 1.1
+  continuity_required_at_smooth_matches: [pressure, energy_density, baryon_chemical_potential]
+  registered_density_discontinuities_preserved: true
+  no_observer_specific_crust: true
+
+local_chart_proposals:
+  status: LOCKED
+  role: proposal_coordinates_subject_to_common_physical_filters
+  GW:
+    chart: spectral_adiabatic_index
+    parameters:
+      gamma0: [0.2, 2.0]
+      gamma1: [-1.6, 1.7]
+      gamma2: [-0.6, 0.6]
+      gamma3: [-0.02, 0.02]
+  XRAY:
+    chart: piecewise_polytrope
+    break_density_nsat: [1.1, 2.0, 3.5, 6.0]
+    parameters:
+      log10_p1_cgs: [33.6, 34.8]
+      gamma1: [1.0, 4.5]
+      gamma2: [1.0, 4.5]
+      gamma3: [1.0, 4.5]
+  RADIO:
+    chart: monotone_eos_spline
+    representation: monotone_log_pressure_spline
+    density_nodes_nsat: [1.1, 1.5, 2.0, 3.0, 4.5, 6.0]
+    log_pressure_increment_dex: [0.02, 0.80]
+  NUCLEAR:
+    chart: speed_of_sound_nodes
+    density_nodes_nsat: [1.1, 1.5, 2.0, 3.0, 4.5, 6.0]
+    cs2_range: [0.01, 1.0]
+  common_acceptance_filters:
+    - thermodynamic_stability
+    - causal_sound_speed
+    - continuous_matching_at_1_1_nsat
+    - maximum_mass_at_least_2_0_msun
+    - stable_branch_covers_1_0_to_2_2_msun
+
+synthetic_likelihoods:
+  status: LOCKED
+  signal_levels: [LOW, MEDIUM, HIGH]
+  GW:
+    family: multivariate_student_t
+    degrees_of_freedom: 8
+    network_snr: [12, 24, 48]
+    variables: [chirp_mass, mass_ratio, effective_tidal_deformability]
+  XRAY:
+    family: bivariate_student_t
+    degrees_of_freedom: 8
+    sigma_mass_msun: [0.12, 0.06, 0.03]
+    sigma_radius_km: [1.20, 0.60, 0.30]
+    correlation_mass_radius: -0.35
+  RADIO:
+    family: gaussian
+    sigma_mass_msun: [0.08, 0.04, 0.02]
+  NUCLEAR:
+    family: correlated_gaussian_log_pressure_band
+    sigma_log_pressure: [0.20, 0.10, 0.05]
+    adjacent_anchor_correlation: 0.60
+  balance_rule: no_single_observer_exceeds_60pct_expected_information_gain_in_MEDIUM
+
+phase_transition_proxy:
+  status: LOCKED
+  scientific_label: rapid_softening_then_restiffening
+  not_claimed_as_unique_first_order_signature: true
+  softening:
+    cs2_upper: 0.08
+    minimum_width_nsat: 0.40
+    onset_density_nsat: [1.5, 4.5]
+  restiffening:
+    cs2_lower: 0.45
+    maximum_delay_nsat: 1.50
+  confirmation_rule:
+    first_observer: one_of_[GW_XRAY]
+    confirming_observer: the_other_of_[GW_XRAY]
+    provenance_preserved: true
+
+comparator_roles:
+  status: LOCKED
+  P1_primary: HYBRID_vs_IND
+  P1_diagnostic: [HYBRID_vs_NAIVE_POOL, ATLAS_vs_NAIVE_POOL]
+  P2_primary: holonomy_vs_held_out_predictive_loss
+  P3_primary: HYBRID_vs_NAIVE_POOL
+  P4_primary: attacked_HYBRID_vs_clean_HYBRID
+  NAIVE_POOL_rule: prior_harmonized_likelihood_product_in_one_reference_chart
+  raw_posterior_pooling_forbidden: true
+
+trajectory_budget_rule:
+  status: LOCKED
+  pilot:
+    confirmatory: false
+    observer_counts: [4]
+    out_of_grid_signal_level: DEVELOPMENT
+    trajectories_per_cell: 200
+  confirmatory_budget:
+    minimum_power: 0.90
+    target_effect: smallest_frozen_effect
+    maximum_monte_carlo_se_directional_fraction: 0.01
+    minimum_trajectories_per_cell: 250
+    maximum_trajectories_per_cell: 1000
+    rounding_increment: 50
+    selection_rule: max_power_requirement_and_MCSE_requirement_rounded_up
+  budget_chosen_before_confirmatory_seed_schedule: true
+
+implementation_order:
+  - independent_dimensionless_TOV_oracle
+  - independent_dimensionless_Love_oracle
+  - pinned_outer_crust_table_and_units
+  - shared_inner_crust_connector
+  - pinned_chiral_EFT_anchor_band
+  - four_local_chart_generators
+  - public_relation_translation_tests
+  - out_of_grid_likelihood_smoke_tests
+  - nonconfirmatory_power_pilot
+
+implementation_evidence:
+  dimensionless_TOV_Love_oracle:
+    status: INTERNAL_SELF_CONSISTENCY_PASSED
+    source: src/ccsu_multiobserver/ns_eos_oracle.py
+    contract: ns_eos_oracle_contract_v0_2.yaml
+    review: NS_EOS_ORACLE_REVIEW_V0_2.md
+    cross_implementation_validated: false
+    counts_toward_confirmatory_freeze: false
+  low_density_contract:
+    status: INTERNAL_LOW_DENSITY_STELLAR_IMPACT_VALIDATION_PASSED
+    source: src/ccsu_multiobserver/ns_eos_low_density.py
+    generator: scripts/generate_muses_chiral_eft_anchor.py
+    inner_crust_validation_source: src/ccsu_multiobserver/ns_eos_inner_crust_validation.py
+    inner_crust_template_generator: scripts/fit_inner_crust_reference_template.py
+    inner_crust_validation_runner: scripts/run_inner_crust_validation.py
+    contract: ns_eos_low_density_contract_v0_6.yaml
+    review: NS_EOS_LOW_DENSITY_REVIEW_V0_6.md
+    inner_crust_connector_internal_validation: PASSED
+    inner_crust_connector_external_local_shape_validation: PASSED
+    inner_crust_connector_external_calibration_model: IOPB
+    inner_crust_connector_external_primary_holdout: G3
+    inner_crust_connector_external_secondary_holdout: FSUGarnet
+    inner_crust_endpoint_exponential_v0_4: REJECTED
+    inner_crust_reference_tilted_v0_5: ACCEPTED_FOR_CONTINUED_DEVELOPMENT_ONLY
+    final_outer_crust_EFT_pairings: ALL_8_PASSED
+    rounded_outer_endpoint_mu_projection: EXPLICITLY_BOUNDED_AT_1E_6
+    inner_crust_stellar_impact_validation: PASSED_UNDER_SHARED_SYNTHETIC_CSS_CORE
+    inner_crust_stellar_impact_contract: stellar_impact_contract_v0_1.yaml
+    inner_crust_stellar_impact_result: stellar_impact_results_v0_1.json
+    stellar_impact_high_density_semantics: SYNTHETIC_COMMON_DIAGNOSTIC_NOT_PHYSICAL_PRIOR
+    stellar_impact_cross_implementation_validated: false
+    scientific_outer_crust_tables_embedded: true
+    scientific_chiral_EFT_reference_members_embedded: true
+    chiral_EFT_source_commit_pinned: true
+    chiral_EFT_generation_chain_hashed: true
+    chiral_EFT_probabilistic_coverage_claimed: false
+    counts_toward_confirmatory_freeze: false
+
+resolved_open_decisions:
+  - low_density_matching_prescription
+  - exact_EOS_parameter_ranges_per_local_chart
+  - likelihood_shapes_and_signal_to_noise_grid
+  - phase_transition_operational_definition
+  - whether_NAIVE_POOL_is_primary_or_diagnostic_comparator
+  - confirmatory_trajectory_budget_after_power_pilot
+
+remaining_freeze_blockers:
+  - independent_review_of_parameter_ranges
+  - TOV_and_Love_cross_implementation_agreement
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
