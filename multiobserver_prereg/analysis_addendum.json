@@ -1,0 +1,23 @@
+{
+  "addendum_schema": 1,
+  "analysis_engine_version": "1.0.0",
+  "confirmatory_results_inspected_before_decisions": false,
+  "decisions_fixed": {
+    "BCa_limits": "Report 5th and 95th BCa limits as one-sided 95% bounds.",
+    "bootstrap_p_values": "Use the one-sided tail area of the centered stratified-bootstrap distribution; add one to numerator and denominator.",
+    "cell_weighting": "Calculate trajectory metrics first and weight every preregistered cell equally.",
+    "decision_rule": "P1-P4 pass only if all preregistered thresholds, the 80% directional-cell rule, zero primary execution failures, and the Holm-adjusted primary p-value pass. P5 is independent and has no Holm correction.",
+    "failure_rule": "A written failed row or non-finite primary metric in a preregistered primary contrast arm forces its prediction to fail; failures in non-primary arms remain disclosed but do not alter the primary decision. Incomplete or structurally invalid schedules are refused rather than analyzed.",
+    "P1_directional_unit": "The nine N by sigma strata; HYBRID rQ must be below IND rQ.",
+    "P2_controls": "Categorical N and topology.",
+    "P2_cross_validation": "Four deterministic folds, each holding out one complete translation-bias level; the full model adds standardized Hc.",
+    "P2_directional_unit": "The nine N by topology strata; within-stratum Spearman rho across translation-bias levels must be positive.",
+    "P3_directional_unit": "The nine N by SNR strata; HYBRID minus MEAN recall must be positive.",
+    "P4_pooling": "For each attack, pool equal-sized replicate samples across N cells; calculate median and P95.",
+    "P4_worst_attack": "Select the attack with the largest max(median/0.15, P95/0.30), using the attack name as a deterministic lexical tie-break.",
+    "P4_directional_unit": "The nine N by attack cells; both the median and P95 bound must hold.",
+    "P5_regression": "Ordinary least squares with intercept over all trajectory-level log(tau) and log(1/lambda2) pairs; equal replicate counts imply equal cell weight."
+  },
+  "scope": "Operational analysis choices left implicit by CCSU-MO-PREREG-001; no simulator dynamics, seed, design cell, outcome metric, threshold, or confirmatory result is changed.",
+  "status": "MUST_BE_PUBLICLY_COMMITTED_BEFORE_CONFIRMATORY_INPUT_IS_READ"
+}
