@@ -1,0 +1,43 @@
+extends: ns_eos_decisions_v0_8.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.9-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  finite_domain_recovery_search:
+    status: RECOVERY_CANDIDATES_FOUND_PROPOSAL_BOX_IMBALANCE_DEMONSTRATED
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    source: src/ccsu_multiobserver/ns_eos_recovery.py
+    runner: scripts/run_finite_domain_recovery_search.py
+    contract: finite_domain_recovery_contract_v0_1.yaml
+    result: finite_domain_recovery_results_v0_1.json
+    review: FINITE_DOMAIN_RECOVERY_REVIEW_V0_1.md
+    proposals_per_chart: 32
+    paired_chiral_eft_members: 2
+    evaluated_cases: 256
+    numerical_rejections: 0
+    accepted_cases:
+      GW: 2
+      XRAY: 0
+      RADIO: 3
+      NUCLEAR: 60
+    acceptance_fraction:
+      GW: 0.03125
+      XRAY: 0.0
+      RADIO: 0.046875
+      NUCLEAR: 0.9375
+    accepted_volume_balance_demonstrated: false
+    parameter_box_expansion_used: false
+    pressure_extrapolation_used: false
+    stellar_gates_changed: false
+    candidates_enter_P1_to_P4_calibration: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - finite_domain_acceptance_imbalance_and_XRAY_zero_acceptance
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

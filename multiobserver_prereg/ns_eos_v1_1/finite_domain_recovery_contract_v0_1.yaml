@@ -1,0 +1,72 @@
+schema_version: 1
+recovery_id: CCSU-MO-NS-EOS-001-FINITE-DOMAIN-RECOVERY-001
+version: "0.1-development"
+status: DEVELOPMENT_NONCONFIRMATORY_SEARCH
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_finite_domain_recovery_search.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+
+observer_order: [GW, XRAY, RADIO, NUCLEAR]
+mass_anchors_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+
+low_density:
+  outer_crust_reference_manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  parameter_box_expansion_forbidden: true
+  proposal_clipping_forbidden: true
+  pressure_extrapolation_forbidden: true
+  maximum_mass_requires_turnover_inside_domain: true
+  registered_stellar_gates_unchanged: true
+
+search_design:
+  sequence: scipy_qmc_scrambled_sobol
+  sobol_seed: 20260727
+  sobol_sample_power_per_chart: 5
+  proposals_per_chart: 32
+  proposals_evaluated_against_both_eft_members: true
+  equal_proposal_count_per_chart: true
+  diagnostic_only: true
+
+screening_solver:
+  logarithmic_scan_points: 24
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.06
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.08
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+exact_revalidation_solver:
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+acceptance:
+  local_thermodynamic_filters_required: true
+  stable_branch_covers_1_0_to_2_2_msun: true
+  maximum_mass_at_least_2_0_msun: true
+  mass_turnover_inside_6_nsat: true
+  all_mass_anchors_translated: true
+  exact_revalidation_required: true
+
+does_not_validate:
+  - physical_prior_interpretation_of_parameter_boxes
+  - independent_parameter_range_review
+  - observational_likelihoods
+  - P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
+  - pilot_or_confirmatory_authorization

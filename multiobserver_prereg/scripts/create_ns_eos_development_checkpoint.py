@@ -27,6 +27,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/fit_inner_crust_reference_template.py",
             "scripts/generate_muses_chiral_eft_anchor.py",
             "scripts/run_final_low_density_pairing_validation.py",
+            "scripts/run_finite_domain_recovery_search.py",
             "scripts/run_inner_crust_validation.py",
             "scripts/run_local_chart_validation.py",
             "scripts/run_local_to_public_relation_validation.py",
@@ -39,6 +40,7 @@ def _registered_files() -> tuple[Path, ...]:
             "src/ccsu_multiobserver/ns_eos_low_density.py",
             "src/ccsu_multiobserver/ns_eos_oracle.py",
             "src/ccsu_multiobserver/ns_eos_relations.py",
+            "src/ccsu_multiobserver/ns_eos_recovery.py",
             "src/ccsu_multiobserver/ns_eos_stellar_impact.py",
             "tests/test_ns_eos_decisions.py",
             "tests/test_ns_eos_final_pairings.py",
@@ -47,6 +49,7 @@ def _registered_files() -> tuple[Path, ...]:
             "tests/test_ns_eos_low_density.py",
             "tests/test_ns_eos_oracle.py",
             "tests/test_ns_eos_relations.py",
+            "tests/test_ns_eos_recovery.py",
             "tests/test_ns_eos_stellar_impact.py",
             "tests/test_ns_eos_tov_love_cross_validation.py",
         )
@@ -85,6 +88,12 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     relation_validation = json.loads(
         relation_path.read_text(encoding="utf-8")
     )
+    recovery_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "finite_domain_recovery_results_v0_1.json"
+    )
+    recovery = json.loads(recovery_path.read_text(encoding="utf-8"))
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -92,16 +101,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "0.9-development",
+        "version": "1.0-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "a1a937252c29ada11af8ffa200311cc64bbeac04",
+        "parent_commit": "a7421346080c2fb398b76946efee266bcb001b6a",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 91,
+            "passed": 97,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -220,6 +229,19 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "finite_domain_recovery": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(recovery_path),
+                "canonical_record_sha256": recovery[
+                    "canonical_record_sha256"
+                ],
+                "evaluated_cases": recovery["case_count"],
+                "accepted_cases": recovery["accepted_count"],
+                "acceptance_summary": recovery["acceptance_summary"],
+                "pilot_entry_authorized": recovery[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -249,13 +271,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             ),
             "local_to_public_relations": relation_validation["decision"],
             "finite_domain_stellar_gates": (
-                "FAILED_FOR_ALL_REGISTERED_EXEMPLARS"
+                "RECOVERY_CANDIDATES_FOUND_WITHOUT_EXTRAPOLATION"
+            ),
+            "proposal_box_acceptance_balance": (
+                "FAILED_XRAY_ZERO_NUCLEAR_0_9375"
             ),
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "finite_domain_stellar_gate_recovery_without_extrapolation",
+            "finite_domain_acceptance_imbalance_and_XRAY_zero_acceptance",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",
             "power_derived_confirmatory_budget",

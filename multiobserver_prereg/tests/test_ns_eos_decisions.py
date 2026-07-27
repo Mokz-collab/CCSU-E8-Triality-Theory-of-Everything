@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_8.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_7.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_9.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_8.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.7-development")
+        self.assertEqual(previous["version"], "0.8-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -68,8 +68,25 @@ class NSEOSDecisionTests(unittest.TestCase):
             evidence["maximum_mass_invented_at_domain_boundary"]
         )
         self.assertFalse(evidence["pilot_entry_authorized"])
-        self.assertIn(
+        self.assertNotIn(
             "finite_domain_stellar_gate_recovery_without_extrapolation",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_recovery_candidates_do_not_authorize_imbalanced_pilot(self):
+        evidence = self.decisions["implementation_evidence"][
+            "finite_domain_recovery_search"
+        ]
+        self.assertEqual(evidence["evaluated_cases"], 256)
+        self.assertEqual(evidence["numerical_rejections"], 0)
+        self.assertEqual(evidence["accepted_cases"]["XRAY"], 0)
+        self.assertEqual(evidence["accepted_cases"]["NUCLEAR"], 60)
+        self.assertFalse(
+            evidence["accepted_volume_balance_demonstrated"]
+        )
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertIn(
+            "finite_domain_acceptance_imbalance_and_XRAY_zero_acceptance",
             self.decisions["remaining_freeze_blockers"],
         )
 

@@ -76,9 +76,15 @@ registered exemplars. All eight translations complete, but every mass
 sequence is still rising at the finite \(6\,n_{\mathrm{sat}}\) boundary.
 Consequently no \(M_{\max}\) is invented from the endpoint, zero cases pass
 the full stellar gates, and pilot entry is forbidden. The result supplies
-lower bounds and partial relation anchors only. Recovery requires a
-deterministic nonconfirmatory search within the existing proposal boxes or an
-explicitly registered domain revision; extrapolation is not allowed.
+lower bounds and partial relation anchors only.
+
+The first deterministic recovery search is now complete. It evaluates 32
+Sobol proposals per chart against both χEFT members without changing the
+boxes, gates, or finite domain. GW accepts 2/64 cases, XRAY 0/64, RADIO 3/64,
+and NUCLEAR 60/64. The result proves that finite-domain candidates exist, but
+also demonstrates severe proposal-volume imbalance. Pilot entry therefore
+remains forbidden pending independent range review and recovery of XRAY
+support. Extrapolation remains prohibited.
 
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_8.yaml` are closed.
+`ns_eos_decisions_v0_9.yaml` are closed.
