@@ -1,0 +1,138 @@
+schema_version: 1
+generator_contract_id: CCSU-MO-NS-EOS-001-LOCAL-CHARTS-001
+version: "0.1-development"
+status: DEVELOPMENT_GENERATOR_CONTRACT
+confirmatory_authorization: false
+
+decision_lock: ns_eos_decisions_v0_6.yaml
+source: src/ccsu_multiobserver/ns_eos_local_charts.py
+environment_lock: ns_eos_local_chart_environment_v0_1.lock
+anchor_density_nsat: 1.1
+maximum_density_nsat: 6.0
+sample_count: 257
+canonical_units:
+  baryon_density: fm^-3
+  pressure: MeV_fm^-3
+  energy_density: MeV_fm^-3
+  baryon_chemical_potential: MeV
+  sound_speed_squared: dimensionless_c_equals_1
+
+thermodynamic_evolution:
+  independent_variable: x_equals_ln_n_over_n_anchor
+  identities:
+    - d_epsilon_d_x_equals_epsilon_plus_pressure
+    - cs2_equals_d_pressure_d_epsilon
+    - mu_equals_epsilon_plus_pressure_over_n
+  integrator: scipy_solve_ivp_DOP853
+  relative_tolerance: 0.00000000001
+  absolute_tolerance: 0.000000000001
+  maximum_x_step: 0.01
+
+anchors:
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+anchor_hash_must_validate_before_generation: true
+
+charts:
+  GW:
+    chart: spectral_adiabatic_index
+    equation: >
+      Gamma(x)=exp(gamma0+gamma1*x+gamma2*x^2+gamma3*x^3);
+      dP/dx=Gamma*P.
+    parameters:
+      gamma0: [0.2, 2.0]
+      gamma1: [-1.6, 1.7]
+      gamma2: [-0.6, 0.6]
+      gamma3: [-0.02, 0.02]
+    registered_exemplar:
+      gamma0: 0.8
+      gamma1: 0.0
+      gamma2: 0.0
+      gamma3: 0.0
+  XRAY:
+    chart: piecewise_polytrope
+    density_breaks_nsat: [1.1, 2.0, 3.5, 6.0]
+    first_segment_semantics: >
+      shifted power law fixed to the low-density anchor and p1 at 2 n_sat;
+      later segments are continuous ordinary power laws.
+    parameters:
+      log10_p1_cgs: [33.6, 34.8]
+      gamma1: [1.0, 4.5]
+      gamma2: [1.0, 4.5]
+      gamma3: [1.0, 4.5]
+    registered_exemplar:
+      log10_p1_cgs: 34.2
+      gamma1: 2.2
+      gamma2: 2.5
+      gamma3: 2.3
+  RADIO:
+    chart: monotone_eos_spline
+    density_nodes_nsat: [1.1, 1.5, 2.0, 3.0, 4.5, 6.0]
+    equation: monotone_PCHIP_in_log10_pressure_vs_log_density
+    parameters:
+      delta_log10_p_1: [0.02, 0.80]
+      delta_log10_p_2: [0.02, 0.80]
+      delta_log10_p_3: [0.02, 0.80]
+      delta_log10_p_4: [0.02, 0.80]
+      delta_log10_p_5: [0.02, 0.80]
+    registered_exemplar:
+      delta_log10_p_1: 0.16
+      delta_log10_p_2: 0.18
+      delta_log10_p_3: 0.24
+      delta_log10_p_4: 0.24
+      delta_log10_p_5: 0.18
+  NUCLEAR:
+    chart: speed_of_sound_nodes
+    density_nodes_nsat: [1.1, 1.5, 2.0, 3.0, 4.5, 6.0]
+    interpolation: shape_preserving_PCHIP_in_log_density
+    parameters:
+      cs2_1: [0.01, 1.0]
+      cs2_2: [0.01, 1.0]
+      cs2_3: [0.01, 1.0]
+      cs2_4: [0.01, 1.0]
+      cs2_5: [0.01, 1.0]
+      cs2_6: [0.01, 1.0]
+    registered_exemplar:
+      cs2_1: 0.05
+      cs2_2: 0.12
+      cs2_3: 0.25
+      cs2_4: 0.45
+      cs2_5: 0.55
+      cs2_6: 0.50
+
+local_acceptance:
+  density_strictly_increasing: true
+  pressure_strictly_increasing: true
+  energy_strictly_increasing: true
+  sound_speed_squared_interval: [exclusive_0, inclusive_1]
+  matching_relative_tolerance: 0.0000000001
+  thermodynamic_identity_relative_tolerance: 0.000000000001
+
+proposal_semantics:
+  parameter_boxes_are_physical_priors: false
+  invalid_proposals_are_rejected_not_clipped: true
+  local_parameter_vector_averaging_forbidden: true
+  atlas_aggregation_unit: physical_relation_anchor
+  same_low_density_member_across_arms_within_trajectory: true
+
+primary_sources:
+  - role: spectral_adiabatic_index
+    citation: Lindblom_2010_PhysRevD_82_103011
+    url: https://arxiv.org/abs/1009.0738
+  - role: piecewise_polytrope
+    citation: Read_Lackey_Owen_Friedman_2009_PhysRevD_79_124032
+    url: https://arxiv.org/abs/0812.2163
+  - role: flexible_nonparametric_EOS
+    citation: Landry_Essick_2019_PhysRevD_99_084049
+    url: https://arxiv.org/abs/1811.12529
+  - role: sound_speed_and_continuous_EOS_ensembles
+    citation: Altiparmak_Ecker_Rezzolla_2022_ApJL_939_L34
+    url: https://arxiv.org/abs/2203.14974
+
+does_not_validate:
+  - independent_review_of_parameter_ranges
+  - maximum_mass_filter
+  - stable_branch_coverage_filter
+  - local_to_public_relation_translation
+  - observational_likelihoods
+  - confirmatory_trajectory_authorization

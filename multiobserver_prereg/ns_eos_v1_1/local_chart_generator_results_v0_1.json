@@ -1,0 +1,357 @@
+{
+  "all_cases_pass": true,
+  "canonical_record_sha256": "9888e15adf63ad022059faa9474fdbd08c722d4928d5615466f65ef59c17bac8",
+  "case_count": 8,
+  "cases": [
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-414",
+      "anchor_table_sha256": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+      "case_id": "GW__MUSES-N3LO-414",
+      "chart": "spectral_adiabatic_index",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 1.7079718221311448e-13,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.2537401167234655,
+        "minimum_sound_speed_squared": 0.03874884331718362,
+        "pressure_ratio_6_to_1_1_nsat": 43.62006830683581,
+        "sample_count": 257
+      },
+      "observer": "GW",
+      "parameters": {
+        "gamma0": 0.8,
+        "gamma1": 0.0,
+        "gamma2": 0.0,
+        "gamma3": 0.0
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-414",
+      "anchor_table_sha256": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+      "case_id": "XRAY__MUSES-N3LO-414",
+      "chart": "piecewise_polytrope",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 1.7079718221311448e-13,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.27722260782833813,
+        "minimum_sound_speed_squared": 0.03259658481154948,
+        "pressure_ratio_6_to_1_1_nsat": 46.45800706132719,
+        "sample_count": 259
+      },
+      "observer": "XRAY",
+      "parameters": {
+        "gamma1": 2.2,
+        "gamma2": 2.5,
+        "gamma3": 2.3,
+        "log10_p1_cgs": 34.2
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-414",
+      "anchor_table_sha256": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+      "case_id": "RADIO__MUSES-N3LO-414",
+      "chart": "monotone_eos_spline",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 1.7079718221311448e-13,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 1.4902347797588978e-16
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.04460719815725634,
+        "minimum_sound_speed_squared": 0.018397314826107014,
+        "pressure_ratio_6_to_1_1_nsat": 9.999999999999998,
+        "sample_count": 261
+      },
+      "observer": "RADIO",
+      "parameters": {
+        "delta_log10_p_1": 0.16,
+        "delta_log10_p_2": 0.18,
+        "delta_log10_p_3": 0.24,
+        "delta_log10_p_4": 0.24,
+        "delta_log10_p_5": 0.18
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-414",
+      "anchor_table_sha256": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+      "case_id": "NUCLEAR__MUSES-N3LO-414",
+      "chart": "speed_of_sound_nodes",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 1.7079718221311448e-13,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.55,
+        "minimum_sound_speed_squared": 0.05,
+        "pressure_ratio_6_to_1_1_nsat": 155.43657986654574,
+        "sample_count": 261
+      },
+      "observer": "NUCLEAR",
+      "parameters": {
+        "cs2_1": 0.05,
+        "cs2_2": 0.12,
+        "cs2_3": 0.25,
+        "cs2_4": 0.45,
+        "cs2_5": 0.55,
+        "cs2_6": 0.5
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-450",
+      "anchor_table_sha256": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6",
+      "case_id": "GW__MUSES-N3LO-450",
+      "chart": "spectral_adiabatic_index",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 6.659072133086564e-14,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.2441003656917195,
+        "minimum_sound_speed_squared": 0.036966062452133595,
+        "pressure_ratio_6_to_1_1_nsat": 43.62006830683577,
+        "sample_count": 257
+      },
+      "observer": "GW",
+      "parameters": {
+        "gamma0": 0.8,
+        "gamma1": 0.0,
+        "gamma2": 0.0,
+        "gamma3": 0.0
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-450",
+      "anchor_table_sha256": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6",
+      "case_id": "XRAY__MUSES-N3LO-450",
+      "chart": "piecewise_polytrope",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 6.659072133086564e-14,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.277336641675094,
+        "minimum_sound_speed_squared": 0.03329377035563654,
+        "pressure_ratio_6_to_1_1_nsat": 48.75140014064987,
+        "sample_count": 259
+      },
+      "observer": "XRAY",
+      "parameters": {
+        "gamma1": 2.2,
+        "gamma2": 2.5,
+        "gamma3": 2.3,
+        "log10_p1_cgs": 34.2
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-450",
+      "anchor_table_sha256": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6",
+      "case_id": "RADIO__MUSES-N3LO-450",
+      "chart": "monotone_eos_spline",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 6.659072133086564e-14,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.04265550507221761,
+        "minimum_sound_speed_squared": 0.017550879731985387,
+        "pressure_ratio_6_to_1_1_nsat": 10.000000000000002,
+        "sample_count": 261
+      },
+      "observer": "RADIO",
+      "parameters": {
+        "delta_log10_p_1": 0.16,
+        "delta_log10_p_2": 0.18,
+        "delta_log10_p_3": 0.24,
+        "delta_log10_p_4": 0.24,
+        "delta_log10_p_5": 0.18
+      }
+    },
+    {
+      "all_local_checks_pass": true,
+      "anchor_model": "MUSES-N3LO-450",
+      "anchor_table_sha256": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6",
+      "case_id": "NUCLEAR__MUSES-N3LO-450",
+      "chart": "speed_of_sound_nodes",
+      "diagnostics": {
+        "all_local_checks_pass": true,
+        "checks": {
+          "anchor_matching": true,
+          "density_strictly_increasing": true,
+          "energy_strictly_increasing": true,
+          "finite": true,
+          "pressure_strictly_increasing": true,
+          "sound_speed_causal": true,
+          "sound_speed_positive": true,
+          "thermodynamic_identity": true
+        },
+        "matching_relative_residuals": {
+          "chemical_potential": 6.659072133086564e-14,
+          "density": 1.5770213417970976e-16,
+          "energy": 0.0,
+          "pressure": 0.0
+        },
+        "maximum_identity_relative_residual": 0.0,
+        "maximum_sound_speed_squared": 0.55,
+        "minimum_sound_speed_squared": 0.05,
+        "pressure_ratio_6_to_1_1_nsat": 162.88467043065535,
+        "sample_count": 261
+      },
+      "observer": "NUCLEAR",
+      "parameters": {
+        "cs2_1": 0.05,
+        "cs2_2": 0.12,
+        "cs2_3": 0.25,
+        "cs2_4": 0.45,
+        "cs2_5": 0.55,
+        "cs2_6": 0.5
+      }
+    }
+  ],
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "local_chart_generator_contract_v0_1.yaml",
+    "sha256": "832fc7de7a54064273ae2a179e9d6aee6bbe9955cea6050ea7936874d41b4920"
+  },
+  "created_utc": "2026-07-27T10:14:00Z",
+  "decision": "FOUR_LOCAL_CHART_GENERATORS_PASSED_INTERNAL_LOCAL_FILTERS",
+  "decision_lock": {
+    "path": "ns_eos_decisions_v0_6.yaml",
+    "resolved_version": "0.6-development",
+    "sha256": "1b19af72579b3676f666304c291adcf6d045975dff09cf014f065a803ed5d789"
+  },
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "environment_lock": {
+    "path": "ns_eos_local_chart_environment_v0_1.lock",
+    "sha256": "388e0fec245fd6a9a2ac648ca6cc11b03516be321d807324fb92f7b7010681d4"
+  },
+  "four_distinct_local_charts": true,
+  "remaining_nonvalidated_items": [
+    "independent_review_of_parameter_ranges",
+    "maximum_mass_filter",
+    "stable_branch_coverage_filter",
+    "local_to_public_relation_translation",
+    "observational_likelihoods",
+    "confirmatory_trajectory_authorization"
+  ],
+  "schema": "ccsu.multiobserver.ns-eos-local-chart-result.v1",
+  "source": {
+    "path": "src/ccsu_multiobserver/ns_eos_local_charts.py",
+    "sha256": "0e113a4ac58914ff3d740d56d0f75585b77e44bef298a1ed8a37b7409a764f96"
+  },
+  "status": "DEVELOPMENT_NOT_CONFIRMATORY",
+  "validation_id": "CCSU-MO-NS-EOS-001-LOCAL-CHARTS-001"
+}

@@ -1,0 +1,31 @@
+extends: ns_eos_decisions_v0_6.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.7-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  local_chart_generators:
+    status: FOUR_GENERATORS_PASSED_INTERNAL_LOCAL_FILTERS
+    source: src/ccsu_multiobserver/ns_eos_local_charts.py
+    runner: scripts/run_local_chart_validation.py
+    contract: local_chart_generator_contract_v0_1.yaml
+    result: local_chart_generator_results_v0_1.json
+    review_packet: LOCAL_CHART_PARAMETER_REVIEW_PACKET_V0_1.md
+    environment_lock: ns_eos_local_chart_environment_v0_1.lock
+    observers: [GW, XRAY, RADIO, NUCLEAR]
+    anchor_members: [MUSES-N3LO-414, MUSES-N3LO-450]
+    registered_cases: 8
+    all_registered_cases_passed: true
+    invalid_proposals_rejected_not_clipped: true
+    local_parameter_vector_averaging_forbidden: true
+    maximum_mass_filter_implemented: false
+    stable_branch_filter_implemented: false
+    independent_parameter_range_review: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

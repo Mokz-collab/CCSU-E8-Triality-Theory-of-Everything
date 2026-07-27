@@ -28,17 +28,20 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/generate_muses_chiral_eft_anchor.py",
             "scripts/run_final_low_density_pairing_validation.py",
             "scripts/run_inner_crust_validation.py",
+            "scripts/run_local_chart_validation.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_tov_love_cross_validation.py",
             "src/ccsu_multiobserver/ns_eos_decisions.py",
             "src/ccsu_multiobserver/ns_eos_enthalpy_oracle.py",
             "src/ccsu_multiobserver/ns_eos_inner_crust_validation.py",
+            "src/ccsu_multiobserver/ns_eos_local_charts.py",
             "src/ccsu_multiobserver/ns_eos_low_density.py",
             "src/ccsu_multiobserver/ns_eos_oracle.py",
             "src/ccsu_multiobserver/ns_eos_stellar_impact.py",
             "tests/test_ns_eos_decisions.py",
             "tests/test_ns_eos_final_pairings.py",
             "tests/test_ns_eos_inner_crust_validation.py",
+            "tests/test_ns_eos_local_charts.py",
             "tests/test_ns_eos_low_density.py",
             "tests/test_ns_eos_oracle.py",
             "tests/test_ns_eos_stellar_impact.py",
@@ -63,6 +66,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     cross_validation = json.loads(
         cross_validation_path.read_text(encoding="utf-8")
     )
+    local_chart_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "local_chart_generator_results_v0_1.json"
+    )
+    local_chart_validation = json.loads(
+        local_chart_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -70,16 +81,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "0.7-development",
+        "version": "0.8-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "a192eb892ca5233d34dc7ac4521ac6cd8acbefee",
+        "parent_commit": "80ab695bf344fea80e95ce0a2f497329f2197b8d",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 75,
+            "passed": 83,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -148,6 +159,25 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     / "ns_eos_cross_validation_environment_v0_1.lock"
                 ),
             },
+            "local_chart_generators": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(local_chart_path),
+                "canonical_record_sha256": local_chart_validation[
+                    "canonical_record_sha256"
+                ],
+                "registered_cases": local_chart_validation["case_count"],
+                "registered_cases_passed": sum(
+                    bool(case["all_local_checks_pass"])
+                    for case in local_chart_validation["cases"]
+                ),
+                "distinct_local_charts": local_chart_validation[
+                    "four_distinct_local_charts"
+                ],
+                "environment_lock_sha256": local_chart_validation[
+                    "environment_lock"
+                ]["sha256"],
+                "independent_range_review": False,
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -166,6 +196,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             ),
             "TOV_Love_cross_implementation": (
                 "INTERNAL_INDEPENDENT_FORMULATION_AGREEMENT_PASSED"
+            ),
+        },
+        "local_chart_decision": {
+            "local_chart_generators": (
+                "FOUR_GENERATORS_PASSED_INTERNAL_LOCAL_FILTERS"
+            ),
+            "local_chart_parameter_ranges": (
+                "AWAITING_INDEPENDENT_REVIEW"
             ),
         },
         "files": files,

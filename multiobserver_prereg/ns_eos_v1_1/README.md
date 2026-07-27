@@ -17,7 +17,7 @@ verify the two χEFT members with:
 
 ```bash
 PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_decisions \
-  ns_eos_v1_1/ns_eos_decisions_v0_6.yaml
+  ns_eos_v1_1/ns_eos_decisions_v0_7.yaml
 PYTHONPATH=src python scripts/run_inner_crust_validation.py \
   --contract ns_eos_v1_1/inner_crust_validation_contract_v0_1.yaml \
   --output /tmp/inner_crust_validation.json \
@@ -38,6 +38,10 @@ PYTHONPATH=src python scripts/run_tov_love_cross_validation.py \
   --contract ns_eos_v1_1/tov_love_cross_validation_contract_v0_1.yaml \
   --output /tmp/tov_love_cross_validation.json \
   --created-utc 2026-07-26T23:28:00Z
+PYTHONPATH=src python scripts/run_local_chart_validation.py \
+  --contract ns_eos_v1_1/local_chart_generator_contract_v0_1.yaml \
+  --output /tmp/local_chart_validation.json \
+  --created-utc 2026-07-27T10:14:00Z
 ```
 
 The two χEFT members form a coherent interaction-reference envelope. They do
@@ -57,5 +61,13 @@ with the radius-based RK4 solver in all ten preregistered cases. This closes
 the internal TOV/Love cross-implementation blocker, but it is not validation
 by a separately maintained external package or independent research group.
 
+The four local high-density charts are now executable and retain distinct
+observer coordinates. Eight registered chart/χEFT-anchor cases pass local
+matching, identity, monotonicity, stability, and causality checks. Parameter
+boxes remain proposal regions rather than physical priors: invalid candidates
+are rejected, never clipped, and the independent range review remains open.
+Maximum-mass, stable-branch, and public-relation translation gates are the
+next implementation layer.
+
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_6.yaml` are closed.
+`ns_eos_decisions_v0_7.yaml` are closed.
