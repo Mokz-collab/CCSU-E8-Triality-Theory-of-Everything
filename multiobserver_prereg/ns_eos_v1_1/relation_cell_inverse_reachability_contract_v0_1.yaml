@@ -1,0 +1,80 @@
+schema_version: 1
+diagnostic_id: CCSU-MO-NS-EOS-001-INVERSE-RELATION-REACHABILITY-001
+version: "0.1-development"
+status: DEVELOPMENT_NONCONFIRMATORY_DIAGNOSTIC
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_relation_cell_inverse_reachability.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+recovery_result: finite_domain_recovery_results_v0_1.json
+xray_diagnostic_result: xray_relation_space_diagnostic_results_v0_1.json
+common_measure_result: common_relation_measure_results_v0_1.json
+
+observer_order: [GW, XRAY, RADIO, NUCLEAR]
+mass_anchors_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+
+low_density:
+  outer_crust_reference_manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+relation_space:
+  coordinates:
+    - log10_pressure_mev_fm3
+    - pressure_over_energy
+    - sound_speed_squared
+  density_anchors_nsat: [2.0, 3.0, 4.0, 5.0, 6.0]
+  scaling:
+    log10_pressure_decades: 1.0
+    pressure_over_energy: 1.0
+    sound_speed_squared: 1.0
+  distance: root_mean_square_over_all_15_scaled_coordinates
+  target_cells: common_measure_primary_component_medoids
+
+inverse_bank:
+  sequence: scipy_qmc_scrambled_sobol
+  sobol_seed: 20260728
+  sobol_sample_power_per_chart: 8
+  sobol_proposals_per_chart: 256
+  include_public_accepted_seed_proposals: true
+  require_local_pass_for_both_eft_members: true
+  same_parameters_for_both_eft_members: true
+  parameter_values_excluded_from_public_matrix: true
+
+inverse_selection:
+  rule: minimize_maximum_member_relation_distance
+  relation_reachability_epsilon: 0.05
+  deterministic_tie_break: candidate_id_lexicographic
+  exact_stellar_gates_run_only_if_relation_reachable: true
+  robust_reachability_requires_both_eft_members: true
+
+exact_stellar_solver:
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  parameter_box_expansion_forbidden: true
+  invalid_proposals_rejected_not_clipped: true
+  pressure_extrapolation_forbidden: true
+  stellar_gates_unchanged: true
+  nonreachability_is_a_reported_result: true
+
+does_not_validate:
+  - global_optimization_of_inverse_map
+  - sampling_completeness
+  - physical_prior_measure
+  - observational_viability
+  - independent_parameter_range_review
+  - P1_to_P4_thresholds
+  - pilot_or_confirmatory_authorization

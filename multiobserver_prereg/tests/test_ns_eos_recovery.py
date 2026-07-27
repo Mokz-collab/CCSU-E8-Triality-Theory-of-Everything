@@ -19,6 +19,7 @@ from ccsu_multiobserver.ns_eos_recovery import (
     relation_components,
     relation_distance_matrix,
     relation_vector,
+    select_paired_minimax_candidate,
     summarize_acceptance,
 )
 
@@ -173,6 +174,32 @@ class NSEOSRecoveryTests(unittest.TestCase):
             ((0, 1, 2), (3,)),
         )
 
+    def test_inverse_selection_minimizes_paired_worst_case_loss(self):
+        result = select_paired_minimax_candidate(
+            np.asarray([0.0, 0.0]),
+            [
+                {
+                    "candidate_id": "asymmetric",
+                    "member_vectors": [
+                        np.asarray([0.0, 0.0]),
+                        np.asarray([0.4, 0.0]),
+                    ],
+                },
+                {
+                    "candidate_id": "paired",
+                    "member_vectors": [
+                        np.asarray([0.2, 0.0]),
+                        np.asarray([0.2, 0.0]),
+                    ],
+                },
+            ],
+        )
+        self.assertEqual(result["candidate_id"], "paired")
+        self.assertAlmostEqual(
+            result["paired_worst_case_loss"],
+            np.sqrt(0.02),
+        )
+
     def test_zero_acceptance_is_reported_as_imbalance(self):
         cases = [
             {"observer": "GW", "outcome": "ACCEPTED"},
@@ -278,6 +305,30 @@ class NSEOSRecoveryTests(unittest.TestCase):
         self.assertFalse(result["cross_observer_overlap_demonstrated"])
         self.assertFalse(
             result["equal_relation_space_coverage_demonstrated"]
+        )
+        self.assertFalse(result["pilot_entry_authorized"])
+
+    def test_registered_inverse_map_has_no_cross_chart_overlap(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "relation_cell_inverse_reachability_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(result["target_cell_count"], 35)
+        self.assertEqual(
+            result["cross_chart_robust_overlap_cell_count"],
+            0,
+        )
+        self.assertEqual(result["uncovered_target_cell_count"], 1)
+        self.assertFalse(result["cross_chart_overlap_demonstrated"])
+        self.assertFalse(
+            result["all_targets_have_robust_source_chart"]
+        )
+        self.assertFalse(
+            result["local_parameter_vectors_in_public_matrix"]
         )
         self.assertFalse(result["pilot_entry_authorized"])
 

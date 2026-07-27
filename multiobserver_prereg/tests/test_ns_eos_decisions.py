@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_11.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_10.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_12.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_11.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.10-development")
+        self.assertEqual(previous["version"], "0.11-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -121,9 +121,28 @@ class NSEOSDecisionTests(unittest.TestCase):
             evidence["cross_observer_overlap_demonstrated"]
         )
         self.assertFalse(evidence["pilot_entry_authorized"])
-        self.assertIn(
+        self.assertNotIn(
             "common_relation_space_sampling_coverage_and_"
             "cross_chart_overlap_not_demonstrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_inverse_map_records_nonoverlap_without_overclaim(self):
+        evidence = self.decisions["implementation_evidence"][
+            "relation_cell_inverse_reachability"
+        ]
+        self.assertEqual(evidence["target_cells"], 35)
+        self.assertEqual(evidence["cross_chart_robust_overlap_cells"], 0)
+        self.assertEqual(evidence["uncovered_cells"], 1)
+        self.assertTrue(evidence["nonreachability_recorded"])
+        self.assertFalse(evidence["cross_chart_overlap_demonstrated"])
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertIn(
+            "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
+            self.decisions["remaining_freeze_blockers"],
+        )
+        self.assertIn(
+            "inverse_reachability_sampling_completeness_not_demonstrated",
             self.decisions["remaining_freeze_blockers"],
         )
 

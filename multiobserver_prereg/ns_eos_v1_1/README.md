@@ -105,5 +105,16 @@ passes duplicate invariance. No primary component contains more than one
 chart, and NUCLEAR accounts for 30/35 occupied cells. The measure is defined,
 but balanced sampling coverage and cross-chart overlap are not demonstrated.
 
+Inverse reachability has now been evaluated for all 35 occupied relation
+cells. Each chart uses a 256-point Sobol bank plus its public accepted seeds,
+with selection minimizing the worst translation loss across both χEFT
+members. Exact stellar gates run only below the unchanged relation threshold
+\(\epsilon=0.05\). GW robustly reaches one cell, XRAY two, RADIO one, and
+NUCLEAR thirty; no cell is robustly reached by two charts. One RADIO
+N3LO-450 singleton is not pair-robust and becomes explicitly uncovered.
+This maps the non-overlap but does not prove global nonreachability. Targeted
+bounded optimization of the closest cross-chart near misses is the next
+development step.
+
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_11.yaml` are closed.
+`ns_eos_decisions_v0_12.yaml` are closed.

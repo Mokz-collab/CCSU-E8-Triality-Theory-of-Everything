@@ -32,6 +32,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_inner_crust_validation.py",
             "scripts/run_local_chart_validation.py",
             "scripts/run_local_to_public_relation_validation.py",
+            "scripts/run_relation_cell_inverse_reachability.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_tov_love_cross_validation.py",
             "scripts/run_xray_relation_space_diagnostic.py",
@@ -112,6 +113,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     common_measure = json.loads(
         common_measure_path.read_text(encoding="utf-8")
     )
+    inverse_reachability_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "relation_cell_inverse_reachability_results_v0_1.json"
+    )
+    inverse_reachability = json.loads(
+        inverse_reachability_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -119,16 +128,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.2-development",
+        "version": "1.3-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "6296483e2dd8cb2ca983da2b45b96f32117caae8",
+        "parent_commit": "96d0cec65cbd1f58c0b9b4537a2d8c52802fe5f8",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 106,
+            "passed": 109,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -306,6 +315,34 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "relation_cell_inverse_reachability": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(inverse_reachability_path),
+                "canonical_record_sha256": inverse_reachability[
+                    "canonical_record_sha256"
+                ],
+                "target_cells": inverse_reachability[
+                    "target_cell_count"
+                ],
+                "chart_summary": inverse_reachability["chart_summary"],
+                "cross_chart_robust_overlap_cells": (
+                    inverse_reachability[
+                        "cross_chart_robust_overlap_cell_count"
+                    ]
+                ),
+                "uncovered_target_cells": inverse_reachability[
+                    "uncovered_target_cell_count"
+                ],
+                "exact_stellar_candidate_evaluations": (
+                    inverse_reachability[
+                        "exact_stellar_candidate_evaluations"
+                    ]
+                ),
+                "decision": inverse_reachability["decision"],
+                "pilot_entry_authorized": inverse_reachability[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -348,11 +385,15 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             ),
             "common_relation_space_sampling_coverage": "NOT_DEMONSTRATED",
             "cross_chart_relation_overlap": "NOT_DEMONSTRATED",
+            "inverse_relation_cell_reachability": (
+                "MAPPED_NO_CROSS_CHART_OVERLAP_AT_EPSILON_0_05"
+            ),
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "common_relation_space_sampling_coverage_and_cross_chart_overlap_not_demonstrated",
+            "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
+            "inverse_reachability_sampling_completeness_not_demonstrated",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",
             "power_derived_confirmatory_budget",

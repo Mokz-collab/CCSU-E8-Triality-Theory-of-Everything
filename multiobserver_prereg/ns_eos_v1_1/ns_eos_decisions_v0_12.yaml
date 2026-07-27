@@ -1,0 +1,42 @@
+extends: ns_eos_decisions_v0_11.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.12-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  relation_cell_inverse_reachability:
+    status: INVERSE_RELATION_CELL_REACHABILITY_MAPPED_NO_CROSS_CHART_OVERLAP_AT_REGISTERED_RESOLUTION
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    source: src/ccsu_multiobserver/ns_eos_recovery.py
+    runner: scripts/run_relation_cell_inverse_reachability.py
+    contract: relation_cell_inverse_reachability_contract_v0_1.yaml
+    result: relation_cell_inverse_reachability_results_v0_1.json
+    review: RELATION_CELL_INVERSE_REACHABILITY_REVIEW_V0_1.md
+    target_cells: 35
+    exact_stellar_candidate_evaluations: 34
+    robust_reachable_cells:
+      GW: 1
+      XRAY: 2
+      RADIO: 1
+      NUCLEAR: 30
+    uncovered_cells: 1
+    cross_chart_robust_overlap_cells: 0
+    cross_chart_overlap_demonstrated: false
+    paired_chiral_eft_minimax_selection: true
+    local_parameter_vectors_in_public_matrix: false
+    parameter_box_expansion_used: false
+    pressure_extrapolation_used: false
+    stellar_gates_changed: false
+    nonreachability_recorded: true
+    candidates_enter_P1_to_P4_calibration: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

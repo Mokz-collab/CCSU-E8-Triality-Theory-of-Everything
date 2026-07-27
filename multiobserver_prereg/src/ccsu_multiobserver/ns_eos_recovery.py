@@ -238,6 +238,44 @@ def equal_component_measure(
     }
 
 
+def select_paired_minimax_candidate(
+    target_vector: np.ndarray,
+    candidates: Sequence[Mapping[str, object]],
+) -> dict[str, object]:
+    target = np.asarray(target_vector, dtype=float)
+    if target.ndim != 1 or not np.all(np.isfinite(target)):
+        raise ValueError("target vector must be finite and one-dimensional")
+    ranked: list[tuple[float, str, list[float]]] = []
+    for candidate in candidates:
+        identifier = str(candidate["candidate_id"])
+        member_vectors = [
+            np.asarray(vector, dtype=float)
+            for vector in candidate["member_vectors"]
+        ]
+        if (
+            len(member_vectors) < 2
+            or any(vector.shape != target.shape for vector in member_vectors)
+            or not all(np.all(np.isfinite(vector)) for vector in member_vectors)
+        ):
+            raise ValueError("paired candidate vectors are incompatible")
+        losses = [
+            float(np.sqrt(np.mean((vector - target) ** 2)))
+            for vector in member_vectors
+        ]
+        ranked.append((max(losses), identifier, losses))
+    if not ranked:
+        raise ValueError("candidate bank is empty")
+    worst_loss, identifier, member_losses = min(
+        ranked,
+        key=lambda row: (row[0], row[1]),
+    )
+    return {
+        "candidate_id": identifier,
+        "paired_worst_case_loss": worst_loss,
+        "member_losses": member_losses,
+    }
+
+
 def classify_screening_result(
     *,
     local_status: str,
