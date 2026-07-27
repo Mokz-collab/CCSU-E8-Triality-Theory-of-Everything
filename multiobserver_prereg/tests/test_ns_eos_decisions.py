@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_15.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_14.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_16.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_15.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.14-development")
+        self.assertEqual(previous["version"], "0.15-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -201,6 +201,24 @@ class NSEOSDecisionTests(unittest.TestCase):
             self.decisions["remaining_freeze_blockers"],
         )
         self.assertIn(
+            "holonomy_null_and_local_state_ensemble_not_calibrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_state_aligned_holonomy_is_measured_but_uncalibrated(self):
+        evidence = self.decisions["implementation_evidence"][
+            "state_aligned_GW_NUCLEAR_holonomy"
+        ]
+        self.assertTrue(evidence["state_aligned_composition"])
+        self.assertTrue(evidence["reverse_target_is_actual_forward_output"])
+        self.assertAlmostEqual(
+            evidence["paired_worst_case_holonomy"],
+            0.005986150174484296,
+        )
+        self.assertTrue(evidence["both_legs_pass_relation_threshold"])
+        self.assertTrue(evidence["both_legs_pass_paired_stellar_gates"])
+        self.assertFalse(evidence["holonomy_significance_calibrated"])
+        self.assertNotIn(
             "state_aligned_composable_transition_maps_not_validated",
             self.decisions["remaining_freeze_blockers"],
         )

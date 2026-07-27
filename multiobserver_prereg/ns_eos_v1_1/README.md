@@ -139,7 +139,15 @@ correspondence, and the forward/reverse records are not state-aligned
 composable functions on a common input. \(H_c\) therefore remains null, not
 zero.
 
-The next development step is to construct state-aligned transition maps on
-one frozen reciprocal cycle and validate their composition before evaluating
-numeric holonomy. The active checkpoint remains development-only until all
-blockers in `ns_eos_decisions_v0_15.yaml` are closed.
+The GW ↔ NUCLEAR cycle is now evaluated on the same paired public state. The
+reverse leg targets the actual NUCLEAR output of the forward leg. Both legs
+pass the relation threshold and paired stellar gates. The paired worst-case
+round-trip holonomy is \(H_c=0.00598615\), with local parameters retained
+privately and represented publicly only by hashes. This identifies numeric
+holonomy for one frozen state, but its scientific significance is not
+calibrated.
+
+The next development step is a frozen local state ensemble plus a null model
+that separates optimization/numerical closure error from stable transition
+holonomy. The active checkpoint remains development-only until all blockers
+in `ns_eos_decisions_v0_16.yaml` are closed.

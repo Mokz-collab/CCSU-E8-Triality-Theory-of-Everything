@@ -1,0 +1,159 @@
+{
+  "canonical_record_sha256": "3bf8602d67893bc831d3e9c99b6684723ea4191129808b25f97ceb3410b67983",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "state_aligned_gw_nuclear_cycle_contract_v0_1.yaml",
+    "sha256": "5fcdb96dc2fa6149c9780d89dfbe01856ff88ec0e1dd691efd1be26298614135"
+  },
+  "created_utc": "2026-07-27T17:20:00Z",
+  "cycle_valid_under_frozen_gates": true,
+  "decision": "STATE_ALIGNED_GW_NUCLEAR_HOLONOMY_MEASURED",
+  "does_not_validate": [
+    "global_transition_atlas",
+    "sampling_completeness",
+    "path_independence_on_other_states",
+    "physical_prior_measure",
+    "observational_viability",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "finite_domain_rule": {
+    "invalid_proposals_rejected_not_clipped": true,
+    "local_parameter_vectors_in_public_record": false,
+    "maximum_density_nsat": 6.0,
+    "paired_eft_members_required": true,
+    "parameter_boxes_unchanged": true,
+    "pressure_extrapolation_forbidden": true,
+    "relation_threshold_unchanged": true,
+    "stellar_gates_unchanged": true
+  },
+  "forward_transition": {
+    "chart": "NUCLEAR",
+    "initial_paired_worst_case_loss": 0.06775727287024114,
+    "local_parameter_vector_in_public_record": false,
+    "optimized_member_losses": {
+      "MUSES-N3LO-414": 0.010906859080521823,
+      "MUSES-N3LO-450": 0.010529910414251987
+    },
+    "optimized_paired_worst_case_loss": 0.010906859080521823,
+    "optimizer": {
+      "evaluations": 1985,
+      "generations_completed": 30,
+      "invalid_evaluations": 0,
+      "message": "Maximum number of iterations has been exceeded.",
+      "reported_success": false,
+      "seed": 20260735
+    },
+    "parameter_sha256": "f784a1006db9590d1a067742cfe0aa71adf32bbf527e048cd07bb24d6d68d6dc",
+    "relation_reachable": true,
+    "robust_stellar_pass": true,
+    "stellar_member_results": {
+      "MUSES-N3LO-414": {
+        "all_stellar_gates_pass": true,
+        "gates": {
+          "all_registered_mass_anchors_translated": true,
+          "domain_contains_mass_turnover": true,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": true
+        },
+        "maximum_mass_msun": 2.698326569351896,
+        "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+      },
+      "MUSES-N3LO-450": {
+        "all_stellar_gates_pass": true,
+        "gates": {
+          "all_registered_mass_anchors_translated": true,
+          "domain_contains_mass_turnover": true,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": true
+        },
+        "maximum_mass_msun": 2.6975540255948873,
+        "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+      }
+    }
+  },
+  "holonomy_by_eft_member": {
+    "MUSES-N3LO-414": 0.005986150174484296,
+    "MUSES-N3LO-450": 0.005860779174315906
+  },
+  "holonomy_definition": "paired_member_RMS_distance_from_initial_GW_state_to_returned_GW_state",
+  "holonomy_identifiable": true,
+  "initial_state": {
+    "case_ids": [
+      "GW__MUSES-N3LO-414__S0029",
+      "GW__MUSES-N3LO-450__S0029"
+    ],
+    "chart": "GW",
+    "local_parameter_vector_in_public_record": false,
+    "paired_eft_members": [
+      "MUSES-N3LO-414",
+      "MUSES-N3LO-450"
+    ],
+    "parameter_sha256": "56c4807bec89bdcc4cff3681d5463d02354eb17618277139b2018b528e28f638"
+  },
+  "paired_worst_case_holonomy": 0.005986150174484296,
+  "pilot_entry_authorized": false,
+  "registration_id": "CCSU-MO-NS-EOS-001-GW-NUCLEAR-CYCLE",
+  "reverse_target_is_actual_forward_output": true,
+  "reverse_transition": {
+    "chart": "GW",
+    "initial_paired_worst_case_loss": 0.010906859080521823,
+    "local_parameter_vector_in_public_record": false,
+    "optimized_member_losses": {
+      "MUSES-N3LO-414": 0.0094219176045407,
+      "MUSES-N3LO-450": 0.009467117623322443
+    },
+    "optimized_paired_worst_case_loss": 0.009467117623322443,
+    "optimizer": {
+      "evaluations": 993,
+      "generations_completed": 30,
+      "invalid_evaluations": 165,
+      "message": "Maximum number of iterations has been exceeded.",
+      "reported_success": false,
+      "seed": 20260736
+    },
+    "parameter_sha256": "5e0de628fda8ebcde9a4673a6ee65e29884e05c7b55138367a6c66863be32300",
+    "relation_reachable": true,
+    "robust_stellar_pass": true,
+    "stellar_member_results": {
+      "MUSES-N3LO-414": {
+        "all_stellar_gates_pass": true,
+        "gates": {
+          "all_registered_mass_anchors_translated": true,
+          "domain_contains_mass_turnover": true,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": true
+        },
+        "maximum_mass_msun": 2.7192876319412975,
+        "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+      },
+      "MUSES-N3LO-450": {
+        "all_stellar_gates_pass": true,
+        "gates": {
+          "all_registered_mass_anchors_translated": true,
+          "domain_contains_mass_turnover": true,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": true
+        },
+        "maximum_mass_msun": 2.676967815206772,
+        "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+      }
+    }
+  },
+  "schema": "ccsu.multiobserver.ns-eos-state-aligned-cycle.v1",
+  "source": {
+    "path": "scripts/run_state_aligned_gw_nuclear_cycle.py",
+    "sha256": "e982ef0096dec6cef5ccd286eb4f42b456461ebd2a0045199a776721a9f99e01"
+  },
+  "state_aligned_composition": true,
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "version": "0.1-development",
+  "zero_holonomy_claimed": false
+}

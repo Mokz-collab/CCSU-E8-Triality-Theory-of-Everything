@@ -1,0 +1,38 @@
+extends: ns_eos_decisions_v0_15.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.16-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  state_aligned_GW_NUCLEAR_holonomy:
+    status: STATE_ALIGNED_GW_NUCLEAR_HOLONOMY_MEASURED
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    runner: scripts/run_state_aligned_gw_nuclear_cycle.py
+    contract: state_aligned_gw_nuclear_cycle_contract_v0_1.yaml
+    result: state_aligned_gw_nuclear_cycle_results_v0_1.json
+    review: STATE_ALIGNED_GW_NUCLEAR_HOLONOMY_REVIEW_V0_1.md
+    initial_state: GW__S0029_PAIRED_EFT
+    state_aligned_composition: true
+    reverse_target_is_actual_forward_output: true
+    forward_paired_worst_case_loss: 0.010906859080521823
+    reverse_paired_worst_case_loss: 0.009467117623322443
+    holonomy_by_eft_member:
+      MUSES-N3LO-414: 0.005986150174484296
+      MUSES-N3LO-450: 0.005860779174315906
+    paired_worst_case_holonomy: 0.005986150174484296
+    both_legs_pass_relation_threshold: true
+    both_legs_pass_paired_stellar_gates: true
+    local_parameter_vectors_in_public_record: false
+    holonomy_significance_calibrated: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - holonomy_null_and_local_state_ensemble_not_calibrated
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
+

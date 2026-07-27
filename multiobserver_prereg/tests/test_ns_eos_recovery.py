@@ -423,6 +423,25 @@ class NSEOSRecoveryTests(unittest.TestCase):
         self.assertIsNone(cycle["holonomy_value"])
         self.assertFalse(cycle["zero_holonomy_claimed"])
 
+    def test_state_aligned_cycle_measures_paired_holonomy(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "state_aligned_gw_nuclear_cycle_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertTrue(result["state_aligned_composition"])
+        self.assertTrue(result["reverse_target_is_actual_forward_output"])
+        self.assertTrue(result["cycle_valid_under_frozen_gates"])
+        self.assertTrue(result["holonomy_identifiable"])
+        self.assertAlmostEqual(
+            result["paired_worst_case_holonomy"],
+            max(result["holonomy_by_eft_member"].values()),
+        )
+        self.assertFalse(result["zero_holonomy_claimed"])
+
 
 if __name__ == "__main__":
     unittest.main()
