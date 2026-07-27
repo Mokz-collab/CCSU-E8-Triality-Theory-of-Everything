@@ -154,7 +154,17 @@ singleton null, with an absolute excess of 0.00489188. This does not identify
 significance: one state and one null execution are not a distribution, and no
 p-value is reported.
 
-The next development step is seed-replicated null and cross-chart execution
-on a predeclared local state ensemble. The active checkpoint remains
-development-only until all blockers in `ns_eos_decisions_v0_17.yaml` are
-closed.
+Seed stability has now been measured on the only available robust paired GW
+state, S0029, using three predeclared optimizer-seed pairs per condition. All
+cross-chart and same-chart cycles pass the unchanged relation and stellar
+gates, but the descriptive stability rule fails. The cross-chart coefficient
+of variation is 0.562 and the same-chart-null coefficient of variation is
+0.685, both above the frozen 0.25 limit. Cross-chart holonomy exceeds its
+paired null in only two of three replicates. The earlier 5.47 ratio is
+therefore not a stable estimator across seeds; no p-value or significance
+claim is available.
+
+The next development step is a separately frozen optimizer-convergence
+diagnostic, before expansion to multiple independent GW states. The active
+checkpoint remains development-only until all blockers in
+`ns_eos_decisions_v0_18.yaml` are closed.

@@ -30,6 +30,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_final_low_density_pairing_validation.py",
             "scripts/run_finite_domain_recovery_search.py",
             "scripts/run_inner_crust_validation.py",
+            "scripts/run_holonomy_seed_stability.py",
             "scripts/run_holonomy_singleton_calibration.py",
             "scripts/run_local_chart_validation.py",
             "scripts/run_local_to_public_relation_validation.py",
@@ -53,6 +54,7 @@ def _registered_files() -> tuple[Path, ...]:
             "src/ccsu_multiobserver/ns_eos_stellar_impact.py",
             "tests/test_ns_eos_decisions.py",
             "tests/test_ns_eos_final_pairings.py",
+            "tests/test_ns_eos_holonomy_seed_stability.py",
             "tests/test_ns_eos_inner_crust_validation.py",
             "tests/test_ns_eos_local_charts.py",
             "tests/test_ns_eos_low_density.py",
@@ -183,6 +185,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     singleton_calibration = json.loads(
         singleton_calibration_path.read_text(encoding="utf-8")
     )
+    seed_stability_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "holonomy_seed_stability_results_v0_1.json"
+    )
+    seed_stability = json.loads(
+        seed_stability_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -190,16 +200,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.8-development",
+        "version": "1.9-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "c0eaf95aebf1d90112fecb84592a75b1a89c0709",
+        "parent_commit": "2a55623ec41892cabb39cdb3e11ea572ccc0fc0b",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 120,
+            "passed": 122,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -558,6 +568,38 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 ),
                 "decision": singleton_calibration["decision"],
             },
+            "holonomy_seed_stability": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(seed_stability_path),
+                "canonical_record_sha256": seed_stability[
+                    "canonical_record_sha256"
+                ],
+                "independent_state_count": seed_stability["state"][
+                    "independent_state_count"
+                ],
+                "replicate_count_per_condition": seed_stability[
+                    "replicate_count_per_condition"
+                ],
+                "all_cycles_valid_under_frozen_gates": seed_stability[
+                    "all_cycles_valid_under_frozen_gates"
+                ],
+                "cross_summary": seed_stability["cross_summary"],
+                "null_summary": seed_stability["null_summary"],
+                "cross_exceeds_null_count": seed_stability[
+                    "cross_exceeds_null_count"
+                ],
+                "direction_consistent": seed_stability[
+                    "direction_consistent"
+                ],
+                "descriptive_seed_stability_pass": seed_stability[
+                    "descriptive_seed_stability_pass"
+                ],
+                "statistical_significance_identifiable": seed_stability[
+                    "statistical_significance_identifiable"
+                ],
+                "p_value": seed_stability["p_value"],
+                "decision": seed_stability["decision"],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -606,14 +648,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 "MAPPED_NO_CROSS_CHART_OVERLAP_AT_EPSILON_0_05"
             ),
             "transition_map_and_translation_holonomy": (
-                "CROSS_HOLONOMY_EXCEEDS_SINGLETON_NULL_"
-                "SIGNIFICANCE_NOT_IDENTIFIABLE"
+                "HOLONOMY_SEED_STABILITY_FAILED_"
+                "NUMERICAL_ESTIMATOR_NOT_STABLE"
             ),
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "seed_replicated_holonomy_null_distribution_not_calibrated",
+            "holonomy_optimizer_seed_stability_not_demonstrated",
             "local_state_holonomy_ensemble_not_available",
             "inverse_reachability_sampling_completeness_not_demonstrated",
             "independent_review_of_parameter_ranges",

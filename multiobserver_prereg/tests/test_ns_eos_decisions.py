@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_17.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_16.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_18.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_17.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.16-development")
+        self.assertEqual(previous["version"], "0.17-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -232,11 +232,38 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertTrue(evidence["singleton_not_distribution"])
         self.assertFalse(evidence["statistical_significance_identifiable"])
         self.assertIsNone(evidence["p_value"])
-        self.assertIn(
+        self.assertNotIn(
             "seed_replicated_holonomy_null_distribution_not_calibrated",
             self.decisions["remaining_freeze_blockers"],
         )
 
+    def test_seed_stability_failure_replaces_uncalibrated_singleton_blocker(self):
+        evidence = self.decisions["implementation_evidence"][
+            "holonomy_seed_stability"
+        ]
+        self.assertEqual(
+            evidence["status"],
+            "DESCRIPTIVE_SEED_STABILITY_FAILED",
+        )
+        self.assertTrue(evidence["all_cycles_valid_under_frozen_gates"])
+        self.assertEqual(evidence["replicate_count_per_condition"], 3)
+        self.assertEqual(evidence["cross_exceeds_null_count"], 2)
+        self.assertFalse(evidence["direction_consistent"])
+        self.assertGreater(
+            evidence["cross_holonomy_coefficient_of_variation"],
+            evidence["maximum_registered_coefficient_of_variation"],
+        )
+        self.assertGreater(
+            evidence["null_holonomy_coefficient_of_variation"],
+            evidence["maximum_registered_coefficient_of_variation"],
+        )
+        self.assertFalse(evidence["descriptive_seed_stability_pass"])
+        self.assertFalse(evidence["statistical_significance_identifiable"])
+        self.assertIsNone(evidence["p_value"])
+        self.assertIn(
+            "holonomy_optimizer_seed_stability_not_demonstrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
 
     def test_low_density_intervals_are_contiguous(self):
         low = self.decisions["low_density_matching"]

@@ -76,7 +76,11 @@ def solver_arguments(
     }
 
 
-def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
+def run_cycle(
+    contract_path: Path,
+    created_utc: str,
+    seed_override: tuple[int, int] | None = None,
+) -> dict[str, object]:
     contract_path = contract_path.resolve()
     ns_root = contract_path.parent
     project_root = ns_root.parent
@@ -127,7 +131,9 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
     )
     scaling = contract["relation_space"]["scaling"]
     sample_count = int(chart_contract["sample_count"])
-    optimizer = contract["optimizer"]
+    optimizer = dict(contract["optimizer"])
+    if seed_override is not None:
+        optimizer["forward_seed"], optimizer["reverse_seed"] = seed_override
     target_masses = tuple(float(x) for x in contract["mass_anchors_msun"])
     exact_settings = contract["exact_stellar_solver"]
 

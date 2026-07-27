@@ -1,0 +1,44 @@
+extends: ns_eos_decisions_v0_17.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.18-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  holonomy_seed_stability:
+    status: DESCRIPTIVE_SEED_STABILITY_FAILED
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    runner: scripts/run_holonomy_seed_stability.py
+    contract: holonomy_seed_stability_contract_v0_1.yaml
+    contract_sha256: 2cd55a2d72b414fd10c70ce2698080e5338698b3bcfe732382f31099b00d3f92
+    result: holonomy_seed_stability_results_v0_1.json
+    result_sha256: 68d33c1721ad3323588d18695a51ff76f4c9cf388bb4e1742757f160363e9d34
+    result_canonical_record_sha256: 22776b3a9aea46f108f9b83582740dec149d70034bfcd5e54973863fcc5b29bc
+    review: HOLONOMY_SEED_STABILITY_REVIEW_V0_1.md
+    independent_state_count: 1
+    replicate_count_per_condition: 3
+    all_cycles_valid_under_frozen_gates: true
+    cross_holonomy_mean: 0.0036573899462386972
+    cross_holonomy_sample_standard_deviation: 0.0020555481956262022
+    cross_holonomy_coefficient_of_variation: 0.5620259873410961
+    null_holonomy_mean: 0.0017054963530543255
+    null_holonomy_sample_standard_deviation: 0.001168495304739312
+    null_holonomy_coefficient_of_variation: 0.6851350357018862
+    maximum_registered_coefficient_of_variation: 0.25
+    cross_exceeds_null_count: 2
+    direction_consistent: false
+    descriptive_seed_stability_pass: false
+    statistical_significance_identifiable: false
+    p_value: null
+    optimizer_budget_changed: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - holonomy_optimizer_seed_stability_not_demonstrated
+  - local_state_holonomy_ensemble_not_available
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

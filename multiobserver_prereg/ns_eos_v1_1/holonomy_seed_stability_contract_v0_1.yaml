@@ -1,0 +1,60 @@
+schema: ccsu.multiobserver.ns-eos-holonomy-seed-stability-contract.v1
+registration_id: CCSU-MO-NS-EOS-001-HOLONOMY-SEED-STABILITY
+version: "0.1-development"
+status: FROZEN_FOR_DEVELOPMENT_EXECUTION
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_holonomy_seed_stability.py
+cross_contract: state_aligned_gw_nuclear_cycle_contract_v0_1.yaml
+null_contract: same_chart_gw_null_contract_v0_1.yaml
+existing_cross_result:
+  path: state_aligned_gw_nuclear_cycle_results_v0_1.json
+  sha256: 49451e8a590c594fd97cbc6ecbe187b6cd9fea5a409670682318d5af40e6b5d2
+existing_null_result:
+  path: same_chart_gw_null_results_v0_1.json
+  sha256: 6d9ea23e2bf164e3af24ceb6fa60c4272344db98a6f1cf3fc8640b5fe93ceb5b
+
+state:
+  case: GW__S0029_PAIRED_EFT
+  independent_state_count: 1
+  multiple_independent_states_deferred: true
+
+replicates:
+  - replicate: 1
+    cross_seeds: [20260735, 20260736]
+    null_seeds: [20260737, 20260738]
+    source: existing_public_results
+  - replicate: 2
+    cross_seeds: [20260739, 20260740]
+    null_seeds: [20260743, 20260744]
+    source: execute
+  - replicate: 3
+    cross_seeds: [20260741, 20260742]
+    null_seeds: [20260745, 20260746]
+    source: execute
+
+descriptive_stability_rule:
+  replicate_count_per_condition: 3
+  maximum_cross_coefficient_of_variation: 0.25
+  maximum_null_coefficient_of_variation: 0.25
+  require_cross_exceeds_null_in_every_paired_replicate: true
+  sample_standard_deviation_ddof: 1
+  statistical_significance_authorized: false
+  p_value_authorized: false
+
+frozen_rules:
+  optimizer_budget_unchanged: true
+  relation_threshold_epsilon: 0.05
+  parameter_boxes_unchanged: true
+  maximum_density_nsat: 6.0
+  paired_EFT_members_required: true
+  stellar_gates_unchanged: true
+  local_parameter_vectors_in_public_record: false
+
+does_not_validate:
+  - statistical_significance
+  - false_positive_rate
+  - independent_state_generalization
+  - local_state_ensemble
+  - pilot_or_confirmatory_authorization

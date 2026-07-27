@@ -1,0 +1,128 @@
+{
+  "all_cycles_valid_under_frozen_gates": true,
+  "canonical_record_sha256": "22776b3a9aea46f108f9b83582740dec149d70034bfcd5e54973863fcc5b29bc",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "holonomy_seed_stability_contract_v0_1.yaml",
+    "sha256": "2cd55a2d72b414fd10c70ce2698080e5338698b3bcfe732382f31099b00d3f92"
+  },
+  "created_utc": "2026-07-27T22:00:00Z",
+  "cross_exceeds_null_count": 2,
+  "cross_summary": {
+    "coefficient_of_variation": 0.5620259873410961,
+    "maximum": 0.005986150174484296,
+    "mean": 0.0036573899462386972,
+    "minimum": 0.0020955991703964804,
+    "range": 0.0038905510040878155,
+    "sample_standard_deviation": 0.0020555481956262022
+  },
+  "decision": "DESCRIPTIVE_SEED_STABILITY_FAILED",
+  "descriptive_seed_stability_pass": false,
+  "descriptive_stability_rule": {
+    "maximum_cross_coefficient_of_variation": 0.25,
+    "maximum_null_coefficient_of_variation": 0.25,
+    "p_value_authorized": false,
+    "replicate_count_per_condition": 3,
+    "require_cross_exceeds_null_in_every_paired_replicate": true,
+    "sample_standard_deviation_ddof": 1,
+    "statistical_significance_authorized": false
+  },
+  "direction_consistent": false,
+  "does_not_validate": [
+    "statistical_significance",
+    "false_positive_rate",
+    "independent_state_generalization",
+    "local_state_ensemble",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "null_summary": {
+    "coefficient_of_variation": 0.6851350357018862,
+    "maximum": 0.0030528309882628924,
+    "mean": 0.0017054963530543255,
+    "minimum": 0.0009693925655517054,
+    "range": 0.002083438422711187,
+    "sample_standard_deviation": 0.001168495304739312
+  },
+  "p_value": null,
+  "pilot_entry_authorized": false,
+  "registration_id": "CCSU-MO-NS-EOS-001-HOLONOMY-SEED-STABILITY",
+  "replicate_count_per_condition": 3,
+  "replicates": [
+    {
+      "cross_canonical_record_sha256": "3bf8602d67893bc831d3e9c99b6684723ea4191129808b25f97ceb3410b67983",
+      "cross_cycle_valid": true,
+      "cross_exceeds_null": true,
+      "cross_holonomy": 0.005986150174484296,
+      "cross_minus_null": 0.004891884669135918,
+      "cross_seeds": [
+        20260735,
+        20260736
+      ],
+      "cross_to_null_ratio": 5.470473249157664,
+      "null_canonical_record_sha256": "596f9eaea507b4a87bca7c2e9c741e7d25799bfb99ca585da66f0e33d50a516c",
+      "null_cycle_valid": true,
+      "null_holonomy": 0.0010942655053483782,
+      "null_seeds": [
+        20260737,
+        20260738
+      ],
+      "replicate": 1,
+      "source": "existing_public_results"
+    },
+    {
+      "cross_canonical_record_sha256": "87f54c59d9c989d52211530a81c455b4b3486d00c0109473ccc1ea7a964c9612",
+      "cross_cycle_valid": true,
+      "cross_exceeds_null": false,
+      "cross_holonomy": 0.0028904204938353154,
+      "cross_minus_null": -0.000162410494427577,
+      "cross_seeds": [
+        20260739,
+        20260740
+      ],
+      "cross_to_null_ratio": 0.9468000373908707,
+      "null_canonical_record_sha256": "50f08814d0033cbca872bf766dfd06d92d4dfeef8483990120985ce6de62927d",
+      "null_cycle_valid": true,
+      "null_holonomy": 0.0030528309882628924,
+      "null_seeds": [
+        20260743,
+        20260744
+      ],
+      "replicate": 2,
+      "source": "execute"
+    },
+    {
+      "cross_canonical_record_sha256": "300306064a5fc1a6abfc5b13f0619e827526772afefb7c6bc08806ef1fc92d92",
+      "cross_cycle_valid": true,
+      "cross_exceeds_null": true,
+      "cross_holonomy": 0.0020955991703964804,
+      "cross_minus_null": 0.001126206604844775,
+      "cross_seeds": [
+        20260741,
+        20260742
+      ],
+      "cross_to_null_ratio": 2.1617652588493113,
+      "null_canonical_record_sha256": "964340c38795cdb7fc0114f5a266263bf925189a9266ed5f2fb80e93272a257b",
+      "null_cycle_valid": true,
+      "null_holonomy": 0.0009693925655517054,
+      "null_seeds": [
+        20260745,
+        20260746
+      ],
+      "replicate": 3,
+      "source": "execute"
+    }
+  ],
+  "schema": "ccsu.multiobserver.ns-eos-holonomy-seed-stability.v1",
+  "source": {
+    "path": "scripts/run_holonomy_seed_stability.py",
+    "sha256": "471a7ad3ff5be2765777ed476261cf7ba3f8a1861f6cb81d552f85d6a31ac5db"
+  },
+  "state": {
+    "case": "GW__S0029_PAIRED_EFT",
+    "independent_state_count": 1,
+    "multiple_independent_states_deferred": true
+  },
+  "statistical_significance_identifiable": false,
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "version": "0.1-development"
+}
