@@ -86,5 +86,14 @@ also demonstrates severe proposal-volume imbalance. Pilot entry therefore
 remains forbidden pending independent range review and recovery of XRAY
 support. Extrapolation remains prohibited.
 
+An XRAY-focused \(4^4\) centred factorial diagnostic resolves the apparent
+zero-support result. Nine of 512 paired cases pass, representing five distinct
+proposals; four pass under both χEFT members. The accepted region is a sparse
+interaction requiring high \(p_1\), intermediate stiffening, and moderated
+final stiffness. XRAY is therefore not structurally excluded by the
+\(6\,n_{\mathrm{sat}}\) gate. The open problem is now to define a
+chart-neutral proposal measure in common physical-relation coordinates,
+rather than equating raw parameter-box volume across charts.
+
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_9.yaml` are closed.
+`ns_eos_decisions_v0_10.yaml` are closed.

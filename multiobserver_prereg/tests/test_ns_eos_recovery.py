@@ -4,9 +4,14 @@ import json
 import unittest
 from pathlib import Path
 
-from ccsu_multiobserver.ns_eos_local_charts import CHART_SPECIFICATIONS
+from ccsu_multiobserver.ns_eos_local_charts import (
+    CHART_SPECIFICATIONS,
+    LocalChartEOS,
+)
 from ccsu_multiobserver.ns_eos_recovery import (
+    centered_factorial_proposals,
     classify_screening_result,
+    common_relation_projection,
     deterministic_sobol_proposals,
     summarize_acceptance,
 )
@@ -70,6 +75,44 @@ class NSEOSRecoveryTests(unittest.TestCase):
             "ACCEPTED",
         )
 
+    def test_centered_factorial_stays_inside_original_xray_box(self):
+        specification = CHART_SPECIFICATIONS["XRAY"]
+        proposals = centered_factorial_proposals(
+            specification,
+            unit_levels=(0.125, 0.375, 0.625, 0.875),
+        )
+        self.assertEqual(len(proposals), 256)
+        for proposal in proposals:
+            for name, bounds in zip(
+                specification.parameter_names,
+                specification.parameter_bounds,
+                strict=True,
+            ):
+                self.assertGreater(proposal[name], bounds[0])
+                self.assertLess(proposal[name], bounds[1])
+
+    def test_common_projection_uses_physical_relations_not_parameters(self):
+        chart = LocalChartEOS(
+            observer="TEST",
+            chart="test",
+            parameter_names=("hidden",),
+            parameter_values=(99.0,),
+            density_nsat=(1.1, 2.0, 3.0, 6.0),
+            pressure_mev_fm3=(1.0, 4.0, 9.0, 36.0),
+            energy_mev_fm3=(10.0, 20.0, 30.0, 60.0),
+            chemical_potential_mev=(1.0, 1.0, 1.0, 1.0),
+            sound_speed_squared=(0.1, 0.2, 0.3, 0.6),
+        )
+        projection = common_relation_projection(
+            chart,
+            (2.0, 3.0, 6.0),
+        )
+        self.assertNotIn("parameters", projection)
+        self.assertEqual(
+            projection["pressure_over_energy"],
+            [0.2, 0.3, 0.6],
+        )
+
     def test_zero_acceptance_is_reported_as_imbalance(self):
         cases = [
             {"observer": "GW", "outcome": "ACCEPTED"},
@@ -103,6 +146,51 @@ class NSEOSRecoveryTests(unittest.TestCase):
         self.assertTrue(rule["parameter_box_expansion_forbidden"])
         self.assertTrue(rule["pressure_extrapolation_forbidden"])
         self.assertTrue(rule["registered_stellar_gates_unchanged"])
+
+    def test_registered_xray_factorial_finds_sparse_support(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "xray_relation_space_diagnostic_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(result["case_count"], 512)
+        self.assertEqual(result["accepted_count"], 9)
+        self.assertEqual(result["accepted_unique_proposal_count"], 5)
+        self.assertEqual(result["accepted_for_both_eft_members"], 4)
+        self.assertEqual(
+            result["decision"],
+            "XRAY_FINITE_DOMAIN_SUPPORT_FOUND_IN_SPARSE_INTERACTION_REGION",
+        )
+        self.assertFalse(result["pilot_entry_authorized"])
+
+    def test_xray_acceptance_is_joint_not_gamma1_specific(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "xray_relation_space_diagnostic_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        accepted = [
+            case for case in result["cases"]
+            if case["outcome"] == "ACCEPTED"
+        ]
+        self.assertEqual(
+            {case["unit_coordinates"]["log10_p1_cgs"] for case in accepted},
+            {0.8750000000000008},
+        )
+        self.assertEqual(
+            {case["unit_coordinates"]["gamma2"] for case in accepted},
+            {0.625},
+        )
+        self.assertEqual(
+            {case["unit_coordinates"]["gamma1"] for case in accepted},
+            {0.125, 0.375, 0.625, 0.875},
+        )
 
 
 if __name__ == "__main__":

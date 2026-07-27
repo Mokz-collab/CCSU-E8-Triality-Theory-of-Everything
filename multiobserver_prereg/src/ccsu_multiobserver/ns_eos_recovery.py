@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import math
 from collections import Counter
+from itertools import product
 from typing import Mapping, Sequence
 
 import numpy as np
 from scipy.stats import qmc
 
-from .ns_eos_local_charts import ChartSpecification
+from .ns_eos_local_charts import ChartSpecification, LocalChartEOS
 
 
 def deterministic_sobol_proposals(
@@ -46,6 +47,70 @@ def deterministic_sobol_proposals(
         }
         for row in scaled
     )
+
+
+def centered_factorial_proposals(
+    specification: ChartSpecification,
+    *,
+    unit_levels: Sequence[float],
+) -> tuple[dict[str, float], ...]:
+    levels = tuple(float(value) for value in unit_levels)
+    if not levels or any(not 0.0 < value < 1.0 for value in levels):
+        raise ValueError("factorial levels must lie strictly inside (0, 1)")
+    if tuple(sorted(set(levels))) != levels:
+        raise ValueError("factorial levels must be unique and increasing")
+    proposals = []
+    for unit_point in product(levels, repeat=len(specification.parameter_names)):
+        proposals.append(
+            {
+                name: lower + unit * (upper - lower)
+                for name, unit, (lower, upper) in zip(
+                    specification.parameter_names,
+                    unit_point,
+                    specification.parameter_bounds,
+                    strict=True,
+                )
+            }
+        )
+    return tuple(proposals)
+
+
+def common_relation_projection(
+    chart: LocalChartEOS,
+    density_anchors_nsat: Sequence[float],
+) -> dict[str, list[float]]:
+    density = np.asarray(chart.density_nsat, dtype=float)
+    anchors = np.asarray(density_anchors_nsat, dtype=float)
+    if (
+        anchors.ndim != 1
+        or anchors.size == 0
+        or np.any(np.diff(anchors) <= 0.0)
+        or anchors[0] < density[0] * (1.0 - 1.0e-12)
+        or anchors[-1] > density[-1] * (1.0 + 1.0e-12)
+    ):
+        raise ValueError("relation anchors lie outside the chart domain")
+    interpolation_anchors = np.clip(anchors, density[0], density[-1])
+    pressure = np.interp(
+        interpolation_anchors,
+        density,
+        np.asarray(chart.pressure_mev_fm3, dtype=float),
+    )
+    energy = np.interp(
+        interpolation_anchors,
+        density,
+        np.asarray(chart.energy_mev_fm3, dtype=float),
+    )
+    sound_speed = np.interp(
+        interpolation_anchors,
+        density,
+        np.asarray(chart.sound_speed_squared, dtype=float),
+    )
+    return {
+        "density_nsat": anchors.tolist(),
+        "log10_pressure_mev_fm3": np.log10(pressure).tolist(),
+        "pressure_over_energy": (pressure / energy).tolist(),
+        "sound_speed_squared": sound_speed.tolist(),
+    }
 
 
 def classify_screening_result(

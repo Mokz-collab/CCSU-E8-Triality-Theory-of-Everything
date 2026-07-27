@@ -1,0 +1,66 @@
+schema_version: 1
+diagnostic_id: CCSU-MO-NS-EOS-001-XRAY-RELATION-DIAGNOSTIC-001
+version: "0.1-development"
+status: DEVELOPMENT_NONCONFIRMATORY_DIAGNOSTIC
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_xray_relation_space_diagnostic.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+recovery_result: finite_domain_recovery_results_v0_1.json
+
+reference_observer_order: [GW, XRAY, RADIO, NUCLEAR]
+relation_density_anchors_nsat: [2.0, 3.0, 4.0, 5.0, 6.0]
+mass_anchors_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+
+low_density:
+  outer_crust_reference_manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  XRAY_parameter_box_unchanged: true
+  invalid_proposals_rejected_not_clipped: true
+  pressure_extrapolation_forbidden: true
+  stellar_gates_unchanged: true
+
+factorial_design:
+  chart: XRAY_piecewise_polytrope
+  unit_levels: [0.125, 0.375, 0.625, 0.875]
+  factors: [log10_p1_cgs, gamma1, gamma2, gamma3]
+  proposals: 256
+  paired_chiral_eft_members: 2
+  evaluated_cases: 512
+  boundary_points_excluded: true
+  diagnostic_only: true
+
+screening_solver:
+  logarithmic_scan_points: 24
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.06
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.08
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+exact_revalidation_solver:
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+does_not_validate:
+  - observational_viability
+  - physical_prior_measure
+  - equal_relation_space_coverage
+  - independent_parameter_range_review
+  - P1_to_P4_thresholds
+  - pilot_or_confirmatory_authorization

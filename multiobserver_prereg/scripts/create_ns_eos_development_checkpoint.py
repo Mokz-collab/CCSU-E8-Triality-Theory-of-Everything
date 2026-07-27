@@ -33,6 +33,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_local_to_public_relation_validation.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_tov_love_cross_validation.py",
+            "scripts/run_xray_relation_space_diagnostic.py",
             "src/ccsu_multiobserver/ns_eos_decisions.py",
             "src/ccsu_multiobserver/ns_eos_enthalpy_oracle.py",
             "src/ccsu_multiobserver/ns_eos_inner_crust_validation.py",
@@ -94,6 +95,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
         / "finite_domain_recovery_results_v0_1.json"
     )
     recovery = json.loads(recovery_path.read_text(encoding="utf-8"))
+    xray_diagnostic_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "xray_relation_space_diagnostic_results_v0_1.json"
+    )
+    xray_diagnostic = json.loads(
+        xray_diagnostic_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -101,16 +110,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.0-development",
+        "version": "1.1-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "a7421346080c2fb398b76946efee266bcb001b6a",
+        "parent_commit": "3be6cbe8454c3f5c87d0d306d2a1a954045f2e65",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 97,
+            "passed": 102,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -242,6 +251,25 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "XRAY_relation_space_diagnostic": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(xray_diagnostic_path),
+                "canonical_record_sha256": xray_diagnostic[
+                    "canonical_record_sha256"
+                ],
+                "evaluated_cases": xray_diagnostic["case_count"],
+                "accepted_cases": xray_diagnostic["accepted_count"],
+                "accepted_unique_proposals": xray_diagnostic[
+                    "accepted_unique_proposal_count"
+                ],
+                "accepted_for_both_eft_members": xray_diagnostic[
+                    "accepted_for_both_eft_members"
+                ],
+                "decision": xray_diagnostic["decision"],
+                "pilot_entry_authorized": xray_diagnostic[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -274,13 +302,17 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 "RECOVERY_CANDIDATES_FOUND_WITHOUT_EXTRAPOLATION"
             ),
             "proposal_box_acceptance_balance": (
-                "FAILED_XRAY_ZERO_NUCLEAR_0_9375"
+                "UNRESOLVED_RAW_BOX_VOLUMES_NOT_COMPARABLE"
             ),
+            "XRAY_finite_domain_support": (
+                "FOUND_IN_SPARSE_FACTORIAL_INTERACTION_REGION"
+            ),
+            "common_relation_space_proposal_measure": "NOT_DEFINED",
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "finite_domain_acceptance_imbalance_and_XRAY_zero_acceptance",
+            "common_relation_space_proposal_measure_not_defined",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",
             "power_derived_confirmatory_budget",

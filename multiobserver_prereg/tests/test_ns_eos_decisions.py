@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_9.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_8.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_10.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_9.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.8-development")
+        self.assertEqual(previous["version"], "0.9-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -85,8 +85,26 @@ class NSEOSDecisionTests(unittest.TestCase):
             evidence["accepted_volume_balance_demonstrated"]
         )
         self.assertFalse(evidence["pilot_entry_authorized"])
-        self.assertIn(
+        self.assertNotIn(
             "finite_domain_acceptance_imbalance_and_XRAY_zero_acceptance",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_xray_support_closes_zero_acceptance_not_measure_blocker(self):
+        evidence = self.decisions["implementation_evidence"][
+            "XRAY_relation_space_diagnostic"
+        ]
+        self.assertEqual(evidence["evaluated_cases"], 512)
+        self.assertEqual(evidence["accepted_unique_proposals"], 5)
+        self.assertTrue(
+            evidence["XRAY_finite_domain_support_demonstrated"]
+        )
+        self.assertFalse(
+            evidence["equal_relation_space_coverage_demonstrated"]
+        )
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertIn(
+            "common_relation_space_proposal_measure_not_defined",
             self.decisions["remaining_freeze_blockers"],
         )
 

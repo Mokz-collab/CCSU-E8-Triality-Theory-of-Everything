@@ -1,0 +1,43 @@
+extends: ns_eos_decisions_v0_9.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.10-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  XRAY_relation_space_diagnostic:
+    status: XRAY_FINITE_DOMAIN_SUPPORT_FOUND_IN_SPARSE_INTERACTION_REGION
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    source: src/ccsu_multiobserver/ns_eos_recovery.py
+    runner: scripts/run_xray_relation_space_diagnostic.py
+    contract: xray_relation_space_diagnostic_contract_v0_1.yaml
+    result: xray_relation_space_diagnostic_results_v0_1.json
+    review: XRAY_RELATION_SPACE_DIAGNOSTIC_REVIEW_V0_1.md
+    factorial_proposals: 256
+    paired_chiral_eft_members: 2
+    evaluated_cases: 512
+    numerical_rejections: 0
+    accepted_cases: 9
+    accepted_unique_proposals: 5
+    proposals_accepted_for_both_eft_members: 4
+    sparse_interaction:
+      log10_p1_cgs: 34.65
+      gamma2: 3.1875
+      dominant_gamma3: 2.3125
+      gamma1_level_specificity: false
+    XRAY_structural_impossibility_demonstrated: false
+    XRAY_finite_domain_support_demonstrated: true
+    equal_relation_space_coverage_demonstrated: false
+    pressure_extrapolation_used: false
+    parameter_box_changed: false
+    stellar_gates_changed: false
+    candidates_enter_P1_to_P4_calibration: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - common_relation_space_proposal_measure_not_defined
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
