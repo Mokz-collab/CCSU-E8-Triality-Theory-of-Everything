@@ -1,0 +1,52 @@
+extends: ns_eos_decisions_v0_12.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.13-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  targeted_cross_chart_optimization:
+    status: ROBUST_CROSS_CHART_OVERLAP_FOUND_IN_2_OF_4_FROZEN_PROBLEMS
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    source: src/ccsu_multiobserver/ns_eos_recovery.py
+    runner: scripts/run_targeted_cross_chart_optimization.py
+    contract: targeted_cross_chart_optimization_contract_v0_1.yaml
+    result: targeted_cross_chart_optimization_results_v0_1.json
+    review: TARGETED_CROSS_CHART_OPTIMIZATION_REVIEW_V0_1.md
+    frozen_problem_count: 4
+    relation_reachability_success_count: 4
+    robust_cross_chart_overlap_success_count: 2
+    robust_transitions:
+      - source_chart: NUCLEAR
+        target_chart: RADIO
+        target_component_index: 1
+      - source_chart: NUCLEAR
+        target_chart: GW
+        target_component_index: 0
+    relation_only_incompatibilities:
+      - source_chart: GW
+        target_chart: XRAY
+        target_component_index: 34
+        reason: N3LO_450_STELLAR_GATES_FAILED
+      - source_chart: NUCLEAR
+        target_chart: RADIO
+        target_component_index: 2
+        reason: BOTH_EFT_MEMBERS_STABLE_2_2_MSUN_ANCHOR_FAILED
+    relation_threshold_epsilon: 0.05
+    paired_chiral_eft_minimax_objective: true
+    local_parameter_vectors_in_public_record: false
+    parameter_box_expansion_used: false
+    pressure_extrapolation_used: false
+    stellar_gates_changed: false
+    sampling_completeness_demonstrated: false
+    transition_cycle_holonomy_validated: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - transition_map_and_translation_holonomy_not_validated
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

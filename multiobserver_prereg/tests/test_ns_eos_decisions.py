@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_12.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_11.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_13.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_12.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.11-development")
+        self.assertEqual(previous["version"], "0.12-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -127,7 +127,7 @@ class NSEOSDecisionTests(unittest.TestCase):
             self.decisions["remaining_freeze_blockers"],
         )
 
-    def test_inverse_map_records_nonoverlap_without_overclaim(self):
+    def test_inverse_map_records_sampled_nonoverlap_without_overclaim(self):
         evidence = self.decisions["implementation_evidence"][
             "relation_cell_inverse_reachability"
         ]
@@ -137,12 +137,33 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertTrue(evidence["nonreachability_recorded"])
         self.assertFalse(evidence["cross_chart_overlap_demonstrated"])
         self.assertFalse(evidence["pilot_entry_authorized"])
-        self.assertIn(
+        self.assertNotIn(
             "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
             self.decisions["remaining_freeze_blockers"],
         )
         self.assertIn(
             "inverse_reachability_sampling_completeness_not_demonstrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_targeted_optimization_closes_overlap_not_completeness(self):
+        evidence = self.decisions["implementation_evidence"][
+            "targeted_cross_chart_optimization"
+        ]
+        self.assertEqual(evidence["frozen_problem_count"], 4)
+        self.assertEqual(evidence["relation_reachability_success_count"], 4)
+        self.assertEqual(
+            evidence["robust_cross_chart_overlap_success_count"], 2
+        )
+        self.assertFalse(evidence["sampling_completeness_demonstrated"])
+        self.assertFalse(evidence["transition_cycle_holonomy_validated"])
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertNotIn(
+            "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
+            self.decisions["remaining_freeze_blockers"],
+        )
+        self.assertIn(
+            "transition_map_and_translation_holonomy_not_validated",
             self.decisions["remaining_freeze_blockers"],
         )
 

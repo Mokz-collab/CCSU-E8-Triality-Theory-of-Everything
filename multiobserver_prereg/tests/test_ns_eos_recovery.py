@@ -332,6 +332,31 @@ class NSEOSRecoveryTests(unittest.TestCase):
         )
         self.assertFalse(result["pilot_entry_authorized"])
 
+    def test_targeted_optimization_recovers_two_robust_overlaps(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "targeted_cross_chart_optimization_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(result["problem_count"], 4)
+        self.assertEqual(result["relation_reachability_success_count"], 4)
+        self.assertEqual(
+            result["robust_cross_chart_overlap_success_count"], 2
+        )
+        self.assertTrue(result["cross_chart_overlap_demonstrated"])
+        self.assertFalse(result["sampling_completeness_demonstrated"])
+        self.assertFalse(result["local_parameter_vectors_in_public_record"])
+        self.assertFalse(result["pilot_entry_authorized"])
+        self.assertTrue(
+            all(
+                problem["local_parameters_in_public_record"] is False
+                for problem in result["problems"]
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

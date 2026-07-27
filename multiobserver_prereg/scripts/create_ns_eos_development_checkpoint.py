@@ -34,6 +34,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_local_to_public_relation_validation.py",
             "scripts/run_relation_cell_inverse_reachability.py",
             "scripts/run_stellar_impact_validation.py",
+            "scripts/run_targeted_cross_chart_optimization.py",
             "scripts/run_tov_love_cross_validation.py",
             "scripts/run_xray_relation_space_diagnostic.py",
             "src/ccsu_multiobserver/ns_eos_decisions.py",
@@ -121,6 +122,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     inverse_reachability = json.loads(
         inverse_reachability_path.read_text(encoding="utf-8")
     )
+    targeted_optimization_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "targeted_cross_chart_optimization_results_v0_1.json"
+    )
+    targeted_optimization = json.loads(
+        targeted_optimization_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -128,16 +137,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.3-development",
+        "version": "1.4-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "96d0cec65cbd1f58c0b9b4537a2d8c52802fe5f8",
+        "parent_commit": "212c1dad9c232787519067594bc30ee5ca0be75d",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 109,
+            "passed": 112,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -343,6 +352,36 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "targeted_cross_chart_optimization": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(targeted_optimization_path),
+                "canonical_record_sha256": targeted_optimization[
+                    "canonical_record_sha256"
+                ],
+                "frozen_problems": targeted_optimization["problem_count"],
+                "relation_reachability_successes": targeted_optimization[
+                    "relation_reachability_success_count"
+                ],
+                "robust_cross_chart_overlap_successes": (
+                    targeted_optimization[
+                        "robust_cross_chart_overlap_success_count"
+                    ]
+                ),
+                "cross_chart_overlap_demonstrated": (
+                    targeted_optimization[
+                        "cross_chart_overlap_demonstrated"
+                    ]
+                ),
+                "sampling_completeness_demonstrated": (
+                    targeted_optimization[
+                        "sampling_completeness_demonstrated"
+                    ]
+                ),
+                "decision": targeted_optimization["decision"],
+                "pilot_entry_authorized": targeted_optimization[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -384,15 +423,18 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 "DEFINED_LOCAL_STABILITY_PASSED"
             ),
             "common_relation_space_sampling_coverage": "NOT_DEMONSTRATED",
-            "cross_chart_relation_overlap": "NOT_DEMONSTRATED",
+            "cross_chart_relation_overlap": (
+                "ROBUST_OVERLAP_FOUND_IN_2_OF_4_TARGETED_PROBLEMS"
+            ),
             "inverse_relation_cell_reachability": (
                 "MAPPED_NO_CROSS_CHART_OVERLAP_AT_EPSILON_0_05"
             ),
+            "transition_map_and_translation_holonomy": "NOT_VALIDATED",
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
+            "transition_map_and_translation_holonomy_not_validated",
             "inverse_reachability_sampling_completeness_not_demonstrated",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",

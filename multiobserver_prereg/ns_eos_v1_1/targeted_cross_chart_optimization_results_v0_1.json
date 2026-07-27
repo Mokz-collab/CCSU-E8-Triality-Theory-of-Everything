@@ -1,0 +1,315 @@
+{
+  "canonical_record_sha256": "4d9b355f78b80a91804bc8f8c4808874d36c1f46598c3acef43a91da6ceecf33",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "targeted_cross_chart_optimization_contract_v0_1.yaml",
+    "sha256": "19a61d8a74237b0a2bba6e8ed8a9110f8e322d34068c2585be82b04f521073d4"
+  },
+  "created_utc": "2026-07-27T16:11:22Z",
+  "cross_chart_overlap_demonstrated": true,
+  "decision": "TARGETED_OPTIMIZATION_FOUND_ROBUST_CROSS_CHART_OVERLAP",
+  "does_not_validate": [
+    "mathematical_global_nonreachability",
+    "sampling_completeness",
+    "physical_prior_measure",
+    "observational_viability",
+    "independent_parameter_range_review",
+    "P1_to_P4_thresholds",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "finite_domain_rule": {
+    "invalid_proposals_rejected_not_clipped": true,
+    "maximum_density_nsat": 6.0,
+    "parameter_boxes_unchanged": true,
+    "pressure_extrapolation_forbidden": true,
+    "relation_threshold_unchanged": true,
+    "stellar_gates_unchanged": true
+  },
+  "inputs": {
+    "common_measure_result_sha256": "88e304cc5cc68a6ac37b739590289a32c3f39b0de10639e0db8ae827d131d174",
+    "inverse_reachability_result_sha256": "06b5ce0368969d5a36c24ef5854a02813feba571ac72268c0cef90aad09556cf",
+    "local_chart_contract_sha256": "832fc7de7a54064273ae2a179e9d6aee6bbe9955cea6050ea7936874d41b4920"
+  },
+  "local_parameter_vectors_in_public_record": false,
+  "optimization_id": "CCSU-MO-NS-EOS-001-TARGETED-CROSS-CHART-OPT-001",
+  "optimizer_contract": {
+    "absolute_tolerance": 0.0,
+    "algorithm": "scipy_differential_evolution",
+    "base_seed": 20260729,
+    "initialization": "sobol_plus_frozen_start",
+    "invalid_proposal_penalty": 10.0,
+    "inverse_bank_sobol_sample_power": 8,
+    "inverse_bank_sobol_seed": 20260728,
+    "maximum_generations": 30,
+    "mutation": [
+      0.5,
+      1.0
+    ],
+    "no_adaptive_restarts": true,
+    "polish": false,
+    "population_multiplier": 8,
+    "recombination": 0.7,
+    "relative_tolerance": 1e-08,
+    "strategy": "best1bin",
+    "updating": "immediate",
+    "workers": 1
+  },
+  "pilot_entry_authorized": false,
+  "problem_count": 4,
+  "problems": [
+    {
+      "exact_stellar_member_results": {
+        "MUSES-N3LO-414": {
+          "all_stellar_gates_pass": true,
+          "gates": {
+            "all_registered_mass_anchors_translated": true,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": true
+          },
+          "maximum_mass_msun": 2.7577082776685704,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+        },
+        "MUSES-N3LO-450": {
+          "all_stellar_gates_pass": true,
+          "gates": {
+            "all_registered_mass_anchors_translated": true,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": true
+          },
+          "maximum_mass_msun": 2.7568266456297827,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+        }
+      },
+      "exact_stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "initial_paired_worst_case_loss": 0.06032190767017881,
+      "local_parameters_in_public_record": false,
+      "loss_improvement": 0.032078004987178554,
+      "maximum_normalized_parameter_movement": 0.20766555029473233,
+      "optimized_member_losses": {
+        "MUSES-N3LO-414": 0.028204839384896895,
+        "MUSES-N3LO-450": 0.02824390268300025
+      },
+      "optimized_paired_worst_case_loss": 0.02824390268300025,
+      "optimized_parameter_sha256": "537028b611f3ef85076c47f0ccaf5e5c41c94d2141ac31acdaaaf877536e5e73",
+      "optimizer": {
+        "evaluations": 1986,
+        "generations_completed": 30,
+        "invalid_evaluations": 0,
+        "message": "Maximum number of iterations has been exceeded.",
+        "reported_success": false,
+        "seed": 20260729
+      },
+      "problem_id": "RADIO_CELL_1_TO_NUCLEAR",
+      "relation_reachable": true,
+      "robust_cross_chart_overlap": true,
+      "source_chart": "RADIO",
+      "starting_candidate_id": "NUCLEAR__SOBOL__0085",
+      "starting_parameter_sha256": "b439fda902a164aedc643ea4beefe9e91b1aaefb406fadc1585b86971780e2ed",
+      "target_chart": "NUCLEAR",
+      "target_component_index": 1,
+      "target_medoid_atom_id": "RADIO__MUSES-N3LO-414__S0017"
+    },
+    {
+      "exact_stellar_member_results": {
+        "MUSES-N3LO-414": {
+          "all_stellar_gates_pass": true,
+          "gates": {
+            "all_registered_mass_anchors_translated": true,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": true
+          },
+          "maximum_mass_msun": 2.218645113873823,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+        },
+        "MUSES-N3LO-450": {
+          "all_stellar_gates_pass": false,
+          "gates": {
+            "all_registered_mass_anchors_translated": false,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": false
+          },
+          "maximum_mass_msun": 2.1725132576065955,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_FAILED"
+        }
+      },
+      "exact_stellar_status": "FAILED_ONE_OR_BOTH_EFT_MEMBERS",
+      "initial_paired_worst_case_loss": 0.06151263975806239,
+      "local_parameters_in_public_record": false,
+      "loss_improvement": 0.018486272957455814,
+      "maximum_normalized_parameter_movement": 0.8079392248736896,
+      "optimized_member_losses": {
+        "MUSES-N3LO-414": 0.04302636680060658,
+        "MUSES-N3LO-450": 0.042783368855688154
+      },
+      "optimized_paired_worst_case_loss": 0.04302636680060658,
+      "optimized_parameter_sha256": "34162d7f09702cd257348c2ed70a510a857dcff18c45a88dafcc3885f237e3d7",
+      "optimizer": {
+        "evaluations": 994,
+        "generations_completed": 30,
+        "invalid_evaluations": 192,
+        "message": "Maximum number of iterations has been exceeded.",
+        "reported_success": false,
+        "seed": 20260730
+      },
+      "problem_id": "XRAY_CELL_34_TO_GW",
+      "relation_reachable": true,
+      "robust_cross_chart_overlap": false,
+      "source_chart": "XRAY",
+      "starting_candidate_id": "GW__SOBOL__0169",
+      "starting_parameter_sha256": "cde9586e33e26e90ac732c2c41fd51d78a1a85158ab173ffd0e2443b8d9aa048",
+      "target_chart": "GW",
+      "target_component_index": 34,
+      "target_medoid_atom_id": "XRAY__MUSES-N3LO-450__F0248"
+    },
+    {
+      "exact_stellar_member_results": {
+        "MUSES-N3LO-414": {
+          "all_stellar_gates_pass": true,
+          "gates": {
+            "all_registered_mass_anchors_translated": true,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": true
+          },
+          "maximum_mass_msun": 2.731491069655478,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+        },
+        "MUSES-N3LO-450": {
+          "all_stellar_gates_pass": true,
+          "gates": {
+            "all_registered_mass_anchors_translated": true,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": true
+          },
+          "maximum_mass_msun": 2.7303452121322906,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_PASSED"
+        }
+      },
+      "exact_stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "initial_paired_worst_case_loss": 0.06521134087107466,
+      "local_parameters_in_public_record": false,
+      "loss_improvement": 0.06230770198389085,
+      "maximum_normalized_parameter_movement": 0.4160909004860676,
+      "optimized_member_losses": {
+        "MUSES-N3LO-414": 0.0029036388871838113,
+        "MUSES-N3LO-450": 0.002720949839170959
+      },
+      "optimized_paired_worst_case_loss": 0.0029036388871838113,
+      "optimized_parameter_sha256": "93884b62a3ecdc529da362f86d440bfc367f2bb3b66b1877db2296d9f9744c23",
+      "optimizer": {
+        "evaluations": 1986,
+        "generations_completed": 30,
+        "invalid_evaluations": 0,
+        "message": "Maximum number of iterations has been exceeded.",
+        "reported_success": false,
+        "seed": 20260731
+      },
+      "problem_id": "GW_CELL_0_TO_NUCLEAR",
+      "relation_reachable": true,
+      "robust_cross_chart_overlap": true,
+      "source_chart": "GW",
+      "starting_candidate_id": "NUCLEAR__SOBOL__0153",
+      "starting_parameter_sha256": "8e1387d882377aaadb88b06d6c5175e49fc0fb2eeb603fdb81b7d0d6327bccec",
+      "target_chart": "NUCLEAR",
+      "target_component_index": 0,
+      "target_medoid_atom_id": "GW__MUSES-N3LO-414__S0029"
+    },
+    {
+      "exact_stellar_member_results": {
+        "MUSES-N3LO-414": {
+          "all_stellar_gates_pass": false,
+          "gates": {
+            "all_registered_mass_anchors_translated": false,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": false
+          },
+          "maximum_mass_msun": 2.1632883022403586,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_FAILED"
+        },
+        "MUSES-N3LO-450": {
+          "all_stellar_gates_pass": false,
+          "gates": {
+            "all_registered_mass_anchors_translated": false,
+            "domain_contains_mass_turnover": true,
+            "maximum_mass_at_least_2_0_msun": true,
+            "stable_branch_covers_1_0_to_2_2_msun": false
+          },
+          "maximum_mass_msun": 2.1609546647983686,
+          "status": "FINITE_DOMAIN_STELLAR_GATES_FAILED"
+        }
+      },
+      "exact_stellar_status": "FAILED_ONE_OR_BOTH_EFT_MEMBERS",
+      "initial_paired_worst_case_loss": 0.06628985099220316,
+      "local_parameters_in_public_record": false,
+      "loss_improvement": 0.021392737331968316,
+      "maximum_normalized_parameter_movement": 0.1551215219085674,
+      "optimized_member_losses": {
+        "MUSES-N3LO-414": 0.044871992394908376,
+        "MUSES-N3LO-450": 0.04489711366023485
+      },
+      "optimized_paired_worst_case_loss": 0.04489711366023485,
+      "optimized_parameter_sha256": "56456af1dc2ed683e85fa11a99ddb8a288db7b038015606d10744cf97134edce",
+      "optimizer": {
+        "evaluations": 1986,
+        "generations_completed": 30,
+        "invalid_evaluations": 0,
+        "message": "Maximum number of iterations has been exceeded.",
+        "reported_success": false,
+        "seed": 20260732
+      },
+      "problem_id": "RADIO_CELL_2_TO_NUCLEAR",
+      "relation_reachable": true,
+      "robust_cross_chart_overlap": false,
+      "source_chart": "RADIO",
+      "starting_candidate_id": "NUCLEAR__SOBOL__0197",
+      "starting_parameter_sha256": "7d96bd31b324cd06c2f0af50daaaf7a3cce7a28bc757450cc011cbe03d2c7c55",
+      "target_chart": "NUCLEAR",
+      "target_component_index": 2,
+      "target_medoid_atom_id": "RADIO__MUSES-N3LO-450__S0022"
+    }
+  ],
+  "relation_reachability_success_count": 4,
+  "relation_space": {
+    "coordinates": [
+      "log10_pressure_mev_fm3",
+      "pressure_over_energy",
+      "sound_speed_squared"
+    ],
+    "density_anchors_nsat": [
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "distance": "root_mean_square_over_all_15_scaled_coordinates",
+    "scaling": {
+      "log10_pressure_decades": 1.0,
+      "pressure_over_energy": 1.0,
+      "sound_speed_squared": 1.0
+    }
+  },
+  "robust_cross_chart_overlap_success_count": 2,
+  "sampling_completeness_demonstrated": false,
+  "schema": "ccsu.multiobserver.ns-eos-targeted-overlap.v1",
+  "source": {
+    "path": "scripts/run_targeted_cross_chart_optimization.py",
+    "sha256": "46299b576d1e771a085a1d68aba32ae9951b8688cab2e9163bceb3abc1d15fe9"
+  },
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "version": "0.1-development"
+}

@@ -112,9 +112,19 @@ members. Exact stellar gates run only below the unchanged relation threshold
 \(\epsilon=0.05\). GW robustly reaches one cell, XRAY two, RADIO one, and
 NUCLEAR thirty; no cell is robustly reached by two charts. One RADIO
 N3LO-450 singleton is not pair-robust and becomes explicitly uncovered.
-This maps the non-overlap but does not prove global nonreachability. Targeted
-bounded optimization of the closest cross-chart near misses is the next
-development step.
+This maps the non-overlap but does not prove global nonreachability.
 
-The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_12.yaml` are closed.
+Targeted bounded optimization of four frozen near misses is now complete.
+All four targets become reachable in the public relation space at the
+unchanged \(\epsilon=0.05\). Two are robust after exact stellar evaluation
+under both EFT members: NUCLEAR reaches RADIO cell 1 and GW cell 0. The XRAY
+cell 34 → GW and RADIO cell 2 → NUCLEAR directions remain relation-only
+incompatibilities because one or both stellar sequences fail the registered
+high-mass gates. This is the first demonstrated cross-chart overlap at the
+registered resolution; it is conditional overlap, not absolute public
+convergence or global sampling completeness.
+
+The next development step is to freeze the two robust transition records and
+test translation-cycle holonomy wherever a closed transition cycle is
+identifiable. The active checkpoint remains development-only until all
+blockers in `ns_eos_decisions_v0_13.yaml` are closed.
