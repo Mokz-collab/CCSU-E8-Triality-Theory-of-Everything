@@ -1,0 +1,40 @@
+extends: ns_eos_decisions_v0_14.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.15-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  reciprocal_transition_cycles:
+    status: RECIPROCAL_ROBUST_CYCLES_FOUND_HOLONOMY_REQUIRES_STATE_ALIGNED_MAPS
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    optimizer_contract: reciprocal_transition_optimization_contract_v0_1.yaml
+    optimizer_result: reciprocal_transition_optimization_results_v0_1.json
+    cycle_runner: scripts/run_reciprocal_cycle_analysis.py
+    cycle_contract: reciprocal_cycle_contract_v0_1.yaml
+    cycle_result: reciprocal_cycle_results_v0_1.json
+    review: RECIPROCAL_CYCLE_REVIEW_V0_1.md
+    reciprocal_optimization_problem_count: 2
+    reciprocal_robust_success_count: 2
+    combined_transition_count: 4
+    closed_directed_cycles:
+      - [GW, NUCLEAR]
+      - [NUCLEAR, RADIO]
+    closed_directed_cycle_count: 2
+    graph_cycles_available: true
+    transition_record_kind: point_to_relation_cell_correspondence
+    state_aligned_composable_maps_available: false
+    numeric_holonomy_identifiable: false
+    holonomy_value: null
+    zero_holonomy_claimed: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - state_aligned_composable_transition_maps_not_validated
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
+

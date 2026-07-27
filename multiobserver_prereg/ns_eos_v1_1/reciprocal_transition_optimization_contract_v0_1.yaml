@@ -1,0 +1,104 @@
+schema_version: 1
+optimization_id: CCSU-MO-NS-EOS-001-RECIPROCAL-TRANSITION-OPT-001
+version: "0.1-development"
+status: DEVELOPMENT_NONCONFIRMATORY_OPTIMIZATION
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_targeted_cross_chart_optimization.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+common_measure_result: common_relation_measure_results_v0_1.json
+inverse_reachability_result: relation_cell_inverse_reachability_results_v0_1.json
+
+observer_order: [GW, XRAY, RADIO, NUCLEAR]
+mass_anchors_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+
+low_density:
+  outer_crust_reference_manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+relation_space:
+  coordinates:
+    - log10_pressure_mev_fm3
+    - pressure_over_energy
+    - sound_speed_squared
+  density_anchors_nsat: [2.0, 3.0, 4.0, 5.0, 6.0]
+  scaling:
+    log10_pressure_decades: 1.0
+    pressure_over_energy: 1.0
+    sound_speed_squared: 1.0
+  distance: root_mean_square_over_all_15_scaled_coordinates
+
+problems:
+  - problem_id: NUCLEAR_CELL_15_TO_GW
+    target_component_index: 15
+    source_chart: NUCLEAR
+    target_chart: GW
+    starting_candidate_id: GW__SOBOL__0025
+  - problem_id: NUCLEAR_CELL_15_TO_RADIO
+    target_component_index: 15
+    source_chart: NUCLEAR
+    target_chart: RADIO
+    starting_candidate_id: RADIO__SOBOL__0138
+
+optimizer:
+  algorithm: scipy_differential_evolution
+  strategy: best1bin
+  base_seed: 20260733
+  maximum_generations: 30
+  population_multiplier: 8
+  initialization: sobol_plus_frozen_start
+  inverse_bank_sobol_seed: 20260728
+  inverse_bank_sobol_sample_power: 8
+  mutation: [0.5, 1.0]
+  recombination: 0.7
+  relative_tolerance: 0.00000001
+  absolute_tolerance: 0.0
+  polish: false
+  workers: 1
+  updating: immediate
+  invalid_proposal_penalty: 10.0
+  no_adaptive_restarts: true
+
+success_rule:
+  relation_reachability_epsilon: 0.05
+  exact_stellar_revalidation_required: true
+  robust_overlap_requires_both_eft_members: true
+  reciprocal_cycle_requires_robust_reverse_transition: true
+
+exact_stellar_solver:
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  parameter_boxes_unchanged: true
+  invalid_proposals_rejected_not_clipped: true
+  pressure_extrapolation_forbidden: true
+  stellar_gates_unchanged: true
+  relation_threshold_unchanged: true
+
+selection_rationale:
+  frozen_before_execution: true
+  target_component: closest_inverse_bank_NUCLEAR_cell_for_both_GW_and_RADIO
+  GW_initial_paired_worst_case_loss: 0.071537114586005
+  RADIO_initial_paired_worst_case_loss: 0.07464657496198664
+
+does_not_validate:
+  - sampling_completeness
+  - global_transition_atlas
+  - physical_prior_measure
+  - observational_viability
+  - independent_parameter_range_review
+  - P1_to_P4_thresholds
+  - pilot_or_confirmatory_authorization

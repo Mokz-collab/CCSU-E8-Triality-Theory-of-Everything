@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_14.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_13.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_15.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_14.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.13-development")
+        self.assertEqual(previous["version"], "0.14-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -162,7 +162,7 @@ class NSEOSDecisionTests(unittest.TestCase):
             "cross_chart_relation_overlap_not_demonstrated_at_epsilon_0_05",
             self.decisions["remaining_freeze_blockers"],
         )
-        self.assertIn(
+        self.assertNotIn(
             "reciprocal_or_closed_transition_cycle_not_demonstrated",
             self.decisions["remaining_freeze_blockers"],
         )
@@ -181,6 +181,27 @@ class NSEOSDecisionTests(unittest.TestCase):
         )
         self.assertNotIn(
             "transition_map_and_translation_holonomy_not_validated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_reciprocal_cycles_require_state_aligned_maps(self):
+        evidence = self.decisions["implementation_evidence"][
+            "reciprocal_transition_cycles"
+        ]
+        self.assertEqual(evidence["reciprocal_robust_success_count"], 2)
+        self.assertEqual(evidence["closed_directed_cycle_count"], 2)
+        self.assertTrue(evidence["graph_cycles_available"])
+        self.assertFalse(
+            evidence["state_aligned_composable_maps_available"]
+        )
+        self.assertFalse(evidence["numeric_holonomy_identifiable"])
+        self.assertIsNone(evidence["holonomy_value"])
+        self.assertNotIn(
+            "reciprocal_or_closed_transition_cycle_not_demonstrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+        self.assertIn(
+            "state_aligned_composable_transition_maps_not_validated",
             self.decisions["remaining_freeze_blockers"],
         )
 

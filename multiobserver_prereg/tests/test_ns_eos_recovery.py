@@ -395,6 +395,34 @@ class NSEOSRecoveryTests(unittest.TestCase):
             result["scalar_path_loss_interpreted_as_holonomy"]
         )
 
+    def test_reciprocal_search_finds_cycles_not_numeric_holonomy(self):
+        root = Path(__file__).resolve().parents[1]
+        optimization = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "reciprocal_transition_optimization_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        cycle = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "reciprocal_cycle_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            optimization["robust_cross_chart_overlap_success_count"], 2
+        )
+        self.assertEqual(cycle["closed_directed_cycle_count"], 2)
+        self.assertTrue(cycle["graph_cycles_available"])
+        self.assertFalse(
+            cycle["state_aligned_composable_maps_available"]
+        )
+        self.assertFalse(cycle["numeric_holonomy_identifiable"])
+        self.assertIsNone(cycle["holonomy_value"])
+        self.assertFalse(cycle["zero_holonomy_claimed"])
+
 
 if __name__ == "__main__":
     unittest.main()

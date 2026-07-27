@@ -33,6 +33,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_local_chart_validation.py",
             "scripts/run_local_to_public_relation_validation.py",
             "scripts/run_relation_cell_inverse_reachability.py",
+            "scripts/run_reciprocal_cycle_analysis.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_targeted_cross_chart_optimization.py",
             "scripts/run_transition_holonomy_analysis.py",
@@ -139,6 +140,22 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     transition_holonomy = json.loads(
         transition_holonomy_path.read_text(encoding="utf-8")
     )
+    reciprocal_optimization_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "reciprocal_transition_optimization_results_v0_1.json"
+    )
+    reciprocal_optimization = json.loads(
+        reciprocal_optimization_path.read_text(encoding="utf-8")
+    )
+    reciprocal_cycle_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "reciprocal_cycle_results_v0_1.json"
+    )
+    reciprocal_cycle = json.loads(
+        reciprocal_cycle_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -146,16 +163,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.5-development",
+        "version": "1.6-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "04ef8958723f031be7c3a757048f48f80b4db676",
+        "parent_commit": "155a55ad76c346589374190a7f560b42b2b72a2d",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 114,
+            "passed": 116,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -419,6 +436,46 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "reciprocal_transition_optimization": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(reciprocal_optimization_path),
+                "canonical_record_sha256": reciprocal_optimization[
+                    "canonical_record_sha256"
+                ],
+                "problem_count": reciprocal_optimization["problem_count"],
+                "robust_success_count": reciprocal_optimization[
+                    "robust_cross_chart_overlap_success_count"
+                ],
+                "decision": reciprocal_optimization["decision"],
+                "pilot_entry_authorized": reciprocal_optimization[
+                    "pilot_entry_authorized"
+                ],
+            },
+            "reciprocal_transition_cycles": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(reciprocal_cycle_path),
+                "canonical_record_sha256": reciprocal_cycle[
+                    "canonical_record_sha256"
+                ],
+                "transition_count": reciprocal_cycle["transition_count"],
+                "closed_directed_cycles": reciprocal_cycle[
+                    "closed_directed_cycles"
+                ],
+                "graph_cycles_available": reciprocal_cycle[
+                    "graph_cycles_available"
+                ],
+                "state_aligned_composable_maps_available": reciprocal_cycle[
+                    "state_aligned_composable_maps_available"
+                ],
+                "numeric_holonomy_identifiable": reciprocal_cycle[
+                    "numeric_holonomy_identifiable"
+                ],
+                "holonomy_value": reciprocal_cycle["holonomy_value"],
+                "decision": reciprocal_cycle["decision"],
+                "pilot_entry_authorized": reciprocal_cycle[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -467,13 +524,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 "MAPPED_NO_CROSS_CHART_OVERLAP_AT_EPSILON_0_05"
             ),
             "transition_map_and_translation_holonomy": (
-                "TWO_TRANSITIONS_FROZEN_HOLONOMY_NOT_IDENTIFIABLE"
+                "TWO_RECIPROCAL_GRAPH_CYCLES_FOUND_"
+                "STATE_ALIGNED_MAPS_NOT_VALIDATED"
             ),
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "reciprocal_or_closed_transition_cycle_not_demonstrated",
+            "state_aligned_composable_transition_maps_not_validated",
             "inverse_reachability_sampling_completeness_not_demonstrated",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",

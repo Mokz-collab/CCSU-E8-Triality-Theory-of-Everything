@@ -131,8 +131,15 @@ return edge and no closed directed cycle, so translation-cycle holonomy is
 not identifiable. Its value is recorded as null, never as zero, and scalar
 relation loss is not reinterpreted as holonomy.
 
-The next development step is a bounded reciprocal-transition search aimed at
-creating at least one closed directed cycle without changing the boxes,
-relation threshold, finite domain, or stellar gates. The active checkpoint
-remains development-only until all blockers in
-`ns_eos_decisions_v0_14.yaml` are closed.
+A bounded reciprocal-transition search now robustly adds GW → NUCLEAR and
+RADIO → NUCLEAR. Together with the prior edges, this creates the two directed
+graph cycles GW ↔ NUCLEAR and NUCLEAR ↔ RADIO. This is graph closure, not yet
+numeric holonomy: every edge remains a point-to-relation-cell
+correspondence, and the forward/reverse records are not state-aligned
+composable functions on a common input. \(H_c\) therefore remains null, not
+zero.
+
+The next development step is to construct state-aligned transition maps on
+one frozen reciprocal cycle and validate their composition before evaluating
+numeric holonomy. The active checkpoint remains development-only until all
+blockers in `ns_eos_decisions_v0_15.yaml` are closed.

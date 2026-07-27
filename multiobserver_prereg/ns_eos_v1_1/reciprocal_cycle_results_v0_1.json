@@ -1,0 +1,156 @@
+{
+  "canonical_record_sha256": "a565e87099e6b5341b96252bce1178675bd29d211fa6a72d7d647a445b0d85b2",
+  "closed_directed_cycle_count": 2,
+  "closed_directed_cycles": [
+    [
+      "GW",
+      "NUCLEAR"
+    ],
+    [
+      "NUCLEAR",
+      "RADIO"
+    ]
+  ],
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "reciprocal_cycle_contract_v0_1.yaml",
+    "sha256": "cca8976b599f6e3addd158da2c6c74c7709d3bbcdd9a2382fb8ee765d72e744e"
+  },
+  "created_utc": "2026-07-27T16:48:00Z",
+  "decision": "RECIPROCAL_ROBUST_CYCLES_FOUND_HOLONOMY_REQUIRES_STATE_ALIGNED_MAPS",
+  "directed_edges": [
+    {
+      "from_chart": "GW",
+      "to_chart": "NUCLEAR"
+    },
+    {
+      "from_chart": "NUCLEAR",
+      "to_chart": "GW"
+    },
+    {
+      "from_chart": "NUCLEAR",
+      "to_chart": "RADIO"
+    },
+    {
+      "from_chart": "RADIO",
+      "to_chart": "NUCLEAR"
+    }
+  ],
+  "does_not_validate": [
+    "state_aligned_transition_maps",
+    "numeric_translation_holonomy",
+    "path_independence",
+    "sampling_completeness",
+    "global_transition_atlas",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3"
+  },
+  "graph_cycles_available": true,
+  "holonomy_status": "GRAPH_CYCLES_FOUND_STATE_ALIGNED_MAPS_MISSING",
+  "holonomy_value": null,
+  "inputs": [
+    {
+      "canonical_record_sha256": "4d9b355f78b80a91804bc8f8c4808874d36c1f46598c3acef43a91da6ceecf33",
+      "path": "targeted_cross_chart_optimization_results_v0_1.json",
+      "sha256": "014de6b28c01febf903e32d1fcf4c30ed0502e3fede3189e982668a1c9266597"
+    },
+    {
+      "canonical_record_sha256": "9e80e6dc15bf15ee0060a51ca6f3176d693621a2185ea9573b0b0cc3253c6bd8",
+      "path": "reciprocal_transition_optimization_results_v0_1.json",
+      "sha256": "a7ffeeb6bd658226171177b71567073a40ab7e6730b00789594bdc15bce7b392"
+    }
+  ],
+  "numeric_holonomy_identifiable": false,
+  "pilot_entry_authorized": false,
+  "registration_id": "CCSU-MO-NS-EOS-001-RECIPROCAL-CYCLES",
+  "scalar_path_loss_interpreted_as_holonomy": false,
+  "schema": "ccsu.multiobserver.ns-eos-reciprocal-cycles.v1",
+  "source": {
+    "path": "scripts/run_reciprocal_cycle_analysis.py",
+    "sha256": "8bf9d16b31c5cb909f71efa29b8dc769d833a010d293b47f8bafdafeedcad3b0"
+  },
+  "state_aligned_composable_maps_available": false,
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "transition_count": 4,
+  "transition_records": [
+    {
+      "candidate_parameter_sha256": "e948b829626c453e6ffa3e1ef46581df9f33f69c4abdee5bb34721be75974379",
+      "from_chart": "GW",
+      "local_parameter_vector_in_public_record": false,
+      "member_relation_losses": {
+        "MUSES-N3LO-414": 0.045160806926051844,
+        "MUSES-N3LO-450": 0.04518094335292861
+      },
+      "paired_worst_case_relation_loss": 0.04518094335292861,
+      "record_kind": "point_to_relation_cell_correspondence",
+      "source_result": "reciprocal_transition_optimization_results_v0_1.json",
+      "state_aligned_map": false,
+      "stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "target_component_index": 15,
+      "target_medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+      "to_chart": "NUCLEAR",
+      "transition_id": "GW_TO_NUCLEAR_CELL_15"
+    },
+    {
+      "candidate_parameter_sha256": "93884b62a3ecdc529da362f86d440bfc367f2bb3b66b1877db2296d9f9744c23",
+      "from_chart": "NUCLEAR",
+      "local_parameter_vector_in_public_record": false,
+      "member_relation_losses": {
+        "MUSES-N3LO-414": 0.0029036388871838113,
+        "MUSES-N3LO-450": 0.002720949839170959
+      },
+      "paired_worst_case_relation_loss": 0.0029036388871838113,
+      "record_kind": "point_to_relation_cell_correspondence",
+      "source_result": "targeted_cross_chart_optimization_results_v0_1.json",
+      "state_aligned_map": false,
+      "stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "target_component_index": 0,
+      "target_medoid_atom_id": "GW__MUSES-N3LO-414__S0029",
+      "to_chart": "GW",
+      "transition_id": "NUCLEAR_TO_GW_CELL_0"
+    },
+    {
+      "candidate_parameter_sha256": "537028b611f3ef85076c47f0ccaf5e5c41c94d2141ac31acdaaaf877536e5e73",
+      "from_chart": "NUCLEAR",
+      "local_parameter_vector_in_public_record": false,
+      "member_relation_losses": {
+        "MUSES-N3LO-414": 0.028204839384896895,
+        "MUSES-N3LO-450": 0.02824390268300025
+      },
+      "paired_worst_case_relation_loss": 0.02824390268300025,
+      "record_kind": "point_to_relation_cell_correspondence",
+      "source_result": "targeted_cross_chart_optimization_results_v0_1.json",
+      "state_aligned_map": false,
+      "stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "target_component_index": 1,
+      "target_medoid_atom_id": "RADIO__MUSES-N3LO-414__S0017",
+      "to_chart": "RADIO",
+      "transition_id": "NUCLEAR_TO_RADIO_CELL_1"
+    },
+    {
+      "candidate_parameter_sha256": "0c1d325ea71872a69fe9db31d9c15dc7e71c682b51c73e6111ced2c0ad625f6d",
+      "from_chart": "RADIO",
+      "local_parameter_vector_in_public_record": false,
+      "member_relation_losses": {
+        "MUSES-N3LO-414": 0.0290933707771019,
+        "MUSES-N3LO-450": 0.028779914529265514
+      },
+      "paired_worst_case_relation_loss": 0.0290933707771019,
+      "record_kind": "point_to_relation_cell_correspondence",
+      "source_result": "reciprocal_transition_optimization_results_v0_1.json",
+      "state_aligned_map": false,
+      "stellar_status": "PASS_BOTH_EFT_MEMBERS",
+      "target_component_index": 15,
+      "target_medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+      "to_chart": "NUCLEAR",
+      "transition_id": "RADIO_TO_NUCLEAR_CELL_15"
+    }
+  ],
+  "version": "0.1-development",
+  "zero_holonomy_claimed": false
+}
