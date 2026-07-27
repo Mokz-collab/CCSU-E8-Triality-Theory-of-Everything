@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_16.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_15.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_17.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_16.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.15-development")
+        self.assertEqual(previous["version"], "0.16-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -200,7 +200,7 @@ class NSEOSDecisionTests(unittest.TestCase):
             "reciprocal_or_closed_transition_cycle_not_demonstrated",
             self.decisions["remaining_freeze_blockers"],
         )
-        self.assertIn(
+        self.assertNotIn(
             "holonomy_null_and_local_state_ensemble_not_calibrated",
             self.decisions["remaining_freeze_blockers"],
         )
@@ -220,6 +220,20 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertFalse(evidence["holonomy_significance_calibrated"])
         self.assertNotIn(
             "state_aligned_composable_transition_maps_not_validated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_singleton_null_forbids_significance_claim(self):
+        evidence = self.decisions["implementation_evidence"][
+            "holonomy_singleton_calibration"
+        ]
+        self.assertEqual(evidence["robust_GW_state_count"], 1)
+        self.assertGreater(evidence["cross_to_null_ratio"], 1.0)
+        self.assertTrue(evidence["singleton_not_distribution"])
+        self.assertFalse(evidence["statistical_significance_identifiable"])
+        self.assertIsNone(evidence["p_value"])
+        self.assertIn(
+            "seed_replicated_holonomy_null_distribution_not_calibrated",
             self.decisions["remaining_freeze_blockers"],
         )
 

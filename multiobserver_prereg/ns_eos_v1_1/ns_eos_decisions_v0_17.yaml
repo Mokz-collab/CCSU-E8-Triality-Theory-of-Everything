@@ -1,0 +1,37 @@
+extends: ns_eos_decisions_v0_16.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.17-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  holonomy_singleton_calibration:
+    status: CROSS_HOLONOMY_EXCEEDS_SINGLETON_NULL_SIGNIFICANCE_NOT_IDENTIFIABLE
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    null_runner: scripts/run_same_chart_gw_null.py
+    null_contract: same_chart_gw_null_contract_v0_1.yaml
+    null_result: same_chart_gw_null_results_v0_1.json
+    calibration_runner: scripts/run_holonomy_singleton_calibration.py
+    calibration_contract: holonomy_singleton_calibration_contract_v0_1.yaml
+    calibration_result: holonomy_singleton_calibration_results_v0_1.json
+    review: HOLONOMY_SINGLETON_CALIBRATION_REVIEW_V0_1.md
+    robust_GW_state_count: 1
+    cross_chart_holonomy: 0.005986150174484296
+    same_chart_null_holonomy: 0.0010942655053483782
+    cross_to_null_ratio: 5.470473249157664
+    cross_minus_null: 0.004891884669135918
+    singleton_not_distribution: true
+    statistical_significance_identifiable: false
+    p_value: null
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - seed_replicated_holonomy_null_distribution_not_calibrated
+  - local_state_holonomy_ensemble_not_available
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
+

@@ -442,6 +442,21 @@ class NSEOSRecoveryTests(unittest.TestCase):
         )
         self.assertFalse(result["zero_holonomy_claimed"])
 
+    def test_singleton_calibration_has_no_p_value(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "holonomy_singleton_calibration_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertGreater(result["cross_to_null_holonomy_ratio"], 1.0)
+        self.assertTrue(result["cross_exceeds_singleton_null"])
+        self.assertTrue(result["singleton_not_distribution"])
+        self.assertFalse(result["statistical_significance_identifiable"])
+        self.assertIsNone(result["p_value"])
+
 
 if __name__ == "__main__":
     unittest.main()

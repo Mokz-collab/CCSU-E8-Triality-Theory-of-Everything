@@ -103,6 +103,8 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
     ]
     eft_labels = tuple(table.model_label for table in eft_tables)
     cycle = contract["cycle"]
+    initial_chart = str(cycle["initial_chart"])
+    intermediate_chart = str(cycle["intermediate_chart"])
     initial_cases = {
         case["case_id"]: case
         for case in recovery["cases"]
@@ -167,7 +169,9 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
             )
         return public, vectors
 
-    initial_public, initial_vectors = projections("GW", initial_parameters)
+    initial_public, initial_vectors = projections(
+        initial_chart, initial_parameters
+    )
 
     def optimize_leg(
         chart_name: str,
@@ -295,23 +299,32 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
 
     order = tuple(str(x) for x in contract["observer_order"])
     sobol_seed = int(optimizer["inverse_bank_sobol_seed"])
-    nuclear_index = int(
-        cycle["forward_starting_candidate_id"].rsplit("__", 1)[1]
+    def frozen_start(chart_name: str, candidate_id: str) -> dict[str, float]:
+        prefix = f"{chart_name}__SOBOL__"
+        if not candidate_id.startswith(prefix):
+            raise ValueError("cycle starts must be frozen Sobol candidates")
+        index = int(candidate_id.removeprefix(prefix))
+        return deterministic_sobol_proposals(
+            CHART_SPECIFICATIONS[chart_name],
+            sample_power=int(optimizer["inverse_bank_sobol_sample_power"]),
+            seed=sobol_seed + order.index(chart_name),
+        )[index]
+
+    forward_start = frozen_start(
+        intermediate_chart, cycle["forward_starting_candidate_id"]
     )
-    nuclear_start = deterministic_sobol_proposals(
-        CHART_SPECIFICATIONS["NUCLEAR"],
-        sample_power=int(optimizer["inverse_bank_sobol_sample_power"]),
-        seed=sobol_seed + order.index("NUCLEAR"),
-    )[nuclear_index]
+    reverse_start = frozen_start(
+        initial_chart, cycle["reverse_starting_candidate_id"]
+    )
     forward = optimize_leg(
-        "NUCLEAR",
-        nuclear_start,
+        intermediate_chart,
+        forward_start,
         initial_vectors,
         int(optimizer["forward_seed"]),
     )
     reverse = optimize_leg(
-        "GW",
-        initial_parameters,
+        initial_chart,
+        reverse_start,
         forward["vectors"],
         int(optimizer["reverse_seed"]),
     )
@@ -352,7 +365,7 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
             "sha256": sha256_file(project_root / contract["source"]),
         },
         "initial_state": {
-            "chart": "GW",
+            "chart": initial_chart,
             "case_ids": cycle["initial_state_case_ids"],
             "parameter_sha256": parameter_sha256(initial_parameters),
             "local_parameter_vector_in_public_record": False,
@@ -369,7 +382,8 @@ def run_cycle(contract_path: Path, created_utc: str) -> dict[str, object]:
         "holonomy_identifiable": cycle_valid,
         "zero_holonomy_claimed": False,
         "decision": (
-            "STATE_ALIGNED_GW_NUCLEAR_HOLONOMY_MEASURED"
+            f"STATE_ALIGNED_{initial_chart}_{intermediate_chart}_"
+            "HOLONOMY_MEASURED"
             if cycle_valid
             else "STATE_ALIGNED_CYCLE_FAILED_FROZEN_GATES"
         ),

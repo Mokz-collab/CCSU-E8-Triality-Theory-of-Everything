@@ -1,0 +1,31 @@
+schema: ccsu.multiobserver.ns-eos-holonomy-singleton-calibration-contract.v1
+registration_id: CCSU-MO-NS-EOS-001-HOLONOMY-SINGLETON-CAL
+version: "0.1-development"
+status: FROZEN_FOR_DEVELOPMENT_REPLAY
+confirmatory_authorization: false
+
+source: scripts/run_holonomy_singleton_calibration.py
+cross_chart_result:
+  path: state_aligned_gw_nuclear_cycle_results_v0_1.json
+  sha256: 49451e8a590c594fd97cbc6ecbe187b6cd9fea5a409670682318d5af40e6b5d2
+same_chart_null_result:
+  path: same_chart_gw_null_results_v0_1.json
+  sha256: 6d9ea23e2bf164e3af24ceb6fa60c4272344db98a6f1cf3fc8640b5fe93ceb5b
+
+comparison:
+  primary: cross_to_null_holonomy_ratio
+  secondary: cross_minus_null_holonomy
+  paired_worst_case_EFT_rule: true
+  singleton_state_count: 1
+  repeated_null_runs: 1
+  statistical_significance_authorized: false
+  p_value_authorized: false
+  pilot_entry_authorized: false
+
+does_not_validate:
+  - null_distribution
+  - statistical_significance
+  - optimization_seed_stability
+  - local_state_generalization
+  - pilot_or_confirmatory_authorization
+

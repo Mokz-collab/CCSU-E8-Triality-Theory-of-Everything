@@ -1,0 +1,47 @@
+{
+  "available_robust_GW_state_count": 1,
+  "canonical_record_sha256": "85467e97a5073d5925e43c77ff5da06c914483f28ad26010b04d31053bed503f",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "holonomy_singleton_calibration_contract_v0_1.yaml",
+    "sha256": "a54209533051754eae2dea22df3e9e6828660c7fc99ca2600df2f61d356f0e44"
+  },
+  "created_utc": "2026-07-27T21:36:00Z",
+  "cross_chart_paired_worst_case_holonomy": 0.005986150174484296,
+  "cross_exceeds_singleton_null": true,
+  "cross_minus_null_holonomy": 0.004891884669135918,
+  "cross_to_null_holonomy_ratio": 5.470473249157664,
+  "decision": "CROSS_HOLONOMY_EXCEEDS_SINGLETON_NULL_SIGNIFICANCE_NOT_IDENTIFIABLE",
+  "does_not_validate": [
+    "null_distribution",
+    "statistical_significance",
+    "optimization_seed_stability",
+    "local_state_generalization",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "inputs": {
+    "cross_chart_result": {
+      "canonical_record_sha256": "3bf8602d67893bc831d3e9c99b6684723ea4191129808b25f97ceb3410b67983",
+      "path": "state_aligned_gw_nuclear_cycle_results_v0_1.json",
+      "sha256": "49451e8a590c594fd97cbc6ecbe187b6cd9fea5a409670682318d5af40e6b5d2"
+    },
+    "same_chart_null_result": {
+      "canonical_record_sha256": "596f9eaea507b4a87bca7c2e9c741e7d25799bfb99ca585da66f0e33d50a516c",
+      "path": "same_chart_gw_null_results_v0_1.json",
+      "sha256": "6d9ea23e2bf164e3af24ceb6fa60c4272344db98a6f1cf3fc8640b5fe93ceb5b"
+    }
+  },
+  "p_value": null,
+  "pilot_entry_authorized": false,
+  "registration_id": "CCSU-MO-NS-EOS-001-HOLONOMY-SINGLETON-CAL",
+  "same_chart_null_paired_worst_case_holonomy": 0.0010942655053483782,
+  "schema": "ccsu.multiobserver.ns-eos-holonomy-singleton-calibration.v1",
+  "singleton_not_distribution": true,
+  "source": {
+    "path": "scripts/run_holonomy_singleton_calibration.py",
+    "sha256": "898b25693e1f41afd527c0231dd93062f751a61e820ebb9f621c19311f055248"
+  },
+  "statistical_significance_identifiable": false,
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "version": "0.1-development"
+}

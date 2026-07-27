@@ -30,10 +30,12 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_final_low_density_pairing_validation.py",
             "scripts/run_finite_domain_recovery_search.py",
             "scripts/run_inner_crust_validation.py",
+            "scripts/run_holonomy_singleton_calibration.py",
             "scripts/run_local_chart_validation.py",
             "scripts/run_local_to_public_relation_validation.py",
             "scripts/run_relation_cell_inverse_reachability.py",
             "scripts/run_reciprocal_cycle_analysis.py",
+            "scripts/run_same_chart_gw_null.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_state_aligned_gw_nuclear_cycle.py",
             "scripts/run_targeted_cross_chart_optimization.py",
@@ -165,6 +167,22 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     state_aligned_cycle = json.loads(
         state_aligned_cycle_path.read_text(encoding="utf-8")
     )
+    same_chart_null_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "same_chart_gw_null_results_v0_1.json"
+    )
+    same_chart_null = json.loads(
+        same_chart_null_path.read_text(encoding="utf-8")
+    )
+    singleton_calibration_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "holonomy_singleton_calibration_results_v0_1.json"
+    )
+    singleton_calibration = json.loads(
+        singleton_calibration_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -172,16 +190,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.7-development",
+        "version": "1.8-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "7507f211e3d1e89f4507f2c960be9f88a7f36b5e",
+        "parent_commit": "c0eaf95aebf1d90112fecb84592a75b1a89c0709",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 118,
+            "passed": 120,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -508,6 +526,38 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "same_chart_GW_null": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(same_chart_null_path),
+                "canonical_record_sha256": same_chart_null[
+                    "canonical_record_sha256"
+                ],
+                "paired_worst_case_holonomy": same_chart_null[
+                    "paired_worst_case_holonomy"
+                ],
+                "cycle_valid_under_frozen_gates": same_chart_null[
+                    "cycle_valid_under_frozen_gates"
+                ],
+            },
+            "holonomy_singleton_calibration": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(singleton_calibration_path),
+                "canonical_record_sha256": singleton_calibration[
+                    "canonical_record_sha256"
+                ],
+                "cross_to_null_holonomy_ratio": singleton_calibration[
+                    "cross_to_null_holonomy_ratio"
+                ],
+                "cross_minus_null_holonomy": singleton_calibration[
+                    "cross_minus_null_holonomy"
+                ],
+                "statistical_significance_identifiable": (
+                    singleton_calibration[
+                        "statistical_significance_identifiable"
+                    ]
+                ),
+                "decision": singleton_calibration["decision"],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -556,14 +606,15 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 "MAPPED_NO_CROSS_CHART_OVERLAP_AT_EPSILON_0_05"
             ),
             "transition_map_and_translation_holonomy": (
-                "GW_NUCLEAR_STATE_ALIGNED_HOLONOMY_MEASURED_"
-                "SIGNIFICANCE_NOT_CALIBRATED"
+                "CROSS_HOLONOMY_EXCEEDS_SINGLETON_NULL_"
+                "SIGNIFICANCE_NOT_IDENTIFIABLE"
             ),
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "holonomy_null_and_local_state_ensemble_not_calibrated",
+            "seed_replicated_holonomy_null_distribution_not_calibrated",
+            "local_state_holonomy_ensemble_not_available",
             "inverse_reachability_sampling_completeness_not_demonstrated",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",

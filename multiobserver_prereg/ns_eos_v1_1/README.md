@@ -147,7 +147,14 @@ privately and represented publicly only by hashes. This identifies numeric
 holonomy for one frozen state, but its scientific significance is not
 calibrated.
 
-The next development step is a frozen local state ensemble plus a null model
-that separates optimization/numerical closure error from stable transition
-holonomy. The active checkpoint remains development-only until all blockers
-in `ns_eos_decisions_v0_16.yaml` are closed.
+The available robust GW ensemble contains only the paired state S0029. A
+same-chart GW → GW → GW optimizer null, initialized away from S0029, measures
+a closure floor of 0.00109427. The cross-chart holonomy is 5.47 times this
+singleton null, with an absolute excess of 0.00489188. This does not identify
+significance: one state and one null execution are not a distribution, and no
+p-value is reported.
+
+The next development step is seed-replicated null and cross-chart execution
+on a predeclared local state ensemble. The active checkpoint remains
+development-only until all blockers in `ns_eos_decisions_v0_17.yaml` are
+closed.

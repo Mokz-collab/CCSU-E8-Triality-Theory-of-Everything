@@ -1,0 +1,94 @@
+schema: ccsu.multiobserver.ns-eos-same-chart-null-contract.v1
+registration_id: CCSU-MO-NS-EOS-001-GW-IDENTITY-NULL
+version: "0.1-development"
+status: FROZEN_FOR_DEVELOPMENT_EXECUTION
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_same_chart_gw_null.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+recovery_result: finite_domain_recovery_results_v0_1.json
+recovery_result_sha256: 6bf294581e05735ea13303740e88491a959d65469fe638e768cfcf4040204e6f
+
+cycle:
+  initial_chart: GW
+  intermediate_chart: GW
+  initial_state_case_ids:
+    - GW__MUSES-N3LO-414__S0029
+    - GW__MUSES-N3LO-450__S0029
+  forward_starting_candidate_id: GW__SOBOL__0025
+  reverse_starting_candidate_id: GW__SOBOL__0025
+  state_alignment: reverse_target_is_actual_forward_output
+  holonomy_definition: paired_member_RMS_distance_from_initial_GW_state_to_returned_GW_state
+
+observer_order: [GW, XRAY, RADIO, NUCLEAR]
+mass_anchors_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+
+low_density:
+  outer_crust_reference_manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+relation_space:
+  density_anchors_nsat: [2.0, 3.0, 4.0, 5.0, 6.0]
+  scaling:
+    log10_pressure_decades: 1.0
+    pressure_over_energy: 1.0
+    sound_speed_squared: 1.0
+  relation_threshold_epsilon: 0.05
+
+optimizer:
+  algorithm: scipy_differential_evolution
+  strategy: best1bin
+  forward_seed: 20260737
+  reverse_seed: 20260738
+  maximum_generations: 30
+  population_multiplier: 8
+  initialization: sobol_plus_frozen_start
+  inverse_bank_sobol_seed: 20260728
+  inverse_bank_sobol_sample_power: 8
+  mutation: [0.5, 1.0]
+  recombination: 0.7
+  relative_tolerance: 0.00000001
+  absolute_tolerance: 0.0
+  polish: false
+  workers: 1
+  updating: immediate
+  invalid_proposal_penalty: 10.0
+  no_adaptive_restarts: true
+
+exact_stellar_solver:
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  parameter_boxes_unchanged: true
+  invalid_proposals_rejected_not_clipped: true
+  pressure_extrapolation_forbidden: true
+  stellar_gates_unchanged: true
+  relation_threshold_unchanged: true
+  paired_eft_members_required: true
+  local_parameter_vectors_in_public_record: false
+
+calibration_semantics:
+  available_robust_GW_state_count: 1
+  singleton_not_distribution: true
+  same_chart_null_estimates: numerical_and_optimizer_closure_floor
+  no_significance_test_authorized: true
+
+does_not_validate:
+  - holonomy_null_distribution
+  - statistical_significance
+  - global_transition_atlas
+  - sampling_completeness
+  - pilot_or_confirmatory_authorization
