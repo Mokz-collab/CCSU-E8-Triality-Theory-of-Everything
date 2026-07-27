@@ -24,6 +24,7 @@ def _registered_files() -> tuple[Path, ...]:
         PROJECT_ROOT / relative
         for relative in (
             "scripts/create_ns_eos_development_checkpoint.py",
+            "scripts/run_common_relation_measure.py",
             "scripts/fit_inner_crust_reference_template.py",
             "scripts/generate_muses_chiral_eft_anchor.py",
             "scripts/run_final_low_density_pairing_validation.py",
@@ -103,6 +104,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     xray_diagnostic = json.loads(
         xray_diagnostic_path.read_text(encoding="utf-8")
     )
+    common_measure_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "common_relation_measure_results_v0_1.json"
+    )
+    common_measure = json.loads(
+        common_measure_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -110,16 +119,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "1.1-development",
+        "version": "1.2-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "3be6cbe8454c3f5c87d0d306d2a1a954045f2e65",
+        "parent_commit": "6296483e2dd8cb2ca983da2b45b96f32117caae8",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 102,
+            "passed": 106,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -270,6 +279,33 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                     "pilot_entry_authorized"
                 ],
             },
+            "common_relation_space_measure": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(common_measure_path),
+                "canonical_record_sha256": common_measure[
+                    "canonical_record_sha256"
+                ],
+                "accepted_relation_atoms": common_measure["atom_count"],
+                "occupied_components": common_measure[
+                    "primary_measure"
+                ]["component_count"],
+                "mixed_observer_components": common_measure[
+                    "primary_measure"
+                ]["mixed_observer_component_count"],
+                "local_plateau_pass": common_measure[
+                    "local_plateau_pass"
+                ],
+                "duplicate_atom_invariance_pass": common_measure[
+                    "duplicate_atom_invariance_pass"
+                ],
+                "observer_attributed_mass": common_measure[
+                    "primary_measure"
+                ]["observer_attributed_mass"],
+                "decision": common_measure["decision"],
+                "pilot_entry_authorized": common_measure[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -307,12 +343,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             "XRAY_finite_domain_support": (
                 "FOUND_IN_SPARSE_FACTORIAL_INTERACTION_REGION"
             ),
-            "common_relation_space_proposal_measure": "NOT_DEFINED",
+            "common_relation_space_proposal_measure": (
+                "DEFINED_LOCAL_STABILITY_PASSED"
+            ),
+            "common_relation_space_sampling_coverage": "NOT_DEMONSTRATED",
+            "cross_chart_relation_overlap": "NOT_DEMONSTRATED",
             "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
-            "common_relation_space_proposal_measure_not_defined",
+            "common_relation_space_sampling_coverage_and_cross_chart_overlap_not_demonstrated",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",
             "power_derived_confirmatory_budget",

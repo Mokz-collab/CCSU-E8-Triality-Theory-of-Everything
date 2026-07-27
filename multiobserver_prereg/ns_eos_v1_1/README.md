@@ -95,5 +95,15 @@ final stiffness. XRAY is therefore not structurally excluded by the
 chart-neutral proposal measure in common physical-relation coordinates,
 rather than equating raw parameter-box volume across charts.
 
+A first chart-neutral occupied-relation measure is now executable. It uses
+\(\log_{10}P\), \(P/\varepsilon\), and \(c_s^2\) at five density anchors,
+with no observer label or local parameter in the distance. Equal mass is
+assigned to each occupied relation component and divided among duplicate
+members. At \(\epsilon=0.05\), 74 accepted χEFT realizations form 35
+components; the result is exactly stable over \(\epsilon=0.02\)–0.05 and
+passes duplicate invariance. No primary component contains more than one
+chart, and NUCLEAR accounts for 30/35 occupied cells. The measure is defined,
+but balanced sampling coverage and cross-chart overlap are not demonstrated.
+
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_10.yaml` are closed.
+`ns_eos_decisions_v0_11.yaml` are closed.

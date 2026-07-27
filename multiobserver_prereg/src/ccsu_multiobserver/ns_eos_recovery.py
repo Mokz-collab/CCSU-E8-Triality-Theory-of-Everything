@@ -113,6 +113,131 @@ def common_relation_projection(
     }
 
 
+def relation_vector(
+    projection: Mapping[str, Sequence[float]],
+    *,
+    log_pressure_scale_decades: float,
+    pressure_over_energy_scale: float,
+    sound_speed_squared_scale: float,
+) -> np.ndarray:
+    scales = (
+        float(log_pressure_scale_decades),
+        float(pressure_over_energy_scale),
+        float(sound_speed_squared_scale),
+    )
+    if any(not math.isfinite(value) or value <= 0.0 for value in scales):
+        raise ValueError("relation scales must be finite and positive")
+    fields = (
+        "log10_pressure_mev_fm3",
+        "pressure_over_energy",
+        "sound_speed_squared",
+    )
+    blocks = [
+        np.asarray(projection[field], dtype=float) / scale
+        for field, scale in zip(fields, scales, strict=True)
+    ]
+    if (
+        any(block.ndim != 1 or block.size == 0 for block in blocks)
+        or len({block.size for block in blocks}) != 1
+        or not all(np.all(np.isfinite(block)) for block in blocks)
+    ):
+        raise ValueError("relation projection blocks are incompatible")
+    return np.concatenate(blocks)
+
+
+def relation_distance_matrix(vectors: Sequence[np.ndarray]) -> np.ndarray:
+    matrix = np.asarray(vectors, dtype=float)
+    if (
+        matrix.ndim != 2
+        or matrix.shape[0] == 0
+        or matrix.shape[1] == 0
+        or not np.all(np.isfinite(matrix))
+    ):
+        raise ValueError("relation vectors must form a finite matrix")
+    differences = matrix[:, None, :] - matrix[None, :, :]
+    return np.sqrt(np.mean(differences * differences, axis=2))
+
+
+def relation_components(
+    distance_matrix: np.ndarray,
+    *,
+    epsilon: float,
+) -> tuple[tuple[int, ...], ...]:
+    distances = np.asarray(distance_matrix, dtype=float)
+    if (
+        distances.ndim != 2
+        or distances.shape[0] != distances.shape[1]
+        or not np.all(np.isfinite(distances))
+    ):
+        raise ValueError("distance matrix must be finite and square")
+    if not math.isfinite(epsilon) or epsilon <= 0.0:
+        raise ValueError("epsilon must be finite and positive")
+    seen: set[int] = set()
+    components: list[tuple[int, ...]] = []
+    for start in range(distances.shape[0]):
+        if start in seen:
+            continue
+        stack = [start]
+        seen.add(start)
+        component: list[int] = []
+        while stack:
+            index = stack.pop()
+            component.append(index)
+            neighbors = np.flatnonzero(distances[index] <= epsilon)
+            for neighbor_value in neighbors:
+                neighbor = int(neighbor_value)
+                if neighbor not in seen:
+                    seen.add(neighbor)
+                    stack.append(neighbor)
+        components.append(tuple(sorted(component)))
+    return tuple(components)
+
+
+def equal_component_measure(
+    atoms: Sequence[Mapping[str, object]],
+    distance_matrix: np.ndarray,
+    *,
+    epsilon: float,
+) -> dict[str, object]:
+    if len(atoms) != distance_matrix.shape[0]:
+        raise ValueError("atom and distance counts differ")
+    components = relation_components(distance_matrix, epsilon=epsilon)
+    component_mass = 1.0 / len(components)
+    atom_weights = [0.0] * len(atoms)
+    component_records: list[dict[str, object]] = []
+    provenance_mass: Counter[str] = Counter()
+    mixed_components = 0
+    for component_index, component in enumerate(components):
+        atom_mass = component_mass / len(component)
+        observers = sorted(
+            {str(atoms[index]["observer"]) for index in component}
+        )
+        if len(observers) > 1:
+            mixed_components += 1
+        for index in component:
+            atom_weights[index] = atom_mass
+            provenance_mass[str(atoms[index]["observer"])] += atom_mass
+        component_records.append(
+            {
+                "component_index": component_index,
+                "atom_indices": list(component),
+                "atom_count": len(component),
+                "observers": observers,
+                "mass": component_mass,
+            }
+        )
+    return {
+        "epsilon": epsilon,
+        "component_count": len(components),
+        "mixed_observer_component_count": mixed_components,
+        "component_mass": component_mass,
+        "components": component_records,
+        "atom_weights": atom_weights,
+        "observer_attributed_mass": dict(sorted(provenance_mass.items())),
+        "total_mass": sum(atom_weights),
+    }
+
+
 def classify_screening_result(
     *,
     local_status: str,

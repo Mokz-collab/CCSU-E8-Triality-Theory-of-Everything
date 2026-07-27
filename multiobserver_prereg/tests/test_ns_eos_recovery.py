@@ -4,6 +4,8 @@ import json
 import unittest
 from pathlib import Path
 
+import numpy as np
+
 from ccsu_multiobserver.ns_eos_local_charts import (
     CHART_SPECIFICATIONS,
     LocalChartEOS,
@@ -13,6 +15,10 @@ from ccsu_multiobserver.ns_eos_recovery import (
     classify_screening_result,
     common_relation_projection,
     deterministic_sobol_proposals,
+    equal_component_measure,
+    relation_components,
+    relation_distance_matrix,
+    relation_vector,
     summarize_acceptance,
 )
 
@@ -113,6 +119,60 @@ class NSEOSRecoveryTests(unittest.TestCase):
             [0.2, 0.3, 0.6],
         )
 
+    def test_relation_measure_is_invariant_to_same_provenance_duplicate(self):
+        vectors = [
+            relation_vector(
+                {
+                    "log10_pressure_mev_fm3": [1.0, 1.1],
+                    "pressure_over_energy": [0.1, 0.2],
+                    "sound_speed_squared": [0.2, 0.3],
+                },
+                log_pressure_scale_decades=1.0,
+                pressure_over_energy_scale=1.0,
+                sound_speed_squared_scale=1.0,
+            ),
+            relation_vector(
+                {
+                    "log10_pressure_mev_fm3": [2.0, 2.1],
+                    "pressure_over_energy": [0.4, 0.5],
+                    "sound_speed_squared": [0.6, 0.7],
+                },
+                log_pressure_scale_decades=1.0,
+                pressure_over_energy_scale=1.0,
+                sound_speed_squared_scale=1.0,
+            ),
+        ]
+        atoms = [{"observer": "GW"}, {"observer": "XRAY"}]
+        base = equal_component_measure(
+            atoms,
+            relation_distance_matrix(vectors),
+            epsilon=0.05,
+        )
+        duplicated = equal_component_measure(
+            atoms + [{"observer": "GW"}],
+            relation_distance_matrix(vectors + [vectors[0]]),
+            epsilon=0.05,
+        )
+        self.assertEqual(base["component_count"], 2)
+        self.assertEqual(
+            base["observer_attributed_mass"],
+            duplicated["observer_attributed_mass"],
+        )
+
+    def test_relation_components_use_transitive_occupancy(self):
+        distances = relation_distance_matrix(
+            [
+                np.asarray([0.00]),
+                np.asarray([0.04]),
+                np.asarray([0.08]),
+                np.asarray([1.00]),
+            ]
+        )
+        self.assertEqual(
+            relation_components(distances, epsilon=0.05),
+            ((0, 1, 2), (3,)),
+        )
+
     def test_zero_acceptance_is_reported_as_imbalance(self):
         cases = [
             {"observer": "GW", "outcome": "ACCEPTED"},
@@ -191,6 +251,35 @@ class NSEOSRecoveryTests(unittest.TestCase):
             {case["unit_coordinates"]["gamma1"] for case in accepted},
             {0.125, 0.375, 0.625, 0.875},
         )
+
+    def test_registered_common_measure_is_stable_but_not_coverage(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "common_relation_measure_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(result["atom_count"], 74)
+        self.assertEqual(
+            result["primary_measure"]["component_count"],
+            35,
+        )
+        self.assertEqual(
+            result["primary_measure"][
+                "mixed_observer_component_count"
+            ],
+            0,
+        )
+        self.assertTrue(result["local_plateau_pass"])
+        self.assertTrue(result["duplicate_atom_invariance_pass"])
+        self.assertTrue(result["local_parameters_excluded"])
+        self.assertFalse(result["cross_observer_overlap_demonstrated"])
+        self.assertFalse(
+            result["equal_relation_space_coverage_demonstrated"]
+        )
+        self.assertFalse(result["pilot_entry_authorized"])
 
 
 if __name__ == "__main__":

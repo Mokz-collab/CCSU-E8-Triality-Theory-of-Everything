@@ -1,0 +1,41 @@
+extends: ns_eos_decisions_v0_10.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.11-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  common_relation_space_measure:
+    status: COMMON_RELATION_MEASURE_DEFINED_LOCAL_STABILITY_PASSED_SAMPLING_COVERAGE_UNRESOLVED
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    source: src/ccsu_multiobserver/ns_eos_recovery.py
+    runner: scripts/run_common_relation_measure.py
+    contract: common_relation_measure_contract_v0_1.yaml
+    result: common_relation_measure_results_v0_1.json
+    review: COMMON_RELATION_MEASURE_REVIEW_V0_1.md
+    accepted_relation_atoms: 74
+    primary_epsilon: 0.05
+    occupied_components: 35
+    mixed_observer_components: 0
+    local_plateau_passed: true
+    duplicate_atom_invariance_passed: true
+    local_parameters_in_measure: false
+    observer_identity_in_distance: false
+    provenance_retained: true
+    attributed_measure_mass:
+      GW: 0.02857142857142857
+      XRAY: 0.05714285714285715
+      RADIO: 0.05714285714285714
+      NUCLEAR: 0.857142857142856
+    equal_relation_space_coverage_demonstrated: false
+    cross_observer_overlap_demonstrated: false
+    candidates_enter_P1_to_P4_calibration: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - common_relation_space_sampling_coverage_and_cross_chart_overlap_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

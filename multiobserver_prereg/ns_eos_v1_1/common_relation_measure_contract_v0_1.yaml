@@ -1,0 +1,58 @@
+schema_version: 1
+measure_id: CCSU-MO-NS-EOS-001-COMMON-RELATION-MEASURE-001
+version: "0.1-development"
+status: DEVELOPMENT_NONCONFIRMATORY_MEASURE
+confirmatory_authorization: false
+pilot_entry_authorized: false
+
+source: scripts/run_common_relation_measure.py
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+recovery_result: finite_domain_recovery_results_v0_1.json
+xray_diagnostic_result: xray_relation_space_diagnostic_results_v0_1.json
+chiral_eft_anchors:
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+  - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+
+relation_space:
+  coordinates:
+    - log10_pressure_mev_fm3
+    - pressure_over_energy
+    - sound_speed_squared
+  density_anchors_nsat: [2.0, 3.0, 4.0, 5.0, 6.0]
+  scaling:
+    log10_pressure_decades: 1.0
+    pressure_over_energy: 1.0
+    sound_speed_squared: 1.0
+  distance: root_mean_square_over_all_15_scaled_coordinates
+  relation_blocks_have_equal_anchor_count: true
+  observer_identity_excluded_from_distance: true
+  local_parameters_excluded_from_atoms: true
+  provenance_retained: true
+
+occupancy_measure:
+  graph_rule: connect_atoms_when_distance_less_than_or_equal_to_epsilon
+  component_rule: connected_components_single_linkage
+  primary_epsilon: 0.05
+  component_mass: equal_across_occupied_components
+  within_component_mass: equal_across_member_atoms
+  duplicate_atoms_do_not_change_component_mass: true
+  sensitivity_epsilons: [0.02, 0.03, 0.05, 0.075, 0.10, 0.15]
+  required_local_plateau_epsilons: [0.02, 0.03, 0.05]
+  mass_stability_tolerance: 0.000000000001
+  epsilon_selected_post_recovery_for_development_diagnostic: true
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  accepted_atoms_only: true
+  pressure_extrapolation_forbidden: true
+  stellar_gates_unchanged: true
+  local_parameter_vector_averaging_forbidden: true
+
+does_not_validate:
+  - sampling_completeness_of_any_chart
+  - equal_relation_space_coverage
+  - physical_prior_measure
+  - observational_viability
+  - independent_parameter_range_review
+  - P1_to_P4_thresholds
+  - pilot_or_confirmatory_authorization

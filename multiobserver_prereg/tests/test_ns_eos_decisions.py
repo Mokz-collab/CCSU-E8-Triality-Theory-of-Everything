@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_10.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_9.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_11.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_10.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.9-development")
+        self.assertEqual(previous["version"], "0.10-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -103,8 +103,27 @@ class NSEOSDecisionTests(unittest.TestCase):
             evidence["equal_relation_space_coverage_demonstrated"]
         )
         self.assertFalse(evidence["pilot_entry_authorized"])
-        self.assertIn(
+        self.assertNotIn(
             "common_relation_space_proposal_measure_not_defined",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_common_measure_closes_definition_not_coverage(self):
+        evidence = self.decisions["implementation_evidence"][
+            "common_relation_space_measure"
+        ]
+        self.assertEqual(evidence["accepted_relation_atoms"], 74)
+        self.assertEqual(evidence["occupied_components"], 35)
+        self.assertTrue(evidence["local_plateau_passed"])
+        self.assertTrue(evidence["duplicate_atom_invariance_passed"])
+        self.assertFalse(evidence["local_parameters_in_measure"])
+        self.assertFalse(
+            evidence["cross_observer_overlap_demonstrated"]
+        )
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertIn(
+            "common_relation_space_sampling_coverage_and_"
+            "cross_chart_overlap_not_demonstrated",
             self.decisions["remaining_freeze_blockers"],
         )
 

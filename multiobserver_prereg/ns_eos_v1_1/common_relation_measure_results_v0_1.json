@@ -1,0 +1,6401 @@
+{
+  "atom_count": 74,
+  "atoms": [
+    {
+      "atom_id": "GW__MUSES-N3LO-414__S0029",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "GW",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7011764795788753,
+          2.256845244964551,
+          2.5417063442795196,
+          2.7116149552729865,
+          2.8227651335345185
+        ],
+        "pressure_over_energy": [
+          0.15753602771004102,
+          0.34136198501497306,
+          0.44024788631035133,
+          0.47014381953570855,
+          0.4645553026787316
+        ],
+        "sound_speed_squared": [
+          0.5086940193210522,
+          0.6651811588845116,
+          0.6013624829518959,
+          0.49611327628702795,
+          0.40081875266179534
+        ]
+      },
+      "source_case_id": "GW__MUSES-N3LO-414__S0029",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "GW__MUSES-N3LO-450__S0029",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "GW",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6802499620810156,
+          2.235918727466691,
+          2.52077982678166,
+          2.690688437775127,
+          2.801838616036659
+        ],
+        "pressure_over_energy": [
+          0.15045751920771688,
+          0.3274333508343294,
+          0.4241465714717695,
+          0.4545670225102602,
+          0.4503874423640131
+        ],
+        "sound_speed_squared": [
+          0.4888262983107121,
+          0.6447343543918695,
+          0.5859188483078637,
+          0.4848127055202747,
+          0.39239063003362773
+        ]
+      },
+      "source_case_id": "GW__MUSES-N3LO-450__S0029",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "RADIO__MUSES-N3LO-414__S0017",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "RADIO",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6248856367835733,
+          2.3253906224029097,
+          2.595027627983845,
+          2.7804132053012256,
+          2.9269886848064104
+        ],
+        "pressure_over_energy": [
+          0.1321033226616478,
+          0.3990953881006232,
+          0.48888532658458783,
+          0.5347482959703805,
+          0.5648518302986467
+        ],
+        "sound_speed_squared": [
+          0.4010924207775425,
+          0.779367964319822,
+          0.6097771586832907,
+          0.6635051460439663,
+          0.6499423879612637
+        ]
+      },
+      "source_case_id": "RADIO__MUSES-N3LO-414__S0017",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "RADIO__MUSES-N3LO-450__S0017",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "RADIO",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6039591192857137,
+          2.3044641049050503,
+          2.574101110485985,
+          2.7594866878033657,
+          2.90606216730855
+        ],
+        "pressure_over_energy": [
+          0.12616986049417567,
+          0.38283562762383533,
+          0.47131245492723833,
+          0.5175320709048074,
+          0.5483530505409644
+        ],
+        "sound_speed_squared": [
+          0.38509555165376813,
+          0.7564059795491951,
+          0.5948799635033559,
+          0.6494284643479142,
+          0.6376814935474656
+        ]
+      },
+      "source_case_id": "RADIO__MUSES-N3LO-450__S0017",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "RADIO__MUSES-N3LO-450__S0022",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "RADIO",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.5358704587288907,
+          2.080425039141696,
+          2.2431248542506492,
+          2.427679941133961,
+          2.679970630056482
+        ],
+        "pressure_over_energy": [
+          0.10864529948963524,
+          0.23655708020805283,
+          0.24066526107085479,
+          0.2783955091394836,
+          0.39065639960872817
+        ],
+        "sound_speed_squared": [
+          0.32009088445732153,
+          0.36242875685372256,
+          0.24054404488701758,
+          0.5942628336439185,
+          0.9832521753829037
+        ]
+      },
+      "source_case_id": "RADIO__MUSES-N3LO-450__S0022",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0000",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0150075064319313,
+          2.4651437854634812,
+          2.699672549058256,
+          2.898841797672986,
+          3.047588822733876
+        ],
+        "pressure_over_energy": [
+          0.31344700475189086,
+          0.4948680799290298,
+          0.5487514021361033,
+          0.6100821473963456,
+          0.6387422858866195
+        ],
+        "sound_speed_squared": [
+          0.9159171601198612,
+          0.5822834551986307,
+          0.7260287427968164,
+          0.7526992308611281,
+          0.6828322092536838
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0000",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0002",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.140314716848285,
+          2.5530292839978133,
+          2.7939571818598345,
+          2.8889086291527604,
+          2.9718645222840294
+        ],
+        "pressure_over_energy": [
+          0.39371674950680113,
+          0.5623463119944438,
+          0.6161758513726199,
+          0.5391976774426337,
+          0.49515953026322174
+        ],
+        "sound_speed_squared": [
+          0.575703509664163,
+          0.9167741484474391,
+          0.45517399421926275,
+          0.33916143778124097,
+          0.38591947485692796
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0002",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0003",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8779356492170844,
+          2.1706488397921255,
+          2.3406853469033955,
+          2.5693458638784805,
+          2.796520445077853
+        ],
+        "pressure_over_energy": [
+          0.22919975833252124,
+          0.26924992757631366,
+          0.2767013461520364,
+          0.3498461873034109,
+          0.45733534961608224
+        ],
+        "sound_speed_squared": [
+          0.48460956409573563,
+          0.2037286664824933,
+          0.4266269577943476,
+          0.6917490149698621,
+          0.9552676063403487
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0003",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0004",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.080354725735646,
+          2.1617817189317465,
+          2.336298176901925,
+          2.6233510928676202,
+          2.8005510140483714
+        ],
+        "pressure_over_energy": [
+          0.34527153119083454,
+          0.24594210227242685,
+          0.25771809298736115,
+          0.3722238314061029,
+          0.43306992814181067
+        ],
+        "sound_speed_squared": [
+          0.23274151714518668,
+          0.042081075571477417,
+          0.5929018347172451,
+          0.7152382788592261,
+          0.536838545622304
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0004",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0005",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.893296253296211,
+          2.442596460180234,
+          2.6957927138789706,
+          2.8046013780028263,
+          2.853979744543661
+        ],
+        "pressure_over_energy": [
+          0.2390315356224799,
+          0.4858014851030507,
+          0.5593940559700621,
+          0.5096843961718092,
+          0.4364294587571887
+        ],
+        "sound_speed_squared": [
+          0.8198636211548,
+          0.814999808855355,
+          0.5275877528811977,
+          0.2827505955567308,
+          0.12360571015626191
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0005",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0006",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9857507127269947,
+          2.2634850196539507,
+          2.4469463454393483,
+          2.5273657080166516,
+          2.608618121126162
+        ],
+        "pressure_over_energy": [
+          0.2819166719292016,
+          0.31661333526643326,
+          0.3294055624400648,
+          0.2957668495610951,
+          0.28202812367619484
+        ],
+        "sound_speed_squared": [
+          0.2635504401754588,
+          0.4500915551185608,
+          0.24001206615494622,
+          0.19615724195438314,
+          0.27663363666273655
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0006",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0007",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6124012048998573,
+          2.2509387802011536,
+          2.579557945564002,
+          2.8377069155335173,
+          3.0154209860974746
+        ],
+        "pressure_over_energy": [
+          0.13003923522681937,
+          0.34193665352366315,
+          0.4859051469049113,
+          0.622165600356718,
+          0.69190972215578
+        ],
+        "sound_speed_squared": [
+          0.6650480070337653,
+          0.6662098162621259,
+          0.9029024749910215,
+          0.9446529137595766,
+          0.8207994947582483
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0007",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0008",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9804530402317673,
+          2.3705474865507696,
+          2.586229321519733,
+          2.616321296379929,
+          2.7665483778826108
+        ],
+        "pressure_over_energy": [
+          0.28360788377467877,
+          0.40664227104370687,
+          0.44070078041989197,
+          0.34629312896902487,
+          0.3826146547802558
+        ],
+        "sound_speed_squared": [
+          0.33757321392185985,
+          0.7670841474924237,
+          0.1859757984895089,
+          0.17577896847578217,
+          0.8912597055174409
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0008",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0009",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.001245111920231,
+          2.2943828717829273,
+          2.477898246770492,
+          2.752564788581558,
+          2.9089725847642396
+        ],
+        "pressure_over_energy": [
+          0.297116595710378,
+          0.33722060810554605,
+          0.35157410099162206,
+          0.48231739847147564,
+          0.5247981890231167
+        ],
+        "sound_speed_squared": [
+          0.7381030471436679,
+          0.11694619798101484,
+          0.7149344394725539,
+          0.8137265496185557,
+          0.4691425373312086
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0009",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0010",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8880852226866212,
+          2.2712214864417453,
+          2.579145540564922,
+          2.750075158823725,
+          2.833232870419946
+        ],
+        "pressure_over_energy": [
+          0.22958485295886627,
+          0.3332048802807034,
+          0.4526981994929428,
+          0.48303396799662907,
+          0.44740091437313334
+        ],
+        "sound_speed_squared": [
+          0.1830132324248552,
+          0.7303231073636561,
+          0.6384843466304975,
+          0.46796314063104866,
+          0.19237165866419664
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0010",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0011",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7661365990874627,
+          2.2616533037482176,
+          2.4308790453311175,
+          2.552487360319983,
+          2.716809385578581
+        ],
+        "pressure_over_energy": [
+          0.18221226527653475,
+          0.33875598676097346,
+          0.3399760417370995,
+          0.33391152588624456,
+          0.38105460346538406
+        ],
+        "sound_speed_squared": [
+          0.7691694763209671,
+          0.3894829155970364,
+          0.31039562970061557,
+          0.3778231737879384,
+          0.7310407496523113
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0011",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0012",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.02940989946263,
+          2.320529861280623,
+          2.501335198433261,
+          2.676625102507843,
+          2.852988281436177
+        ],
+        "pressure_over_energy": [
+          0.3163297258131641,
+          0.3580435703731562,
+          0.3671387068514494,
+          0.4037490379981957,
+          0.4667506506742082
+        ],
+        "sound_speed_squared": [
+          0.5337058123294264,
+          0.35204599743708964,
+          0.4384376108393277,
+          0.5785830183486297,
+          0.7762787557207048
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0012",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6642267995094038,
+          2.158737578423499,
+          2.4493564888847015,
+          2.6628625181740047,
+          2.784299467646739
+        ],
+        "pressure_over_energy": [
+          0.14282911004311555,
+          0.2730778970961897,
+          0.3650010831342592,
+          0.43636521724910027,
+          0.44341506676351117
+        ],
+        "sound_speed_squared": [
+          0.44164603615179654,
+          0.5052444523386657,
+          0.6211001936030507,
+          0.5904551957401412,
+          0.3328767140489072
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0014",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.278989705177689,
+          2.55311543956767,
+          2.706000499922362,
+          2.9444199562007825,
+          3.0402214371747167
+        ],
+        "pressure_over_energy": [
+          0.5248181601384486,
+          0.5206983556429942,
+          0.48409380839912763,
+          0.5942807765887475,
+          0.554404927691737
+        ],
+        "sound_speed_squared": [
+          0.9976705433800817,
+          0.14130869718268516,
+          0.7562896881545981,
+          0.7748790455624408,
+          0.05228444593027248
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0014",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0015",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.5980169914841735,
+          2.192250617758482,
+          2.5226903558363847,
+          2.6045604440707604,
+          2.725189985956425
+        ],
+        "pressure_over_energy": [
+          0.12367656634156007,
+          0.3016530721471368,
+          0.4324720599705942,
+          0.3814325249990383,
+          0.39160806388391933
+        ],
+        "sound_speed_squared": [
+          0.10123527484945953,
+          0.9752060898579658,
+          0.36344699947649733,
+          0.2647193874875212,
+          0.6276165231969207
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0015",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0016",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.1559965779635584,
+          2.478292020871222,
+          2.6693197572286214,
+          2.81985358842599,
+          2.922610520306627
+        ],
+        "pressure_over_energy": [
+          0.4148919581098178,
+          0.48156741893061644,
+          0.487832283066512,
+          0.494567443572757,
+          0.47763875960712343
+        ],
+        "sound_speed_squared": [
+          0.7116180519945919,
+          0.48940520763397216,
+          0.5121761457215015,
+          0.4886189350897229,
+          0.3543143488094211
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0016",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0017",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.87958247259556,
+          2.293856583392486,
+          2.5392723062818696,
+          2.6651259312030944,
+          2.8247683096997265
+        ],
+        "pressure_over_energy": [
+          0.22558937731849837,
+          0.3487896916709833,
+          0.4114032077168158,
+          0.40166515753220355,
+          0.4479880450459736
+        ],
+        "sound_speed_squared": [
+          0.3720644071791321,
+          0.6426066129654646,
+          0.4110904245633721,
+          0.4269117053878084,
+          0.800163390384987
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0017",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0018",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.1342076426267322,
+          2.3739709829665188,
+          2.391214562090226,
+          2.442675585502581,
+          2.597911379716197
+        ],
+        "pressure_over_energy": [
+          0.3925986978071839,
+          0.38165205371989697,
+          0.27155073090115844,
+          0.23142859189787335,
+          0.26388160444117403
+        ],
+        "sound_speed_squared": [
+          0.8042876949440688,
+          0.019444669149816036,
+          0.05781339003538856,
+          0.20107807022621502,
+          0.5891389441490174
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0018",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0019",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4189391547378352,
+          2.112268297602618,
+          2.521956615581918,
+          2.751523052749154,
+          2.83109616109804
+        ],
+        "pressure_over_energy": [
+          0.08282953852739905,
+          0.25724062252965857,
+          0.4471964417259939,
+          0.5427185391307975,
+          0.4930268346158174
+        ],
+        "sound_speed_squared": [
+          0.1553576247021556,
+          0.8533466644957661,
+          0.8311794343336878,
+          0.6518640912357334,
+          0.012326726550236256
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0019",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0020",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9132086605209666,
+          2.3729883328823393,
+          2.7190378301773532,
+          2.954562008440815,
+          3.088440518784332
+        ],
+        "pressure_over_energy": [
+          0.2456610425304631,
+          0.41596041046026805,
+          0.5979251765085436,
+          0.7102668788054419,
+          0.7066346403944302
+        ],
+        "sound_speed_squared": [
+          0.4071926305256784,
+          0.8772183246444911,
+          0.9685645656801765,
+          0.8923930629652329,
+          0.4926647024601697
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0020",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0021",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7617408809380068,
+          2.1449186856091376,
+          2.2594767639076268,
+          2.346509453418088,
+          2.5729860506312874
+        ],
+        "pressure_over_energy": [
+          0.17817400651437434,
+          0.26058748734049514,
+          0.23675807643267147,
+          0.22006453209840002,
+          0.29534420280626117
+        ],
+        "sound_speed_squared": [
+          0.5602135036606342,
+          0.22709064262919132,
+          0.14970567777864402,
+          0.28026499565453983,
+          0.9133017303142696
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0021",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0022",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0482368371787185,
+          2.318842481727415,
+          2.564688602126336,
+          2.7105672951875133,
+          2.8596425857174688
+        ],
+        "pressure_over_energy": [
+          0.31872959639771736,
+          0.3494143654756171,
+          0.4128226347824838,
+          0.421035648388197,
+          0.4568607633250162
+        ],
+        "sound_speed_squared": [
+          0.12886826015077532,
+          0.6046786344703287,
+          0.4650370411703994,
+          0.4729259466642358,
+          0.6907205754891039
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0022",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0023",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9422074338476265,
+          2.3532168978467687,
+          2.5366951992528963,
+          2.7525808646666996,
+          2.852896055352709
+        ],
+        "pressure_over_energy": [
+          0.2694645026111914,
+          0.39729256662108764,
+          0.4064948480650281,
+          0.48386733695628,
+          0.46502748505844693
+        ],
+        "sound_speed_squared": [
+          0.9625145813822746,
+          0.2638508345093578,
+          0.6261813972255321,
+          0.6266658788463118,
+          0.1544984844047576
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0023",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0024",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8753798431581241,
+          1.9938786412336778,
+          2.173714585840395,
+          2.3314709004619303,
+          2.4137568533544194
+        ],
+        "pressure_over_energy": [
+          0.22424238232790594,
+          0.18143414007753123,
+          0.19515430338684162,
+          0.21444246421070312,
+          0.2077227892041955
+        ],
+        "sound_speed_squared": [
+          0.054850255036726595,
+          0.17941385360434653,
+          0.27032687923973225,
+          0.2535172525688659,
+          0.09926753724925219
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0024",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0025",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7953495927918288,
+          2.452928562147473,
+          2.7456677564910055,
+          2.901804697395797,
+          3.0131068499549456
+        ],
+        "pressure_over_energy": [
+          0.193286715754178,
+          0.5070701473392966,
+          0.6310393822456734,
+          0.6278953530814403,
+          0.6041941612346058
+        ],
+        "sound_speed_squared": [
+          0.889462451133877,
+          0.9523279842175544,
+          0.7111909744047534,
+          0.5665894816206494,
+          0.5139206193201243
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0025",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0026",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.125892906466594,
+          2.3628558949364424,
+          2.5788345700017703,
+          2.8228759466837046,
+          3.009983967890427
+        ],
+        "pressure_over_energy": [
+          0.38205177857421385,
+          0.3760379562530777,
+          0.41533517699386197,
+          0.5248803845731699,
+          0.606862582390241
+        ],
+        "sound_speed_squared": [
+          0.4569235816970468,
+          0.3282010949216783,
+          0.7069541424665509,
+          0.8430668295996266,
+          0.8602437231596559
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0026",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0027",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8497769401611255,
+          2.3081143267337323,
+          2.4768568305409153,
+          2.5062579403602436,
+          2.5743068248665355
+        ],
+        "pressure_over_energy": [
+          0.21619681855482167,
+          0.36672235299695943,
+          0.3637061466034707,
+          0.2895245642086189,
+          0.2684392420495595
+        ],
+        "sound_speed_squared": [
+          0.6109121737163514,
+          0.5443164056353271,
+          0.1454149205098129,
+          0.08773189433654696,
+          0.31369087690487507
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0027",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0028",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.151918124305793,
+          2.567208058344042,
+          2.7483707110435445,
+          2.82413897598857,
+          2.8793882306616663
+        ],
+        "pressure_over_energy": [
+          0.41046720767814254,
+          0.5789894726304705,
+          0.5575323755731437,
+          0.47332118734834433,
+          0.41324594805435705
+        ],
+        "sound_speed_squared": [
+          0.846280483501032,
+          0.6924591780919581,
+          0.34538436695836244,
+          0.22759433467850818,
+          0.20654413267038763
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0028",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0029",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.866456549229802,
+          2.1342289447470373,
+          2.462785272659663,
+          2.7451527268017717,
+          2.920642205775616
+        ],
+        "pressure_over_energy": [
+          0.21921801504707158,
+          0.2471580082789659,
+          0.3629177685587462,
+          0.5047434980682021,
+          0.5705801110389462
+        ],
+        "sound_speed_squared": [
+          0.19831816164776683,
+          0.41260319252498456,
+          0.8176492981061976,
+          0.8669743285968842,
+          0.6578899413533509
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0029",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-414__S0030",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0848761083554503,
+          2.5024922583109848,
+          2.7628732728541294,
+          2.9356064070649666,
+          3.105845206140871
+        ],
+        "pressure_over_energy": [
+          0.35089236860129264,
+          0.5141175943404426,
+          0.5973075580327722,
+          0.6208629838988711,
+          0.6807291349673307
+        ],
+        "sound_speed_squared": [
+          0.6298619063943625,
+          0.7911712212953717,
+          0.6869778844405058,
+          0.7181254866075147,
+          0.9926874783914538
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-414__S0030",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0000",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0139609409932837,
+          2.4644687395572054,
+          2.699082669595835,
+          2.8982956619382985,
+          3.0470644878172273
+        ],
+        "pressure_over_energy": [
+          0.31290194557371925,
+          0.4945206219305137,
+          0.5485187675288637,
+          0.6099121651534276,
+          0.6386136778004265
+        ],
+        "sound_speed_squared": [
+          0.9159171601198614,
+          0.5822834551986307,
+          0.7260287427968164,
+          0.7526992308611281,
+          0.6828322092536838
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0000",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0002",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.1394124886966384,
+          2.552391632923932,
+          2.793390510558785,
+          2.88836075422341,
+          2.9713300208743822
+        ],
+        "pressure_over_energy": [
+          0.3931723361601111,
+          0.5620092475719001,
+          0.6159564537629986,
+          0.5390507350460537,
+          0.4950512394797547
+        ],
+        "sound_speed_squared": [
+          0.575703509664163,
+          0.9167741484474391,
+          0.45517399421926275,
+          0.33916143778124097,
+          0.385919474856928
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0002",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0003",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8766752801436304,
+          2.1697757194275944,
+          2.339942554375873,
+          2.5687143601110085,
+          2.7959543370250737
+        ],
+        "pressure_over_energy": [
+          0.22868834152945589,
+          0.2689336994867111,
+          0.27648034486032963,
+          0.34967167977197156,
+          0.45718937239898594
+        ],
+        "sound_speed_squared": [
+          0.4846095640957356,
+          0.2037286664824933,
+          0.4266269577943476,
+          0.6917490149698621,
+          0.9552676063403486
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0003",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0004",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0793886139430593,
+          2.1609002993839868,
+          2.335552623571162,
+          2.6227383639005373,
+          2.7999857850553544
+        ],
+        "pressure_over_energy": [
+          0.34474247729616125,
+          0.24565269936866216,
+          0.25751325327645697,
+          0.3720571528183007,
+          0.4329352527930742
+        ],
+        "sound_speed_squared": [
+          0.23274151714518668,
+          0.042081075571477417,
+          0.5929018347172451,
+          0.7152382788592261,
+          0.536838545622304
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0004",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0005",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8920633408146923,
+          2.4419105365602287,
+          2.695201767217561,
+          2.8040370240827954,
+          2.853425428067555
+        ],
+        "pressure_over_energy": [
+          0.2385125992746317,
+          0.48544439853402954,
+          0.559153138322843,
+          0.5095189741813593,
+          0.43630916670028197
+        ],
+        "sound_speed_squared": [
+          0.8198636211548002,
+          0.8149998088553548,
+          0.5275877528811977,
+          0.2827505955567308,
+          0.12360571015626191
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0005",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0006",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9846640070308263,
+          2.26268932677501,
+          2.446262564585297,
+          2.526717908250015,
+          2.6080004996120536
+        ],
+        "pressure_over_energy": [
+          0.28140485910789764,
+          0.3163018378724052,
+          0.3291910627124002,
+          0.2956108536758617,
+          0.28190606032877896
+        ],
+        "sound_speed_squared": [
+          0.2635504401754588,
+          0.4500915551185608,
+          0.24001206615494622,
+          0.19615724195438314,
+          0.27663363666273655
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0006",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0007",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6104742231604707,
+          2.250133565918698,
+          2.5789301733269285,
+          2.837149416419709,
+          3.014892547975325
+        ],
+        "pressure_over_energy": [
+          0.12954761188906114,
+          0.34158373097551376,
+          0.485644553624284,
+          0.6219645544744127,
+          0.6917548331412737
+        ],
+        "sound_speed_squared": [
+          0.6650480070337653,
+          0.6662098162621259,
+          0.9029024749910216,
+          0.9446529137595766,
+          0.8207994947582483
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0007",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0008",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9793587721285684,
+          2.369822761930629,
+          2.5856039399991895,
+          2.6157062535359286,
+          2.7659754711401687
+        ],
+        "pressure_over_energy": [
+          0.2830859976257055,
+          0.406308229640986,
+          0.44047510977052673,
+          0.34613850841731664,
+          0.38249050948283114
+        ],
+        "sound_speed_squared": [
+          0.3375732139218599,
+          0.7670841474924238,
+          0.1859757984895089,
+          0.17577896847578217,
+          0.8912597055174409
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0008",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0009",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.000180001539771,
+          2.293609486592212,
+          2.477229108416457,
+          2.7519885457956863,
+          2.9084281823631644
+        ],
+        "pressure_over_energy": [
+          0.29658992497375825,
+          0.33690678342744185,
+          0.35135735868844525,
+          0.48214413248768534,
+          0.5246629044402799
+        ],
+        "sound_speed_squared": [
+          0.7381030471436679,
+          0.11694619798101484,
+          0.7149344394725539,
+          0.8137265496185557,
+          0.4691425373312086
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0009",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0010",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.886843104433817,
+          2.270431529059616,
+          2.5785176193199715,
+          2.7494983110538174,
+          2.8326744754520807
+        ],
+        "pressure_over_energy": [
+          0.22908424885100176,
+          0.332878791932229,
+          0.4524606126708448,
+          0.4828593631149856,
+          0.44727057739897697
+        ],
+        "sound_speed_squared": [
+          0.18301323242485523,
+          0.7303231073636561,
+          0.6384843466304975,
+          0.46796314063104866,
+          0.19237165866419664
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0010",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0011",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7646441910521649,
+          2.2608562378632358,
+          2.4301872416964856,
+          2.551849501114359,
+          2.7162241075367275
+        ],
+        "pressure_over_energy": [
+          0.18170643431812375,
+          0.3384156730514911,
+          0.339744491112461,
+          0.3337404179871997,
+          0.3809161193941071
+        ],
+        "sound_speed_squared": [
+          0.7691694763209671,
+          0.38948291559703646,
+          0.31039562970061557,
+          0.37782317378793834,
+          0.7310407496523113
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0011",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0012",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.028382121429584,
+          2.319774151880384,
+          2.5006764733613136,
+          2.676028741155241,
+          2.8524337744239254
+        ],
+        "pressure_over_energy": [
+          0.3157964233932271,
+          0.3577249507174047,
+          0.3669217899514906,
+          0.40358543923969714,
+          0.4666189861709894
+        ],
+        "sound_speed_squared": [
+          0.5337058123294264,
+          0.3520459974370897,
+          0.43843761083932764,
+          0.5785830183486297,
+          0.7762787557207048
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0012",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0013",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.6624638452803033,
+          2.1578532703505164,
+          2.448673886060788,
+          2.6622621189093474,
+          2.7837306440226195
+        ],
+        "pressure_over_energy": [
+          0.1423444449382389,
+          0.27274726431360674,
+          0.3647583951934443,
+          0.43617847147904465,
+          0.44327088392128366
+        ],
+        "sound_speed_squared": [
+          0.4416460361517966,
+          0.5052444523386657,
+          0.6211001936030507,
+          0.5904551957401412,
+          0.3328767140489072
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0013",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0014",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.278205404887908,
+          2.552477821558781,
+          2.7054123407540303,
+          2.9438813098691274,
+          3.039696189085352
+        ],
+        "pressure_over_energy": [
+          0.5242412241910355,
+          0.5203946297281897,
+          0.48389999293662883,
+          0.5941331544616693,
+          0.5542972328612784
+        ],
+        "sound_speed_squared": [
+          0.9976705433800818,
+          0.14130869718268516,
+          0.7562896881545981,
+          0.7748790455624408,
+          0.05228444593027248
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0014",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0015",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.5960408927139553,
+          2.1913970197465162,
+          2.5220406417568126,
+          2.6039414458599124,
+          2.7246068930134344
+        ],
+        "pressure_over_energy": [
+          0.12319596972465634,
+          0.30130737820478587,
+          0.43221718258620545,
+          0.3812529751905284,
+          0.3914673978909049
+        ],
+        "sound_speed_squared": [
+          0.10123527484945952,
+          0.9752060898579658,
+          0.36344699947649733,
+          0.2647193874875212,
+          0.6276165231969207
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0015",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0016",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.1551096516621993,
+          2.4776230622253803,
+          2.668721268438654,
+          2.8192924575820206,
+          2.922068388301985
+        ],
+        "pressure_over_energy": [
+          0.41433020691822064,
+          0.4812422972509264,
+          0.48761922531670465,
+          0.49441401804278545,
+          0.4775231275923731
+        ],
+        "sound_speed_squared": [
+          0.7116180519945919,
+          0.48940520763397216,
+          0.5121761457215015,
+          0.4886189350897229,
+          0.3543143488094211
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0016",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0017",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8783250939370169,
+          2.2930828313472675,
+          2.538629289786785,
+          2.6645262049611613,
+          2.8242081936489143
+        ],
+        "pressure_over_energy": [
+          0.22508939033371403,
+          0.34846189805079164,
+          0.41117325939387744,
+          0.4014982848146404,
+          0.44785491450453835
+        ],
+        "sound_speed_squared": [
+          0.37206440717913203,
+          0.6426066129654646,
+          0.4110904245633721,
+          0.4269117053878084,
+          0.800163390384987
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0017",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0018",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.1332993041215245,
+          2.373248251507788,
+          2.3905016337592397,
+          2.4419897011424108,
+          2.59729009724008
+        ],
+        "pressure_over_energy": [
+          0.39204858675528104,
+          0.3813465236941445,
+          0.27135843985535346,
+          0.23128761252465332,
+          0.26376620090672526
+        ],
+        "sound_speed_squared": [
+          0.8042876949440688,
+          0.019444669149816036,
+          0.05781339003538856,
+          0.20107807022621504,
+          0.5891389441490175
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0018",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0019",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.416192895813626,
+          2.1113372847391374,
+          2.5213065991740957,
+          2.7509465572656966,
+          2.830537334741166
+        ],
+        "pressure_over_energy": [
+          0.08236107800267978,
+          0.25689830735781044,
+          0.44692972889442834,
+          0.5425151464143377,
+          0.49287794889258146
+        ],
+        "sound_speed_squared": [
+          0.1553576247021556,
+          0.8533466644957661,
+          0.8311794343336878,
+          0.6518640912357334,
+          0.012326726550236256
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0019",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0020",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.9120099230003609,
+          2.3722650308462385,
+          2.7184531372166525,
+          2.9540249239471943,
+          3.0879209747905842
+        ],
+        "pressure_over_energy": [
+          0.2451488848836416,
+          0.415618380134488,
+          0.5976750543042214,
+          0.71008198035925,
+          0.7064997697555216
+        ],
+        "sound_speed_squared": [
+          0.4071926305256784,
+          0.8772183246444911,
+          0.9685645656801765,
+          0.8923930629652329,
+          0.4926647024601697
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0020",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0021",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7602380696627835,
+          2.14402100734214,
+          2.25867805898061,
+          2.3457702829977927,
+          2.5723558870850476
+        ],
+        "pressure_over_energy": [
+          0.17767605843759937,
+          0.26026497117073377,
+          0.2365372301899411,
+          0.2198987952258727,
+          0.2952040069049508
+        ],
+        "sound_speed_squared": [
+          0.5602135036606342,
+          0.2270906426291913,
+          0.14970567777864402,
+          0.28026499565453983,
+          0.9133017303142698
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0021",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0022",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0472326960211347,
+          2.318085663492308,
+          2.564055367232724,
+          2.7099803620742495,
+          2.859089349088661
+        ],
+        "pressure_over_energy": [
+          0.3182140992635035,
+          0.34910419638645573,
+          0.4126047884187378,
+          0.4208759272372594,
+          0.45673470357451657
+        ],
+        "sound_speed_squared": [
+          0.12886826015077532,
+          0.6046786344703287,
+          0.46503704117039946,
+          0.4729259466642358,
+          0.6907205754891039
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0022",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0023",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.941055741081304,
+          2.352481839114284,
+          2.5360511583408236,
+          2.752004625699506,
+          2.8523415305245527
+        ],
+        "pressure_over_energy": [
+          0.26892896966883756,
+          0.396955177756003,
+          0.4062670853832576,
+          0.483693338856066,
+          0.4648964328312086
+        ],
+        "sound_speed_squared": [
+          0.9625145813822746,
+          0.2638508345093578,
+          0.6261813972255321,
+          0.6266658788463118,
+          0.1544984844047576
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0023",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0024",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8741148105200767,
+          1.9928033599964647,
+          2.1728442956279563,
+          2.3307222770904343,
+          2.413056166859315
+        ],
+        "pressure_over_energy": [
+          0.22374110027672459,
+          0.18113615460637011,
+          0.19493998254687053,
+          0.21427604168341174,
+          0.2075901409163356
+        ],
+        "sound_speed_squared": [
+          0.054850255036726595,
+          0.17941385360434653,
+          0.27032687923973225,
+          0.2535172525688659,
+          0.0992675372492522
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0024",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0025",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.7939237057452284,
+          2.4522476932975406,
+          2.7450898282548417,
+          2.9012590727928744,
+          3.012578104740047
+        ],
+        "pressure_over_energy": [
+          0.1927803461423523,
+          0.506700981658043,
+          0.6307859624951028,
+          0.6277196752385941,
+          0.6040652334543345
+        ],
+        "sound_speed_squared": [
+          0.889462451133877,
+          0.9523279842175544,
+          0.7111909744047534,
+          0.5665894816206494,
+          0.5139206193201243
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0025",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0026",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.124976109327201,
+          2.362126634764726,
+          2.578206536329022,
+          2.822315441196577,
+          3.0094548057051167
+        ],
+        "pressure_over_energy": [
+          0.3815102290542096,
+          0.37573037217614746,
+          0.4151226505578475,
+          0.524715405843519,
+          0.6067319338418424
+        ],
+        "sound_speed_squared": [
+          0.4569235816970468,
+          0.3282010949216783,
+          0.7069541424665509,
+          0.8430668295996265,
+          0.860243723159656
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0026",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0027",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8484636410105628,
+          2.30735035679726,
+          2.4761872160298375,
+          2.5056013315963845,
+          2.573677144483918
+        ],
+        "pressure_over_energy": [
+          0.2156875474391802,
+          0.36638440427734126,
+          0.3634793703495454,
+          0.2893650282351643,
+          0.268314841723846
+        ],
+        "sound_speed_squared": [
+          0.6109121737163514,
+          0.5443164056353271,
+          0.1454149205098129,
+          0.08773189433654696,
+          0.31369087690487507
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0027",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0028",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.151027271441843,
+          2.566575762255592,
+          2.7477934465498097,
+          2.823578730539926,
+          2.8788386510360913
+        ],
+        "pressure_over_energy": [
+          0.40990795786031464,
+          0.5786500012193851,
+          0.5573198887792064,
+          0.473177860700437,
+          0.41314025159702117
+        ],
+        "sound_speed_squared": [
+          0.846280483501032,
+          0.6924591780919581,
+          0.34538436695836244,
+          0.22759433467850818,
+          0.20654413267038763
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0028",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0029",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.8651750170702985,
+          2.133320627726274,
+          2.4621091151858634,
+          2.7445746716671247,
+          2.920099750497895
+        ],
+        "pressure_over_energy": [
+          0.21871984418575915,
+          0.24684782816994358,
+          0.36268416851311647,
+          0.5045562656085442,
+          0.570432625841072
+        ],
+        "sound_speed_squared": [
+          0.19831816164776683,
+          0.41260319252498445,
+          0.8176492981061976,
+          0.8669743285968841,
+          0.6578899413533509
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0029",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "NUCLEAR__MUSES-N3LO-450__S0030",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "NUCLEAR",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          2.0839151276014256,
+          2.501834032913584,
+          2.762299499789423,
+          2.9350663733224085,
+          3.1053275710542856
+        ],
+        "pressure_over_energy": [
+          0.3503580485179618,
+          0.5137820975907615,
+          0.5970817670436565,
+          0.6207029738705497,
+          0.6806062073374852
+        ],
+        "sound_speed_squared": [
+          0.6298619063943625,
+          0.7911712212953717,
+          0.6869778844405057,
+          0.7181254866075147,
+          0.9926874783914537
+        ]
+      },
+      "source_case_id": "NUCLEAR__MUSES-N3LO-450__S0030",
+      "source_result": "finite_domain_recovery_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-414__F0201",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08823571667083879,
+          0.20255433896113575,
+          0.31350990770474485,
+          0.38860599078919716,
+          0.45707497591434654
+        ],
+        "sound_speed_squared": [
+          0.18054106813994875,
+          0.5368777305091957,
+          0.5519455759757642,
+          0.6471530109995206,
+          0.7254162615335868
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-414__F0201",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-414__F0217",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08846275507937683,
+          0.20304707816734513,
+          0.314216893561734,
+          0.389416310312755,
+          0.4579572975906346
+        ],
+        "sound_speed_squared": [
+          0.22409110463699405,
+          0.5379633260745114,
+          0.5528926630850406,
+          0.6481242462360293,
+          0.7263767275135214
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-414__F0217",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-414__F0233",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08867365778411798,
+          0.2035046745437301,
+          0.31487323194993133,
+          0.39016833385920524,
+          0.45877589941386065
+        ],
+        "sound_speed_squared": [
+          0.2723876235609904,
+          0.5389706994072927,
+          0.5537709905873361,
+          0.6490245959353679,
+          0.7272667911643128
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-414__F0233",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-414__F0249",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08886531720709996,
+          0.20392041541640357,
+          0.3154693491322604,
+          0.3908511517507575,
+          0.4595189653604895
+        ],
+        "sound_speed_squared": [
+          0.32473903581974384,
+          0.5398852662330379,
+          0.5545679691396181,
+          0.6498412468048678,
+          0.7280738603719815
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-414__F0249",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-450__F0201",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08827858372887541,
+          0.20264738349411554,
+          0.3136434278893543,
+          0.38875904744207956,
+          0.4572416535336529
+        ],
+        "sound_speed_squared": [
+          0.18163857061253286,
+          0.5370827929449066,
+          0.5521245193691525,
+          0.6473365489275227,
+          0.7255977903407864
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-450__F0201",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-450__F0217",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08850712586493677,
+          0.20314335952244528,
+          0.31435500915766673,
+          0.38957458093297304,
+          0.4581295997566298
+        ],
+        "sound_speed_squared": [
+          0.225456586081315,
+          0.5381753478509048,
+          0.5530775655044732,
+          0.648313814491846,
+          0.7265641542521533
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-450__F0217",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-450__F0233",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08871943187834762,
+          0.20360397501776092,
+          0.31501563183717624,
+          0.3903314624652222,
+          0.458953439169237
+        ],
+        "sound_speed_squared": [
+          0.2740510529647444,
+          0.5391892028111046,
+          0.5539614377273403,
+          0.6492197708331271,
+          0.727459697879877
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-450__F0233",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-450__F0248",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3033377173079095,
+          2.442646452281799,
+          2.5564679951255425
+        ],
+        "pressure_over_energy": [
+          0.08891237195256069,
+          0.20402246986936604,
+          0.28143906390479423,
+          0.29109725533824665,
+          0.29876183862538647
+        ],
+        "sound_speed_squared": [
+          0.3267261278733632,
+          0.5401096739935264,
+          0.31571397716396044,
+          0.3241054177046579,
+          0.33067659539376787
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-450__F0248",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    },
+    {
+      "atom_id": "XRAY__MUSES-N3LO-450__F0249",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "local_parameters_included": false,
+      "observer": "XRAY",
+      "relation_projection": {
+        "density_nsat": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0
+        ],
+        "log10_pressure_mev_fm3": [
+          1.4452896062650127,
+          2.006596493158526,
+          2.3540841361451776,
+          2.578191400415726,
+          2.7612908004047396
+        ],
+        "pressure_over_energy": [
+          0.08891237195256069,
+          0.20402246986936604,
+          0.3156156544265381,
+          0.3910187062196573,
+          0.45970127434801544
+        ],
+        "sound_speed_squared": [
+          0.3267261278733632,
+          0.5401096739935264,
+          0.5547634615456088,
+          0.6500415196102397,
+          0.7282717468371107
+        ]
+      },
+      "source_case_id": "XRAY__MUSES-N3LO-450__F0249",
+      "source_result": "xray_relation_space_diagnostic_results_v0_1.json"
+    }
+  ],
+  "canonical_record_sha256": "84651f705c27749f539e6dd3a5758ecef93733720f8b94e7dc35d16134d4b90c",
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "common_relation_measure_contract_v0_1.yaml",
+    "sha256": "2d543fa59a0f41f9ecf5a3ccdd5dd7e199a0107499824f8a75c9a62d32c9e4b0"
+  },
+  "created_utc": "2026-07-27T12:57:37Z",
+  "cross_observer_components_at_primary_epsilon": 0,
+  "cross_observer_overlap_demonstrated": false,
+  "decision": "COMMON_RELATION_MEASURE_DEFINED_LOCAL_STABILITY_PASSED_SAMPLING_COVERAGE_UNRESOLVED",
+  "does_not_validate": [
+    "sampling_completeness_of_any_chart",
+    "equal_relation_space_coverage",
+    "physical_prior_measure",
+    "observational_viability",
+    "independent_parameter_range_review",
+    "P1_to_P4_thresholds",
+    "pilot_or_confirmatory_authorization"
+  ],
+  "duplicate_atom_invariance_pass": true,
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "equal_relation_space_coverage_demonstrated": false,
+  "inputs": {
+    "local_chart_contract": {
+      "path": "local_chart_generator_contract_v0_1.yaml",
+      "sha256": "832fc7de7a54064273ae2a179e9d6aee6bbe9955cea6050ea7936874d41b4920"
+    },
+    "recovery_result": {
+      "path": "finite_domain_recovery_results_v0_1.json",
+      "sha256": "6bf294581e05735ea13303740e88491a959d65469fe638e768cfcf4040204e6f"
+    },
+    "xray_diagnostic_result": {
+      "path": "xray_relation_space_diagnostic_results_v0_1.json",
+      "sha256": "56efb909398a2a8e2b5820722ef15e19102407ffe7ab7bcef9ee7acbaac4821b"
+    }
+  },
+  "local_parameters_excluded": true,
+  "local_plateau_pass": true,
+  "measure_id": "CCSU-MO-NS-EOS-001-COMMON-RELATION-MEASURE-001",
+  "occupancy_measure_rule": {
+    "component_mass": "equal_across_occupied_components",
+    "component_rule": "connected_components_single_linkage",
+    "duplicate_atoms_do_not_change_component_mass": true,
+    "epsilon_selected_post_recovery_for_development_diagnostic": true,
+    "graph_rule": "connect_atoms_when_distance_less_than_or_equal_to_epsilon",
+    "mass_stability_tolerance": 1e-12,
+    "primary_epsilon": 0.05,
+    "required_local_plateau_epsilons": [
+      0.02,
+      0.03,
+      0.05
+    ],
+    "sensitivity_epsilons": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15
+    ],
+    "within_component_mass": "equal_across_member_atoms"
+  },
+  "pilot_entry_authorized": false,
+  "primary_measure": {
+    "atom_weights": [
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.02857142857142857,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.014285714285714285,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.0035714285714285713,
+      0.02857142857142857,
+      0.0035714285714285713
+    ],
+    "component_count": 35,
+    "component_mass": 0.02857142857142857,
+    "components": [
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          0,
+          1
+        ],
+        "component_index": 0,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "GW__MUSES-N3LO-414__S0029",
+        "medoid_atom_index": 0,
+        "observers": [
+          "GW"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          2,
+          3
+        ],
+        "component_index": 1,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "RADIO__MUSES-N3LO-414__S0017",
+        "medoid_atom_index": 2,
+        "observers": [
+          "RADIO"
+        ]
+      },
+      {
+        "atom_count": 1,
+        "atom_indices": [
+          4
+        ],
+        "component_index": 2,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "RADIO__MUSES-N3LO-450__S0022",
+        "medoid_atom_index": 4,
+        "observers": [
+          "RADIO"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          5,
+          35
+        ],
+        "component_index": 3,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0000",
+        "medoid_atom_index": 5,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          6,
+          36
+        ],
+        "component_index": 4,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0002",
+        "medoid_atom_index": 6,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          7,
+          37
+        ],
+        "component_index": 5,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0003",
+        "medoid_atom_index": 7,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          8,
+          38
+        ],
+        "component_index": 6,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0004",
+        "medoid_atom_index": 8,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          9,
+          39
+        ],
+        "component_index": 7,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0005",
+        "medoid_atom_index": 9,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          10,
+          40
+        ],
+        "component_index": 8,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0006",
+        "medoid_atom_index": 10,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          11,
+          41
+        ],
+        "component_index": 9,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0007",
+        "medoid_atom_index": 11,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          12,
+          42
+        ],
+        "component_index": 10,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0008",
+        "medoid_atom_index": 12,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          13,
+          43
+        ],
+        "component_index": 11,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0009",
+        "medoid_atom_index": 13,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          14,
+          44
+        ],
+        "component_index": 12,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0010",
+        "medoid_atom_index": 14,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          15,
+          45
+        ],
+        "component_index": 13,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0011",
+        "medoid_atom_index": 15,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          16,
+          46
+        ],
+        "component_index": 14,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0012",
+        "medoid_atom_index": 16,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          17,
+          47
+        ],
+        "component_index": 15,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+        "medoid_atom_index": 17,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          18,
+          48
+        ],
+        "component_index": 16,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0014",
+        "medoid_atom_index": 18,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          19,
+          49
+        ],
+        "component_index": 17,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0015",
+        "medoid_atom_index": 19,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          20,
+          50
+        ],
+        "component_index": 18,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0016",
+        "medoid_atom_index": 20,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          21,
+          51
+        ],
+        "component_index": 19,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0017",
+        "medoid_atom_index": 21,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          22,
+          52
+        ],
+        "component_index": 20,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0018",
+        "medoid_atom_index": 22,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          23,
+          53
+        ],
+        "component_index": 21,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0019",
+        "medoid_atom_index": 23,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          24,
+          54
+        ],
+        "component_index": 22,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0020",
+        "medoid_atom_index": 24,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          25,
+          55
+        ],
+        "component_index": 23,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0021",
+        "medoid_atom_index": 25,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          26,
+          56
+        ],
+        "component_index": 24,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0022",
+        "medoid_atom_index": 26,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          27,
+          57
+        ],
+        "component_index": 25,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0023",
+        "medoid_atom_index": 27,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          28,
+          58
+        ],
+        "component_index": 26,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0024",
+        "medoid_atom_index": 28,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          29,
+          59
+        ],
+        "component_index": 27,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0025",
+        "medoid_atom_index": 29,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          30,
+          60
+        ],
+        "component_index": 28,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0026",
+        "medoid_atom_index": 30,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          31,
+          61
+        ],
+        "component_index": 29,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0027",
+        "medoid_atom_index": 31,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          32,
+          62
+        ],
+        "component_index": 30,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0028",
+        "medoid_atom_index": 32,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          33,
+          63
+        ],
+        "component_index": 31,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0029",
+        "medoid_atom_index": 33,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 2,
+        "atom_indices": [
+          34,
+          64
+        ],
+        "component_index": 32,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0030",
+        "medoid_atom_index": 34,
+        "observers": [
+          "NUCLEAR"
+        ]
+      },
+      {
+        "atom_count": 8,
+        "atom_indices": [
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          73
+        ],
+        "component_index": 33,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "XRAY__MUSES-N3LO-414__F0233",
+        "medoid_atom_index": 67,
+        "observers": [
+          "XRAY"
+        ]
+      },
+      {
+        "atom_count": 1,
+        "atom_indices": [
+          72
+        ],
+        "component_index": 34,
+        "mass": 0.02857142857142857,
+        "medoid_atom_id": "XRAY__MUSES-N3LO-450__F0248",
+        "medoid_atom_index": 72,
+        "observers": [
+          "XRAY"
+        ]
+      }
+    ],
+    "epsilon": 0.05,
+    "mixed_observer_component_count": 0,
+    "observer_attributed_mass": {
+      "GW": 0.02857142857142857,
+      "NUCLEAR": 0.857142857142856,
+      "RADIO": 0.05714285714285714,
+      "XRAY": 0.05714285714285715
+    },
+    "total_mass": 1.0
+  },
+  "relation_space": {
+    "coordinates": [
+      "log10_pressure_mev_fm3",
+      "pressure_over_energy",
+      "sound_speed_squared"
+    ],
+    "density_anchors_nsat": [
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "distance": "root_mean_square_over_all_15_scaled_coordinates",
+    "local_parameters_excluded_from_atoms": true,
+    "observer_identity_excluded_from_distance": true,
+    "provenance_retained": true,
+    "relation_blocks_have_equal_anchor_count": true,
+    "scaling": {
+      "log10_pressure_decades": 1.0,
+      "pressure_over_energy": 1.0,
+      "sound_speed_squared": 1.0
+    }
+  },
+  "schema": "ccsu.multiobserver.ns-eos-common-relation-measure.v1",
+  "sensitivity": {
+    "0.02": {
+      "atom_weights": [
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.02857142857142857,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.02857142857142857,
+        0.0035714285714285713
+      ],
+      "component_count": 35,
+      "component_mass": 0.02857142857142857,
+      "components": [
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            0,
+            1
+          ],
+          "component_index": 0,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "GW"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            2,
+            3
+          ],
+          "component_index": 1,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            4
+          ],
+          "component_index": 2,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            5,
+            35
+          ],
+          "component_index": 3,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            6,
+            36
+          ],
+          "component_index": 4,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            7,
+            37
+          ],
+          "component_index": 5,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 6,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            9,
+            39
+          ],
+          "component_index": 7,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            10,
+            40
+          ],
+          "component_index": 8,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            11,
+            41
+          ],
+          "component_index": 9,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            12,
+            42
+          ],
+          "component_index": 10,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            13,
+            43
+          ],
+          "component_index": 11,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            14,
+            44
+          ],
+          "component_index": 12,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            15,
+            45
+          ],
+          "component_index": 13,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            16,
+            46
+          ],
+          "component_index": 14,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            17,
+            47
+          ],
+          "component_index": 15,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 16,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 17,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            20,
+            50
+          ],
+          "component_index": 18,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            21,
+            51
+          ],
+          "component_index": 19,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 20,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 21,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 22,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            25,
+            55
+          ],
+          "component_index": 23,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            26,
+            56
+          ],
+          "component_index": 24,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            27,
+            57
+          ],
+          "component_index": 25,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 26,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            29,
+            59
+          ],
+          "component_index": 27,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            30,
+            60
+          ],
+          "component_index": 28,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            31,
+            61
+          ],
+          "component_index": 29,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            32,
+            62
+          ],
+          "component_index": 30,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            33,
+            63
+          ],
+          "component_index": 31,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            34,
+            64
+          ],
+          "component_index": 32,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 8,
+          "atom_indices": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 33,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 34,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.02,
+      "mixed_observer_component_count": 0,
+      "observer_attributed_mass": {
+        "GW": 0.02857142857142857,
+        "NUCLEAR": 0.857142857142856,
+        "RADIO": 0.05714285714285714,
+        "XRAY": 0.05714285714285715
+      },
+      "total_mass": 1.0
+    },
+    "0.03": {
+      "atom_weights": [
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.02857142857142857,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.02857142857142857,
+        0.0035714285714285713
+      ],
+      "component_count": 35,
+      "component_mass": 0.02857142857142857,
+      "components": [
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            0,
+            1
+          ],
+          "component_index": 0,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "GW"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            2,
+            3
+          ],
+          "component_index": 1,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            4
+          ],
+          "component_index": 2,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            5,
+            35
+          ],
+          "component_index": 3,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            6,
+            36
+          ],
+          "component_index": 4,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            7,
+            37
+          ],
+          "component_index": 5,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 6,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            9,
+            39
+          ],
+          "component_index": 7,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            10,
+            40
+          ],
+          "component_index": 8,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            11,
+            41
+          ],
+          "component_index": 9,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            12,
+            42
+          ],
+          "component_index": 10,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            13,
+            43
+          ],
+          "component_index": 11,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            14,
+            44
+          ],
+          "component_index": 12,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            15,
+            45
+          ],
+          "component_index": 13,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            16,
+            46
+          ],
+          "component_index": 14,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            17,
+            47
+          ],
+          "component_index": 15,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 16,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 17,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            20,
+            50
+          ],
+          "component_index": 18,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            21,
+            51
+          ],
+          "component_index": 19,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 20,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 21,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 22,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            25,
+            55
+          ],
+          "component_index": 23,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            26,
+            56
+          ],
+          "component_index": 24,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            27,
+            57
+          ],
+          "component_index": 25,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 26,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            29,
+            59
+          ],
+          "component_index": 27,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            30,
+            60
+          ],
+          "component_index": 28,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            31,
+            61
+          ],
+          "component_index": 29,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            32,
+            62
+          ],
+          "component_index": 30,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            33,
+            63
+          ],
+          "component_index": 31,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            34,
+            64
+          ],
+          "component_index": 32,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 8,
+          "atom_indices": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 33,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 34,
+          "mass": 0.02857142857142857,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.03,
+      "mixed_observer_component_count": 0,
+      "observer_attributed_mass": {
+        "GW": 0.02857142857142857,
+        "NUCLEAR": 0.857142857142856,
+        "RADIO": 0.05714285714285714,
+        "XRAY": 0.05714285714285715
+      },
+      "total_mass": 1.0
+    },
+    "0.05": {
+      "atom_weights": [
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.02857142857142857,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.014285714285714285,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.0035714285714285713,
+        0.02857142857142857,
+        0.0035714285714285713
+      ],
+      "component_count": 35,
+      "component_mass": 0.02857142857142857,
+      "components": [
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            0,
+            1
+          ],
+          "component_index": 0,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "GW__MUSES-N3LO-414__S0029",
+          "medoid_atom_index": 0,
+          "observers": [
+            "GW"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            2,
+            3
+          ],
+          "component_index": 1,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "RADIO__MUSES-N3LO-414__S0017",
+          "medoid_atom_index": 2,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            4
+          ],
+          "component_index": 2,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "RADIO__MUSES-N3LO-450__S0022",
+          "medoid_atom_index": 4,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            5,
+            35
+          ],
+          "component_index": 3,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0000",
+          "medoid_atom_index": 5,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            6,
+            36
+          ],
+          "component_index": 4,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0002",
+          "medoid_atom_index": 6,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            7,
+            37
+          ],
+          "component_index": 5,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0003",
+          "medoid_atom_index": 7,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 6,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0004",
+          "medoid_atom_index": 8,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            9,
+            39
+          ],
+          "component_index": 7,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0005",
+          "medoid_atom_index": 9,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            10,
+            40
+          ],
+          "component_index": 8,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0006",
+          "medoid_atom_index": 10,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            11,
+            41
+          ],
+          "component_index": 9,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0007",
+          "medoid_atom_index": 11,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            12,
+            42
+          ],
+          "component_index": 10,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0008",
+          "medoid_atom_index": 12,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            13,
+            43
+          ],
+          "component_index": 11,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0009",
+          "medoid_atom_index": 13,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            14,
+            44
+          ],
+          "component_index": 12,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0010",
+          "medoid_atom_index": 14,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            15,
+            45
+          ],
+          "component_index": 13,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0011",
+          "medoid_atom_index": 15,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            16,
+            46
+          ],
+          "component_index": 14,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0012",
+          "medoid_atom_index": 16,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            17,
+            47
+          ],
+          "component_index": 15,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0013",
+          "medoid_atom_index": 17,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 16,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0014",
+          "medoid_atom_index": 18,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 17,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0015",
+          "medoid_atom_index": 19,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            20,
+            50
+          ],
+          "component_index": 18,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0016",
+          "medoid_atom_index": 20,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            21,
+            51
+          ],
+          "component_index": 19,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0017",
+          "medoid_atom_index": 21,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 20,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0018",
+          "medoid_atom_index": 22,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 21,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0019",
+          "medoid_atom_index": 23,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 22,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0020",
+          "medoid_atom_index": 24,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            25,
+            55
+          ],
+          "component_index": 23,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0021",
+          "medoid_atom_index": 25,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            26,
+            56
+          ],
+          "component_index": 24,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0022",
+          "medoid_atom_index": 26,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            27,
+            57
+          ],
+          "component_index": 25,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0023",
+          "medoid_atom_index": 27,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 26,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0024",
+          "medoid_atom_index": 28,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            29,
+            59
+          ],
+          "component_index": 27,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0025",
+          "medoid_atom_index": 29,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            30,
+            60
+          ],
+          "component_index": 28,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0026",
+          "medoid_atom_index": 30,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            31,
+            61
+          ],
+          "component_index": 29,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0027",
+          "medoid_atom_index": 31,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            32,
+            62
+          ],
+          "component_index": 30,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0028",
+          "medoid_atom_index": 32,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            33,
+            63
+          ],
+          "component_index": 31,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0029",
+          "medoid_atom_index": 33,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            34,
+            64
+          ],
+          "component_index": 32,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "NUCLEAR__MUSES-N3LO-414__S0030",
+          "medoid_atom_index": 34,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 8,
+          "atom_indices": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 33,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "XRAY__MUSES-N3LO-414__F0233",
+          "medoid_atom_index": 67,
+          "observers": [
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 34,
+          "mass": 0.02857142857142857,
+          "medoid_atom_id": "XRAY__MUSES-N3LO-450__F0248",
+          "medoid_atom_index": 72,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.05,
+      "mixed_observer_component_count": 0,
+      "observer_attributed_mass": {
+        "GW": 0.02857142857142857,
+        "NUCLEAR": 0.857142857142856,
+        "RADIO": 0.05714285714285714,
+        "XRAY": 0.05714285714285715
+      },
+      "total_mass": 1.0
+    },
+    "0.075": {
+      "atom_weights": [
+        0.007352941176470588,
+        0.007352941176470588,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.029411764705882353,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.007352941176470588,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.007352941176470588,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.014705882352941176,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.003676470588235294,
+        0.029411764705882353,
+        0.003676470588235294
+      ],
+      "component_count": 34,
+      "component_mass": 0.029411764705882353,
+      "components": [
+        {
+          "atom_count": 4,
+          "atom_indices": [
+            0,
+            1,
+            17,
+            47
+          ],
+          "component_index": 0,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "GW",
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            2,
+            3
+          ],
+          "component_index": 1,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            4
+          ],
+          "component_index": 2,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            5,
+            35
+          ],
+          "component_index": 3,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            6,
+            36
+          ],
+          "component_index": 4,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            7,
+            37
+          ],
+          "component_index": 5,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 6,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            9,
+            39
+          ],
+          "component_index": 7,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            10,
+            40
+          ],
+          "component_index": 8,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            11,
+            41
+          ],
+          "component_index": 9,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            12,
+            42
+          ],
+          "component_index": 10,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            13,
+            43
+          ],
+          "component_index": 11,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            14,
+            44
+          ],
+          "component_index": 12,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            15,
+            45
+          ],
+          "component_index": 13,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            16,
+            46
+          ],
+          "component_index": 14,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 15,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 16,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            20,
+            50
+          ],
+          "component_index": 17,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            21,
+            51
+          ],
+          "component_index": 18,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 19,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 20,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 21,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            25,
+            55
+          ],
+          "component_index": 22,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            26,
+            56
+          ],
+          "component_index": 23,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            27,
+            57
+          ],
+          "component_index": 24,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 25,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            29,
+            59
+          ],
+          "component_index": 26,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            30,
+            60
+          ],
+          "component_index": 27,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            31,
+            61
+          ],
+          "component_index": 28,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            32,
+            62
+          ],
+          "component_index": 29,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            33,
+            63
+          ],
+          "component_index": 30,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            34,
+            64
+          ],
+          "component_index": 31,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 8,
+          "atom_indices": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 32,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 33,
+          "mass": 0.029411764705882353,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.075,
+      "mixed_observer_component_count": 1,
+      "observer_attributed_mass": {
+        "GW": 0.014705882352941176,
+        "NUCLEAR": 0.8676470588235281,
+        "RADIO": 0.058823529411764705,
+        "XRAY": 0.058823529411764705
+      },
+      "total_mass": 1.0
+    },
+    "0.1": {
+      "atom_weights": [
+        0.005208333333333333,
+        0.005208333333333333,
+        0.005208333333333333,
+        0.005208333333333333,
+        0.03125,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.005208333333333333,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.0078125,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.0078125,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.005208333333333333,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.0078125,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.0078125,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.015625,
+        0.00390625,
+        0.00390625,
+        0.00390625,
+        0.00390625,
+        0.00390625,
+        0.00390625,
+        0.00390625,
+        0.03125,
+        0.00390625
+      ],
+      "component_count": 32,
+      "component_mass": 0.03125,
+      "components": [
+        {
+          "atom_count": 6,
+          "atom_indices": [
+            0,
+            1,
+            2,
+            3,
+            17,
+            47
+          ],
+          "component_index": 0,
+          "mass": 0.03125,
+          "observers": [
+            "GW",
+            "NUCLEAR",
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            4
+          ],
+          "component_index": 1,
+          "mass": 0.03125,
+          "observers": [
+            "RADIO"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            5,
+            35
+          ],
+          "component_index": 2,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            6,
+            36
+          ],
+          "component_index": 3,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            7,
+            37
+          ],
+          "component_index": 4,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 5,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            9,
+            39
+          ],
+          "component_index": 6,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            10,
+            40
+          ],
+          "component_index": 7,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            11,
+            41
+          ],
+          "component_index": 8,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            12,
+            42
+          ],
+          "component_index": 9,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            13,
+            43
+          ],
+          "component_index": 10,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            14,
+            44
+          ],
+          "component_index": 11,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            15,
+            45
+          ],
+          "component_index": 12,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            16,
+            46
+          ],
+          "component_index": 13,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 14,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 15,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            20,
+            50
+          ],
+          "component_index": 16,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 4,
+          "atom_indices": [
+            21,
+            26,
+            51,
+            56
+          ],
+          "component_index": 17,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 18,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 19,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 20,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            25,
+            55
+          ],
+          "component_index": 21,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            27,
+            57
+          ],
+          "component_index": 22,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 23,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            29,
+            59
+          ],
+          "component_index": 24,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            30,
+            60
+          ],
+          "component_index": 25,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            31,
+            61
+          ],
+          "component_index": 26,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            32,
+            62
+          ],
+          "component_index": 27,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            33,
+            63
+          ],
+          "component_index": 28,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            34,
+            64
+          ],
+          "component_index": 29,
+          "mass": 0.03125,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 8,
+          "atom_indices": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 30,
+          "mass": 0.03125,
+          "observers": [
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 31,
+          "mass": 0.03125,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.1,
+      "mixed_observer_component_count": 1,
+      "observer_attributed_mass": {
+        "GW": 0.010416666666666666,
+        "NUCLEAR": 0.8854166666666666,
+        "RADIO": 0.041666666666666664,
+        "XRAY": 0.0625
+      },
+      "total_mass": 1.0
+    },
+    "0.15": {
+      "atom_weights": [
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.013888888888888888,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.006944444444444444,
+        0.020833333333333332,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.006944444444444444,
+        0.041666666666666664,
+        0.013888888888888888,
+        0.0022522522522522522,
+        0.020833333333333332,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.013888888888888888,
+        0.013888888888888888,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.006944444444444444,
+        0.020833333333333332,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.041666666666666664,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.006944444444444444,
+        0.041666666666666664,
+        0.013888888888888888,
+        0.0022522522522522522,
+        0.020833333333333332,
+        0.006944444444444444,
+        0.0022522522522522522,
+        0.013888888888888888,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.0022522522522522522,
+        0.08333333333333333,
+        0.0022522522522522522
+      ],
+      "component_count": 12,
+      "component_mass": 0.08333333333333333,
+      "components": [
+        {
+          "atom_count": 37,
+          "atom_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            7,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            21,
+            25,
+            26,
+            30,
+            33,
+            37,
+            41,
+            42,
+            44,
+            45,
+            46,
+            47,
+            51,
+            55,
+            56,
+            60,
+            63,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "component_index": 0,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "GW",
+            "NUCLEAR",
+            "RADIO",
+            "XRAY"
+          ]
+        },
+        {
+          "atom_count": 6,
+          "atom_indices": [
+            5,
+            29,
+            34,
+            35,
+            59,
+            64
+          ],
+          "component_index": 1,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 12,
+          "atom_indices": [
+            6,
+            9,
+            13,
+            20,
+            27,
+            32,
+            36,
+            39,
+            43,
+            50,
+            57,
+            62
+          ],
+          "component_index": 2,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            8,
+            38
+          ],
+          "component_index": 3,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 4,
+          "atom_indices": [
+            10,
+            31,
+            40,
+            61
+          ],
+          "component_index": 4,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            18,
+            48
+          ],
+          "component_index": 5,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            19,
+            49
+          ],
+          "component_index": 6,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            22,
+            52
+          ],
+          "component_index": 7,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            23,
+            53
+          ],
+          "component_index": 8,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            24,
+            54
+          ],
+          "component_index": 9,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 2,
+          "atom_indices": [
+            28,
+            58
+          ],
+          "component_index": 10,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "NUCLEAR"
+          ]
+        },
+        {
+          "atom_count": 1,
+          "atom_indices": [
+            72
+          ],
+          "component_index": 11,
+          "mass": 0.08333333333333333,
+          "observers": [
+            "XRAY"
+          ]
+        }
+      ],
+      "epsilon": 0.15,
+      "mixed_observer_component_count": 1,
+      "observer_attributed_mass": {
+        "GW": 0.0045045045045045045,
+        "NUCLEAR": 0.8873873873873871,
+        "RADIO": 0.006756756756756757,
+        "XRAY": 0.10135135135135134
+      },
+      "total_mass": 1.0
+    }
+  },
+  "source": {
+    "path": "scripts/run_common_relation_measure.py",
+    "sha256": "4d28268f2489ff45dca93fa2d40dc5e37ebc4d812339931e713b5078d9282c44"
+  },
+  "status": "DEVELOPMENT_NONCONFIRMATORY",
+  "version": "0.1-development"
+}
