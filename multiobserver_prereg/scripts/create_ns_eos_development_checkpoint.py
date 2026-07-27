@@ -29,6 +29,7 @@ def _registered_files() -> tuple[Path, ...]:
             "scripts/run_final_low_density_pairing_validation.py",
             "scripts/run_inner_crust_validation.py",
             "scripts/run_local_chart_validation.py",
+            "scripts/run_local_to_public_relation_validation.py",
             "scripts/run_stellar_impact_validation.py",
             "scripts/run_tov_love_cross_validation.py",
             "src/ccsu_multiobserver/ns_eos_decisions.py",
@@ -37,6 +38,7 @@ def _registered_files() -> tuple[Path, ...]:
             "src/ccsu_multiobserver/ns_eos_local_charts.py",
             "src/ccsu_multiobserver/ns_eos_low_density.py",
             "src/ccsu_multiobserver/ns_eos_oracle.py",
+            "src/ccsu_multiobserver/ns_eos_relations.py",
             "src/ccsu_multiobserver/ns_eos_stellar_impact.py",
             "tests/test_ns_eos_decisions.py",
             "tests/test_ns_eos_final_pairings.py",
@@ -44,6 +46,7 @@ def _registered_files() -> tuple[Path, ...]:
             "tests/test_ns_eos_local_charts.py",
             "tests/test_ns_eos_low_density.py",
             "tests/test_ns_eos_oracle.py",
+            "tests/test_ns_eos_relations.py",
             "tests/test_ns_eos_stellar_impact.py",
             "tests/test_ns_eos_tov_love_cross_validation.py",
         )
@@ -74,6 +77,14 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     local_chart_validation = json.loads(
         local_chart_path.read_text(encoding="utf-8")
     )
+    relation_path = (
+        PROJECT_ROOT
+        / "ns_eos_v1_1"
+        / "local_to_public_relation_results_v0_1.json"
+    )
+    relation_validation = json.loads(
+        relation_path.read_text(encoding="utf-8")
+    )
     files = {
         str(path.relative_to(PROJECT_ROOT)): sha256_file(path)
         for path in _registered_files()
@@ -81,16 +92,16 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
     return {
         "schema": "ccsu.multiobserver.ns-eos-development-checkpoint.v1",
         "registration_id": "CCSU-MO-NS-EOS-001",
-        "version": "0.8-development",
+        "version": "0.9-development",
         "status": "DEVELOPMENT_NOT_FROZEN",
         "confirmatory_authorization": False,
         "created_utc": created_utc,
         "branch": "multiobserver-control-recovery-v1-20260726",
-        "parent_commit": "80ab695bf344fea80e95ce0a2f497329f2197b8d",
+        "parent_commit": "a1a937252c29ada11af8ffa200311cc64bbeac04",
         "scientific_source_bytes_embedded": True,
         "tests": {
             "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
-            "passed": 83,
+            "passed": 91,
             "failed": 0,
         },
         "reproducibility_replay": {
@@ -178,6 +189,37 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
                 ]["sha256"],
                 "independent_range_review": False,
             },
+            "local_to_public_relations": {
+                "status": "EXACT_BYTE_REPLAY_PASSED",
+                "sha256": sha256_file(relation_path),
+                "canonical_record_sha256": relation_validation[
+                    "canonical_record_sha256"
+                ],
+                "translations_completed": relation_validation[
+                    "case_count"
+                ],
+                "full_stellar_gate_pass_count": relation_validation[
+                    "full_stellar_gate_pass_count"
+                ],
+                "domain_truncated_before_turnover_count": (
+                    relation_validation[
+                        "domain_truncated_before_turnover_count"
+                    ]
+                ),
+                "maximum_mass_threshold_pass_count": (
+                    relation_validation[
+                        "maximum_mass_threshold_pass_count"
+                    ]
+                ),
+                "all_mass_anchors_translated_count": (
+                    relation_validation[
+                        "all_mass_anchors_translated_count"
+                    ]
+                ),
+                "pilot_entry_authorized": relation_validation[
+                    "pilot_entry_authorized"
+                ],
+            },
         },
         "inner_crust_decision": {
             "retired_rule": "endpoint_exponential_v0_4",
@@ -205,9 +247,15 @@ def create_checkpoint(created_utc: str) -> dict[str, object]:
             "local_chart_parameter_ranges": (
                 "AWAITING_INDEPENDENT_REVIEW"
             ),
+            "local_to_public_relations": relation_validation["decision"],
+            "finite_domain_stellar_gates": (
+                "FAILED_FOR_ALL_REGISTERED_EXEMPLARS"
+            ),
+            "pilot_entry": "FORBIDDEN",
         },
         "files": files,
         "remaining_freeze_blockers": [
+            "finite_domain_stellar_gate_recovery_without_extrapolation",
             "independent_review_of_parameter_ranges",
             "pilot_calibration_of_P1_to_P4_thresholds",
             "power_derived_confirmatory_budget",

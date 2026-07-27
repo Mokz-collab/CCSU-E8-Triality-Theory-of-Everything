@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_7.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_6.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_8.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_7.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.6-development")
+        self.assertEqual(previous["version"], "0.7-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -54,6 +54,22 @@ class NSEOSDecisionTests(unittest.TestCase):
         self.assertFalse(evidence["independent_parameter_range_review"])
         self.assertIn(
             "independent_review_of_parameter_ranges",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_failed_stellar_gates_forbid_pilot_entry(self):
+        evidence = self.decisions["implementation_evidence"][
+            "local_to_public_relations"
+        ]
+        self.assertEqual(evidence["numerical_translations_completed"], 8)
+        self.assertEqual(evidence["full_stellar_gate_passed"], 0)
+        self.assertFalse(evidence["constant_sound_speed_extension_used"])
+        self.assertFalse(
+            evidence["maximum_mass_invented_at_domain_boundary"]
+        )
+        self.assertFalse(evidence["pilot_entry_authorized"])
+        self.assertIn(
+            "finite_domain_stellar_gate_recovery_without_extrapolation",
             self.decisions["remaining_freeze_blockers"],
         )
 

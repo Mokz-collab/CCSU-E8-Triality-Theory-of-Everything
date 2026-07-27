@@ -1,0 +1,92 @@
+schema_version: 1
+translation_contract_id: CCSU-MO-NS-EOS-001-RELATIONS-001
+version: "0.1-development"
+status: DEVELOPMENT_FINITE_DOMAIN_TRANSLATION
+confirmatory_authorization: false
+
+decision_lock: ns_eos_decisions_v0_7.yaml
+domain_lock: ns_eos_domain_v0_1.yaml
+local_chart_contract: local_chart_generator_contract_v0_1.yaml
+local_chart_result: local_chart_generator_results_v0_1.json
+source: src/ccsu_multiobserver/ns_eos_relations.py
+environment_lock: ns_eos_local_chart_environment_v0_1.lock
+
+low_density:
+  outer_crust_reference:
+    manifest: data/outer_crust_koliogi_2026/manifest_DDME2.yaml
+    role: registered_translation_reference_not_ensemble_average
+  chiral_eft_anchors:
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_414.yaml
+    - data/chiral_eft_muses_v1_0_1/manifest_n3lo_450.yaml
+  inner_crust_template: data/unified_eos_hcdas_2022/inner_crust_derivative_template_v0_1.json
+  connector: reference_tilted_v0_5_candidate
+  connector_sample_count: 257
+  rounded_outer_mu_projection_tolerance: 0.000001
+
+finite_domain_rule:
+  maximum_density_nsat: 6.0
+  pressure_above_domain: HARD_ERROR
+  constant_sound_speed_extension_forbidden: true
+  maximum_mass_reported_only_if_turnover_inside_domain: true
+  otherwise_report: maximum_mass_lower_bound_and_domain_truncation
+  no_extrapolation_to_pass_physical_gate: true
+
+stellar_solver:
+  central_pressure_minimum: pinned_EFT_anchor_times_1_plus_1e_minus_6
+  central_pressure_maximum: chart_6_nsat_pressure_times_1_minus_1e_minus_12
+  logarithmic_scan_points: 48
+  target_mass_tolerance_msun: 0.000002
+  maximum_bisection_iterations: 50
+  maximum_step_km: 0.03
+  minimum_step_km: 0.0000001
+  pressure_step_fraction: 0.05
+  turnover_mass_drop_tolerance_msun: 0.0001
+
+atlas_anchors:
+  mass_msun: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2]
+  density_nsat: [1.0, 1.5, 2.0, 3.0, 4.0, 5.0, 6.0]
+
+public_projection:
+  GW: [tidal_deformability_mass, maximum_mass]
+  XRAY: [mass_radius, maximum_mass]
+  RADIO: [maximum_mass]
+  NUCLEAR: [pressure_energy_density]
+  local_parameters_in_atlas_forbidden: true
+  required_provenance:
+    - observer
+    - local_chart
+    - source_event
+    - likelihood_family
+    - prior_identifier
+    - translation_version
+    - calibration_state
+
+physical_gates:
+  maximum_mass_msun_lower: 2.0
+  stable_branch_required_mass_interval_msun: [1.0, 2.2]
+  domain_contains_mass_turnover: true
+  all_registered_mass_anchors_translated: true
+  gate_failure_does_not_invalidate_numerical_translation: true
+  gate_failure_forbids_pilot_entry: true
+
+convergence_check:
+  case_id: NUCLEAR__MUSES-N3LO-414
+  target_mass_msun: 1.4
+  coarse_maximum_step_km: 0.03
+  fine_maximum_step_km: 0.015
+  maximum_relative_differences:
+    mass: 0.00001
+    radius: 0.001
+    love_k2: 0.005
+    tidal_lambda: 0.005
+
+decision_scope: >
+  Forward translation of the eight registered local-chart exemplars into
+  provenance-preserving public EOS relations and finite-domain stellar gates.
+does_not_validate:
+  - parameter_range_acceptance
+  - accepted_prior_volume_balance
+  - outer_crust_ensemble_translation_sensitivity
+  - observational_likelihoods
+  - P1_to_P4_thresholds
+  - confirmatory_trajectory_authorization

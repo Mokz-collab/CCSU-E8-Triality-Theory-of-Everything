@@ -1,0 +1,34 @@
+extends: ns_eos_decisions_v0_7.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.8-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  local_to_public_relations:
+    status: >
+      TRANSLATION_IMPLEMENTED_REGISTERED_EXEMPLARS_FAILED_FINITE_DOMAIN_STELLAR_GATES
+    source: src/ccsu_multiobserver/ns_eos_relations.py
+    runner: scripts/run_local_to_public_relation_validation.py
+    contract: local_to_public_relation_contract_v0_1.yaml
+    result: local_to_public_relation_results_v0_1.json
+    review: LOCAL_TO_PUBLIC_RELATION_REVIEW_V0_1.md
+    registered_cases: 8
+    numerical_translations_completed: 8
+    full_stellar_gate_passed: 0
+    domain_truncated_before_mass_turnover: 8
+    maximum_mass_at_least_2_msun_lower_bound_passed: 2
+    all_mass_anchors_translated: 0
+    constant_sound_speed_extension_used: false
+    maximum_mass_invented_at_domain_boundary: false
+    public_provenance_complete: true
+    local_parameters_in_atlas: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - finite_domain_stellar_gate_recovery_without_extrapolation
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget

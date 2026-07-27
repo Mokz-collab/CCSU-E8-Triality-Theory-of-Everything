@@ -1,0 +1,855 @@
+{
+  "all_mass_anchors_translated_count": 0,
+  "all_public_provenance_complete": true,
+  "canonical_record_sha256": "469da958ba0efa36473a12157846f7f0e607bdb429b0fc197db0a4a9a22b0603",
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "GW__MUSES-N3LO-414",
+      "chart": "spectral_adiabatic_index",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 129.98758270238804
+      },
+      "observer": "GW",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "gamma0": 0.8,
+        "gamma1": 0.0,
+        "gamma2": 0.0,
+        "gamma3": 0.0
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "spectral_adiabatic_index",
+          "observer": "GW",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "maximum_mass_lower_bound_msun": 1.0268927535751462,
+          "maximum_mass_msun": null,
+          "tidal_deformability_mass": [
+            {
+              "mass_msun": 1.000000335653299,
+              "tidal_lambda": 608.4048223482658
+            }
+          ]
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 129.98758270225798,
+          "minimum": 2.9799979169129363,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [
+          {
+            "central_pressure_mev_fm3": 116.12700843743659,
+            "integration_steps": 944,
+            "love_k2": 0.06666905193744917,
+            "mass_msun": 1.000000335653299,
+            "radius_km": 9.920699601873059,
+            "target_mass_msun": 1.0,
+            "tidal_lambda": 608.4048223482658
+          }
+        ],
+        "maximum_mass_lower_bound_msun": 1.0268927535751462,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 1.0268927535751462,
+          "maximum": 1.0268927535751462,
+          "minimum": 0.20431879665460628
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "XRAY__MUSES-N3LO-414",
+      "chart": "piecewise_polytrope",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 138.4446258220557
+      },
+      "observer": "XRAY",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "gamma1": 2.2,
+        "gamma2": 2.5,
+        "gamma3": 2.3,
+        "log10_p1_cgs": 34.2
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "piecewise_polytrope",
+          "observer": "XRAY",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "mass_radius": [
+            {
+              "mass_msun": 0.9999992379975682,
+              "radius_km": 9.879651416195415
+            }
+          ],
+          "maximum_mass_lower_bound_msun": 1.059373774333825,
+          "maximum_mass_msun": null
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 138.44462582191727,
+          "minimum": 2.9799979169129363,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [
+          {
+            "central_pressure_mev_fm3": 110.88570706452103,
+            "integration_steps": 943,
+            "love_k2": 0.06864433592813013,
+            "mass_msun": 0.9999992379975682,
+            "radius_km": 9.879651416195415,
+            "target_mass_msun": 1.0,
+            "tidal_lambda": 613.5812374883413
+          }
+        ],
+        "maximum_mass_lower_bound_msun": 1.059373774333825,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 1.059373774333825,
+          "maximum": 1.059373774333825,
+          "minimum": 0.2043187966540307
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "RADIO__MUSES-N3LO-414",
+      "chart": "monotone_eos_spline",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 29.79994936917999
+      },
+      "observer": "RADIO",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "delta_log10_p_1": 0.16,
+        "delta_log10_p_2": 0.18,
+        "delta_log10_p_3": 0.24,
+        "delta_log10_p_4": 0.24,
+        "delta_log10_p_5": 0.18
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "monotone_eos_spline",
+          "observer": "RADIO",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "maximum_mass_lower_bound_msun": 0.32677884371527377,
+          "maximum_mass_msun": null
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 29.799949369150195,
+          "minimum": 2.9799979169129363,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [],
+        "maximum_mass_lower_bound_msun": 0.32677884371527377,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 0.32677884371527377,
+          "maximum": 0.32677884371527377,
+          "minimum": 0.2043187966512323
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.0,
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "NUCLEAR__MUSES-N3LO-414",
+      "chart": "speed_of_sound_nodes",
+      "chiral_eft_model": "MUSES-N3LO-414",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 463.2002210141566
+      },
+      "observer": "NUCLEAR",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "cs2_1": 0.05,
+        "cs2_2": 0.12,
+        "cs2_3": 0.25,
+        "cs2_4": 0.45,
+        "cs2_5": 0.55,
+        "cs2_6": 0.5
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "speed_of_sound_nodes",
+          "observer": "NUCLEAR",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "pressure_energy_density": [
+            {
+              "density_nsat": 1.0,
+              "energy_mev_fm3": 152.6504931714,
+              "pressure_mev_fm3": 2.277649695786
+            },
+            {
+              "density_nsat": 1.5,
+              "energy_mev_fm3": 231.11712566674044,
+              "pressure_mev_fm3": 8.140107201519305
+            },
+            {
+              "density_nsat": 2.0,
+              "energy_mev_fm3": 312.82171455137996,
+              "pressure_mev_fm3": 23.235851547491936
+            },
+            {
+              "density_nsat": 3.0,
+              "energy_mev_fm3": 493.1550527647345,
+              "pressure_mev_fm3": 88.92102469537107
+            },
+            {
+              "density_nsat": 4.0,
+              "energy_mev_fm3": 702.0024069330486,
+              "pressure_mev_fm3": 193.37716424237766
+            },
+            {
+              "density_nsat": 5.0,
+              "energy_mev_fm3": 940.5937780023663,
+              "pressure_mev_fm3": 323.842703826041
+            }
+          ]
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 463.200221013693,
+          "minimum": 2.9799979169129363,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [
+          {
+            "central_pressure_mev_fm3": 31.645173857800383,
+            "integration_steps": 991,
+            "love_k2": 0.10943264341381871,
+            "mass_msun": 0.9999987755107729,
+            "radius_km": 12.218606126571318,
+            "target_mass_msun": 1.0,
+            "tidal_lambda": 2830.189240895438
+          },
+          {
+            "central_pressure_mev_fm3": 43.83652862262045,
+            "integration_steps": 1007,
+            "love_k2": 0.10136796248887993,
+            "mass_msun": 1.1999987402076102,
+            "radius_km": 12.294520669500832,
+            "target_mass_msun": 1.2,
+            "tidal_lambda": 1086.7067730823621
+          },
+          {
+            "central_pressure_mev_fm3": 59.97039613216224,
+            "integration_steps": 1020,
+            "love_k2": 0.08998956735070286,
+            "mass_msun": 1.400001178606134,
+            "radius_km": 12.347573529856225,
+            "target_mass_msun": 1.4,
+            "tidal_lambda": 456.0535732375919
+          },
+          {
+            "central_pressure_mev_fm3": 82.48421459340018,
+            "integration_steps": 1031,
+            "love_k2": 0.07651164205943833,
+            "mass_msun": 1.599999551997923,
+            "radius_km": 12.357366887512228,
+            "target_mass_msun": 1.6,
+            "tidal_lambda": 199.6712434226591
+          },
+          {
+            "central_pressure_mev_fm3": 116.93727684053061,
+            "integration_steps": 1038,
+            "love_k2": 0.06213009722731532,
+            "mass_msun": 1.8000006332137273,
+            "radius_km": 12.297049197040995,
+            "target_mass_msun": 1.8,
+            "tidal_lambda": 87.80128997764133
+          },
+          {
+            "central_pressure_mev_fm3": 180.67764814933722,
+            "integration_steps": 1043,
+            "love_k2": 0.04646615475315854,
+            "mass_msun": 1.9999981572795815,
+            "radius_km": 12.102423763011304,
+            "target_mass_msun": 2.0,
+            "tidal_lambda": 35.80206979096533
+          }
+        ],
+        "maximum_mass_lower_bound_msun": 2.184409166557645,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 2.184409166557645,
+          "maximum": 2.184409166557645,
+          "minimum": 0.204318796655299
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "GW__MUSES-N3LO-450",
+      "chart": "spectral_adiabatic_index",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 123.8726276096629
+      },
+      "observer": "GW",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "gamma0": 0.8,
+        "gamma1": 0.0,
+        "gamma2": 0.0,
+        "gamma3": 0.0
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "spectral_adiabatic_index",
+          "observer": "GW",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "maximum_mass_lower_bound_msun": 0.9861219456756427,
+          "maximum_mass_msun": null,
+          "tidal_deformability_mass": []
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 123.872627609539,
+          "minimum": 2.839811038601198,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [],
+        "maximum_mass_lower_bound_msun": 0.9861219456756427,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 0.9861219456756427,
+          "maximum": 0.9861219456756427,
+          "minimum": 0.19340016828761758
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.0,
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "XRAY__MUSES-N3LO-450",
+      "chart": "piecewise_polytrope",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 138.4446258220557
+      },
+      "observer": "XRAY",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "gamma1": 2.2,
+        "gamma2": 2.5,
+        "gamma3": 2.3,
+        "log10_p1_cgs": 34.2
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "piecewise_polytrope",
+          "observer": "XRAY",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "mass_radius": [
+            {
+              "mass_msun": 0.9999998427375985,
+              "radius_km": 9.85829642743505
+            }
+          ],
+          "maximum_mass_lower_bound_msun": 1.0595206429308262,
+          "maximum_mass_msun": null
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 138.44462582191727,
+          "minimum": 2.839811038601198,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [
+          {
+            "central_pressure_mev_fm3": 110.8873503551174,
+            "integration_steps": 943,
+            "love_k2": 0.06921070780851574,
+            "mass_msun": 0.9999998427375985,
+            "radius_km": 9.85829642743505,
+            "target_mass_msun": 1.0,
+            "tidal_lambda": 611.9847442722945
+          }
+        ],
+        "maximum_mass_lower_bound_msun": 1.0595206429308262,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 1.0595206429308262,
+          "maximum": 1.0595206429308262,
+          "minimum": 0.19340016828729178
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "RADIO__MUSES-N3LO-450",
+      "chart": "monotone_eos_spline",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 28.398081987930002
+      },
+      "observer": "RADIO",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "delta_log10_p_1": 0.16,
+        "delta_log10_p_2": 0.18,
+        "delta_log10_p_3": 0.24,
+        "delta_log10_p_4": 0.24,
+        "delta_log10_p_5": 0.18
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "monotone_eos_spline",
+          "observer": "RADIO",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "maximum_mass_lower_bound_msun": 0.3081956381055325,
+          "maximum_mass_msun": null
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 28.398081987901588,
+          "minimum": 2.839811038601198,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": false,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [],
+        "maximum_mass_lower_bound_msun": 0.3081956381055325,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 0.3081956381055325,
+          "maximum": 0.3081956381055325,
+          "minimum": 0.19340016828434942
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          1.0,
+          1.2,
+          1.4,
+          1.6,
+          1.8,
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "case_id": "NUCLEAR__MUSES-N3LO-450",
+      "chart": "speed_of_sound_nodes",
+      "chiral_eft_model": "MUSES-N3LO-450",
+      "finite_domain": {
+        "extension_used": false,
+        "maximum_density_nsat": 5.999999999999999,
+        "maximum_pressure_mev_fm3": 462.56122254667076
+      },
+      "observer": "NUCLEAR",
+      "outer_crust_model": "DD-ME2",
+      "parameters": {
+        "cs2_1": 0.05,
+        "cs2_2": 0.12,
+        "cs2_3": 0.25,
+        "cs2_4": 0.45,
+        "cs2_5": 0.55,
+        "cs2_6": 0.5
+      },
+      "public_projection": {
+        "local_parameters_included": false,
+        "provenance": {
+          "calibration_state": "DEVELOPMENT_NOT_CONFIRMATORY",
+          "likelihood_family": "NONE_FORWARD_TRANSLATION",
+          "local_chart": "speed_of_sound_nodes",
+          "observer": "NUCLEAR",
+          "prior_identifier": "PROPOSAL_BOX_NOT_PHYSICAL_PRIOR_v0.7",
+          "source_event": "REGISTERED_SYNTHETIC_EXEMPLAR",
+          "translation_version": "CCSU-MO-NS-EOS-001-RELATIONS-001-v0.1"
+        },
+        "relations": {
+          "pressure_energy_density": [
+            {
+              "density_nsat": 1.0,
+              "energy_mev_fm3": 152.6199162401,
+              "pressure_mev_fm3": 2.180742146901
+            },
+            {
+              "density_nsat": 1.5,
+              "energy_mev_fm3": 231.00358514607663,
+              "pressure_mev_fm3": 7.994327651590026
+            },
+            {
+              "density_nsat": 2.0,
+              "energy_mev_fm3": 312.619618130019,
+              "pressure_mev_fm3": 23.073710403197047
+            },
+            {
+              "density_nsat": 3.0,
+              "energy_mev_fm3": 492.7575012195826,
+              "pressure_mev_fm3": 88.6876903896469
+            },
+            {
+              "density_nsat": 4.0,
+              "energy_mev_fm3": 701.3784952321641,
+              "pressure_mev_fm3": 193.0306147188321
+            },
+            {
+              "density_nsat": 5.0,
+              "energy_mev_fm3": 939.7112679581766,
+              "pressure_mev_fm3": 323.35474863749505
+            }
+          ]
+        }
+      },
+      "stellar_translation": {
+        "all_stellar_gates_pass": false,
+        "central_pressure_scan_mev_fm3": {
+          "maximum": 462.5612225462083,
+          "minimum": 2.839811038601198,
+          "points": 48
+        },
+        "finite_domain_maximum_density_nsat": 5.999999999999999,
+        "gates": {
+          "all_registered_mass_anchors_translated": false,
+          "domain_contains_mass_turnover": false,
+          "maximum_mass_at_least_2_0_msun": true,
+          "stable_branch_covers_1_0_to_2_2_msun": false
+        },
+        "mass_radius_tidal_relation": [
+          {
+            "central_pressure_mev_fm3": 31.88752412601682,
+            "integration_steps": 990,
+            "love_k2": 0.11008754239408151,
+            "mass_msun": 1.000001140574964,
+            "radius_km": 12.169931472640204,
+            "target_mass_msun": 1.0,
+            "tidal_lambda": 2790.833734354485
+          },
+          {
+            "central_pressure_mev_fm3": 44.104120114982614,
+            "integration_steps": 1006,
+            "love_k2": 0.10196948122459373,
+            "mass_msun": 1.199999644806765,
+            "radius_km": 12.253657154573592,
+            "target_mass_msun": 1.2,
+            "tidal_lambda": 1075.1049157020745
+          },
+          {
+            "central_pressure_mev_fm3": 60.27190287817267,
+            "integration_steps": 1020,
+            "love_k2": 0.09045764051486184,
+            "mass_msun": 1.3999999644901353,
+            "radius_km": 12.312848622324232,
+            "target_mass_msun": 1.4,
+            "tidal_lambda": 452.0176916462907
+          },
+          {
+            "central_pressure_mev_fm3": 82.83739686677751,
+            "integration_steps": 1030,
+            "love_k2": 0.0768477471030044,
+            "mass_msun": 1.599999625306547,
+            "radius_km": 12.327791935018963,
+            "target_mass_msun": 1.6,
+            "tidal_lambda": 198.15991843820564
+          },
+          {
+            "central_pressure_mev_fm3": 117.38473112133104,
+            "integration_steps": 1038,
+            "love_k2": 0.0622863239603432,
+            "mass_msun": 1.8000006797008206,
+            "radius_km": 12.271889824200766,
+            "target_mass_msun": 1.8,
+            "tidal_lambda": 87.12528118879402
+          },
+          {
+            "central_pressure_mev_fm3": 181.35693943814096,
+            "integration_steps": 1042,
+            "love_k2": 0.04651662410397264,
+            "mass_msun": 1.9999989557051052,
+            "radius_km": 12.081166587417188,
+            "target_mass_msun": 2.0,
+            "tidal_lambda": 35.527226817831895
+          }
+        ],
+        "maximum_mass_lower_bound_msun": 2.1836914900568853,
+        "maximum_mass_msun": null,
+        "maximum_mass_sample_index": 47,
+        "sampled_mass_range_msun": {
+          "endpoint_at_6_nsat": 2.1836914900568853,
+          "maximum": 2.1836914900568853,
+          "minimum": 0.19340016828839351
+        },
+        "status": "DOMAIN_TRUNCATED_BEFORE_MASS_TURNOVER",
+        "unbracketed_mass_anchors_msun": [
+          2.2
+        ]
+      }
+    }
+  ],
+  "confirmatory_authorization": false,
+  "contract": {
+    "path": "local_to_public_relation_contract_v0_1.yaml",
+    "sha256": "de7d23a196b83c55b43f621c3bad092b26305e181a43cff5651a9cc58924a9b8"
+  },
+  "convergence_check": {
+    "all_checks_pass": true,
+    "central_pressure_mev_fm3": 59.97039613216224,
+    "checks": {
+      "love_k2": true,
+      "mass": true,
+      "radius": true,
+      "tidal_lambda": true
+    },
+    "coarse_maximum_step_km": 0.03,
+    "fine_maximum_step_km": 0.015,
+    "relative_differences": {
+      "love_k2": 0.0006383443650849043,
+      "mass": 7.889253577084702e-07,
+      "radius": 4.156204501227491e-07,
+      "tidal_lambda": 0.0006364790291679364
+    }
+  },
+  "created_utc": "2026-07-27T10:49:15Z",
+  "decision": "TRANSLATION_IMPLEMENTED_REGISTERED_EXEMPLARS_FAILED_FINITE_DOMAIN_STELLAR_GATES",
+  "domain_truncated_before_turnover_count": 8,
+  "environment": {
+    "implementation": "CPython",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "scipy": "1.17.0"
+  },
+  "finite_domain_rule": {
+    "constant_sound_speed_extension_forbidden": true,
+    "maximum_density_nsat": 6.0,
+    "maximum_mass_reported_only_if_turnover_inside_domain": true,
+    "no_extrapolation_to_pass_physical_gate": true,
+    "otherwise_report": "maximum_mass_lower_bound_and_domain_truncation",
+    "pressure_above_domain": "HARD_ERROR"
+  },
+  "full_stellar_gate_pass_count": 0,
+  "maximum_mass_threshold_pass_count": 2,
+  "pilot_entry_authorized": false,
+  "prerequisites": {
+    "decision_lock": {
+      "path": "ns_eos_decisions_v0_7.yaml",
+      "resolved_version": "0.7-development",
+      "sha256": "f248ed52f4b3b2ebab03913559e3653788ab74c77b6e3ce73be0d46259078e98"
+    },
+    "domain_lock": {
+      "path": "ns_eos_domain_v0_1.yaml",
+      "resolved_version": "0.1-draft",
+      "sha256": "96ecebe6ef25c744958d004744d06eea9caf332992ac826d949ab4e3e25aac87"
+    },
+    "environment_lock": {
+      "path": "ns_eos_local_chart_environment_v0_1.lock",
+      "sha256": "388e0fec245fd6a9a2ac648ca6cc11b03516be321d807324fb92f7b7010681d4"
+    },
+    "local_chart_contract": {
+      "path": "local_chart_generator_contract_v0_1.yaml",
+      "sha256": "832fc7de7a54064273ae2a179e9d6aee6bbe9955cea6050ea7936874d41b4920"
+    },
+    "local_chart_result": {
+      "path": "local_chart_generator_results_v0_1.json",
+      "sha256": "cd7ef74b2cc68697bb8bff3534a7d2227c638cc54da9657e8ab1d74b7bfc0593"
+    }
+  },
+  "remaining_nonvalidated_items": [
+    "parameter_range_acceptance",
+    "accepted_prior_volume_balance",
+    "outer_crust_ensemble_translation_sensitivity",
+    "observational_likelihoods",
+    "P1_to_P4_thresholds",
+    "confirmatory_trajectory_authorization"
+  ],
+  "schema": "ccsu.multiobserver.ns-eos-relation-translation.v1",
+  "scientific_inputs": {
+    "chiral_eft_table_sha256": {
+      "MUSES-N3LO-414": "902cdc8a69487e9d850d3c3e1939a3137b4fc6847ffcf0d9f5bb742edc6bda2b",
+      "MUSES-N3LO-450": "8f99939d30a35bfd4f0e3cd10c65aa696518283950fb4f7a50fedf1e3c0196f6"
+    },
+    "inner_crust_template_sha256": "28a2c95bf6558bc9063f3f3a4b596427e4bb6fb8eacb2c9e98ff45e7ee22717c",
+    "outer_crust_manifest_sha256": "ad328140137a36442cd15a599f0ad8cbfdc889139547f0accbf8ab2397f936d7"
+  },
+  "source": {
+    "path": "src/ccsu_multiobserver/ns_eos_relations.py",
+    "sha256": "e046cb0a0ee57d0a7274a7456f196dd5aea0f7b6928df6efa2a6ff2014733769"
+  },
+  "status": "DEVELOPMENT_NOT_CONFIRMATORY",
+  "translation_id": "CCSU-MO-NS-EOS-001-RELATIONS-001",
+  "translations_completed": true
+}

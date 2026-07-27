@@ -17,7 +17,7 @@ verify the two χEFT members with:
 
 ```bash
 PYTHONPATH=src python -m ccsu_multiobserver.ns_eos_decisions \
-  ns_eos_v1_1/ns_eos_decisions_v0_7.yaml
+  ns_eos_v1_1/ns_eos_decisions_v0_8.yaml
 PYTHONPATH=src python scripts/run_inner_crust_validation.py \
   --contract ns_eos_v1_1/inner_crust_validation_contract_v0_1.yaml \
   --output /tmp/inner_crust_validation.json \
@@ -42,6 +42,10 @@ PYTHONPATH=src python scripts/run_local_chart_validation.py \
   --contract ns_eos_v1_1/local_chart_generator_contract_v0_1.yaml \
   --output /tmp/local_chart_validation.json \
   --created-utc 2026-07-27T10:14:00Z
+PYTHONPATH=src python scripts/run_local_to_public_relation_validation.py \
+  --contract ns_eos_v1_1/local_to_public_relation_contract_v0_1.yaml \
+  --output /tmp/local_to_public_relations.json \
+  --created-utc 2026-07-27T10:49:15Z
 ```
 
 The two χEFT members form a coherent interaction-reference envelope. They do
@@ -66,8 +70,15 @@ observer coordinates. Eight registered chart/χEFT-anchor cases pass local
 matching, identity, monotonicity, stability, and causality checks. Parameter
 boxes remain proposal regions rather than physical priors: invalid candidates
 are rejected, never clipped, and the independent range review remains open.
-Maximum-mass, stable-branch, and public-relation translation gates are the
-next implementation layer.
+The maximum-mass, stable-branch, and public-relation layer is now executable,
+and it correctly refuses to authorize the
+registered exemplars. All eight translations complete, but every mass
+sequence is still rising at the finite \(6\,n_{\mathrm{sat}}\) boundary.
+Consequently no \(M_{\max}\) is invented from the endpoint, zero cases pass
+the full stellar gates, and pilot entry is forbidden. The result supplies
+lower bounds and partial relation anchors only. Recovery requires a
+deterministic nonconfirmatory search within the existing proposal boxes or an
+explicitly registered domain revision; extrapolation is not allowed.
 
 The active checkpoint remains development-only until all blockers in
-`ns_eos_decisions_v0_7.yaml` are closed.
+`ns_eos_decisions_v0_8.yaml` are closed.
