@@ -22,6 +22,7 @@ from ccsu_multiobserver.ns_eos_recovery import (
     select_paired_minimax_candidate,
     summarize_acceptance,
 )
+from scripts.run_transition_holonomy_analysis import directed_cycles
 
 
 class NSEOSRecoveryTests(unittest.TestCase):
@@ -355,6 +356,43 @@ class NSEOSRecoveryTests(unittest.TestCase):
                 problem["local_parameters_in_public_record"] is False
                 for problem in result["problems"]
             )
+        )
+
+    def test_directed_cycle_detection_does_not_invent_reverse_edges(self):
+        self.assertEqual(
+            directed_cycles(
+                ("GW", "XRAY", "RADIO", "NUCLEAR"),
+                (("NUCLEAR", "GW"), ("NUCLEAR", "RADIO")),
+            ),
+            (),
+        )
+        self.assertEqual(
+            directed_cycles(
+                ("GW", "NUCLEAR"),
+                (("GW", "NUCLEAR"), ("NUCLEAR", "GW")),
+            ),
+            (("GW", "NUCLEAR"),),
+        )
+
+    def test_registered_transition_graph_makes_holonomy_unidentifiable(self):
+        root = Path(__file__).resolve().parents[1]
+        result = json.loads(
+            (
+                root
+                / "ns_eos_v1_1"
+                / "transition_holonomy_results_v0_1.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(result["transition_count"], 2)
+        self.assertEqual(result["closed_directed_cycle_count"], 0)
+        self.assertFalse(result["holonomy_identifiable"])
+        self.assertEqual(
+            result["holonomy_status"], "HOLONOMY_NOT_IDENTIFIABLE"
+        )
+        self.assertIsNone(result["holonomy_value"])
+        self.assertFalse(result["zero_holonomy_claimed"])
+        self.assertFalse(
+            result["scalar_path_loss_interpreted_as_holonomy"]
         )
 
 

@@ -124,7 +124,15 @@ high-mass gates. This is the first demonstrated cross-chart overlap at the
 registered resolution; it is conditional overlap, not absolute public
 convergence or global sampling completeness.
 
-The next development step is to freeze the two robust transition records and
-test translation-cycle holonomy wherever a closed transition cycle is
-identifiable. The active checkpoint remains development-only until all
-blockers in `ns_eos_decisions_v0_13.yaml` are closed.
+The two robust transitions are now frozen with direction, target-cell,
+relation-loss, parameter-hash, EFT-member, and stellar-gate provenance. They
+form the directed edges NUCLEAR → GW and NUCLEAR → RADIO. The graph has no
+return edge and no closed directed cycle, so translation-cycle holonomy is
+not identifiable. Its value is recorded as null, never as zero, and scalar
+relation loss is not reinterpreted as holonomy.
+
+The next development step is a bounded reciprocal-transition search aimed at
+creating at least one closed directed cycle without changing the boxes,
+relation threshold, finite domain, or stellar gates. The active checkpoint
+remains development-only until all blockers in
+`ns_eos_decisions_v0_14.yaml` are closed.

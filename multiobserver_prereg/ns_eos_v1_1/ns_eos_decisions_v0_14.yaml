@@ -1,0 +1,39 @@
+extends: ns_eos_decisions_v0_13.yaml
+schema_version: 1
+decision_lock_id: CCSU-MO-NS-EOS-001-DECISIONS
+version: "0.14-development"
+status: DRAFT_LOCKED_FOR_IMPLEMENTATION
+confirmatory_authorization: false
+
+implementation_evidence:
+  robust_transition_holonomy:
+    status: ROBUST_TRANSITIONS_FROZEN_HOLONOMY_NOT_IDENTIFIABLE
+    study_class: DEVELOPMENT_NONCONFIRMATORY
+    runner: scripts/run_transition_holonomy_analysis.py
+    contract: transition_holonomy_contract_v0_1.yaml
+    result: transition_holonomy_results_v0_1.json
+    review: TRANSITION_HOLONOMY_REVIEW_V0_1.md
+    transition_count: 2
+    directed_transitions:
+      - from_chart: NUCLEAR
+        to_chart: GW
+        target_component_index: 0
+      - from_chart: NUCLEAR
+        to_chart: RADIO
+        target_component_index: 1
+    closed_directed_cycle_count: 0
+    holonomy_identifiable: false
+    holonomy_value: null
+    zero_holonomy_claimed: false
+    scalar_path_loss_interpreted_as_holonomy: false
+    local_parameter_vectors_in_public_record: false
+    pilot_entry_authorized: false
+    counts_toward_confirmatory_freeze: false
+
+remaining_freeze_blockers:
+  - reciprocal_or_closed_transition_cycle_not_demonstrated
+  - inverse_reachability_sampling_completeness_not_demonstrated
+  - independent_review_of_parameter_ranges
+  - pilot_calibration_of_P1_to_P4_thresholds
+  - power_derived_confirmatory_budget
+

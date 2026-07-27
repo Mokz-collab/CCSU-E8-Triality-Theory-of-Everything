@@ -10,8 +10,8 @@ from ccsu_multiobserver.ns_eos_decisions import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_13.yaml"
-LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_12.yaml"
+DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_14.yaml"
+LEGACY_DECISIONS = ROOT / "ns_eos_v1_1" / "ns_eos_decisions_v0_13.yaml"
 
 
 class NSEOSDecisionTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class NSEOSDecisionTests(unittest.TestCase):
 
     def test_previous_decision_checkpoint_remains_valid(self):
         previous = load_and_validate_decisions(LEGACY_DECISIONS)
-        self.assertEqual(previous["version"], "0.12-development")
+        self.assertEqual(previous["version"], "0.13-development")
 
     def test_cross_implementation_blocker_is_closed_in_development_only(self):
         evidence = self.decisions["implementation_evidence"][
@@ -163,9 +163,27 @@ class NSEOSDecisionTests(unittest.TestCase):
             self.decisions["remaining_freeze_blockers"],
         )
         self.assertIn(
+            "reciprocal_or_closed_transition_cycle_not_demonstrated",
+            self.decisions["remaining_freeze_blockers"],
+        )
+
+    def test_transition_graph_records_nonidentifiability_not_zero(self):
+        evidence = self.decisions["implementation_evidence"][
+            "robust_transition_holonomy"
+        ]
+        self.assertEqual(evidence["transition_count"], 2)
+        self.assertEqual(evidence["closed_directed_cycle_count"], 0)
+        self.assertFalse(evidence["holonomy_identifiable"])
+        self.assertIsNone(evidence["holonomy_value"])
+        self.assertFalse(evidence["zero_holonomy_claimed"])
+        self.assertFalse(
+            evidence["scalar_path_loss_interpreted_as_holonomy"]
+        )
+        self.assertNotIn(
             "transition_map_and_translation_holonomy_not_validated",
             self.decisions["remaining_freeze_blockers"],
         )
+
 
     def test_low_density_intervals_are_contiguous(self):
         low = self.decisions["low_density_matching"]

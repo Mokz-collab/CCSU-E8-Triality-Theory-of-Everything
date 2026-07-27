@@ -1,0 +1,38 @@
+schema: ccsu.multiobserver.ns-eos-transition-holonomy-contract.v1
+registration_id: CCSU-MO-NS-EOS-001-TRANSITIONS
+version: "0.1-development"
+status: FROZEN_FOR_DEVELOPMENT_REPLAY
+confirmatory_authorization: false
+
+source: scripts/run_transition_holonomy_analysis.py
+targeted_optimization_result:
+  path: targeted_cross_chart_optimization_results_v0_1.json
+  sha256: 014de6b28c01febf903e32d1fcf4c30ed0502e3fede3189e982668a1c9266597
+
+observer_order: [GW, XRAY, RADIO, NUCLEAR]
+transition_selection:
+  require_relation_reachable: true
+  require_robust_cross_chart_overlap: true
+  require_exact_stellar_status: PASS_BOTH_EFT_MEMBERS
+  require_both_registered_eft_members: true
+  local_parameter_vectors_forbidden: true
+  direction_semantics: optimized_chart_to_target_cell_owner_chart
+
+holonomy_rule:
+  graph: directed_robust_transition_graph
+  minimum_cycle_length: 2
+  require_closed_directed_cycle: true
+  require_composable_registered_transition_maps: true
+  no_cycle_outcome: HOLONOMY_NOT_IDENTIFIABLE
+  no_cycle_must_not_be_reported_as_zero: true
+  scalar_path_loss_is_not_holonomy: true
+
+does_not_validate:
+  - global_transition_atlas
+  - inverse_reachability_sampling_completeness
+  - zero_holonomy
+  - path_independence
+  - observer_identity
+  - confirmatory_predictions
+  - pilot_entry
+
